@@ -198,7 +198,7 @@
       <div class="buttonArea" @contextmenu.prevent>
         <div>
           <ctrl-button @click="commit">確定</ctrl-button>
-          <ctrl-button @click="cancel">キャンセル</ctrl-button>
+          <ctrl-button @click="cancel">取消</ctrl-button>
         </div>
       </div>
     </div>

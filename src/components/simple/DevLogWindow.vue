@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="開発履歴 on Twitter   「みんなありがとう！！！！！」"
+    titleText="開發歷史 on Twitter   「多謝大家！！！！！」"
     display-property="private.display.devLogWindow"
     align="left-top"
     fixSize="385, 660"

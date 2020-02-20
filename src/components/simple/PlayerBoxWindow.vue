@@ -1,16 +1,16 @@
 <template>
   <window-frame
-    titleText="プレイヤーボックス画面"
+    titleText="棋子管理盒"
     display-property="private.display.playerBoxWindow"
     align="center"
     fixSize="300, 400"
   >
     <div class="contents" @contextmenu.prevent>
       <label class="playerSelect">
-        <player-select v-model="currentPlayerKey" />のプレイヤーボックス
+        <player-select v-model="currentPlayerKey" />的棋子管理盒
       </label>
       <label class="playerFontColor">
-        チャット文字色
+        角色的文字顏色
         <input
           type="color"
           :value="getPlayer ? getPlayer.fontColor : ''"
@@ -23,7 +23,7 @@
        ! マップ
        !---------------->
       <fieldset class="field map">
-        <legend>マップにいる</legend>
+        <legend>在地圖上的</legend>
         <ul class="objList">
           <li
             v-for="character in getMapObjectList({
@@ -35,7 +35,7 @@
           >
             <character-chip :type="character.kind" :objKey="character.key" />
             <fieldset class="fontColorArea">
-              <legend>チャット文字色</legend>
+              <legend>角色的文字顏色</legend>
               <label>
                 <ctrl-select
                   :value="character.fontColorType"
@@ -81,7 +81,7 @@
        ! キャラクター待合室
        !---------------->
       <fieldset class="field waiting" v-if="currentPlayerKey === playerKey">
-        <legend>キャラクター待合室にいる</legend>
+        <legend>在待機室的</legend>
         <ul class="objList">
           <li
             v-for="character in getMapObjectList({
@@ -99,7 +99,7 @@
        ! 墓場
        !---------------->
       <fieldset class="field graveyard" v-if="currentPlayerKey === playerKey">
-        <legend>墓場にいる</legend>
+        <legend>在墓場的</legend>
         <ul class="objList">
           <li
             v-for="character in getMapObjectList({
@@ -203,13 +203,13 @@ export default class PlayerBoxWindow extends Mixins<WindowMixin>(WindowMixin) {
     resultList.push({
       key: 0,
       value: "0",
-      text: "主と同じ",
+      text: "和主要相同",
       disabled: false
     });
     resultList.push({
       key: 1,
       value: "1",
-      text: "個別",
+      text: "獨立設定",
       disabled: false
     });
     return resultList;

@@ -294,7 +294,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
               return;
             }
           }
-          alert("実行結果で数値が取得できませんでした。\nキャンセルします。");
+          alert("実行結果で数値が取得できませんでした。\n取消します。");
         });
       }
     };

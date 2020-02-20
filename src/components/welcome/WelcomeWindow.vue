@@ -86,7 +86,7 @@
               <room-data-load-spec /><!-- 部屋データ読込 -->
               <chat-log-save-spec /><!-- チャットログ保存 -->
               <file-upload-spec /><!-- ファイルアップローダー -->
-              <edit-image-tag-spec /><!-- (画像)タグ編集 -->
+              <edit-image-tag-spec /><!-- (画像)タグ編輯 -->
               <delete-image-spec /><!-- 画像削除 -->
               <character-spec /><!-- キャラクター -->
               <chit-spec /><!-- チット -->
@@ -95,7 +95,7 @@
               <dice-symbol-spec /><!-- ダイスシンボル -->
               <waiting-room-spec /><!-- キャラクター待合室 -->
               <graveyard-spec /><!-- 墓場 -->
-              <player-box-spec /><!-- プレイヤーボックス -->
+              <player-box-spec /><!-- 棋子管理盒 -->
               <chat-spec /><!-- チャット -->
               <dice-spec /><!-- ダイス -->
               <chat-palette-spec /><!-- チャットパレット -->

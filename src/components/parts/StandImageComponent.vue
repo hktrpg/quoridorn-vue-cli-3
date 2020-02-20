@@ -60,7 +60,7 @@ export default class StandImageComponent extends Vue {
 
   @Watch("standImage", { deep: true })
   onChangeStandImage(standImage: any) {
-    // 稼働中のタイマーはキャンセル
+    // 稼働中のタイマーは取消
     if (this.timer !== -1) clearTimeout(this.timer);
 
     if (!standImage) return;

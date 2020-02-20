@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="BGM編集画面"
+    titleText="BGM編輯画面"
     display-property="private.display.editBGMWindow"
     align="right-bottom"
     fixSize="300, 365"
@@ -27,7 +27,7 @@
             @click="isHideUrl = !isHideUrl"
             @contextmenu.prevent
           >
-            編集するにはここをクリックしてください。
+            編輯するにはここをクリックしてください。
           </div>
         </label>
       </fieldset>
@@ -174,7 +174,7 @@
       <div class="buttonArea" @contextmenu.prevent>
         <div>
           <ctrl-button @click="commit">確定</ctrl-button>
-          <ctrl-button @click="cancel">キャンセル</ctrl-button>
+          <ctrl-button @click="cancel">取消</ctrl-button>
         </div>
       </div>
     </div>

@@ -28,7 +28,7 @@
           決定
         </ctrl-button>
         <ctrl-button @click="cancel" :disabled="!saveDataList">
-          キャンセル
+          取消
         </ctrl-button>
       </div>
     </div>

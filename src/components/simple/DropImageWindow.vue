@@ -1,21 +1,21 @@
 <template>
   <window-frame
-    titleText="画像データ登録"
+    titleText="圖片データ登録"
     display-property="private.display.dropImageWindow"
     align="center"
     fixSize="385, 660"
   >
     <div class="contents" @contextmenu.prevent>
-      <div v-if="!imageList">画像読込中...</div>
+      <div v-if="!imageList">圖片讀取中...</div>
       <fieldset v-for="imageObj in imageList" :key="imageObj.key">
         <legend>{{ imageObj.name }}</legend>
         <div>
           <img class="image" v-img="imageObj.image" draggable="false" />
           <ctrl-button class="passwordButton" @click="passwordButtonOnClick">
-            隠し画像パスワード設定
+            隠し圖片パスワード設定
           </ctrl-button>
           <label class="passwordLabel">
-            隠し画像パスワード：{{ imageObj.password !== "" ? "あり" : "なし" }}
+            隠し圖片パスワード：{{ imageObj.password !== "" ? "あり" : "なし" }}
           </label>
           <span class="tagLabel">付与するタグ(半角・全角スペースで区切り)</span>
           <input
@@ -41,7 +41,7 @@
           決定
         </ctrl-button>
         <ctrl-button @click="cancel" :disabled="!imageList">
-          キャンセル
+          取消
         </ctrl-button>
       </div>
     </div>

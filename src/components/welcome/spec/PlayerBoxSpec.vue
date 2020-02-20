@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="playerBoxSpec"
-    label-str="プレイヤーボックス"
+    label-str="棋子管理盒"
     lastVersion="1.0.0"
     :isSpecFixed="false"
   >
@@ -11,7 +11,7 @@
     <spec-item class-str="operation" label-str="起動操作">
       <li>画面上部メニューの「表示」を選択</li>
       <li>「ウィンドウ」にカーソルをあてる</li>
-      <li>「プレイヤーボックス表示」を選択</li>
+      <li>「棋子管理盒表示」を選択</li>
     </spec-item>
     <!----------------------
      ! 仕様
@@ -35,7 +35,7 @@
      !--------------------->
     <spec-item class-str="request" label-str="ユーザ要望">
       <li>
-        キャラクター待合室にいるキャラクターを編集したい
+        キャラクター待合室にいるキャラクターを編輯したい
       </li>
     </spec-item>
     <!----------------------

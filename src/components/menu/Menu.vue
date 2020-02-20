@@ -204,16 +204,16 @@
         @click="menuClick"
         property="private.display.chatWindow"
       >
-        チャット顯示
+        顯示對話
       </menu-boolean-item>
       <menu-boolean-item @click="menuClick" property="private.setting.dice">
-        ダイス顯示
+        顯示棋子
       </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.playerBoxWindow"
       >
-        プレイヤーボックス顯示
+        顯示棋子管理盒
       </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
@@ -393,13 +393,13 @@ export default class Menu extends Vue {
 
   /** 墓場 */
   clickGraveyard(): void {
-    alert("「墓場」はプレイヤーボックス画面に統合されました。");
+    alert("「墓場」は棋子管理盒画面に統合されました。");
     this.menuClick();
   }
 
   /** 角色待合室 */
   clickWaitingRoom(): void {
-    alert("「角色待合室」はプレイヤーボックス画面に統合されました。");
+    alert("「角色待合室」は棋子管理盒画面に統合されました。");
     this.menuClick();
   }
 

@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="グループチャット編集画面"
+    titleText="グループチャット編輯画面"
     display-property="private.display.editGroupChatWindow"
     align="center"
     :fixSize="`${windowSize.w}, ${windowSize.h}`"

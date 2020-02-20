@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="editImageTagSpec"
-    label-str="タグ編集"
+    label-str="タグ編輯"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -10,14 +10,14 @@
      !--------------------->
     <spec-item class-str="operation" label-str="起動操作">
       <li>画面上部メニューの「画像」を選択</li>
-      <li>「タグ編集」を選択</li>
+      <li>「タグ編輯」を選択</li>
     </spec-item>
     <!----------------------
      ! 仕様
      !--------------------->
     <spec-item class-str="spec" label-str="仕様">
       <li>
-        既に参照可能となっている画像に付与されているタグ情報を編集する
+        既に参照可能となっている画像に付与されているタグ情報を編輯する
       </li>
     </spec-item>
     <!----------------------

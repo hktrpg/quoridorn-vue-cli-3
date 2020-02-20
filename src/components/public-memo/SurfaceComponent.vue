@@ -477,7 +477,7 @@ export default class SurfaceComponent extends Vue {
   }
 
   /**
-   * 編集中モードで画像を選択された時
+   * 編輯中モードで画像を選択された時
    * @param itemIndex
    * @param imageIndex
    * @param imageKey

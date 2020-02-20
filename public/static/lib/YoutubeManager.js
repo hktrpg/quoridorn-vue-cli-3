@@ -33,7 +33,7 @@ const YoutubeControlManager = () => {
       const usePlayer = playerArr[useIndex];
       if (!usePlayer) {
         alert(
-          "アクティブなYoutube再生の上限を超えました。\nこの操作をキャンセルします。"
+          "アクティブなYoutube再生の上限を超えました。\nこの操作を取消します。"
         );
         return false;
       }

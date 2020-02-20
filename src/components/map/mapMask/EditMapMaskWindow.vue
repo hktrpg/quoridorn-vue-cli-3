@@ -81,8 +81,8 @@
         </tr>
         <tr>
           <td colspan="2" class="multi">
-            <ctrl-button @click="commitEdit">編集</ctrl-button
-            ><ctrl-button @click="cancelEdit">キャンセル</ctrl-button>
+            <ctrl-button @click="commitEdit">編輯</ctrl-button
+            ><ctrl-button @click="cancelEdit">取消</ctrl-button>
           </td>
         </tr>
       </tbody>

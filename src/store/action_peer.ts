@@ -71,7 +71,7 @@ export default {
           // 画面が閉じられたらPeer接続を破棄
           // TODO 複数呼び出されたら上書きされてしまう問題
           window.onunload = window.onbeforeunload = () => {
-            // マップ編集中のロックを解除
+            // マップ編輯中のロックを解除
             if (rootGetters.isMapEditing === rootGetters.peerId(isWait)) {
               dispatch("setProperty", {
                 property: "public.map.isEditing",

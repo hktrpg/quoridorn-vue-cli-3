@@ -60,7 +60,7 @@
       </label>
       <div class="operationArea">
         <ctrl-button @click="commitButtonOnClick">設定</ctrl-button>
-        <ctrl-button @click="cancelButtonOnClick">キャンセル</ctrl-button>
+        <ctrl-button @click="cancelButtonOnClick">取消</ctrl-button>
       </div>
     </div>
   </window-frame>
@@ -176,7 +176,7 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
   }
 
   /*********************************************************************************************************************
-   * キャンセルボタン押下時
+   * 取消ボタン押下時
    */
   private cancelButtonOnClick() {
     this.windowClose("private.display.counterRemoconEditorWindow");

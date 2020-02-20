@@ -52,7 +52,7 @@
                   状態「{{ status.standImage.ref }}」のデータを参照しています
                 </span>
                 <span v-if="status.standImage.isSystemLock">
-                  初期データとして必要なため<br />編集できません
+                  初期データとして必要なため<br />編輯できません
                 </span>
               </div>
               <div class="base">

@@ -107,9 +107,9 @@
           プレビュー確認
         </ctrl-button>
         <ctrl-button @click="editButtonOnClick" v-if="isPreview">
-          編集に戻る
+          編輯に戻る
         </ctrl-button>
-        <ctrl-button @click="cancelButtonOnClick">キャンセル</ctrl-button>
+        <ctrl-button @click="cancelButtonOnClick">取消</ctrl-button>
       </div>
     </div>
 

@@ -167,7 +167,7 @@
                   </li>
                   <li>
                     <spec-link property="editImageTagWindow" title-str="">
-                      タグ編集
+                      タグ編輯
                     </spec-link>
                   </li>
                   <li>

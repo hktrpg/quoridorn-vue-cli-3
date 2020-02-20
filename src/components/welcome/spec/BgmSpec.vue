@@ -65,7 +65,7 @@
       </li>
       <li>
         <spec-link property="addEditBgmWindowSpec" title-str="">
-          BGM追加・編集画面
+          BGM追加・編輯画面
         </spec-link>
       </li>
     </spec-item>

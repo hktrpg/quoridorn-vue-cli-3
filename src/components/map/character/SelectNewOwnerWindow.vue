@@ -15,7 +15,7 @@
         <ctrl-button @click="commit" :disabled="!currentPlayerKey">
           決定
         </ctrl-button>
-        <ctrl-button @click="cancel">キャンセル</ctrl-button>
+        <ctrl-button @click="cancel">取消</ctrl-button>
       </div>
     </div>
   </window-frame>

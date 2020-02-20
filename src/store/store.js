@@ -696,7 +696,7 @@ export default new Vuex.Store({
 
     parseColor: () =>
       /**
-       * 文字をparseしてカラー編集オブジェクトを生成する
+       * 文字をparseしてカラー編輯オブジェクトを生成する
        * @param colorText
        * @returns {*}
        */
