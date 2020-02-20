@@ -1,18 +1,19 @@
 <template>
   <fieldset class="root">
-    <legend>部屋名を指定して入室する／新しい部屋をつくる</legend>
+    <legend>輸入名稱進入指定房間/創建新房間</legend>
 
     <div class="description" v-if="!paramRoomName">
-      すでに部屋が作られているかどうかをチェックします。
+      輸入房間名稱，檢查是否已創建房間。
     </div>
     <div class="existMsg" v-if="!!paramRoomName">
-      チェック完了：部屋名「{{ paramRoomName }}」{{
-        isRoomExist ? "に入室可能です" : "はまだ作られていません"
+      檢查完成：房間名「{{ paramRoomName }}」{{
+        isRoomExist ? "可以進入" : "沒有房間"
       }}
     </div>
 
     <label class="roomName">
-      部屋名：<input
+      房間名：
+      <input
         ref="roomNameInput"
         type="text"
         v-model="roomName"
@@ -23,15 +24,15 @@
         @keydown.229.stop
         @keyup.229.stop
       />
-      <ctrl-button @click="commitRoomName">チェック</ctrl-button>
+      <ctrl-button @click="commitRoomName">確認</ctrl-button>
     </label>
 
     <!----------------------
-     ! 部屋ができるのを待つ
-     !--------------------->
+     ! 房間ができるのを待つ
+    !--------------------->
     <sub-block-title
       @open="openWaitRoom"
-      text="部屋ができるのを待つ"
+      text="等待這名稱的房間建立"
       v-if="!isRoomExist"
     />
 
@@ -39,11 +40,11 @@
       class="indentDescription description"
       v-if="paramRoomName && !isRoomExist"
     >
-      部屋が作られたら自動で入室します。それまでは仮部屋での待機となります。
+      創建房間後，您將會自動進入房間。 在那之前，你將會在臨時房間等待。
     </div>
     <div class="subBlock waitRoom" v-if="isViewWait && !isRoomExist">
       <label class="roomPassword">
-        入室パスワード：
+        房間密碼：
         <input
           type="password"
           v-model="roomPassword"
@@ -54,13 +55,14 @@
         />
       </label>
       <fieldset class="playerInfo">
-        <legend>あなたの情報</legend>
+        <legend>你的情報</legend>
         <div>
           <label>
             <player-type-select v-model="inputPlayerType" />
             <input
-              placeholder="プレイヤー名を入力（必須項目）"
+              placeholder="請輸入玩家名稱（必須填寫）"
               type="text"
+              text="玩家zzz"
               v-model="playerName"
               @keydown.enter.stop
               @keyup.enter.stop
@@ -70,7 +72,8 @@
           </label>
         </div>
         <label class="playerPassword">
-          パスワード：<input
+          個人密碼：
+          <input
             type="password"
             v-model="playerPassword"
             @keydown.enter.stop
@@ -79,26 +82,24 @@
             @keyup.229.stop
           />
         </label>
-        <div class="description">
-          部屋内でのプレイヤー管理に使用します。パスワード忘れに注意！
-        </div>
+        <div class="description">用於管理房間。 注意不要忘記密碼！</div>
       </fieldset>
       <ctrl-button @click="doWaitRoom">
-        <i class="icon-home3"></i> 仮入室
+        <i class="icon-home3"></i> 臨時房間
       </ctrl-button>
     </div>
 
     <!----------------------
-     ! この部屋に入る
-     !--------------------->
+     ! この房間に入る
+    !--------------------->
     <sub-block-title
       @open="openNewRoom"
-      text="この部屋に入る"
+      text="進入這個房間"
       v-if="isRoomExist"
     />
     <div class="subBlock joinRoom isShow" v-if="isRoomExist">
       <label class="roomPassword">
-        入室パスワード：
+        房間密碼：
         <input
           type="password"
           v-model="roomPassword"
@@ -110,31 +111,32 @@
         />
       </label>
       <ctrl-button @click="roomProcess(false)">
-        <i class="icon-home3"></i> 入室
+        <i class="icon-home3"></i> 進入房間
       </ctrl-button>
     </div>
 
     <!----------------------
-     ! 新しい部屋をつくる
-     !--------------------->
-    <sub-block-title @open="openNewRoom" text="新しい部屋をつくる" />
+     ! 新しい房間をつくる
+    !--------------------->
+    <sub-block-title @open="openNewRoom" text="新增房間" />
     <div
       class="indentDescription description"
       v-if="paramRoomName && !isRoomExist"
     >
-      「{{ paramRoomName }}」は作成可能です。
+      「可以新增{{ paramRoomName }}房間」。
     </div>
     <div
       class="indentDescription description"
       v-if="paramRoomName && isRoomExist"
     >
-      「{{
-        paramRoomName
-      }}」はすでに作成済みです。<br />同じ名前の部屋はひとつのサーバでひとつしか作成できません。<br />部屋名を変更して、もう一度チェックしてください。
+      「{{ paramRoomName }}」已經創建。
+      <br />一台服務器上只能創建一個同名的房間。
+      <br />修改房間名稱，然後再次檢查。
     </div>
     <div class="subBlock newRoom" v-if="isViewNewRoom && !isRoomExist">
       <label class="roomPassword">
-        入室パスワード：<input
+        入室密碼：
+        <input
           type="password"
           v-model="roomPassword"
           @keydown.enter.stop
@@ -144,17 +146,18 @@
         />
       </label>
       <label class="roomSystem">
-        システム：
+        骰組：
         <dice-bot-select :outputFlg="true" v-model="currentSystem" />
       </label>
       <fieldset class="playerInfo">
-        <legend>あなたの情報</legend>
+        <legend>你的資料</legend>
         <div>
           <label>
             <player-type-select v-model="inputPlayerType" />
             <input
-              placeholder="プレイヤー名を入力（必須項目）"
+              placeholder="輸入你的名字（必須項目）"
               type="text"
+              text="玩家z"
               v-model="playerName"
               @keydown.enter.stop
               @keyup.enter.stop
@@ -164,7 +167,8 @@
           </label>
         </div>
         <label class="playerPassword">
-          パスワード：<input
+          玩家密碼：
+          <input
             type="password"
             v-model="playerPassword"
             @keydown.enter.stop
@@ -173,17 +177,14 @@
             @keyup.229.stop
           />
         </label>
+        <div class="description">管理房間用。請注意不要忘記！</div>
         <div class="description">
-          部屋内でのプレイヤー管理に使用します。パスワード忘れに注意！
-        </div>
-        <div class="description">
-          権限の詳細は<a @click="onClickDescription" href="javascript:void(0);"
-            >こちら</a
-          >
+          権限詳情
+          <a @click="onClickDescription" href="javascript:void(0);">在這裡</a>
         </div>
       </fieldset>
       <ctrl-button @click="roomProcess(true)">
-        <i class="icon-home3"></i> 作成
+        <i class="icon-home3"></i> 新增
       </ctrl-button>
     </div>
   </fieldset>
@@ -230,7 +231,7 @@ export default class CreateNewRoom extends Vue {
   /*
    * data
    */
-  static ENTRANCE_ROOM_NAME = "の待機部屋";
+  static ENTRANCE_ROOM_NAME = "的等待房間";
   private roomName: string = "";
   private roomPassword: string = "";
   private playerName: string = "";
@@ -280,18 +281,16 @@ export default class CreateNewRoom extends Vue {
 
   /**
    * ====================================================================================================
-   * 部屋名を入力してチェックボタンを押下した際の処理
+   * 房間名を入力してチェックボタンを押下した際の処理
    */
   commitRoomName() {
     /* ------------------------------
      * 入力チェック
      */
     const errorMsg = [];
-    if (!this.roomName) errorMsg.push("・部屋名");
+    if (!this.roomName) errorMsg.push("・房間名");
     if (errorMsg.length > 0) {
-      alert(
-        `必須項目未入力エラー\n${errorMsg.join("\n")}\n入力をお願いします。`
-      );
+      alert(`必要的資料未輸入\n${errorMsg.join("\n")}\n請輸入。`);
       return;
     }
 
@@ -321,7 +320,7 @@ export default class CreateNewRoom extends Vue {
     });
 
     /* ------------------------------
-     * 部屋存在チェック
+     * 房間存在チェック
      */
     this.loading(true);
     Promise.resolve()
@@ -358,22 +357,20 @@ export default class CreateNewRoom extends Vue {
       })
       .then(() => this.loading(false))
       .catch(() => this.loading(false));
-    // end of 部屋存在チェック
+    // end of 房間存在チェック
   }
 
   /**
    * ====================================================================================================
-   * 部屋建て・入室振り分け
+   * 房間建て・入室振り分け
    */
   roomProcess(isNewRoom: boolean) {
     // 入力チェック
     const errorMsg = [];
-    if (!this.roomName) errorMsg.push("・部屋名");
-    if (isNewRoom && !this.playerName) errorMsg.push("・ユーザ名");
+    if (!this.roomName) errorMsg.push("・房間名");
+    if (isNewRoom && !this.playerName) errorMsg.push("・用戶名");
     if (errorMsg.length > 0) {
-      alert(
-        `必須項目未入力エラー\n${errorMsg.join("\n")}\n入力をお願いします。`
-      );
+      alert(`必要的資料未輸入\n${errorMsg.join("\n")}\n請輸入。`);
       return;
     }
 
@@ -410,24 +407,22 @@ export default class CreateNewRoom extends Vue {
 
   /**
    * ====================================================================================================
-   * 部屋ができるのを待つ
+   * 房間ができるのを待つ
    */
   doWaitRoom() {
     // 入力チェック
     const errorMsg = [];
-    if (!this.roomName) errorMsg.push("・部屋名");
+    if (!this.roomName) errorMsg.push("・房間名");
     if (errorMsg.length > 0) {
-      alert(
-        `必須項目未入力エラー\n${errorMsg.join("\n")}\n入力をお願いします。`
-      );
+      alert(`必要的資料未輸入\n${errorMsg.join("\n")}\n請輸入。`);
       return;
     }
 
-    // まず目的の部屋の存在チェックする
+    // まず目的の房間の存在チェックする
     Promise.resolve()
       .then(() => this.checkRoomName({ roomName: this.roomName }))
       .then((isExist: boolean) => {
-        window.console.log(`部屋${this.roomName}の存在チェック完了。`);
+        window.console.log(`房間${this.roomName}的存在檢查完成`);
         const joinArg = {
           roomName: this.roomName,
           roomPassword: this.roomPassword,
@@ -440,25 +435,19 @@ export default class CreateNewRoom extends Vue {
         };
         if (isExist) {
           // 存在したら普通に入室する
-          alert(
-            `部屋${
-              this.roomName
-            }は今しがた作成されたところです。\nご入室ください。`
-          );
+          alert(`房間${this.roomName}剛剛已經新增了\n請進入。`);
           this.loading(true);
           return this.doJoinRoom(joinArg);
         } else {
-          // 存在しなかったら待合室に入りつつ、目的の部屋ができるのをチェックしながら待つ
+          // 存在しなかったら待合室に入りつつ、目的の房間ができるのをチェックしながら待つ
 
-          // 再帰呼び出しでチェックし続け、部屋ができたら入室する
+          // 再帰呼び出しでチェックし続け、房間ができたら入室する
           const checkFunc = () => {
             Promise.resolve()
               .then(() => this.checkRoomName({ roomName: this.roomName }))
               .then((isExist: boolean) => {
                 if (isExist) {
-                  alert(
-                    `部屋${this.roomName}が作成されました。\nご入室ください。`
-                  );
+                  alert(`房間${this.roomName}已新增\n請進入。`);
 
                   const endFunc = () => {
                     this.loading(false);
@@ -482,7 +471,7 @@ export default class CreateNewRoom extends Vue {
           // モーダル状態の解除
           this.updateIsModal(false);
 
-          // エントランス部屋に接続する
+          // エントランス房間に接続する
           this.loading(true);
           const entranceRoomName =
             this.roomName + CreateNewRoom.ENTRANCE_ROOM_NAME;
