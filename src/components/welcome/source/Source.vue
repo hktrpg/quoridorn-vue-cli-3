@@ -1,6 +1,6 @@
 <template>
   <div class="sourceContainer">
-    ※ 以下敬称略
+    ※ 以下省略敬語
     <ul class="type">
       <li>
         <span class="unSelectable">【特別協力】</span>
@@ -18,29 +18,29 @@
             </div>
             <ul>
               <li>
-                <span class="unSelectable">ロゴ作成</span>
+                <span class="unSelectable">LOGO製作</span>
               </li>
               <li>
-                <span class="unSelectable">Favicon作成</span>
+                <span class="unSelectable">Favicon製作</span>
               </li>
               <li>
                 <span class="unSelectable">
-                  画面デザイン作成（ようこそ画面 - 仕様一覧タブ）
+                  畫面設計及製作（歡迎畫面 - 使用說明）
                 </span>
               </li>
               <li>
                 <span class="unSelectable">
-                  ログインに関するユーザフローデザイン
+                  登錄的用戶流程設計
                 </span>
               </li>
               <li>
                 <span class="unSelectable">
-                  画面デザイン作成（ようこそ画面 - ログインタブ）
+                  裝飾設計（ 歡迎畫面- 登錄）
                 </span>
               </li>
               <li>
                 <span class="unSelectable">
-                  画面デザインアドバイス（プレイヤーボックス画面）
+                  繪畫方面的設計建議（玩家）
                 </span>
               </li>
             </ul>
@@ -66,34 +66,32 @@
             <ul>
               <li>
                 <span class="unSelectable">
-                  マスコットキャラクターの創造・作成
+                  設計和製作吉祥物角色
                 </span>
               </li>
               <li>
                 <span class="unSelectable">
-                  擬人化キャラクターの創造・作成
+                  設計和製作吉祥物角色擬人化人物
                 </span>
               </li>
             </ul>
             <span style="font-size: 90%; color: red;">
-              キャラクター素材のQuoridorn以外での利用：
-              <br />Quoridornの宣伝であることが明確な表記かつ
-              <br />非商用の目的の場合は許可いたします。
-              <br />悪質な転載・利用を発見した場合は
-              <br />直ちにイラストの利用料を請求いたします。
+              角色及素材在Quoridorn之外的使用： 如果很明顯用於Quoridorn的廣告和
+              <br />出於非商業目的，我們會接受。 <br />如果發現惡意複製或使用
+              <br />將立即收取插圖的使用費用
             </span>
             <br />
             <span style="font-size: 90%;">
-              キャラクター素材の著作権は
-              <br />Quoridorn開発者HillTopが所有しています。
+              角色及素材的版權為
+              <br />Quoridorn開發者HillTop擁有。
             </span>
           </li>
           <li>
             <div>
-              <span class="unSelectable">デフォルトマップ背景</span>
+              <span class="unSelectable">默認地圖背景</span>
             </div>
             <div>
-              <span class="unSelectable">サイト名：</span>
+              <span class="unSelectable">網站名稱：</span>
               TEDDY-PLAZA
               <span class="unSelectable">
                 (
@@ -120,10 +118,10 @@
           </li>
           <li>
             <div>
-              <span class="unSelectable">入力中アイコン</span>
+              <span class="unSelectable">Typing icon</span>
             </div>
             <div>
-              <span class="unSelectable">サイト名：</span>
+              <span class="unSelectable">網站名稱：</span>
               みんなの知識 ちょっと便利帳
               <span class="unSelectable">
                 (
@@ -150,8 +148,8 @@
           </li>
           <!--
           <li>
-            <div><span class="unSelectable">favicon作成</span></div>
-            <div><span class="unSelectable">サイト名：</span>Free logo Maker - Supalogo.com<span class="unSelectable"> (<a target="_blank" href="https://supalogo.com/#">LINK</a>)</span></div>
+            <div><span class="unSelectable">favicon製作</span></div>
+            <div><span class="unSelectable">網站名稱：</span>Free logo Maker - Supalogo.com<span class="unSelectable"> (<a target="_blank" href="https://supalogo.com/#">LINK</a>)</span></div>
             <div>
               <span class="unSelectable">設定：</span>
               <ul>
@@ -174,7 +172,7 @@
         </ul>
       </li>
       <li>
-        <span class="unSelectable">【カード】</span>
+        <span class="unSelectable">【卡片】</span>
         <ul class="detail">
           <li>
             <div>
@@ -183,7 +181,7 @@
               </span>
             </div>
             <div>
-              <span class="unSelectable">サイト名：</span>
+              <span class="unSelectable">網站名稱：</span>
               Wikipedia Commons
               <span class="unSelectable">
                 (
@@ -194,7 +192,7 @@
               </span>
             </div>
             <div>
-              <span class="unSelectable">参照一覧：</span>
+              <span class="unSelectable">参考列表：</span>
               <ul>
                 <li>
                   English pattern playing cards deck
@@ -253,10 +251,10 @@
           </li>
           <li>
             <div>
-              <span class="unSelectable">花札</span>
+              <span class="unSelectable">卡牌</span>
             </div>
             <div>
-              <span class="unSelectable">サイト名：</span>
+              <span class="unSelectable">網站名稱：</span>
               pixiv
               <span class="unSelectable">
                 (
@@ -297,7 +295,7 @@
               <span class="unSelectable">タロットカード 大アルカナ</span>
             </div>
             <div>
-              <span class="unSelectable">サイト名：</span>
+              <span class="unSelectable">網站名稱：</span>
               flickr
               <span class="unSelectable">
                 (
@@ -333,7 +331,7 @@
               <span class="unSelectable">効果音</span>
             </div>
             <div>
-              <span class="unSelectable">サイト名：</span>
+              <span class="unSelectable">網站名稱：</span>
               効果音ラボ
               <span class="unSelectable">
                 (
@@ -363,7 +361,7 @@
               <span class="unSelectable">BGM</span>
             </div>
             <div>
-              <span class="unSelectable">サイト名：</span>
+              <span class="unSelectable">網站名稱：</span>
               H/MIX GALLARY Free Music Download Site
               <span class="unSelectable">
                 (

@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="マップ変更"
+    titleText="地圖變更"
     display-property="private.display.editMapWindow"
     align="center"
     fixSize="401, 435"
@@ -18,11 +18,11 @@
       />
 
       <fieldset class="imageAreaSettings">
-        <legend>イメージ部分</legend>
+        <legend>圖片部分</legend>
         <div>
           <div class="totalRow">
             <label
-              >縦マス：<input
+              >緃向：<input
                 type="number"
                 min="1"
                 class="size"
@@ -35,7 +35,7 @@
           </div>
           <div class="totalColumn">
             <label
-              >横マス：<input
+              >橫向：<input
                 type="number"
                 min="1"
                 class="size"
@@ -48,7 +48,7 @@
           </div>
           <div class="gridColor">
             <label
-              >マス目の色：<input
+              >網格顏色：<input
                 type="color"
                 class="size"
                 v-model="edit.gridColor"
@@ -61,11 +61,11 @@
         </div>
       </fieldset>
       <fieldset class="marginAreaSettings">
-        <legend>余白部分</legend>
+        <legend>途白外圍</legend>
         <div>
           <div class="marginGridSize">
             <label
-              >マス数：<input
+              >格數：<input
                 type="number"
                 min="0"
                 class="size"
@@ -78,7 +78,7 @@
           </div>
           <div class="borderWidth">
             <label
-              >外周罫線の太さ：<input
+              >外格線粗度：<input
                 type="number"
                 min="0"
                 class="size"
@@ -91,7 +91,7 @@
           </div>
           <div class="isUseImage">
             <label
-              >ぼかし画像：<input
+              >模糊(Blur)圖片：<input
                 type="checkbox"
                 v-model="edit.isUseImage"
                 @keydown.enter.stop
@@ -105,7 +105,7 @@
         <div>
           <div class="isUseGridColor">
             <label
-              >被せ色：<input
+              >覆蓋顏色：<input
                 type="color"
                 class="size"
                 v-model="edit.maskColor"
@@ -127,7 +127,7 @@
           </div>
           <div class="isUseGridColor">
             <label
-              >方眼罫線：<input
+              >網格：<input
                 type="checkbox"
                 v-model="edit.isUseGridColor"
                 @keydown.enter.stop
@@ -166,9 +166,9 @@
       <div class="buttonArea">
         <div>
           <ctrl-button @click="commit">確定</ctrl-button>
-          <ctrl-button @click="cancel">キャンセル</ctrl-button>
+          <ctrl-button @click="cancel">取消</ctrl-button>
         </div>
-        <p>確定ボタンを押下しないとルームメンバーには反映されません。</p>
+        <p>如果您不按確認鍵，則該變化將不會其他玩家畫面上顯示。</p>
       </div>
     </div>
   </window-frame>
@@ -237,9 +237,7 @@ export default class EditMapWindow extends Mixins<WindowMixin>(WindowMixin) {
   private open() {
     const peerId = this.peerId(this.isWait);
     if (this.storeMap.isEditing && this.storeMap.isEditing !== peerId) {
-      alert(
-        "他の画面とマップ変更操作が競合しますので、この操作はキャンセルします。"
-      );
+      alert("因為地圖更改操作與其他人的面面衝突，所以該操作將被取消。");
       this.windowClose("private.display.editMapWindow");
       return;
     }
@@ -316,9 +314,7 @@ export default class EditMapWindow extends Mixins<WindowMixin>(WindowMixin) {
         logOff: true
       });
     } else {
-      alert(
-        "ルームメイトとマップ変更操作が競合しますので、この操作はキャンセルします。"
-      );
+      alert("因為地圖更改操作與其他人的面面衝突，所以該操作將被取消。");
     }
     this.setProperty({
       property: "public.map.isEditing",

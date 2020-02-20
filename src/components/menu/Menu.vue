@@ -4,52 +4,52 @@
     <div class="span-group">
       <span
         @click="menuClick()"
-        @mouseenter="menuHover('ファイル')"
-        :class="{ isHover: isShow('ファイル') }"
+        @mouseenter="menuHover('檔案')"
+        :class="{ isHover: isShow('檔案') }"
       >
-        ファイル
+        檔案
       </span>
       <span
         @click="menuClick()"
-        @mouseenter="menuHover('表示')"
-        :class="{ isHover: isShow('表示', 'ウィンドウ') }"
+        @mouseenter="menuHover('顯示')"
+        :class="{ isHover: isShow('顯示', '視窗設定') }"
       >
-        表示
+        顯示
       </span>
       <span
         @click="menuClick()"
-        @mouseenter="menuHover('コマ')"
-        :class="{ isHover: isShow('コマ') }"
+        @mouseenter="menuHover('方塊')"
+        :class="{ isHover: isShow('方塊') }"
       >
-        コマ
+        方塊
       </span>
       <span
         @click="menuClick()"
-        @mouseenter="menuHover('マップ')"
-        :class="{ isHover: isShow('マップ') }"
+        @mouseenter="menuHover('地圖')"
+        :class="{ isHover: isShow('地圖') }"
       >
-        マップ
+        地圖
       </span>
       <span
         @click="menuClick()"
-        @mouseenter="menuHover('画像')"
-        :class="{ isHover: isShow('画像') }"
+        @mouseenter="menuHover('圖片')"
+        :class="{ isHover: isShow('圖片') }"
       >
-        画像
+        圖片
       </span>
       <span
         @click="menuClick()"
-        @mouseenter="menuHover('ヘルプ')"
-        :class="{ isHover: isShow('ヘルプ') }"
+        @mouseenter="menuHover('說明')"
+        :class="{ isHover: isShow('說明') }"
       >
-        ヘルプ
+        說明
       </span>
       <span
         @click="menuClick()"
-        @mouseenter="menuHover('デモ')"
-        :class="{ isHover: isShow('デモ') }"
+        @mouseenter="menuHover('Demo')"
+        :class="{ isHover: isShow('Demo') }"
       >
-        デモ
+        Demo
       </span>
     </div>
     <!-- 部屋情報 -->
@@ -60,189 +60,191 @@
       :class="{ isDisconnect: !isRoomJoined }"
     >
       <span :class="{ isDisconnect: !isRoomJoined }">{{
-        `${roomName}` || "未接続"
+        `${roomName}` || "未接線"
       }}</span>
       ：
       <span>{{ members.length }}</span>
       名
     </div>
-    <!-- 共有メモ -->
+    <!-- 共用筆記 -->
     <div class="menu-button" @click="clickPublicMemo" :title="publicMemoTitle">
-      共有メモ
+      共用筆記
     </div>
-    <!-- ログアウト -->
+    <!-- 登出 -->
     <div
       class="menu-button"
       @click="clickLogOut"
       :class="{ isDisconnect: !isRoomJoined }"
       :title="logoutTitle"
     >
-      ログアウト
+      登出
     </div>
 
     <!--------------------------------------------------
-     ! ファイル
+     ! 檔案
      !-------------------------------------------------->
-    <div class="hoverMenu hoverMenu2" v-show="isShow('ファイル')">
+    <div class="hoverMenu hoverMenu2" v-show="isShow('檔案')">
       <div class="item" @click="clickExport">セーブ</div>
       <div class="item" @click="clickImport">ロード</div>
-      <hr @mouseenter="menuHover('ファイル')" />
-      <div class="item" @click="clickChatLog">チャットログ取得</div>
+      <hr @mouseenter="menuHover('檔案')" />
+      <div class="item" @click="clickChatLog">獲取聊天記錄</div>
     </div>
     <!--------------------------------------------------
-     ! 表示
+     ! 顯示
      !-------------------------------------------------->
-    <div class="hoverMenu hoverMenu3" v-show="isShow('表示', 'ウィンドウ')">
-      <div class="item" @mouseenter="menuHover('ウィンドウ')">
-        ウィンドウ
+    <div class="hoverMenu hoverMenu3" v-show="isShow('顯示', '視窗')">
+      <div class="item" @mouseenter="menuHover('視窗')">
+        視窗
         <span class="triangle"></span>
       </div>
-      <hr @mouseenter="menuHover('表示')" />
+      <hr @mouseenter="menuHover('顯示')" />
       <menu-boolean-item
         property="private.setting.standImage"
-        @mouseenter="menuHover('表示')"
+        @mouseenter="menuHover('顯示')"
       >
-        立ち絵表示
+        立繪顯示
       </menu-boolean-item>
       <menu-boolean-item
         property="private.setting.cutIn"
-        @mouseenter="menuHover('表示')"
+        @mouseenter="menuHover('顯示')"
       >
-        カットイン表示
+        Cut-In顯示
       </menu-boolean-item>
-      <hr @mouseenter="menuHover('表示')" />
+      <hr @mouseenter="menuHover('顯示')" />
       <menu-boolean-item
         property="public.setting.gridId"
-        @mouseenter="menuHover('表示')"
+        @mouseenter="menuHover('顯示')"
       >
-        座標表示
+        座標顯示
       </menu-boolean-item>
       <menu-boolean-item
         property="public.setting.gridLine"
-        @mouseenter="menuHover('表示')"
+        @mouseenter="menuHover('顯示')"
       >
-        マス目表示
+        網格顯示
       </menu-boolean-item>
-      <hr @mouseenter="menuHover('表示')" />
+      <hr @mouseenter="menuHover('顯示')" />
       <menu-boolean-item
         property="public.setting.isFitGrid"
-        @mouseenter="menuHover('表示')"
+        @mouseenter="menuHover('顯示')"
       >
-        マス目にキャラクターを合わせる
+        格線貼齊
       </menu-boolean-item>
-      <hr @mouseenter="menuHover('表示')" />
+      <hr @mouseenter="menuHover('顯示')" />
       <div
         class="item"
         @click="clickSettingFontSize"
-        @mouseenter="menuHover('表示')"
+        @mouseenter="menuHover('顯示')"
       >
-        フォントサイズ調整
+        字體大小調整
       </div>
-      <hr @mouseenter="menuHover('表示')" />
+      <hr @mouseenter="menuHover('顯示')" />
       <div
         class="item"
         @click="clickResetWindowLocate"
-        @mouseenter="menuHover('表示')"
+        @mouseenter="menuHover('顯示')"
       >
-        ウィンドウ配置初期化
+        視窗配置初期化
       </div>
     </div>
     <!--------------------------------------------------
-     ! コマ
+     ! 方塊
      !-------------------------------------------------->
-    <div class="hoverMenu hoverMenu4" v-show="isShow('コマ')">
-      <div class="item" @click="clickAddCharacter">キャラクター追加</div>
-      <div class="item" @click="clickAddRange">範囲追加</div>
+    <div class="hoverMenu hoverMenu4" v-show="isShow('方塊')">
+      <div class="item" @click="clickAddCharacter">添加角色</div>
+      <div class="item" @click="clickAddRange">添加範圍</div>
       <hr />
-      <div class="item" @click="clickAddChit">チット作成</div>
+      <div class="item" @click="clickAddChit">添加棋子</div>
       <hr />
       <div class="item" @click="clickGraveyard">墓場</div>
-      <div class="item" @click="clickWaitingRoom">キャラクター待合室</div>
+      <div class="item" @click="clickWaitingRoom">角色等候室</div>
       <hr />
       <menu-boolean-item property="public.setting.pieceRotateMarker">
-        回転マーカーを表示する
+        顯示旋轉標誌
       </menu-boolean-item>
     </div>
     <!--------------------------------------------------
-     ! マップ
+     ! 地圖
      !-------------------------------------------------->
-    <div class="hoverMenu hoverMenu5" v-show="isShow('マップ')">
-      <div class="item" @click="clickChangeMap">マップ変更</div>
-      <div class="item" @click="clickAddFloorTile">フロアタイル追加</div>
-      <div class="item" @click="clickAddMapMask">マップマスク追加</div>
-      <div class="item" @click="clickCreateEasyMap">簡易マップ作成</div>
+    <div class="hoverMenu hoverMenu5" v-show="isShow('地圖')">
+      <div class="item" @click="clickChangeMap">變更地圖</div>
+      <div class="item" @click="clickAddFloorTile">添加地圖版塊</div>
+      <div class="item" @click="clickAddMapMask">添加地圖迷霧</div>
+      <div class="item" @click="clickCreateEasyMap">製作簡易地圖</div>
       <hr />
-      <div class="item" @click="clickSaveMap">マップ状態保存</div>
-      <div class="item" @click="clickSwitchMap">マップ切り替え</div>
+      <div class="item" @click="clickSaveMap">保存地圖狀態</div>
+      <div class="item" @click="clickSwitchMap">切換地圖</div>
     </div>
     <!--------------------------------------------------
-     ! 画像
+     ! 圖片
      !-------------------------------------------------->
-    <div class="hoverMenu hoverMenu6" v-show="isShow('画像')">
-      <div class="item" @click="clickFileUploader">ファイルアップローダー</div>
+    <div class="hoverMenu hoverMenu6" v-show="isShow('圖片')">
+      <div class="item" @click="clickFileUploader">上傳檔案</div>
       <hr />
-      <div class="item" @click="clickTagEdit">タグ編集</div>
-      <div class="item" @click="clickDeleteImage">画像削除</div>
+      <div class="item" @click="clickTagEdit" disabled>TAG編輯(未實裝)</div>
+      <div class="item" @click="clickDeleteImage" disabled>
+        圖片刪除(未實裝)
+      </div>
     </div>
     <!--------------------------------------------------
-     ! ヘルプ
+     ! 說明
      !-------------------------------------------------->
-    <div class="hoverMenu hoverMenu7" v-show="isShow('ヘルプ')">
-      <div class="item" @click="clickWelcome">ようこそ画面</div>
-      <div class="item" @click="clickVersion">バージョン</div>
-      <div class="item" @click="clickManual">マニュアル</div>
+    <div class="hoverMenu hoverMenu7" v-show="isShow('說明')">
+      <div class="item" @click="clickWelcome">歡迎畫面</div>
+      <div class="item" @click="clickVersion">版本</div>
+      <div class="item" @click="clickManual" disabled>Manual(未實裝)</div>
       <hr />
-      <div class="item" @click="clickOfficialSite">オフィシャルサイトへ</div>
+      <div class="item" @click="clickOfficialSite">官網</div>
     </div>
     <!--------------------------------------------------
-     ! ウィンドウ
+     ! 視窗
      !-------------------------------------------------->
-    <div class="hoverMenu hoverMenu8" v-show="isShow('ウィンドウ')">
+    <div class="hoverMenu hoverMenu8" v-show="isShow('視窗')">
       <menu-boolean-item
         @click="menuClick"
         property="private.display.chatWindow"
       >
-        チャット表示
+        チャット顯示
       </menu-boolean-item>
       <menu-boolean-item @click="menuClick" property="private.setting.dice">
-        ダイス表示
+        ダイス顯示
       </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.playerBoxWindow"
       >
-        プレイヤーボックス表示
+        プレイヤーボックス顯示
       </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.initiativeWindow"
       >
-        イニシアティブ表示
+        イニシアティブ顯示
       </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.resourceWindow"
       >
-        リソース表示
+        リソース顯示
       </menu-boolean-item>
       <hr />
       <menu-boolean-item
         @click="menuClick"
         property="private.display.chatPaletteSettingWindow"
       >
-        チャットパレット表示
+        チャットパレット顯示
       </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.counterRemoconWindow"
       >
-        カウンターリモコン表示
+        カウンターリモコン顯示
       </menu-boolean-item>
     </div>
     <!--------------------------------------------------
-     ! デモ
+     ! Demo
      !-------------------------------------------------->
-    <div class="hoverMenu hoverMenu9" v-show="isShow('デモ')">
+    <div class="hoverMenu hoverMenu9" v-show="isShow('Demo')">
       <div class="item" @click="clickDevHistory">開発履歴</div>
       <hr />
       <div class="item" @click="clickBufForm">不具合の報告</div>
@@ -301,24 +303,24 @@ export default class Menu extends Vue {
     this.windowOpen("private.display.roomInfoWindow");
   }
 
-  /** 共有メモボタン押下 */
+  /** 共用筆記ボタン押下 */
   clickPublicMemo() {
     this.addListObj({
       propName: "publicMemo",
       kind: "publicMemo",
       targetList: [],
-      title: "共有メモ",
+      title: "共用筆記",
       tabList: []
     });
   }
 
-  /** ログアウトボタン押下 */
+  /** 登出ボタン押下 */
   clickLogOut(): void {
     location.href = location.href.replace(/\?.+$/, "");
   }
 
   /* --------------------
-   * ファイル
+   * 檔案
    * ----------------- */
   /** セーブ */
   clickExport(): void {
@@ -344,46 +346,46 @@ export default class Menu extends Vue {
   }
 
   /* --------------------
-   * 表示
+   * 顯示
    * ----------------- */
   /** フォントサイズ調整 */
   clickSettingFontSize(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "フォントサイズ変更",
+      value: "フォントサイズ變更",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
     this.menuClick();
   }
 
-  /** ウィンドウ配置初期化 */
+  /** 視窗配置初期化 */
   clickResetWindowLocate(): void {
     this.doResetWindowLocate();
     this.menuClick();
   }
 
   /* --------------------
-   * コマ
+   * 方塊
    * ----------------- */
-  /** キャラクター追加 */
+  /** 角色添加 */
   clickAddCharacter(): void {
     this.windowOpen("private.display.addCharacterSettingWindow");
     this.menuClick();
   }
 
-  /** 範囲追加 */
+  /** 範囲添加 */
   clickAddRange(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "範囲追加",
+      value: "範囲添加",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
     this.menuClick();
   }
 
-  /** チット作成 */
+  /** チット製作 */
   clickAddChit(): void {
     this.windowOpen("private.display.addChitWindow");
     this.menuClick();
@@ -395,60 +397,60 @@ export default class Menu extends Vue {
     this.menuClick();
   }
 
-  /** キャラクター待合室 */
+  /** 角色待合室 */
   clickWaitingRoom(): void {
-    alert("「キャラクター待合室」はプレイヤーボックス画面に統合されました。");
+    alert("「角色待合室」はプレイヤーボックス画面に統合されました。");
     this.menuClick();
   }
 
   /* --------------------
-   * マップ
+   * 地圖
    * ----------------- */
-  /** マップ変更 */
+  /** 地圖變更 */
   clickChangeMap(): void {
     this.windowOpen("private.display.editMapWindow");
     this.menuClick();
   }
 
-  /** フロアタイル追加 */
+  /** フロアタイル添加 */
   clickAddFloorTile(): void {
     this.windowOpen("private.display.addFloorTileWindow");
     this.menuClick();
   }
 
-  /** マップマスク追加 */
+  /** 地圖マスク添加 */
   clickAddMapMask(): void {
     this.windowOpen("private.display.addMapMaskWindow");
     this.menuClick();
   }
 
-  /** 簡易マップ作成 */
+  /** 簡易地圖製作 */
   clickCreateEasyMap(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "簡易マップ",
+      value: "簡易地圖",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
     this.menuClick();
   }
 
-  /** マップ状態保存 */
+  /** 地圖状態保存 */
   clickSaveMap(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "マップ保存",
+      value: "地圖保存",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
     this.menuClick();
   }
 
-  /** マップ切り替え */
+  /** 地圖切り替え */
   clickSwitchMap(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "マップ切り替え",
+      value: "地圖切り替え",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -456,30 +458,30 @@ export default class Menu extends Vue {
   }
 
   /* --------------------
-   * 画像
+   * 圖片
    * ----------------- */
-  /** ファイルアップローダー */
+  /** 檔案アップローダー */
   clickFileUploader(): void {
     this.windowOpen("private.display.fileUploaderWindow");
     this.menuClick();
   }
 
-  /** タグ編集 */
+  /** タグ編輯 */
   clickTagEdit(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "画像タグ編集",
+      value: "圖片タグ編輯",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
     this.menuClick();
   }
 
-  /** 画像削除 */
+  /** 圖片刪除 */
   clickDeleteImage(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "画像削除",
+      value: "圖片刪除",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -487,7 +489,7 @@ export default class Menu extends Vue {
   }
 
   /* --------------------
-   * ヘルプ
+   * 說明
    * ----------------- */
   /** ようこそ */
   clickWelcome(): void {
@@ -519,7 +521,7 @@ export default class Menu extends Vue {
   }
 
   /* --------------------
-   * デモ
+   * Demo
    * ----------------- */
   /** 開発履歴 */
   clickDevHistory(): void {
@@ -542,7 +544,7 @@ export default class Menu extends Vue {
   get roomInfoTitle(): string {
     return this.isRoomJoined === true
       ? "メンバーの一覧を見たり、部屋の設定を変えることができますよ。"
-      : "お部屋に入っていません。\n「接続」ボタンを押してお部屋を作りましょう！！";
+      : "お部屋に入っていません。\n「接線」ボタンを押してお部屋を作りましょう！！";
   }
 
   get publicMemoTitle(): string {
@@ -554,7 +556,7 @@ export default class Menu extends Vue {
   get logoutTitle(): string {
     return this.isRoomJoined === true
       ? "この部屋から退室するのですか？"
-      : "お部屋に入っていません。\n「接続」ボタンを押してお部屋を作りましょう！！";
+      : "お部屋に入っていません。\n「接線」ボタンを押してお部屋を作りましょう！！";
   }
 }
 </script>

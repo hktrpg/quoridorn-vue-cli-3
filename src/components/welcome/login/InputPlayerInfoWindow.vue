@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="入室情報入力画面"
+    titleText="房間資料輸入畫面"
     display-property="private.display.inputPlayerInfoWindow"
     align="center"
     fixSize="375, 210"
@@ -9,17 +9,15 @@
   >
     <div class="contents">
       <div class="welcomeMessage">
-        部屋「{{
-          useRoomName
-        }}」へようこそ！<br />ユーザ情報を入力してください。
+        房間「{{ useRoomName }}」歡迎你！<br />輸入玩家信息。
       </div>
       <fieldset class="playerInfo">
-        <legend>あなたの情報</legend>
+        <legend>你的資料</legend>
         <label>
           <player-type-select v-model="inputPlayerType" v-if="!isPlayerExist" />
           <input
             ref="playerInput"
-            placeholder="ユーザ名を入力（必須項目）"
+            placeholder="輸入你的名字（必須填寫）"
             type="text"
             v-model="inputPlayerName"
             list="input-player-info-window-players"
@@ -38,7 +36,7 @@
           </datalist>
         </label>
         <label class="playerPassword"
-          >パスワード：<input
+          >密碼：<input
             type="password"
             v-model="inputPlayerPassword"
             @keydown.enter.stop
@@ -48,15 +46,15 @@
           />
         </label>
         <div class="description" v-if="!isPlayerExist">
-          部屋内でのユーザ管理に使用します。パスワード忘れに注意！
+          管理房間用。請小心不要忘記！
         </div>
         <div class="description" v-if="!isPlayerExist">
-          権限の詳細は<a @click="onClickDescription" href="javascript:void(0);"
-            >こちら</a
+          權限詳情<a @click="onClickDescription" href="javascript:void(0);"
+            >這裡</a
           >
         </div>
         <div class="description" v-if="isPlayerExist">
-          おかえりなさい。<br />照合するパスワードを指定してください。
+          歡迎回來。<br />指定要驗證的密碼。
         </div>
       </fieldset>
       <div class="buttonArea">
@@ -135,23 +133,19 @@ export default class InputPlayerInfoWindow extends Mixins<WindowMixin>(
   }
 
   commit() {
-    // 入力チェック
+    // 輸入チェック
     const errorMsg = [];
     this.inputPlayerName = this.inputPlayerName.trim();
-    if (!this.inputPlayerName) errorMsg.push("・ユーザ名");
+    if (!this.inputPlayerName) errorMsg.push("・玩家名");
     if (errorMsg.length > 0) {
-      alert(
-        `必須項目未入力エラー\n${errorMsg.join("\n")}\n入力をお願いします。`
-      );
+      alert(`未輸入必須填寫的資料\n${errorMsg.join("\n")}\n請輸入。`);
       return;
     }
     const player = this.playerList.filter(
       (p: any) => p.name === this.inputPlayerName
     )[0];
     if (player && player.password !== this.inputPlayerPassword) {
-      alert(
-        "パスワードが違います。\nパスワードを入力し直すか、別人で参加してください。"
-      );
+      alert("密碼錯誤。\n重新輸入你的密碼或以其他身份加入。");
       return;
     }
     this.windowClose("private.display.inputPlayerInfoWindow");

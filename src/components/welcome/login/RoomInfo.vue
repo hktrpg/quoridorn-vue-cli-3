@@ -1,20 +1,20 @@
 <template>
   <fieldset class="root">
-    <legend>部屋情報</legend>
+    <legend>房間情報</legend>
     <label>
-      部屋名：
+      房間名：
       <span>{{ roomName }}</span>
     </label>
     <label>
       パスワード：
-      <span>{{ roomPassword || "設定なし" }}</span>
+      <span>{{ roomPassword || "沒有密碼" }}</span>
     </label>
     <label>
       システム：
       <span>{{ systemName }}</span>
     </label>
     <div style="color: darkgreen;">
-      ※ ログイン情報の暗号化はまだしてないので、いずれ実装します。
+      ※ 尚未加密登錄信息，預定將來會增加這功能。
     </div>
     <label v-if="!isWait">
       招待用URL：
@@ -31,9 +31,9 @@
       <ctrl-button class="copy" @click="doCopy">コピー</ctrl-button>
     </label>
     <div class="description" v-if="isWait">
-      ここは目的の部屋が作成されるまでの間に滞在する一時的な部屋です。
-      <br />目的の部屋ができたらメッセージ表示の後、自動で部屋を移動します。
-      <br />目的の部屋へのデータ引き継ぎはされません。
+      這是一個臨時房間，一直保留到指定房間新增為止。
+      <br />目標的房間新增的信息出現後，將會自動在房間進行移動。
+      <br />數據將不會傳送到目標房間。
     </div>
   </fieldset>
 </template>
@@ -64,7 +64,7 @@ export default class RoomInfo extends Vue {
       })
       .catch((err: any) => {
         window.console.error(err);
-        this.systemName = "ダイスボット名の取得に失敗しました。";
+        this.systemName = "無法獲得骰子bot的名稱。";
       });
   }
 
@@ -75,7 +75,7 @@ export default class RoomInfo extends Vue {
   doCopy(event: any): void {
     const text = event.target.parentNode.previousElementSibling.value;
     if (!execCopy(text)) {
-      alert("テキストをコピーできませんでした。\n" + text);
+      alert("無法複製文字。\n" + text);
     }
     alert(text);
   }

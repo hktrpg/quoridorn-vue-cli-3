@@ -1,11 +1,11 @@
 <template>
   <fieldset class="root">
-    <legend>部屋データから部屋を作る</legend>
+    <legend>使用備份檔案新增房間</legend>
     <div class="input-room-data">
-      部屋データ：
-      <ctrl-button @click="chooseFile">ファイルを選択</ctrl-button>
+      房間檔案：
+      <ctrl-button @click="chooseFile">選擇檔案</ctrl-button>
       <div class="description">
-        {{ files.length ? "" : "未選択" }}
+        {{ files.length ? "" : "未選擇" }}
         <span v-for="file in files" :key="file.name">{{ file.name }}</span>
       </div>
       <input
@@ -21,7 +21,7 @@
         @keyup.229.stop
       />
     </div>
-    <ctrl-button @click="commit"><i class="icon-home3"></i> 作成</ctrl-button>
+    <ctrl-button @click="commit"><i class="icon-home3"></i> 新增</ctrl-button>
   </fieldset>
 </template>
 
@@ -52,7 +52,7 @@ export default class CreateRoomFromRoomData extends Vue {
    */
   commit(): void {
     if (!this.files.length) {
-      alert("ファイルを選択してください。");
+      alert("請選擇一個文件。");
       return;
     }
     this.importStart({ zipFiles: this.files, isRoomCreate: true });

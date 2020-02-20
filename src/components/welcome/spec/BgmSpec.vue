@@ -6,17 +6,17 @@
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 起動操作
+     ! 開始運作
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作">
-      <li>チャット画面のアイコン<span class="icon-music"></span>をクリック</li>
+    <spec-item class-str="operation" label-str="開始運作">
+      <li>聊天視窗Icon<span class="icon-music"></span>點擊</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 方法
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
-      <li>追加ボタンで曲の追加</li>
-      <li>変更ボタンで選択した行の曲の情報の変更</li>
+    <spec-item class-str="spec" label-str="方法">
+      <li>使用按鈕添加歌曲</li>
+      <li>通過更改按鈕更改歌曲信息</li>
       <li>
         コピーボタンで選択した行の曲の情報をコピーして末尾に追加
       </li>

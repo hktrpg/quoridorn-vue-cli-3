@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="グループチャット設定画面"
+    titleText="群聊設定畫面"
     display-property="private.display.settingChatTargetTabWindow"
     align="center"
     :fixSize="`${windowSize.w}, ${windowSize.h}`"
@@ -9,11 +9,11 @@
   >
     <div class="contents" @contextmenu.prevent>
       <div class="operationArea">
-        <ctrl-button @click="addButtonOnClick" ref="button">追加</ctrl-button>
-        <ctrl-button @click="delButtonOnClick">削除</ctrl-button>
+        <ctrl-button @click="addButtonOnClick" ref="button">增加</ctrl-button>
+        <ctrl-button @click="delButtonOnClick">刪除</ctrl-button>
         <div class="space"></div>
         <label>
-          タブを斜めにする<input
+          垂直分頁<input
             type="checkbox"
             v-model="isTabVertical"
             @keydown.enter.stop
@@ -27,13 +27,13 @@
         <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">
           <thead>
             <tr>
-              <th :style="colStyle(0)">秘匿</th>
+              <th :style="colStyle(0)">私下</th>
               <divider :index="0" prop="settingChatTargetTabWindow" />
-              <th :style="colStyle(1)">名前</th>
+              <th :style="colStyle(1)">名稱</th>
               <divider :index="1" prop="settingChatTargetTabWindow" />
-              <th :style="colStyle(2)">出力先タブ</th>
+              <th :style="colStyle(2)">目標分頁</th>
               <divider :index="2" prop="settingChatTargetTabWindow" />
-              <th :style="colStyle(3)">送信先</th>
+              <th :style="colStyle(3)">目的地</th>
               <divider :index="3" prop="settingChatTargetTabWindow" />
               <th :style="colStyle(4)"></th>
             </tr>
@@ -48,7 +48,7 @@
               @click="selectLine(groupTargetTab.key)"
               :class="{ isActive: selectLineKey === groupTargetTab.key }"
             >
-              <!-- 秘匿チェック -->
+              <!-- 私下チェック -->
               <td :style="colStyle(0)">
                 <span
                   class="icon-checkmark"
@@ -57,18 +57,16 @@
               </td>
               <divider :index="0" prop="settingChatTargetTabWindow" />
 
-              <!-- 名前 -->
+              <!-- 名稱 -->
               <td :style="colStyle(1)">
                 {{ groupTargetTab.name }}
               </td>
               <divider :index="1" prop="settingChatTargetTabWindow" />
 
-              <!-- 出力先タブ -->
+              <!-- 目標分頁 -->
               <td :style="colStyle(2)">
                 {{
-                  groupTargetTab.targetTab
-                    ? groupTargetTab.targetTab
-                    : "指定なし"
+                  groupTargetTab.targetTab ? groupTargetTab.targetTab : "無指定"
                 }}
               </td>
               <divider :index="2" prop="settingChatTargetTabWindow" />
@@ -82,13 +80,13 @@
               </td>
               <divider :index="2" prop="settingChatTargetTabWindow" />
 
-              <!-- 編集ボタン -->
+              <!-- 編輯ボタン -->
               <td :style="colStyle(4)">
                 <ctrl-button
                   @click="edit(groupTargetTab.key)"
                   :disabled="!isEditableTab(groupTargetTab.key)"
                 >
-                  編集
+                  編輯
                 </ctrl-button>
               </td>
             </tr>
@@ -180,7 +178,7 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
     if (this.selectLineKey) {
       this.deleteGroupTargetTab({ key: this.selectLineKey });
     } else {
-      alert("削除対象を選択してください。");
+      alert("刪除対象を選択してください。");
     }
   }
 
@@ -265,7 +263,7 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
   ) {
     const newArr = groupTargetTab.group.concat();
     if (flg) {
-      // 追加の場合
+      // 增加の場合
       newArr.push(player.key);
     } else {
       // 除外の場合

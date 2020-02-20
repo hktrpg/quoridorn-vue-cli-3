@@ -4,7 +4,7 @@
     :class="[animationClass, colorClass]"
     v-if="isView"
     v-html="viewMessage"
-    title="閉じる"
+    title="關閉"
     @click="onClick"
   ></div>
 </template>

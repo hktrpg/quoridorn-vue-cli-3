@@ -12,12 +12,12 @@
       >
         <div class="operationLine">
           <label>
-            タブ
+            分頁
             <chat-tab-select v-model="sendTab" />
           </label>
 
           <label>
-            グルチャ
+            目標
             <group-chat-tab-select v-model="chatTarget" />
           </label>
         </div>
@@ -42,9 +42,9 @@
             <actor-status-select :actorKey="actor.key" v-model="statusName" />
           </label>
           <div class="spacer"></div>
-          <ctrl-button @click="edit(actor)">編集</ctrl-button>
-          <ctrl-button @click="doExport(actor)">セーブ</ctrl-button>
-          <ctrl-button @click="doImport(actor)">ロード</ctrl-button>
+          <ctrl-button @click="edit(actor)">編輯</ctrl-button>
+          <ctrl-button @click="doExport(actor)">儲存</ctrl-button>
+          <ctrl-button @click="doImport(actor)">讀取</ctrl-button>
         </div>
 
         <div class="chat-palette">
@@ -166,7 +166,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレットを編集する
+   * チャットパレットを編輯する
    * @param actor
    */
   private edit(actor: any) {
@@ -190,11 +190,11 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
       },
       saveDataTypeName: "Quoridorn_ChatPalette01"
     };
-    saveJson(`チャットパレット_${actor.name}`, data);
+    saveJson(`聊天組合板_${actor.name}`, data);
   }
 
   /**
-   * チャットパレットをロードする
+   * チャットパレットを讀取する
    * @param actor
    */
   private doImport(actor: any) {

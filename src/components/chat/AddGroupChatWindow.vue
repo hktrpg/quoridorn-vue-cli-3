@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="グループチャット追加画面"
+    titleText="群聊視窗"
     display-property="private.display.addGroupChatWindow"
     align="center"
     :fixSize="`${windowSize.w}, ${windowSize.h}`"
@@ -11,7 +11,7 @@
       <div class="scrollArea">
         <div>
           <label>
-            秘匿チャット<input
+            秘密聊天<input
               type="checkbox"
               v-model="isSecret"
               @keydown.enter.stop
@@ -21,7 +21,7 @@
             />
           </label>
           <label
-            >名前<input
+            >名稱<input
               type="text"
               v-model="name"
               @keydown.enter.stop
@@ -31,7 +31,7 @@
             />
           </label>
           <label>
-            出力先のタブ
+            目標分頁
             <ctrl-select
               v-model="targetTab"
               :optionInfoList="targetTabOptionInfoList"
@@ -39,7 +39,7 @@
             />
           </label>
           <label
-            >全体<input
+            >全部人<input
               type="checkbox"
               v-model="isAll"
               @keydown.enter.stop
@@ -53,9 +53,9 @@
           <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">
             <thead>
               <tr>
-                <th :style="colStyle(0)">対象</th>
+                <th :style="colStyle(0)">對像</th>
                 <divider :index="0" prop="addGroupChatWindow" />
-                <th :style="colStyle(1)">名前</th>
+                <th :style="colStyle(1)">名稱</th>
               </tr>
             </thead>
             <tbody>
@@ -68,7 +68,7 @@
                 @click="selectLine(target.key)"
                 :class="{ isActive: selectLineKey === target.key }"
               >
-                <!-- 対象チェック -->
+                <!-- 對像チェック -->
                 <td :style="colStyle(0)" class="target">
                   <input
                     type="checkbox"
@@ -87,7 +87,7 @@
                 </td>
                 <divider :index="0" prop="addGroupChatWindow" />
 
-                <!-- 名前 -->
+                <!-- 名稱 -->
                 <td :style="colStyle(1)" class="name" :class="target.kind">
                   {{ getViewName(target.key) }}
                 </td>
@@ -104,7 +104,7 @@
       <div class="buttonArea">
         <div>
           <ctrl-button @click="commit">確定</ctrl-button>
-          <ctrl-button @click="cancel">キャンセル</ctrl-button>
+          <ctrl-button @click="cancel">取消</ctrl-button>
         </div>
       </div>
     </div>
@@ -262,7 +262,7 @@ export default class addGroupChatWindow extends Mixins<WindowMixin>(
 
   private getViewNames(tab: any) {
     return tab.isAll
-      ? "全員"
+      ? "全部人"
       : tab.group.map((g: string) => this.getViewName(g)).join(", ");
   }
 
@@ -349,7 +349,7 @@ export default class addGroupChatWindow extends Mixins<WindowMixin>(
     resultList.unshift({
       key: "0",
       value: "",
-      text: "指定なし",
+      text: "無指定",
       disabled: false
     });
     return resultList;

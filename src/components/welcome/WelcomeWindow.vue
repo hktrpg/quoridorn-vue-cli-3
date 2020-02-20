@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="ようこそ"
+    titleText="歡迎光臨 冰丼 @ HKTRPG "
     display-property="private.display.welcomeWindow"
     align="center"
     fixSize="500, 500"
@@ -48,16 +48,16 @@
 
         <div class="tab_area" @contextmenu.prevent>
           <label class="tab1_label" for="welcomeWindow-tab1">
-            ログイン
+            登入
           </label>
           <label class="tab2_label" for="welcomeWindow-tab2">
-            仕様一覧
+            使用說明
           </label>
           <label class="tab3_label" for="welcomeWindow-tab3">
-            出典元情報
+            來源信息
           </label>
           <label class="tab4_label" for="welcomeWindow-tab4">
-            開発支援
+            開發支援
           </label>
         </div>
         <div class="panel_area">
@@ -73,10 +73,10 @@
           <div id="panel2" class="tab_panel">
             <div class="spec-header">
               <ctrl-button class="open" @click="specAll(true)">
-                全て開く
+                全部展開
               </ctrl-button>
               <ctrl-button class="close" @click="specAll(false)">
-                全て閉じる
+                全部關閉
               </ctrl-button>
             </div>
             <div class="menu">

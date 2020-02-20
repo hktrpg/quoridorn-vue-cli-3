@@ -1,6 +1,6 @@
 <template>
   <fieldset class="root">
-    <legend>プレイヤー情報</legend>
+    <legend>玩家情報</legend>
     <dl>
       <template v-for="player in playerList">
         <dt
@@ -20,7 +20,7 @@
           }"
         >
           <label class="returnUrlArea" v-if="!isWait">
-            復帰用URL：
+            回歸用的URL：
             <input
               class="returnUrl"
               type="text"

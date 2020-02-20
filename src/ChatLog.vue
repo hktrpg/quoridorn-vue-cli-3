@@ -6,7 +6,7 @@
         :class="{ open: isViewVisualBlock }"
         @click="onClickLegend('isViewVisualBlock')"
       >
-        視点
+        視點
       </legend>
       <div v-show="isViewVisualBlock">
         <label v-for="player in playerList" :key="player.key"
@@ -24,20 +24,20 @@
       </div>
     </fieldset>
 
-    <!-- 出力形式 -->
+    <!-- 輸出形式 -->
     <fieldset class="save-block">
       <legend
         :class="{ open: isViewSaveBlock }"
         @click="onClickLegend('isViewSaveBlock')"
       >
-        出力
+        輸出方式
       </legend>
       <div v-show="isViewSaveBlock">
         <ctrl-button @click="onClickSaveAsDodontofHTML">
-          どどんとふHTML
+          凍豆腐HTML
         </ctrl-button>
         <ctrl-button @click="onClickSaveAsDodontofText">
-          どどんとふText
+          凍豆腐Text
         </ctrl-button>
         <ctrl-button @click="onClickSaveAsJson">
           Json

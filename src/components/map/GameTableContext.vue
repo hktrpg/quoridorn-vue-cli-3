@@ -1,38 +1,38 @@
 <template>
   <context-frame displayProperty="private.display.gameTableContext">
     <div class="item" @click.left.prevent="addCharacter">
-      キャラクター追加
+      添加角色
     </div>
     <div class="item" @click.left.prevent="addMapMask">
-      マップマスク追加
+      添加地圖迷霧
     </div>
     <div class="item" @click.left.prevent="addMapMarker">
-      マップマーカー追加
+      添加地圖標記
     </div>
     <div class="item" @click.left.prevent="addChit">
-      チット追加
+      添加棋子
     </div>
     <div class="item" @click.left.prevent="addFloorTile">
-      フロアタイル追加
+      添加地圖版塊
     </div>
     <hr />
     <div class="item" @click.left.prevent="addDiceSymbol">
-      ダイスシンボル追加
+      添加骰子
     </div>
     <hr />
     <div class="item" @click.left.prevent="changeMap">
-      マップ変更
+      地圖變更
     </div>
     <hr />
     <div class="item" @click.left.prevent="createHandCardArea">
-      手札置き場の作成
+      手札置き場の作成(未實裝)
     </div>
     <div class="item" @click.left.prevent="createMessageCard">
-      メッセージカード作成
+      メッセージカード作成(未實裝)
     </div>
     <hr />
     <div class="item" @click.left.prevent="resetWindowLocate">
-      ウィンドウ配置初期化
+      初始化視窗畫面
     </div>
   </context-frame>
 </template>
@@ -67,7 +67,7 @@ export default class GameTableContext extends Mixins<WindowMixin>(WindowMixin) {
   private addMapMarker(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "マップマーカー追加",
+      value: "地圖標記追加",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");

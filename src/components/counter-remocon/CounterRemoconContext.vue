@@ -1,16 +1,16 @@
 <template>
   <context-frame displayProperty="private.display.counterRemoconContext">
-    <div class="item" @click.left.prevent="changeOnClick">ボタンの変更</div>
+    <div class="item" @click.left.prevent="changeOnClick">變更按鈕</div>
     <hr />
-    <div class="item" @click.left.prevent="deleteOnClick">ボタンの削除</div>
+    <div class="item" @click.left.prevent="deleteOnClick">刪除按鈕</div>
     <hr />
-    <div class="item" @click.left.prevent="copyOnClick">ボタンの複製</div>
+    <div class="item" @click.left.prevent="copyOnClick">複製按鈕</div>
     <hr />
     <div class="item" @click.left.prevent="moveRightOnClick">
-      ボタンを【&emsp;&emsp;右→】へ
+      按鈕【&emsp;&emsp;右→】
     </div>
     <div class="item" @click.left.prevent="moveLeftOnClick">
-      ボタンを【←左&emsp;&emsp;】へ
+      按鈕【←左&emsp;&emsp;】
     </div>
   </context-frame>
 </template>
@@ -64,14 +64,14 @@ export default class CounterRemoconContext extends Mixins<WindowMixin>(
   private moveRightOnClick(): void {
     // TODO
     window.console.log("moveRightOnClick");
-    alert("未実装です");
+    alert("未實裝");
     this.windowClose("private.display.counterRemoconContext");
   }
 
   private moveLeftOnClick(): void {
     // TODO
     window.console.log("moveLeftOnClick");
-    alert("未実装です");
+    alert("未實裝");
     this.windowClose("private.display.counterRemoconContext");
   }
 }

@@ -9,13 +9,13 @@
   >
     <div class="contents">
       <div class="playOperationArea" @contextmenu.prevent>
-        <!-- 拡大ボタン -->
+        <!-- 擴大ボタン -->
         <ctrl-button
           @click="arrangeWindowSize(true)"
           v-if="isWindowViewScroll"
           :disabled="isModal"
         >
-          ◁︎拡大
+          ◁︎擴大
         </ctrl-button>
 
         <!-- 縮小ボタン -->
@@ -40,13 +40,13 @@
         </ctrl-button>
       </div>
       <div class="playOperationArea" @contextmenu.prevent>
-        <!-- 戻るボタン -->
+        <!-- 取消ボタン -->
         <ctrl-button
           class="back"
           @click="roundBack"
           :disabled="isModal || round === 0 || backDisabled"
         >
-          戻る
+          取消
         </ctrl-button>
 
         <!-- 次へボタン -->
@@ -55,67 +55,64 @@
           @click="roundNext"
           :disabled="isModal || round === 0"
         >
-          次へ
+          下一個
         </ctrl-button>
 
         <!-- 空白 -->
         <div style="flex: 1;"></div>
 
-        <!-- 戦闘開始ボタン -->
+        <!-- 戰鬥開始ボタン -->
         <ctrl-button
           class="start"
           @click="battleStart"
           :disabled="isModal || sortCharacterList.length === 0"
         >
-          戦闘開始
+          戰鬥開始
         </ctrl-button>
 
-        <!-- 戦闘終了ボタン -->
+        <!-- 戰鬥終了ボタン -->
         <ctrl-button
           class="end"
           @click="battleEnd"
           :disabled="isModal || round === 0"
         >
-          戦闘終了
+          戰鬥完結
         </ctrl-button>
       </div>
       <div class="tableContainer">
         <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">
           <thead @contextmenu.prevent>
             <tr>
-              <!-- 順番 -->
-              <th :style="colStyle(0)">順番</th>
+              <!-- 順序 -->
+              <th :style="colStyle(0)">順序</th>
 
-              <!-- イニシアティブ -->
+              <!-- 先攻表 -->
               <divider
                 :index="0"
                 @doubleClick="doubleClick"
                 prop="initiativeWindow"
               />
-              <th :style="colStyle(1)" title="イニシアティブ">
-                イニシアティブ
+              <th :style="colStyle(1)" title="先攻表">
+                先攻表
               </th>
 
-              <!-- 修正（イニシアティブ同値時） -->
+              <!-- 修正（先攻表同値時） -->
               <divider
                 :index="1"
                 @doubleClick="doubleClick"
                 prop="initiativeWindow"
               />
-              <th
-                :style="colStyle(2)"
-                title="修正（イニシアティブ同値時比較用）"
-              >
-                修正（イニシアティブ同値時比較用）
+              <th :style="colStyle(2)" title="修正（先攻表相同數值時比較用）">
+                修正（先攻表相同數值時比較用）
               </th>
 
-              <!-- 名前 -->
+              <!-- 名稱 -->
               <divider
                 :index="2"
                 @doubleClick="doubleClick"
                 prop="initiativeWindow"
               />
-              <th :style="colStyle(3)" title="名前">名前</th>
+              <th :style="colStyle(3)" title="名稱">名稱</th>
 
               <!-- 追加パラメータ -->
               <template v-for="(property, index) in propertyList">
@@ -134,14 +131,14 @@
                 </th>
               </template>
 
-              <!-- その他 -->
+              <!-- 其他 -->
               <divider
                 :index="3 + propertyList.length"
                 @doubleClick="doubleClick"
                 prop="initiativeWindow"
               />
-              <th :style="colStyle(4 + propertyList.length)" title="その他">
-                その他
+              <th :style="colStyle(4 + propertyList.length)" title="其他">
+                其他
               </th>
             </tr>
           </thead>
@@ -158,12 +155,12 @@
                 roundPlayer: round && character.key === roundPlayerKey
               }"
             >
-              <!-- 順番 -->
+              <!-- 順序 -->
               <td :style="colStyle(0)">
                 <span v-if="round && character.key === roundPlayerKey">●</span>
               </td>
 
-              <!-- イニシアティブ -->
+              <!-- 先攻表 -->
               <divider
                 :index="0"
                 @doubleClick="doubleClick"
@@ -189,7 +186,7 @@
                 </label>
               </td>
 
-              <!-- 修正（イニシアティブ同値時） -->
+              <!-- 修正（先攻表同値時） -->
               <divider
                 :index="1"
                 @doubleClick="doubleClick"
@@ -215,7 +212,7 @@
                 </label>
               </td>
 
-              <!-- 名前 -->
+              <!-- 名稱 -->
               <divider
                 :index="2"
                 @doubleClick="doubleClick"
@@ -338,7 +335,7 @@
                 </td>
               </template>
 
-              <!-- その他 -->
+              <!-- 其他 -->
               <divider
                 :index="3 + propertyList.length"
                 @doubleClick="doubleClick"
@@ -351,10 +348,10 @@
               </td>
             </tr>
             <tr class="space">
-              <!-- 順番 -->
+              <!-- 順序 -->
               <td :style="colStyle(0)"></td>
 
-              <!-- イニシアティブ -->
+              <!-- 先攻表 -->
               <divider
                 :index="0"
                 @doubleClick="doubleClick"
@@ -362,7 +359,7 @@
               />
               <td :style="colStyle(1)"></td>
 
-              <!-- 修正（イニシアティブ同値時） -->
+              <!-- 修正（先攻表同値時） -->
               <divider
                 :index="1"
                 @doubleClick="doubleClick"
@@ -370,7 +367,7 @@
               />
               <td :style="colStyle(2)"></td>
 
-              <!-- 名前 -->
+              <!-- 名稱 -->
               <divider
                 :index="2"
                 @doubleClick="doubleClick"
@@ -389,7 +386,7 @@
                 <td :key="`space-${index}`" :style="colStyle(4 + index)"></td>
               </template>
 
-              <!-- その他 -->
+              <!-- 其他 -->
               <divider
                 :index="3 + propertyList.length"
                 @doubleClick="doubleClick"
@@ -407,10 +404,10 @@
       </div>
       <div class="operateArea">
         <ctrl-button @click="editButtonOnClick" :disabled="isModal"
-          >変更</ctrl-button
+          >變更</ctrl-button
         >
         <span style="width: 0.5em;"></span>
-        <ctrl-button :disabled="true">削除</ctrl-button>
+        <ctrl-button :disabled="true">刪除</ctrl-button>
       </div>
     </div>
   </window-frame>
@@ -453,9 +450,9 @@ export default class InitiativeWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   private get titleText(): string {
     const initiateCharacter: any = this.getObj(this.roundPlayerKey);
-    if (this.round === 0 || !initiateCharacter) return "イニシアティブ表";
+    if (this.round === 0 || !initiateCharacter) return "先攻表";
     const initiative: number = initiateCharacter.property.initiative;
-    return `ラウンド：${this.round}／イニシアティブ：${initiative}`;
+    return `回合：${this.round}／先攻表：${initiative}`;
   }
 
   private openSettingWindow() {
@@ -508,11 +505,11 @@ export default class InitiativeWindow extends Mixins<WindowMixin>(WindowMixin) {
 
     let maxWidth = this.getWidth("aaa");
     if (this.movedIndex === 0) {
-      // 順番
-      maxWidth = this.getWidth("順番");
+      // 順序
+      maxWidth = this.getWidth("順序");
     }
     if (this.movedIndex === 1) {
-      // イニシアティブ
+      // 先攻表
       maxWidth = this.getWidth("0") + NUMBER_PADDING;
       this.characterList.forEach((character: any) => {
         maxWidth = Math.max(
@@ -522,7 +519,7 @@ export default class InitiativeWindow extends Mixins<WindowMixin>(WindowMixin) {
       });
     }
     if (this.movedIndex === 2) {
-      // 修正（イニシアティブ同値時）
+      // 修正（先攻表同値時）
       maxWidth = this.getWidth("0") + NUMBER_PADDING;
       this.characterList.forEach((character: any) => {
         maxWidth = Math.max(
@@ -532,8 +529,8 @@ export default class InitiativeWindow extends Mixins<WindowMixin>(WindowMixin) {
       });
     }
     if (this.movedIndex === 3) {
-      // 名前
-      maxWidth = this.getWidth("名前") + TEXT_PADDING;
+      // 名稱
+      maxWidth = this.getWidth("名稱") + TEXT_PADDING;
       this.characterList.forEach((character: any) => {
         maxWidth = Math.max(
           maxWidth,
@@ -569,7 +566,7 @@ export default class InitiativeWindow extends Mixins<WindowMixin>(WindowMixin) {
       this.windowWidth -
         this.windowPadding -
         (sumWidth - this.widthList[this.widthList.length - 1]),
-      this.getWidth("その他")
+      this.getWidth("其他")
     );
 
     this.widthList.splice(this.widthList.length - 1, 1, lastWidth);

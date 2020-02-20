@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="チャットパレット"
+    titleText="聊天組合版"
     display-property="private.display.chatPaletteSettingWindow"
     align="center"
     :fixSize="fixSize"
@@ -11,7 +11,7 @@
     <div class="contents">
       <div class="optionLine">
         <label>
-          パレット数
+          組合版數量
           <ctrl-select
             v-model="columns"
             :optionInfoList="

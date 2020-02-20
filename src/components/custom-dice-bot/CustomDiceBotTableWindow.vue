@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="ダイスボット用表管理"
+    titleText="骰子判定表管理"
     display-property="private.display.customDiceBotTableWindow"
     align="center"
     fixSize="450, 300"
@@ -12,11 +12,11 @@
         <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">
           <thead>
             <tr>
-              <th :style="colStyle(0)">ゲームシステム</th>
+              <th :style="colStyle(0)">遊戲系統</th>
               <divider :index="0" prop="customDiceBotTableWindow" />
-              <th :style="colStyle(1)">コマンド名</th>
+              <th :style="colStyle(1)">指令名稱</th>
               <divider :index="1" prop="customDiceBotTableWindow" />
-              <th :style="colStyle(2)">表タイトル</th>
+              <th :style="colStyle(2)">規則表名稱</th>
             </tr>
           </thead>
           <tbody>
@@ -30,19 +30,19 @@
               @click="selectLine(customDiceBot.key)"
               :class="{ isActive: selectLineKey === customDiceBot.key }"
             >
-              <!-- ゲームシステム -->
+              <!-- 遊戲系統 -->
               <td :style="colStyle(0)">
                 {{ getSystemName(customDiceBot.diceBotSystem) }}
               </td>
               <divider :index="0" prop="customDiceBotTableWindow" />
 
-              <!-- コマンド名 -->
+              <!-- 指令名稱 -->
               <td :style="colStyle(1)">
                 {{ customDiceBot.commandName }}
               </td>
               <divider :index="1" prop="customDiceBotTableWindow" />
 
-              <!-- 表タイトル -->
+              <!-- 規則表名稱 -->
               <td :style="colStyle(2)">
                 {{ customDiceBot.tableTitle }}
               </td>
@@ -62,21 +62,21 @@
               @click="selectLine(customDiceBot.key)"
               :class="{ isActive: selectLineKey === customDiceBot.key }"
             >
-              <!-- ゲームシステム -->
+              <!-- 遊戲系統 -->
               <td :style="colStyle(0)">
                 {{ getSystemName(customDiceBot.diceBotSystem) }}
               </td>
               <divider :index="0" prop="customDiceBotTableWindow" />
 
-              <!-- コマンド名 -->
+              <!-- 指令名稱 -->
               <td :style="colStyle(1)">
                 {{ customDiceBot.commandName }}
               </td>
               <divider :index="1" prop="customDiceBotTableWindow" />
 
-              <!-- 表タイトル -->
+              <!-- 規則表名稱 -->
               <td :style="colStyle(2)">
-                {{ customDiceBot.tableTitle }}（設定ファイル由来）
+                {{ customDiceBot.tableTitle }}（來自規則檔案）
               </td>
             </tr>
 
@@ -98,10 +98,10 @@
         <ctrl-button @click="addButtonOnClick" ref="button"
           >新規作成</ctrl-button
         >
-        <ctrl-button @click="copyButtonOnClick">コピー作成</ctrl-button>
-        <ctrl-button @click="changeButtonOnClick">変更</ctrl-button>
-        <ctrl-button @click="deleteButtonOnClick">削除</ctrl-button>
-        <ctrl-button @click="cancelButtonOnClick">閉じる</ctrl-button>
+        <ctrl-button @click="copyButtonOnClick">複製</ctrl-button>
+        <ctrl-button @click="changeButtonOnClick">變更</ctrl-button>
+        <ctrl-button @click="deleteButtonOnClick">刪除</ctrl-button>
+        <ctrl-button @click="cancelButtonOnClick">關閉</ctrl-button>
       </div>
     </div>
   </window-frame>
@@ -184,17 +184,17 @@ export default class CustomDiceBotTableWindow extends Mixins<WindowMixin>(
         this.addListObj({
           propName: "customDiceBot",
           kind: "customDiceBot",
-          commandName: "PGT",
+          commandName: "HKTRPG",
           diceRoll: "1d6",
-          tableTitle: "ペンギン属表(Penguin's Generic name Table)",
+          tableTitle: "HKTRPG是什麼",
           diceBotSystem: "DiceBot",
           tableContents: [
-            "1:コウテイペンギン属（学名：Aptenodytes）。学名の意味：「翼のない潜水者」。コウテイペンギン／キングペンギン",
-            "2:アデリーペンギン属（学名：Aygoscelis）。学名の意味：「尻についた肢（あし）」。アデリーペンギン／ジェンツーペンギン／ヒゲペンギン",
-            "3:フンボルトペンギン属（学名：Spheniscus）。学名の意味：「楔のような」。ガラパゴスペンギン／ケープペンギン／フンボルトペンギン／マゼランペンギン",
-            "4:マカロニペンギン属（学名：Eudyptes）。学名の意味：「優れた潜水者」。フィヨルドランドペンギン／シュレーターペンギン／スネアーズペンギン／マカロニペンギン／ロイヤルペンギン／イワトビペンギン",
-            "5:キンメペンギン属（学名：Megadyptes）。学名の意味：「大型の潜水者」。キンメペンギン（一種一属の固有種）",
-            "6:コガタペンギン属（学名：Eudyptula）。学名の意味：「非常に小さい」「優れた潜水者」。コガタペンギン／ハネジロペンギン"
+            "1:HKTRPG.com 主站是一個wiki TRPG百科",
+            "2:https://roll.hktrpg.com 是一個簡易擲骰工具",
+            "3:HKTRPG @Facebook 是個資訊平台，可以發佈招團信息",
+            "4:HKTRPG @Telegram Line Discord Bot 是個擲骰Bot, 可以用來跑團",
+            "5:https://mindmap.hktrpg.com/ 是個跑團輔助工具",
+            "6:https://www.hktrpg.com/board/ 是個留言版，可以說說意見。"
           ].join("\n")
         }).then(() => {
           const lastKey: string = this.customDiceBotList[
@@ -213,7 +213,7 @@ export default class CustomDiceBotTableWindow extends Mixins<WindowMixin>(
 
   private copyButtonOnClick(): void {
     if (!this.selectLineKey) {
-      alert("コピー対象を選択してください。");
+      alert("請選擇複製目標。");
       return;
     }
 
@@ -236,7 +236,7 @@ export default class CustomDiceBotTableWindow extends Mixins<WindowMixin>(
 
   private changeButtonOnClick(key: string): void {
     if (!this.selectLineKey) {
-      alert("変更対象を選択してください。");
+      alert("請選擇變更目標。");
       return;
     }
 
@@ -250,7 +250,7 @@ export default class CustomDiceBotTableWindow extends Mixins<WindowMixin>(
 
   private deleteButtonOnClick(): void {
     if (!this.selectLineKey) {
-      alert("削除対象を選択してください。");
+      alert("請選擇刪除目標。");
       return;
     }
 
@@ -303,7 +303,7 @@ export default class CustomDiceBotTableWindow extends Mixins<WindowMixin>(
   }
 
   private getSystemName(systemKey: string) {
-    if (systemKey === "DiceBot") return "指定なし";
+    if (systemKey === "DiceBot") return "無指定";
     const systemObj: any = this.diceSystemList.filter(
       (systemObj: any) => systemObj.system === systemKey
     )[0];

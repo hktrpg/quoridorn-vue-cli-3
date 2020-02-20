@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="チャットパレット読み込み画面"
+    titleText="聊天組合版讀取視窗"
     display-property="private.display.importChatPaletteWindow"
     align="center"
     fixSize="348, 540"
@@ -9,9 +9,9 @@
   >
     <div class="contents">
       <label class="operationLine">
-        <ctrl-button @click="chooseFile">ファイルを選択</ctrl-button>
+        <ctrl-button @click="chooseFile">選擇檔案</ctrl-button>
         <div class="description">
-          {{ file ? file.name : "未選択" }}
+          {{ file ? file.name : "未選擇" }}
         </div>
         <input
           ref="fileChooser"
@@ -30,7 +30,7 @@
 
       <label class="operationLine">
         <ctrl-button @click="commit()">確定</ctrl-button>
-        <ctrl-button @click="cancel()">キャンセル</ctrl-button>
+        <ctrl-button @click="cancel()">取消</ctrl-button>
       </label>
     </div>
   </window-frame>

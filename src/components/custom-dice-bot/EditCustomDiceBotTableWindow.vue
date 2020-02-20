@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="ダイスボット表変更"
+    titleText="骰子判定表更改"
     display-property="private.display.editCustomDiceBotTableWindow"
     align="center"
     :fixSize="'600, 400'"
@@ -11,7 +11,7 @@
     <div class="contents v-box" @contextmenu.prevent>
       <div class="line-box">
         <label class="commandName h-box">
-          コマンド名：
+          指令名稱：
           <input
             type="text"
             class="flex-max"
@@ -24,7 +24,7 @@
           />
         </label>
         <label class="diceRoll h-box">
-          ダイス：
+          骰子：
           <input
             type="text"
             class="flex-max"
@@ -36,7 +36,7 @@
           />
         </label>
         <label class="tableTitle h-box flex-max">
-          表タイトル：
+          規則表名稱：
           <input
             type="text"
             class="flex-max"
@@ -51,7 +51,7 @@
       <div class="line-box">
         <label class="tableContentsLabel">表内容</label>
         <label class="diceBotSystem">
-          ゲームシステム：
+          遊戲系統：
           <dice-bot-select v-model="diceBotSystem" />
         </label>
       </div>
@@ -66,15 +66,14 @@
         ></textarea>
       </label>
       <div v-if="isRoomSys" style="color: red;">
-        ※
-        この表は変更しても、部屋情報のダイスボットが変更されると初期化されます。
+        ※當房間的骰子bot發生更改時，此表也會發生更改，對其進行初始化。
       </div>
       <div class="h-box buttonArea">
         <ctrl-button @click="commitButtonOnClick">
-          変更
+          變更
         </ctrl-button>
         <ctrl-button @click="cancelButtonOnClick">
-          キャンセル
+          取消
         </ctrl-button>
       </div>
     </div>

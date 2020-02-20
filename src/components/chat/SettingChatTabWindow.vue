@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="チャットタブ設定画面"
+    titleText="聊天分頁設定畫面"
     display-property="private.display.settingChatTabWindow"
     align="center"
     fixSize="320, 432"
@@ -25,14 +25,14 @@
               v-if="tab.key !== 'chatTab-1'"
               @click="delTab(tab.key, index)"
             >
-              削除
+              刪除
             </ctrl-button>
           </label>
         </template>
       </draggable>
       <ctrl-button @click="addTab" ref="button">追加</ctrl-button>
       <label>
-        タブを斜めにする<input
+        垂直分頁<input
           type="checkbox"
           v-model="isTabVertical"
           @keydown.enter.stop
@@ -42,7 +42,7 @@
         />
       </label>
       <label>
-        時間を表示する<input
+        顯示時間<input
           type="checkbox"
           v-model="isLogViewTime"
           @keydown.enter.stop
@@ -52,7 +52,7 @@
         />
       </label>
       <label>
-        統合タブを表示する<input
+        顯示所有分頁<input
           type="checkbox"
           v-model="isLogViewAllTab"
           @keydown.enter.stop
@@ -62,8 +62,8 @@
         />
       </label>
       <div class="operateArea">
-        <ctrl-button @click="commit">変更</ctrl-button>
-        <ctrl-button @click="cancel">キャンセル</ctrl-button>
+        <ctrl-button @click="commit">變更</ctrl-button>
+        <ctrl-button @click="cancel">取消</ctrl-button>
       </div>
     </div>
   </window-frame>

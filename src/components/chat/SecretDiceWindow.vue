@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="隠しダイスロール結果"
+    titleText="隱藏擲骰結果"
     display-property="private.display.secretDiceWindow"
     align="center"
     fixSize="400, 200"
@@ -15,8 +15,8 @@
         <label>
           <textarea :value="createTextAreaValue(secretDiceObj)"></textarea>
         </label>
-        <ctrl-button @click="publish(index)">結果公開</ctrl-button>
-        <ctrl-button @click="delSecretDice(index)">削除</ctrl-button>
+        <ctrl-button @click="publish(index)">公開結果</ctrl-button>
+        <ctrl-button @click="delSecretDice(index)">刪除</ctrl-button>
       </div>
     </div>
   </window-frame>

@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="イニシアティブ表設定"
+    titleText="先攻表設定"
     display-property="private.display.initiativeSettingWindow"
     align="center"
     fixSize="510, 210"
@@ -9,9 +9,10 @@
   >
     <div class="contents">
       <div class="message" @contextmenu.prevent>
-        カウンターに使用するパラメータ名をスペース区切りで入力してください。<br />
-        先頭に＊（全角・半角どちらでも可）を付けて記述するとチェック欄になります。<br />
-        （最小）＜カウンター名＜（最大）で上下限を設定。「？」を指定すると個別に設定可能。
+        請以空白鍵區隔計數裡使用的狀態名稱。 <br />
+        在前頭輸入 ＊（全形、半形皆可）將會變為勾選欄位。 <br />
+        可用（最小）＜數值名＜（最大）設定上下限。指定為「？」則可個別設定。<br />
+        例）-15＜HP＜? ?＜MP＜99 AC 侵蝕率 可能性 *毒 ＊翻倒<br />
       </div>
       <div class="message example">
         <span @contextmenu.prevent>例）</span>
@@ -21,10 +22,10 @@
         <br />
       </div>
       <div class="message" @contextmenu.prevent>
-        （注）この設定は同一プレイルームの全員に影響します。
+        (註)此設定會影響同遊戲室的所有人。。
       </div>
       <label @contextmenu.prevent>
-        カウンター名一覧：
+        計數名稱列表：
         <input
           type="text"
           v-model="format"
@@ -38,7 +39,7 @@
       <hr />
       <div class="operationArea" @contextmenu.prevent>
         <ctrl-button @click="commit">決定</ctrl-button>
-        <ctrl-button @click="cancel">キャンセル</ctrl-button>
+        <ctrl-button @click="cancel">取消</ctrl-button>
       </div>
     </div>
   </window-frame>

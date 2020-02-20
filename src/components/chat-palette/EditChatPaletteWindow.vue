@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="チャットパレット編集画面"
+    titleText="聊天組合版編輯視窗"
     display-property="private.display.editChatPaletteWindow"
     align="center"
     fixSize="338, 540"
@@ -20,7 +20,7 @@
 
       <label class="operationLine">
         <ctrl-button @click="commit()">確定</ctrl-button>
-        <ctrl-button @click="cancel()">キャンセル</ctrl-button>
+        <ctrl-button @click="cancel()">取消</ctrl-button>
       </label>
     </div>
   </window-frame>

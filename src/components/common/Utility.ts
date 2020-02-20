@@ -112,7 +112,7 @@ export function qLog(...a: any): void {
         .map(line => `${indent}${line}`)
         .join("\n");
 
-      // Objectを整形して出力するかそのまま出力するか
+      // Objectを整形して出力するかそ的まま出力するか
       if (jsonStr.length > 0) {
         format += "%O";
         logs.push(arg);
@@ -165,41 +165,41 @@ export function saveText(name: string, text: string): void {
 export function conversion(num: number, unitName: string): any {
   const convertTable = [
     {
-      name: ["mm", "mm", "millimeter", "㍉", "㍉㍍", "ミリメートル"],
+      name: ["mm", "mm","毫米", "millimeter", "㍉", "㍉㍍", "ミリメートル"],
       base: "Length"
     },
     {
-      name: ["cm", "cm", "centimeter", "㌢", "㌢㍍", "センチメートル"],
+      name: ["cm", "cm","厘米", "centimeter", "㌢", "㌢㍍", "センチメートル"],
       base: "Length"
     },
-    { name: ["m", "m", "meter", "㍍", "メートル"], base: "Length" },
-    { name: ["km", "km", "kilometer", "㌔㍍", "キロメートル"], base: "Length" },
-    { name: ["in", "in", "inch", "㌅", "インチ"], base: "Length" },
-    { name: ["ft", "ft", "foot", "㌳", "フィート"], base: "Length" },
-    { name: ["yd", "yd", "yard", "㍎", "ヤード"], base: "Length" },
-    { name: ["mi", "mi", "mile", "マイル"], base: "Length" },
+    { name: ["m", "m", "meter", "㍍", "メートル","米"], base: "Length" },
+    { name: ["km", "km", "kilometer", "㌔㍍", "キロメートル","公里"], base: "Length" },
+    { name: ["in", "in", "inch", "㌅", "インチ","吋"], base: "Length" },
+    { name: ["ft", "ft", "foot", "㌳", "フィート","英呎"], base: "Length" },
+    { name: ["yd", "yd", "yard", "㍎", "ヤード","碼"], base: "Length" },
+    { name: ["mi", "mi", "mile", "マイル","英里"], base: "Length" },
     { name: ["li", "li", "link", "リンク"], base: "Length" },
     { name: ["rd", "rd", "rod", "ロッド"], base: "Length" },
     { name: ["ch", "ch", "chain", "チェーン"], base: "Length" },
-    { name: ["angstrom", "Å", "オングストローム"], base: "Length" },
+    { name: ["angstrom", "Å", "オングストローム","埃"], base: "Length" },
     { name: ["mil", "mil", "ミル"], base: "Length" },
     // { name: ["寸"], base: "Length" },
     // { name: ["尺"], base: "Length" },
     // { name: ["里"], base: "Length" },
     {
-      name: ["mm2", "mm²", "㎟", "平方㍉㍍", "平方ミリメートル"],
+      name: ["mm2", "mm²", "㎟", "平方㍉㍍", "平方ミリメートル","平方毫米"],
       base: "Surface area"
     },
     {
-      name: ["cm2", "cm²", "㎠", "平方㌢㍍", "平方メートル"],
+      name: ["cm2", "cm²", "㎠", "平方㌢㍍", "平方メートル","平方厘米"],
       base: "Surface area"
     },
     {
-      name: ["m2", "m²", "㎡", "平方㍍", "平方メートル"],
+      name: ["m2", "m²", "㎡", "平方㍍", "平方メートル","平方米"],
       base: "Surface area"
     },
     {
-      name: ["km2", "km²", "㎢", "平方㌔㍍", "平方キロメートル"],
+      name: ["km2", "km²", "㎢", "平方㌔㍍", "平方キロメートル","平方公里"],
       base: "Surface area"
     },
     {
@@ -274,17 +274,17 @@ export function conversion(num: number, unitName: string): any {
     // { name: ["合"], base: "Volume" },
     // { name: ["斗"], base: "Volume" },
     // { name: ["石"], base: "Volume" },
-    { name: ["mg", "mg", "milligram", "㍉㌘", "ミリグラム"], base: "Mass" },
-    { name: ["g", "g", "gram", "㌘", "グラム"], base: "Mass" },
+    { name: ["mg", "mg", "milligram", "㍉㌘", "ミリグラム","毫克"], base: "Mass" },
+    { name: ["g", "g", "gram", "㌘", "グラム","克"], base: "Mass" },
     {
-      name: ["kg", "kg", "kilogram", "㌔㌘", "㌕", "キログラム"],
+      name: ["kg", "kg", "kilogram", "㌔㌘", "㌕", "キログラム","公斤"],
       base: "Mass"
     },
     { name: ["ton", "t", "tonne", "㌧", "トン"], base: "Mass" },
     { name: ["gr", "gr", "grain", "グレーン"], base: "Mass" },
     { name: ["dr", "dr", "dram", "ドラム"], base: "Mass" },
-    { name: ["oz", "oz", "ounce", "オンス"], base: "Mass" },
-    { name: ["lb", "lb", "lbm", "lbs", "poundmass", "ポンド"], base: "Mass" },
+    { name: ["oz", "oz", "ounce", "オンス","安士"], base: "Mass" },
+    { name: ["lb", "lb", "lbm", "lbs", "poundmass", "ポンド","磅"], base: "Mass" },
     {
       name: ["cwt", "cwt", "hundredweight", "ハンドレッドウェイト"],
       base: "Mass"
@@ -449,7 +449,7 @@ export function toInitiativeObjList(
       color: "#000000"
     };
 
-    // 想定外の多さ
+    // 想定外的多さ
     if (fs.length > 3) {
       resultList.push(obj);
       return;
@@ -468,7 +468,7 @@ export function toInitiativeObjList(
       if (fs[0] === "?") {
         resultList.push({
           type: "min",
-          property: fs[1] + "の最小値",
+          property: fs[1] + "的最小值",
           fromProperty: fs[1],
           refStr: fs[1] + "-min",
           min: null,
@@ -488,7 +488,7 @@ export function toInitiativeObjList(
       if (fs[2] === "?") {
         resultList.push({
           type: "max",
-          property: fs[1] + "の最大値",
+          property: fs[1] + "的最大值",
           fromProperty: fs[1],
           refStr: fs[1] + "-max",
           min: null,
@@ -511,7 +511,7 @@ export function toInitiativeObjList(
         if (fs[0] === "?") {
           resultList.push({
             type: "min",
-            property: fs[1] + "の最小値",
+            property: fs[1] + "的最小值",
             fromProperty: fs[1],
             refStr: fs[1] + "-min",
             min: null,
@@ -535,7 +535,7 @@ export function toInitiativeObjList(
         if (fs[1] === "?") {
           resultList.push({
             type: "max",
-            property: fs[0] + "の最大値",
+            property: fs[0] + "的最大值",
             fromProperty: fs[0],
             refStr: fs[0] + "-max",
             min: null,
@@ -554,7 +554,7 @@ export function toInitiativeObjList(
         obj.property = checkMatchResult[1];
         obj.refStr = checkMatchResult[1];
 
-        // TODO 色の設定
+        // TODO 色的設定
         const color: string = colorList[colorPickIndex++];
         if (colorPickIndex >= colorList.length) colorPickIndex = 0;
         obj.color = color;
@@ -566,7 +566,7 @@ export function toInitiativeObjList(
 }
 
 /**
- * 合計値を算出する
+ * 合計值を算出する
  *
  * @param list
  */
@@ -575,7 +575,7 @@ export function sum(list: number[]): number {
 }
 
 /**
- * イニシアティブ表の各列の幅を再計算する
+ * イニシアティブ表的各列的幅を再計算する
  *
  * @param widthList
  * @param formatObjList
@@ -613,7 +613,7 @@ export function arrangeInitiativeWidthList(
 }
 
 /**
- * リストから特定の要素を削除する
+ * リストから特定的要素を削除する
  *
  * @param list
  * @param filterFunc
@@ -645,7 +645,7 @@ function createBase64DataSet(
   imageFile: any,
   { w, h }: { w: number; h: number }
 ): any {
-  // 画像の読み込み処理
+  // 画像的読み込み処理
   const normalLoad = new Promise<String>(
     (resolve: Function, reject: Function) => {
       try {
@@ -660,14 +660,14 @@ function createBase64DataSet(
       }
     }
   );
-  // サムネイル画像の読み込み処理
+  // サムネイル画像的読み込み処理
   const thumbnailLoad = new Promise<String>(
     (resolve: Function, reject: Function) => {
-      // 画像の読み込み処理
+      // 画像的読み込み処理
       try {
         const reader: any = new FileReader();
         reader.onload = function(event: any) {
-          // サムネイル画像作成の場合は小さくて決まったサイズの画像データに加工する（アニメGIFも最初の１コマの静止画になる）
+          // サムネイル画像作成的場合は小さくて決まったサイズ的画像データに加工する（アニメGIFも最初的１コマ的静止画になる）
 
           const image = new Image();
           image.onload = function() {
@@ -683,7 +683,7 @@ function createBase64DataSet(
               useSize.h = useSize.h * scale;
             }
 
-            // 画像を描画してデータを取り出す（Base64変換の実装）
+            // 画像を描画してデータを取り出す（Base64変換的実装）
             const canvas: HTMLCanvasElement = document.createElement(
               "canvas"
             ) as HTMLCanvasElement;

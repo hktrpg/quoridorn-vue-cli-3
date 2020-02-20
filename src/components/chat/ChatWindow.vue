@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="チャット"
+    titleText="聊天視窗"
     display-property="private.display.chatWindow"
     align="left-bottom"
     baseSize="-300, 300"
@@ -10,7 +10,7 @@
   >
     <div class="container">
       <!----------------
-       ! チャットログ
+       ! 聊天視窗ログ
        !--------------->
       <chat-log-viewer
         :tabIndex="0"
@@ -35,8 +35,8 @@
        ! 操作盤
        !--------------->
       <div class="oneLine dep" @contextmenu.prevent>
-        <!-- 発言者選択 -->
-        <span class="label">名前(！)</span>
+        <!-- 発言者選擇 -->
+        <span class="label">你的名字：</span>
         <ctrl-select
           :tabindex="isModal ? -1 : chatTabs.length + 2"
           :value="chatActorKey"
@@ -52,7 +52,7 @@
           :disabled="isModal"
         />
 
-        <!-- ステータス選択 -->
+        <!-- ステータス選擇 -->
         <actor-status-select
           :actorKey="chatActorKey"
           v-model="statusName"
@@ -60,7 +60,7 @@
           :disabled="isModal"
         />
 
-        <!-- ダイスボット選択 -->
+        <!-- ダイスボット選擇 -->
         <dice-bot-select
           ref="diceBot"
           v-model="currentDiceBotSystem"
@@ -73,7 +73,7 @@
         <span class="icon">
           <i
             class="icon-dice"
-            title="ダイスボットの追加・編集・削除"
+            title="添加/編輯/刪除  骰子判定表"
             @click="diceBotSettingButtonOnClick"
             @keydown.space.stop="diceBotSettingButtonOnClick"
             @keydown.enter.stop="diceBotSettingButtonOnClick"
@@ -85,7 +85,7 @@
         <span class="icon">
           <i
             class="icon-bin"
-            title="チャットログ全削除"
+            title="刪除聊天紀錄"
             @click="chatLogDeleteButtonOnClick"
             @keydown.space.stop="chatLogDeleteButtonOnClick"
             @keydown.enter.stop="chatLogDeleteButtonOnClick"
@@ -97,7 +97,7 @@
         <span class="icon">
           <i
             class="icon-file-text"
-            title="チャットログ保存"
+            title="儲存聊天紀錄"
             @click="chatLogExportButtonOnClick"
             @keydown.space.stop="chatLogExportButtonOnClick"
             @keydown.enter.stop="chatLogExportButtonOnClick"
@@ -109,7 +109,7 @@
         <span class="icon">
           <i
             class="icon-cloud-check"
-            title="点呼・投票設定"
+            title="點名・投票設定"
             @click="rollCallSettingButtonOnClick"
             @keydown.space.stop="rollCallSettingButtonOnClick"
             @keydown.enter.stop="rollCallSettingButtonOnClick"
@@ -121,7 +121,7 @@
         <span class="icon">
           <i
             class="icon-bell"
-            title="目覚ましアラーム設定"
+            title="鬧鐘設定"
             @click="alermSettingButtonOnClick"
             @keydown.space.stop="alermSettingButtonOnClick"
             @keydown.enter.stop="alermSettingButtonOnClick"
@@ -133,7 +133,7 @@
         <span class="icon">
           <i
             class="icon-music"
-            title="BGMの設定"
+            title="BGM設定"
             @click="bgmSettingButtonOnClick"
             @keydown.space.stop="bgmSettingButtonOnClick"
             @keydown.enter.stop="bgmSettingButtonOnClick"
@@ -145,7 +145,7 @@
         <span class="icon">
           <i
             class="icon-film"
-            title="カットイン設定"
+            title="ＣｕｔＩｎ設定"
             @click="cutInSettingButtonOnClick"
             @keydown.space.stop="cutInSettingButtonOnClick"
             @keydown.enter.stop="cutInSettingButtonOnClick"
@@ -157,7 +157,7 @@
         <span class="icon">
           <i
             class="icon-list2"
-            title="チャットパレット設定"
+            title="對話組合版設定"
             @click="chatPaletteSettingButtonOnClick"
             @keydown.space.stop="chatPaletteSettingButtonOnClick"
             @keydown.enter.stop="chatPaletteSettingButtonOnClick"
@@ -169,7 +169,7 @@
         <span class="icon">
           <i
             class="icon-accessibility"
-            title="立ち絵設定"
+            title="立繪設定"
             @click="standImageSettingButtonOnClick"
             @keydown.space.stop="standImageSettingButtonOnClick"
             @keydown.enter.stop="standImageSettingButtonOnClick"
@@ -180,8 +180,9 @@
         </span>
         <span class="icon">
           <i
+            disabled
             class="icon-target"
-            title="射界設定"
+            title="射界設定(未實裝)"
             @click="rangeSettingButtonOnClick"
             @keydown.space.stop="rangeSettingButtonOnClick"
             @keydown.enter.stop="rangeSettingButtonOnClick"
@@ -198,7 +199,7 @@
       <div class="sendLine dep">
         <div class="textAreaContainer">
           <!----------------
-           ! グループチャットタブ
+           ! グループ聊天視窗タブ
            !--------------->
           <tabs-component
             class="group"
@@ -235,12 +236,12 @@
                 @keydown.229.stop
                 @keyup.229.stop
               />
-              発言時に「」を付与
+              發言時加上「」
             </label>
           </tabs-component>
 
           <!----------------
-           ! チャットオプション（単位）
+           ! 聊天視窗オプション（単位）
            !--------------->
           <div
             class="optionTable dep"
@@ -257,7 +258,7 @@
           </div>
 
           <!----------------
-           ! チャットオプション（送信者）
+           ! 聊天視窗オプション（提交者）
            !--------------->
           <div
             class="chatOptionSelector dep"
@@ -265,7 +266,7 @@
             @contextmenu.prevent
           >
             <span
-              >送信者{{
+              >發信人{{
                 chatOptionPageMaxNum > 1
                   ? ` (${chatOptionPageNum} / ${chatOptionPageMaxNum})`
                   : ""
@@ -276,13 +277,13 @@
                 class="ope"
                 v-if="chatOptionPageMaxNum > 1 && chatOptionPageNum === 1"
               >
-                [末尾へ]
+                [到最後]
               </li>
               <li
                 class="ope"
                 v-if="chatOptionPageMaxNum > 1 && chatOptionPageNum !== 1"
               >
-                [前へ]
+                [上一個]
               </li>
               <li
                 v-for="actor in chatOptionPagingList"
@@ -303,7 +304,7 @@
                     chatOptionPageNum !== chatOptionPageMaxNum
                 "
               >
-                [次へ]
+                [下一個]
               </li>
               <li
                 class="ope"
@@ -312,13 +313,13 @@
                     chatOptionPageNum === chatOptionPageMaxNum
                 "
               >
-                [先頭へ]
+                [到頂部]
               </li>
             </ul>
           </div>
 
           <!----------------
-           ! チャットオプション（対象）
+           ! 聊天視窗オプション（対象）
            !--------------->
           <div
             class="chatOptionSelector dep"
@@ -326,7 +327,7 @@
             @contextmenu.prevent
           >
             <span
-              >送信先{{
+              >目的地{{
                 chatOptionPageMaxNum > 1
                   ? ` (${chatOptionPageNum} / ${chatOptionPageMaxNum})`
                   : ""
@@ -337,13 +338,13 @@
                 class="ope"
                 v-if="chatOptionPageMaxNum > 1 && chatOptionPageNum === 1"
               >
-                [末尾へ]
+                [到最後]
               </li>
               <li
                 class="ope"
                 v-if="chatOptionPageMaxNum > 1 && chatOptionPageNum !== 1"
               >
-                [前へ]
+                [上一個]
               </li>
               <li
                 v-for="target in chatOptionPagingList"
@@ -360,7 +361,7 @@
                     chatOptionPageNum !== chatOptionPageMaxNum
                 "
               >
-                [次へ]
+                [下一個]
               </li>
               <li
                 class="ope"
@@ -369,13 +370,13 @@
                     chatOptionPageNum === chatOptionPageMaxNum
                 "
               >
-                [先頭へ]
+                [到頂部]
               </li>
             </ul>
           </div>
 
           <!----------------
-           ! チャットオプション（タブ）
+           ! 聊天視窗オプション（タブ）
            !--------------->
           <div
             class="chatOptionSelector dep"
@@ -383,7 +384,7 @@
             @contextmenu.prevent
           >
             <span
-              >出力先のタブ{{
+              >目標分頁{{
                 chatOptionPageMaxNum > 1
                   ? ` (${chatOptionPageNum} / ${chatOptionPageMaxNum})`
                   : ""
@@ -394,13 +395,13 @@
                 class="ope"
                 v-if="chatOptionPageMaxNum > 1 && chatOptionPageNum === 1"
               >
-                [末尾へ]
+                [到最後]
               </li>
               <li
                 class="ope"
                 v-if="chatOptionPageMaxNum > 1 && chatOptionPageNum !== 1"
               >
-                [前へ]
+                [上一個]
               </li>
               <li
                 v-for="tab in chatOptionPagingList"
@@ -417,7 +418,7 @@
                     chatOptionPageNum !== chatOptionPageMaxNum
                 "
               >
-                [次へ]
+                [下一個]
               </li>
               <li
                 class="ope"
@@ -426,13 +427,13 @@
                     chatOptionPageNum === chatOptionPageMaxNum
                 "
               >
-                [先頭へ]
+                [到頂部]
               </li>
             </ul>
           </div>
 
           <!----------------
-           ! チャットオプション（対象）
+           ! 聊天視窗オプション（対象）
            !--------------->
           <div
             class="chatOptionSelector dep"
@@ -440,7 +441,7 @@
             @contextmenu.prevent
           >
             <span
-              >以降の文字を…{{
+              >後續的文字…{{
                 chatOptionPageMaxNum > 1
                   ? ` (${chatOptionPageNum} / ${chatOptionPageMaxNum})`
                   : ""
@@ -451,13 +452,13 @@
                 class="ope"
                 v-if="chatOptionPageMaxNum > 1 && chatOptionPageNum === 1"
               >
-                [末尾へ]
+                [到最後]
               </li>
               <li
                 class="ope"
                 v-if="chatOptionPageMaxNum > 1 && chatOptionPageNum !== 1"
               >
-                [前へ]
+                [上一個]
               </li>
               <li
                 v-for="target in chatOptionPagingList"
@@ -474,7 +475,7 @@
                     chatOptionPageNum !== chatOptionPageMaxNum
                 "
               >
-                [次へ]
+                [下一個]
               </li>
               <li
                 class="ope"
@@ -483,12 +484,12 @@
                     chatOptionPageNum === chatOptionPageMaxNum
                 "
               >
-                [先頭へ]
+                [到頂部]
               </li>
             </ul>
           </div>
 
-          <!-- チャット入力エリア -->
+          <!-- 聊天視窗入力エリア -->
           <label class="chatInputArea">
             <span
               class="chatOption"
@@ -502,7 +503,7 @@
                 >> {{ groupTargetName }}</span
               >
               <span :class="{ emphasis: outputTab !== null }"
-                ># {{ outputTab ? getTabName(outputTab) : "[選択中]" }}</span
+                ># {{ outputTab ? getTabName(outputTab) : "[選擇中]" }}</span
               >
             </span>
             <!----------------
@@ -534,7 +535,7 @@
           @contextmenu.prevent
           @click="sendMessage(null, true)"
           :disabled="isModal"
-          >送信</ctrl-button
+          >提交</ctrl-button
         >
       </div>
       <!----------------
@@ -623,19 +624,19 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   /** Enterを押しているかどうか */
   private enterPressing: boolean = false;
-  /** 入力されたチャット文字 */
+  /** 入力された聊天視窗文字 */
   private currentMessage: string = "";
   /** 発言時に「」を付与するかどうか */
   private addBrackets: boolean = false;
-  /** チャットオプション入力モード('tab':# or 'target':@ or '') */
+  /** 聊天視窗オプション入力モード('tab':# or 'target':@ or '') */
   private chatOptionSelectMode: string = "";
   /** 発言先 */
   private chatTarget: string = "groupTargetTab-0";
   /** 出力先のタブ */
   private outputTab: string | null = null;
-  /** 選択されているシステム */
+  /** 選擇されているシステム */
   private currentDiceBotSystem: string = "DiceBot";
-  /** 秘匿チャットの相手 */
+  /** 秘匿聊天視窗の相手 */
   private secretTarget: string = "";
   /** 入力中のルームメンバーのpeerIdの配列 */
   private inputtingPeerIdList: any[] = [];
@@ -652,7 +653,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   private hoverChatTargetTab = "";
 
   private placeholderText: string =
-    'メッセージ（改行はShift + Enter）\n部分フォント変更は "&" を入力';
+    '(Entet 送出信息 Shift + Enter 換行）\n輸入"&" 更改部份字體\n"!" 改變發信人  ">" 改變收信人  "#" 改變分頁';
 
   private globalEnter() {
     const input: HTMLTextAreaElement = this.$refs.input as HTMLTextAreaElement;
@@ -672,13 +673,13 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャット入力欄の入力イベントハンドラ
+   * 聊天視窗入力欄の入力イベントハンドラ
    * @param event イベント
    */
   private onInput(event: any): void {
     const text = event.target.value;
 
-    // コマンド（発言者選択）
+    // コマンド（発言者選擇）
     let selectFrom: string = "";
     if (text.startsWith("!") || text.startsWith("！")) {
       const useText = text.substring(1);
@@ -693,7 +694,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       });
     }
 
-    // コマンド（グループチャット選択）
+    // コマンド（グループ聊天視窗選擇）
     let selectTarget: string = "";
     if (text.startsWith(">") || text.startsWith("＞")) {
       const useText = text.substring(1);
@@ -708,7 +709,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       });
     }
 
-    // コマンド（タブ選択）
+    // コマンド（タブ選擇）
     let selectTab: string | null | undefined = undefined;
     if (text.startsWith("#") || text.startsWith("＃")) {
       const useText = text.substring(1);
@@ -716,7 +717,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
         selectTab = this.outputTab;
       }
       const selection: any[] = [
-        { name: "[選択中]", key: null },
+        { name: "[選擇中]", key: null },
         ...this.chatTabs
       ];
       selection.forEach(({ key, name }: { key: string; name: string }) => {
@@ -773,7 +774,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 現在のチャット送信対象
+   * 現在の聊天視窗提交対象
    */
   private get groupTargetName(): string | null {
     let target = this.getObj(this.chatTarget);
@@ -781,7 +782,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 上下キーを押下されてチャットオプションの選択項目を移動させる処理
+   * 上下キーを押下されて聊天視窗オプションの選擇項目を移動させる処理
    */
   private chatOptionSelectChange(direction: string, event: any): void {
     // 変化前の値を保存
@@ -799,7 +800,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       return list[index];
     };
 
-    // 発言者の選択の場合
+    // 発言者の選擇の場合
     if (this.chatOptionSelectMode === "from") {
       event.preventDefault();
       let index = this.useCommandActorList.findIndex(
@@ -813,7 +814,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       event.preventDefault();
     }
 
-    // 発言先の選択の場合
+    // 発言先の選擇の場合
     if (this.chatOptionSelectMode === "target") {
       event.preventDefault();
       let index = this.chatTargetList.findIndex(
@@ -825,10 +826,10 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       event.preventDefault();
     }
 
-    // タブの選択の場合
+    // タブの選擇の場合
     if (this.chatOptionSelectMode === "tab") {
       const selection: (null | any)[] = [
-        null, // [選択中]
+        null, // [選擇中]
         ...this.chatTabs.map((tab: any) => tab.key)
       ];
 
@@ -843,7 +844,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       event.preventDefault();
     }
 
-    // チャットフォーマットの選択の場合
+    // 聊天視窗フォーマットの選擇の場合
     if (this.chatOptionSelectMode === "chatFormat") {
       const selection: (null | any)[] = [
         ...this.chatFormats.map((chatFormat: any) => chatFormat.label)
@@ -872,7 +873,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャットオプションを仮変更前の状態に戻す
+   * 聊天視窗オプションを仮変更前の状態に戻す
    */
   private resetChatOption(): void {
     if (this.chatOptionSelectMode) {
@@ -901,7 +902,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャットログ表示タブを選択されたときの挙動
+   * 聊天視窗ログ表示タブを選擇されたときの挙動
    * @param key タブのkey
    */
   private chatTabOnSelect(key: string): void {
@@ -914,7 +915,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャットログ表示タブをホバーされたときの挙動
+   * 聊天視窗ログ表示タブをホバーされたときの挙動
    * @param key タブのkey
    */
   private chatTabOnHover(key: string): void {
@@ -926,7 +927,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * グループターゲットタブを選択された時の挙動
+   * グループターゲットタブを選擇された時の挙動
    * @param targetKey タブのkey
    */
   private groupTargetTabOnSelect(targetKey: string): void {
@@ -947,21 +948,21 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャットオプションクリックイベントハンドラ
+   * 聊天視窗オプションクリックイベントハンドラ
    */
   private chatOptionOnClick(): void {
     document.getElementById("chatTextArea")!.focus();
   }
 
   /**
-   * チャットタブ追加ボタンクリックイベントハンドラ
+   * 聊天視窗タブ追加ボタンクリックイベントハンドラ
    */
   private tabAddButtonOnClick(): void {
     this.windowOpen("private.display.settingChatTabWindow");
   }
 
   /**
-   * グループチャットタグ追加ボタンクリックイベントハンドラ
+   * グループ聊天視窗タグ追加ボタンクリックイベントハンドラ
    */
   private targetTabAddButtonOnClick(): void {
     this.windowOpen("private.display.settingChatTargetTabWindow");
@@ -975,7 +976,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャットログ削除ボタンクリックイベントハンドラ
+   * 聊天視窗ログ削除ボタンクリックイベントハンドラ
    */
   private async chatLogDeleteButtonOnClick(): Promise<any> {
     if (!this.isGameMaster) {
@@ -985,7 +986,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       return;
     }
     const result: boolean = window.confirm(
-      "本当にチャットログを削除しますか？\n削除前にログ保存を同時に行います。"
+      "本当に聊天視窗ログを削除しますか？\n削除前にログ保存を同時に行います。"
     );
     if (!result) return;
     await this.saveChatLogHtml();
@@ -993,7 +994,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャットログ保存ボタンクリックイベントハンドラ
+   * 聊天視窗ログ保存ボタンクリックイベントハンドラ
    */
   private chatLogExportButtonOnClick(): void {
     this.saveChatLogHtml();
@@ -1031,7 +1032,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャットパレット設定ボタンクリックイベントハンドラ
+   * 聊天視窗パレット設定ボタンクリックイベントハンドラ
    */
   private chatPaletteSettingButtonOnClick(): void {
     this.windowOpen("private.display.chatPaletteSettingWindow");
@@ -1053,7 +1054,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャットオプションに表示するチャットタブの表示名の取得
+   * 聊天視窗オプションに表示する聊天視窗タブの表示名の取得
    * @param tabKey
    */
   private getTabName(tabKey: string): string {
@@ -1062,7 +1063,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * チャット欄に記入された内容をチャットに反映させる
+   * 聊天視窗欄に記入された内容を聊天視窗に反映させる
    * @param event イベント
    * @param flg 押下ならtrue, 離す場合はfalse
    */
@@ -1089,7 +1090,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
     // 単位を初期化
     this.unitList = [];
 
-    // チャット送信オプション選択中のEnterは特別仕様
+    // 聊天視窗提交オプション選擇中のEnterは特別仕様
     if (this.chatOptionSelectMode) {
       if (this.chatOptionSelectMode === "chatFormat") {
         const chatFormat: any = this.chatFormats.filter(
@@ -1128,8 +1129,8 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * グループチャットタブの発言者の名前を取得する
-   * @param tabObj グループチャットオブジェクト
+   * グループ聊天視窗タブの発言者の名前を取得する
+   * @param tabObj グループ聊天視窗オブジェクト
    */
   private otherMatcherObj(tabObj: any): string {
     if (tabObj.isAll) return "";
@@ -1196,7 +1197,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   @Watch("currentDiceBotSystem")
   private onChangeCurrentDiceBotSystem(currentDiceBotSystem: any) {
-    window.console.log(`ダイスボットシステムを${currentDiceBotSystem}に変更`);
+    window.console.log(`骰子Bot系統${currentDiceBotSystem}變更`);
   }
 
   @Watch("chatLogList")
@@ -1300,7 +1301,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
     }
     if (this.chatOptionSelectMode === "tab") {
       list = this.chatTabs.concat();
-      list.unshift({ name: "[選択中]", key: null });
+      list.unshift({ name: "[選擇中]", key: null });
     }
     if (this.chatOptionSelectMode === "chatFormat") {
       list = this.chatFormats.concat();
