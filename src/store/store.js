@@ -307,9 +307,7 @@ export default new Vuex.Store({
           })
           .catch(() => {
             alert(
-              `BCDice-apiサーバ\n${
-                setting.bcdiceServer
-              }\nの接続に失敗しました。`
+              `BCDice-apiサーバ\n${setting.bcdiceServer}\nの接続に失敗しました。`
             );
           });
 

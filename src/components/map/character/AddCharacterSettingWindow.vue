@@ -203,7 +203,10 @@ export default class AddCharacterSettingWindow extends Mixins<WindowMixin>(
 
   private addSwitch(): void {
     const nextKey: number =
-      Math.max.apply(null, this.switchImageList.map(image => image.key)) + 1;
+      Math.max.apply(
+        null,
+        this.switchImageList.map(image => image.key)
+      ) + 1;
 
     this.switchImageList.push({
       key: nextKey,

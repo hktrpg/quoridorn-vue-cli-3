@@ -146,11 +146,7 @@ export default class EditMapMaskWindow extends Mixins<WindowMixin>(
     this.color = colorObj.getColorCode();
     this.transparency = 100 - Math.floor(colorObj.a * 100);
     window.console.log(
-      `  [methods] init window => EditMapMask:{name:"${this.name}", color:${
-        this.color
-      }, size:(${this.width}, ${this.height}), transparency:${
-        this.transparency
-      }}`
+      `  [methods] init window => EditMapMask:{name:"${this.name}", color:${this.color}, size:(${this.width}, ${this.height}), transparency:${this.transparency}}`
     );
   }
 

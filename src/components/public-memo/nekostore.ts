@@ -1,121 +1,116 @@
 interface Nekostore {
-    collection<T extends {}>(name: string): CollectionReference<T>;
+  collection<T extends {}>(name: string): CollectionReference<T>;
 }
 
 type Unsubscribe = () => Promise<void>;
 
 interface CollectionReference<T extends {}, U extends {} | never = never> {
-    parent: U extends {} ? DocumentReference<U> : never;
-    doc(id: string): DocumentReference<T>;
-    add(data: T): Promise<DocumentReference<T>>;
-    get(): Promise<QuerySnapshot<T>>;
-    onSnapshot(callback: (snapshot: QuerySnapshot<T>) => void): Promise<Unsubscribe>;
+  parent: U extends {} ? DocumentReference<U> : never;
+  doc(id: string): DocumentReference<T>;
+  add(data: T): Promise<DocumentReference<T>>;
+  get(): Promise<QuerySnapshot<T>>;
+  onSnapshot(
+    callback: (snapshot: QuerySnapshot<T>) => void
+  ): Promise<Unsubscribe>;
 }
 
 interface DocumentReference<T extends {}> {
-    parent: CollectionReference<T>;
-    get(): Promise<DocumentSnapshot<T>>;
-    update(data: Partial<T>): Promise<void>;
-    remove(): Promise<void>;
-    collection<U extends {}>(name: string): CollectionReference<U, T>;
+  parent: CollectionReference<T>;
+  get(): Promise<DocumentSnapshot<T>>;
+  update(data: Partial<T>): Promise<void>;
+  remove(): Promise<void>;
+  collection<U extends {}>(name: string): CollectionReference<U, T>;
 }
 
 interface DocumentSnapshot<T extends {}> {
-    ref: DocumentReference<T>;
-    id: string;
-    exists: boolean;
-    userId: string;
-    createdAt: number;
-    updatedAt: number;
-    data?: T;
-    onSnapshot(callback: (snapshot: DocumentSnapshot<T>) => void): Promise<Unsubscribe>;
+  ref: DocumentReference<T>;
+  id: string;
+  exists: boolean;
+  userId: string;
+  createdAt: number;
+  updatedAt: number;
+  data?: T;
+  onSnapshot(
+    callback: (snapshot: DocumentSnapshot<T>) => void
+  ): Promise<Unsubscribe>;
 }
 
-type ChangeType = 'added' | 'updated' | 'moved' | 'removed';
+type ChangeType = "added" | "updated" | "moved" | "removed";
 
 interface QueryDocumentSnapshot<T extends {}> extends DocumentSnapshot<T> {
-    changeType: ChangeType;
+  changeType: ChangeType;
 }
 
 interface QuerySnapshot<T extends {}> {
-    ref: CollectionReference<T>;
-    docs: QueryDocumentSnapshot<T>;
+  ref: CollectionReference<T>;
+  docs: QueryDocumentSnapshot<T>;
 }
 
 // ---------------------------------------------------------------------------------------------------
 
 class DocumentSnapshotImpl<T> implements DocumentSnapshot<T> {
-    constructor(
-        createdAt :number,
-        data :T,
-        exists: boolean,
-        id: string,
-        ref: DocumentReference<T>,
-        updatedAt: number,
-        userId: string
-    ) {
-        this.createdAt = createdAt;
-        this.data = data;
-        this.exists = exists;
-        this.id = id;
-        this.ref = ref;
-        this.updatedAt = updatedAt;
-        this.userId = userId;
-    }
+  constructor(
+    createdAt: number,
+    data: T,
+    exists: boolean,
+    id: string,
+    ref: DocumentReference<T>,
+    updatedAt: number,
+    userId: string
+  ) {
+    this.createdAt = createdAt;
+    this.data = data;
+    this.exists = exists;
+    this.id = id;
+    this.ref = ref;
+    this.updatedAt = updatedAt;
+    this.userId = userId;
+  }
 
-    createdAt: number;
-    data: T;
-    exists: boolean;
-    id: string;
-    ref: DocumentReference<T>;
-    updatedAt: number;
-    userId: string;
+  createdAt: number;
+  data: T;
+  exists: boolean;
+  id: string;
+  ref: DocumentReference<T>;
+  updatedAt: number;
+  userId: string;
 
-    async onSnapshot(callback: (snapshot: DocumentSnapshot<T>) => void): Promise<Unsubscribe> {
-        const func: Unsubscribe = async () => {
-            // something
-        };
-        return func;
-    }
-
+  async onSnapshot(
+    callback: (snapshot: DocumentSnapshot<T>) => void
+  ): Promise<Unsubscribe> {
+    const func: Unsubscribe = async () => {
+      // something
+    };
+    return func;
+  }
 }
 
-class QueryDocumentSnapshotImpl<T> extends DocumentSnapshotImpl<T> implements QueryDocumentSnapshot<T> {
-    constructor(
-        createdAt :number,
-        data :T,
-        exists: boolean,
-        id: string,
-        ref: DocumentReference<T>,
-        updatedAt: number,
-        userId: string,
-        changeType: ChangeType
-    ) {
-        super(
-            createdAt,
-            data,
-            exists,
-            id,
-            ref,
-            updatedAt,
-            userId
-        );
-        this.changeType = changeType
-    }
-    changeType: ChangeType;
+class QueryDocumentSnapshotImpl<T> extends DocumentSnapshotImpl<T>
+  implements QueryDocumentSnapshot<T> {
+  constructor(
+    createdAt: number,
+    data: T,
+    exists: boolean,
+    id: string,
+    ref: DocumentReference<T>,
+    updatedAt: number,
+    userId: string,
+    changeType: ChangeType
+  ) {
+    super(createdAt, data, exists, id, ref, updatedAt, userId);
+    this.changeType = changeType;
+  }
+  changeType: ChangeType;
 }
 
 class QuerySnapshotImpl<T> implements QuerySnapshot<T> {
-    constructor(
-        docs: QueryDocumentSnapshot<T>,
-        ref: CollectionReference<T>
-    ) {
-        this.docs = docs;
-        this.ref = ref;
-    }
+  constructor(docs: QueryDocumentSnapshot<T>, ref: CollectionReference<T>) {
+    this.docs = docs;
+    this.ref = ref;
+  }
 
-    docs: QueryDocumentSnapshot<T>;
-    ref: CollectionReference<T>;
+  docs: QueryDocumentSnapshot<T>;
+  ref: CollectionReference<T>;
 }
 
 // class CollectionReferenceImpl<T, never> implements CollectionReference<T, never> {

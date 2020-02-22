@@ -38,9 +38,9 @@ export default {
         Promise.resolve()
           // テンプレートファイル読み込み
           .then(() =>
-            fetch(`${process.env.BASE_URL}/static/chatLogTemplate.html`).then(
-              res => res.text()
-            )
+            fetch(
+              `${process.env.BASE_URL}/static/chatLogTemplate.html`
+            ).then(res => res.text())
           )
 
           // テンプレートエンジン

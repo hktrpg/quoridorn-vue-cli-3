@@ -153,11 +153,7 @@ export default class AddMapMaskWindow extends Mixins<WindowMixin>(WindowMixin) {
     event.dataTransfer.setData("rows", this.height);
     event.dataTransfer.setData("isMulti", this.isMulti);
     window.console.log(
-      `  [methods] drag start mapMask => {name:"${this.name}", color:${
-        this.color
-      }, size:(${this.width}, ${this.height}), transparency:${
-        this.transparency
-      }`
+      `  [methods] drag start mapMask => {name:"${this.name}", color:${this.color}, size:(${this.width}, ${this.height}), transparency:${this.transparency}`
     );
   }
 

@@ -423,9 +423,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
     }
 
     qLog(
-      `  [methods] drop on GameTable => type: ${kind}, address: (${
-        canvasAddress.grid.column
-      },${canvasAddress.grid.row})`
+      `  [methods] drop on GameTable => type: ${kind}, address: (${canvasAddress.grid.column},${canvasAddress.grid.row})`
     );
 
     const pieceObj: any = {

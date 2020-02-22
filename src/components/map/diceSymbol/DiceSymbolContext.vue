@@ -100,9 +100,7 @@ export default class DiceSymbolContext extends Mixins<WindowMixin>(
     const diceObj: any = this.getObj(this.objKey);
     const ownerPlayer: any = this.getObj(diceObj.owner);
 
-    let text: string = `「${
-      ownerPlayer.name
-    }」のダイスシンボルの値が変更されました。`;
+    let text: string = `「${ownerPlayer.name}」のダイスシンボルの値が変更されました。`;
     if (!diceObj.isHide) text += `(${diceObj.pips}→${pips})`;
     // ログに出力
     this.addChatLog({ text });

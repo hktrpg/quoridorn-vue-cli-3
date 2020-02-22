@@ -441,9 +441,7 @@ export default class CreateNewRoom extends Vue {
         if (isExist) {
           // 存在したら普通に入室する
           alert(
-            `部屋${
-              this.roomName
-            }は今しがた作成されたところです。\nご入室ください。`
+            `部屋${this.roomName}は今しがた作成されたところです。\nご入室ください。`
           );
           this.loading(true);
           return this.doJoinRoom(joinArg);
