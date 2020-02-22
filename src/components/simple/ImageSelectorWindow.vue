@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="画像選択"
+    titleText="圖片選擇"
     display-property="private.display.imageSelectorWindow"
     align="center"
     fixSize="400, 193"

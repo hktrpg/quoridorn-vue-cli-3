@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="BGM設定画面"
+    titleText="BGM設定畫面"
     display-property="private.display.settingBGMWindow"
     align="center"
     fixSize="394, 334"

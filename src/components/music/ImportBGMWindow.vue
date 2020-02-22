@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="BGMインポート画面"
+    titleText="BGM導入畫畫"
     display-property="private.display.importBGMWindow"
     align="center"
     fixSize="394, 334"
@@ -8,9 +8,9 @@
   >
     <div class="contents" @contextmenu.prevent>
       <div class="playOperationArea">
-        <ctrl-button @click="chooseFile">ファイルを選択</ctrl-button>
+        <ctrl-button @click="chooseFile">選擇檔案</ctrl-button>
         <div class="description">
-          {{ file ? file.name : "未選択" }}
+          {{ file ? file.name : "未選擇" }}
         </div>
         <input
           ref="fileChooser"
@@ -22,7 +22,7 @@
           @keyup.enter.stop
         />
         <span class="space"></span>
-        <ctrl-button @click="doPreview">プレビュー(自分のみ)</ctrl-button>
+        <ctrl-button @click="doPreview">預覧(自己)</ctrl-button>
       </div>
       <div class="tableContainer">
         <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">

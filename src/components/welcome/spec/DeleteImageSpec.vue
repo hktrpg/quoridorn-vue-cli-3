@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="deleteImageSpec"
-    label-str="画像削除"
+    label-str="圖片刪除"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -13,9 +13,9 @@
       <li>「画像削除」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         既に参照可能となっている画像を選択して削除する
       </li>

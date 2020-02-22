@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="floorTileSpec"
-    label-str="フロアタイル"
+    label-str="地形"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -13,9 +13,9 @@
       <li>「フロアタイル追加」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>チットのように追加し、マップマスクのように操作する</li>
       <li>全てのマップオブジェクトの中で最も背面に配置される</li>
       <li>右クリックメニューから再度編輯が可能</li>

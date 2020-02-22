@@ -29,9 +29,9 @@
         <span class="message" v-if="message">{{ message }}</span>
       </div>
 
-      <!-- 文字サイズ変更 -->
+      <!-- 文字大小変更 -->
       <label v-if="fontSizeBar" class="fontSizeSlider">
-        文字サイズ{{ fontSize }}px
+        文字大小{{ fontSize }}px
         <input
           type="range"
           min="10"
@@ -45,9 +45,9 @@
         />
       </label>
 
-      <!-- 文字サイズ変更 -->
+      <!-- 文字大小変更 -->
       <label v-if="standImageSizeChooser" class="fontSizeSlider">
-        立ち絵サイズ
+        立繪大小
         <ctrl-select
           v-model="standImageSize"
           :optionInfoList="standImageSizeOptionInfoList"

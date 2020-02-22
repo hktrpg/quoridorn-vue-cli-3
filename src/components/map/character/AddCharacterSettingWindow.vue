@@ -1,10 +1,10 @@
 <template>
   <window-frame
-    titleText="キャラクター追加"
+    titleText="新增角色"
     display-property="private.display.addCharacterSettingWindow"
     align="center"
     fixSize="653, 377"
-    message="追加ボタンを押してから画面にドラッグ&ドロップで追加"
+    message="按下新增按鈕並拖放到畫面"
     @open="open"
     @reset="open"
   >

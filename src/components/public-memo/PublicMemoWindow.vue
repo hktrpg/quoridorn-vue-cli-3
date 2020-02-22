@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="共有メモ"
+    titleText="共用筆記"
     display-property="private.display.publicMemoWindow"
     align="center"
     baseSize="350, 310"

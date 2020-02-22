@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="characterSpec"
-    label-str="キャラクター"
+    label-str="角色"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -10,18 +10,18 @@
      !--------------------->
     <spec-item class-str="operation" label-str="起動操作１">
       <li>画面上部メニューの「コマ」を選択</li>
-      <li>「キャラクター追加」を選択</li>
+      <li>「角色追加」を選択</li>
     </spec-item>
     <spec-item class-str="operation" label-str="起動操作２">
       <li>マップを右クリック</li>
       <li>
-        表示されたメニューの「キャラクター追加」を選択
+        表示されたメニューの「角色追加」を選択
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         画像選択 → 後述の「画像選択」の項参照
       </li>

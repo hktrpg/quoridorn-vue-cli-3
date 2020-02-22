@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="graveyardSpec"
-    label-str="墓場"
+    label-str="墓地"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -13,9 +13,9 @@
       <li>「墓場」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>マップオブジェクトを削除した際、一旦は「墓場」へと移動する</li>
       <li>「墓場」の操作により、削除したオブジェクトを復活できる</li>
       <li>「墓場」の操作により、本当に削除することができる</li>

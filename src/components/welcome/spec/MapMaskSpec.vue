@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="mapMaskSpec"
-    label-str="マップマスク"
+    label-str="地圖迷霧"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -19,9 +19,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>中に表示する文字の入力</li>
       <li>表示色（＋透明度）の選択</li>
       <li>サイズ指定</li>

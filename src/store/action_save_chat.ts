@@ -11,7 +11,7 @@ export default {
     async saveChatLogHtml({ rootGetters }: { rootGetters: any }) {
       if (!rootGetters.isGameMaster) {
         alert(
-          "仕様的な考慮不足によりGM専用機能です。\nGM以外でも可能になるよう、近いうちに改修します。\nGMにログ取得を促してくださいませ。"
+          "規格的な考慮不足によりGM専用機能です。\nGM以外でも可能になるよう、近いうちに改修します。\nGMにログ取得を促してくださいませ。"
         );
         return;
       }

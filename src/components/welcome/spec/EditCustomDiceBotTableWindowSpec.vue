@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="editCustomDiceBotTableWindowSpec"
-    label-str="ダイスボット表変更"
+    label-str="更改骰子Bot表"
     lastVersion="1.0.0"
     :isSpecFixed="false"
   >
@@ -14,9 +14,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>「コマンド名」はチャットに反応する文字</li>
       <li>
         「ダイス」はBCDiceが反応できるコマンド

@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="mapSpec"
-    label-str="マップ"
+    label-str="地圖"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -9,22 +9,22 @@
      ! 起動操作
      !--------------------->
     <spec-item class-str="operation" label-str="起動操作1">
-      <li>画面上部メニューの「マップ」を選択</li>
-      <li>「マップ変更」を選択</li>
+      <li>画面上部メニューの「地圖」を選択</li>
+      <li>「地圖変更」を選択</li>
     </spec-item>
     <!----------------------
      ! 起動操作
      !--------------------->
     <spec-item class-str="operation" label-str="起動操作2">
-      <li>マップを右クリック</li>
+      <li>地圖を右クリック</li>
       <li>
-        表示されたメニューの「マップ変更」を選択
+        表示されたメニューの「地圖変更」を選択
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         画像選択 → 後述の「画像選択」の項参照
       </li>
@@ -33,7 +33,7 @@
       <li>余白部分のマス数の指定（縦横同じ）</li>
       <li>余白に付く罫線の太さの調整</li>
       <li>
-        余白部分にマップ画像をぼかした画像を表示させるオプション
+        余白部分に地圖画像をぼかした画像を表示させるオプション
       </li>
       <li>
         余白部分に被せるカラーマスクの色（＋透明度）の選択

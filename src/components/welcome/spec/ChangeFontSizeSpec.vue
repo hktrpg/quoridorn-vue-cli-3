@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="changeFontSizeSpec"
-    label-str="フォントサイズ調整"
+    label-str="字體大小調整"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -10,12 +10,12 @@
      !--------------------->
     <spec-item class-str="operation" label-str="起動操作">
       <li>画面上部メニューの「表示」を選択</li>
-      <li>「フォントサイズ調整」を選択</li>
+      <li>「字體大小調整」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         Quoridorn全体のフォントサイズを変更する
       </li>

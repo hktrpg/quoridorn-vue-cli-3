@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="fileUploadSpec"
-    label-str="ファイルアップローダー"
+    label-str="上傳檔案"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -13,9 +13,9 @@
       <li>「ファイルアップローダー」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         以下の情報を付与して画像ファイルを利用可能にする
         <ol>

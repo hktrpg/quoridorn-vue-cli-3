@@ -1,14 +1,12 @@
 <template>
   <window-frame
-    :titleText="
-      `プレイルーム${roomName === '' ? '' : `「${roomName}」`}情報表示`
-    "
+    :titleText="`房間${roomName === '' ? '' : `「${roomName}」`}情報顯示`"
     display-property="private.display.roomInfoWindow"
     align="center"
     fixSize="400, 310"
   >
     <div class="container" @contextmenu.prevent>
-      <div v-if="playerList.length === 0">お部屋に接続していません。</div>
+      <div v-if="playerList.length === 0">未連接到房間。</div>
       <div class="inviteUrlArea" v-if="playerList.length > 0">
         招待用URL：
         <input
@@ -22,10 +20,10 @@
       </div>
       <ul v-if="playerList.length > 0">
         <li v-for="player in playerList" :key="player.key">
-          <b v-if="player.key === playerKey">[あなた]</b>
+          <b v-if="player.key === playerKey">[自己]]</b>
           <span>{{ player.name }}</span>
           <div class="returnUrlArea">
-            復帰用URL：
+            回歸用URL：
             <input
               class="returnUrl"
               type="text"
@@ -40,7 +38,7 @@
 
       <!-- ダイスボット選択 -->
       <label>
-        部屋のダイスボット：
+        房間的擲骰Bot：
         <dice-bot-select
           ref="diceBot"
           v-model="currentDiceBotSystem"

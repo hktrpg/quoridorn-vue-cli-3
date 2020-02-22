@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="キャラクター所有者選択画面"
+    titleText="角色擁有者選擇畫面"
     display-property="private.display.selectNewOwnerWindow"
     align="center"
     fixSize="280, 130"

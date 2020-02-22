@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="resetAllWindowSpec"
-    label-str="ウィンド配置初期化機能"
+    label-str="視窗佈置初始化功能"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -13,9 +13,9 @@
       <li>「ウィンド配置初期化」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         部屋の初期表示画面設定に従って画面表示の有無をリセットする
       </li>

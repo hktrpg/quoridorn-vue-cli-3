@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="roomDataSaveSpec"
-    label-str="部屋データ保存機能"
+    label-str="房間數據存儲功能"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -22,9 +22,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         その時点でのQuoridornの状態をzipファイルでダウンロード
       </li>

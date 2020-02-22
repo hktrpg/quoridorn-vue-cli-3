@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="mapLoadSpec"
-    label-str="マップ切り替え機能"
+    label-str="地圖切換功能"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -13,9 +13,9 @@
       <li>「マップ切り替え」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         マップ状態保存機能で保存したデータを参照させることで、マップ状態を復元する
       </li>

@@ -1,7 +1,7 @@
 <template
   ><!-- 150, 209 -->
   <window-frame
-    titleText="再生中BGM一覧"
+    titleText="播放中BGM一覧"
     fixSize="222, 274"
     display-property="private.display.jukeboxWindow"
     align="right-bottom"

@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="chatLogSaveSpec"
-    label-str="チャットログ保存機能"
+    label-str="儲存聊天紀錄"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -21,9 +21,9 @@
       <li>チャットログ削除をする際、チャットログを保存してから削除される</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         <b>GM限定機能</b
         >（いずれ閲覧制限などを設けてPLなどでも保存できるようにしたい）

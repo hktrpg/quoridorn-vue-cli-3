@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="customDiceBotSpec"
-    label-str="独自ダイスボット"
+    label-str="獨立設定骰組"
     lastVersion="1.0.0"
     :isSpecFixed="false"
   >
@@ -12,9 +12,9 @@
       <li>チャット画面のアイコン<span class="icon-dice"></span>をクリック</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様 - 操作">
+    <spec-item class-str="spec" label-str="規格 - 操作">
       <li>
         新規作成ボタンでサンプルダイスボットを追加して編輯画面を開く
       </li>
@@ -35,9 +35,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様 - 自鯖設定">
+    <spec-item class-str="spec" label-str="規格 - 自鯖設定">
       <li>
         設定ファイル「conf/system/[ダイスボットのkey]/customDiceBot.yaml」を設置しておく。
       </li>

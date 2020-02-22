@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="diceSpec"
-    label-str="ダイス"
+    label-str="骰子"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -11,23 +11,23 @@
     <spec-item class-str="operation" label-str="起動操作">
       <li>画面上部メニューの「表示」を選択</li>
       <li>「ウィンドウ」にカーソルをあてる</li>
-      <li>「ダイス表示」を選択</li>
+      <li>「骰子表示」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
-        以下のダイスを表示し、選択するとそれを画面に追加。<br />
-        追加されたダイスを選択することでアニメーション付きでダイスロールを行う。<br />
-        ダイスロール結果はチャットに反映する。
+        以下の骰子を表示し、選択するとそれを画面に追加。<br />
+        追加された骰子を選択することでアニメーション付きで骰子ロールを行う。<br />
+        骰子ロール結果はチャットに反映する。
         <ol>
-          <li>４面ダイス</li>
-          <li>６面ダイス</li>
-          <li>８面ダイス</li>
-          <li>１０面ダイス</li>
-          <li>２０面ダイス</li>
-          <li>１００面ダイス</li>
+          <li>４面骰子</li>
+          <li>６面骰子</li>
+          <li>８面骰子</li>
+          <li>１０面骰子</li>
+          <li>２０面骰子</li>
+          <li>１００面骰子</li>
         </ol>
       </li>
     </spec-item>

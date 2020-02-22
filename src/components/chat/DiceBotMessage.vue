@@ -28,7 +28,7 @@ export default class DiceBotMessage extends Vue {
   private colorClass: string = "";
 
   /**
-   * メッセージの文言に「成功」「失敗」が含まれていたら、背景の色を変える仕様
+   * メッセージの文言に「成功」「失敗」が含まれていたら、背景の色を変える規格
    * @param diceBotMessageText
    */
   @Watch("diceBotMessageText", { immediate: true })
@@ -76,7 +76,7 @@ export default class DiceBotMessage extends Vue {
   private timer: any = null;
 
   /**
-   * 「表示」「非表示」の際に「フェードイン」「フェードアウト」する仕様
+   * 「表示」「非表示」の際に「フェードイン」「フェードアウト」する規格
    * @param diceBotMessageView
    */
   @Watch("diceBotMessageView", { immediate: true })

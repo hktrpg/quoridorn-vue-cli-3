@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="logoutSpec"
-    label-str="ログアウト機能"
+    label-str="登出功能"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -12,9 +12,9 @@
       <li>画面上部メニューの「ログアウト」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         部屋から抜けてまっさらなQuoridornの初期画面に戻る。
         <br />→ ページリロードするのでマップオブジェクトも引き継がない。

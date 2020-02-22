@@ -1,11 +1,11 @@
 <template>
   <spec-frame
     property="welcomeWindowSpec"
-    label-str="ようこそ画面"
+    label-str="歡迎畫面"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
-    <div>※ この画面の仕様です</div>
+    <div>※ この画面の規格です</div>
     <!----------------------
      ! 起動操作
      !--------------------->
@@ -14,10 +14,10 @@
       <li>「ようこそ画面」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
-      <li>表示文字サイズ調整機能</li>
+    <spec-item class-str="spec" label-str="規格">
+      <li>表示文字大小調整機能</li>
       <li>
         ログイン処理（ログインタブ）
         <ol>
@@ -49,8 +49,8 @@
                 <ol>
                   <li>PL：プレイヤーを指す</li>
                   <li>GM：ゲームマスターを指す</li>
-                  <li>サブGM</li>
-                  <li>見学者</li>
+                  <li>副GM</li>
+                  <li>觀戰者</li>
                 </ol>
               </li>
             </ul>
@@ -131,7 +131,7 @@
           </li>
         </ol>
       </li>
-      <li>仕様の表示（仕様一覧タブ）</li>
+      <li>規格の表示（規格一覧タブ）</li>
       <li>出典元情報の表示（出典元情報タブ）</li>
     </spec-item>
     <!----------------------

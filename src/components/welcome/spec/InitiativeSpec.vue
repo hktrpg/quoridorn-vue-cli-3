@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="initiativeSpec"
-    label-str="イニシアティブ表"
+    label-str="先攻表"
     lastVersion="1.0.0"
     :isSpecFixed="false"
   >
@@ -14,9 +14,9 @@
       <li>「イニシアティブ表示」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         キャラクター１体に関するパラメータを表形式で表示する
       </li>

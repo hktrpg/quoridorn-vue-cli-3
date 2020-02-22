@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="menuBar"
-    label-str="メインメニュー"
+    label-str="主菜單"
     lastVersion="1.0.0"
     :isSpecFixed="false"
   >
@@ -14,13 +14,13 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>角丸のボタンと展開型の選択肢で構成する</li>
       <li>
         項目は今後の機能増強に伴って増減する可能性あり
-        <span class="unFixed">[仕様未確定事項]</span>
+        <span class="unFixed">[規格未確定事項]</span>
       </li>
       <li>
         メニュー項目
@@ -229,9 +229,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="展開型の選択肢の仕様">
+    <spec-item class-str="spec" label-str="展開型の選択肢の規格">
       <li>
         初期表示の各項目を選択すると展開モードになる
       </li>

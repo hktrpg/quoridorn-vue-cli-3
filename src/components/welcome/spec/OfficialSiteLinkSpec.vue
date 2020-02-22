@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="officialSiteSpec"
-    label-str="オフィシャルサイトへ"
+    label-str="官方網站地址"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -10,12 +10,12 @@
      !--------------------->
     <spec-item class-str="operation" label-str="起動操作">
       <li>画面上部メニューの「ヘルプ」を選択</li>
-      <li>「オフィシャルサイトへ」を選択</li>
+      <li>「官方網站地址」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>外部の公式サイトを別タブで表示する</li>
     </spec-item>
     <!----------------------

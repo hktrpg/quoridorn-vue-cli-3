@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="chatPaletteSpec"
-    label-str="チャットパレット"
+    label-str="聊天面版"
     lastVersion="1.0.0"
     :isSpecFixed="false"
   >
@@ -12,9 +12,9 @@
       <li>チャット画面のアイコン<span class="icon-list2"></span>をクリック</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様 - 操作">
+    <spec-item class-str="spec" label-str="規格 - 操作">
       <li>
         表示するパレット数を選ぶ
       </li>
@@ -28,9 +28,9 @@
       <li>（ワンクリックで画面上部の入力欄で編輯可能状態になる）</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様 - 詳細">
+    <spec-item class-str="spec" label-str="規格 - 詳細">
       <li>
         ロードできるフォーマット<br />
         ・Quoridornでセーブしたチャパレデータ(jsonファイル)<br />

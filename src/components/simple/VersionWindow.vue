@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="バージョン"
+    titleText="版本"
     display-property="private.display.versionWindow"
     align="center"
     fixSize="500, 158"

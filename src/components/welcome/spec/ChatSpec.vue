@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="chatSpec"
-    label-str="チャット"
+    label-str="聊天視窗"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -9,14 +9,14 @@
      ! 起動操作
      !--------------------->
     <spec-item class-str="operation" label-str="起動操作">
-      <li>画面上部メニューの「表示」を選択</li>
+      <li>從視窗頂部的菜單中選擇“表示”</li>
       <li>「ウィンドウ」にカーソルをあてる</li>
       <li>「チャット表示」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>名前の入力</li>
       <li>発言するタブの選択</li>
       <li>タブの編輯</li>
@@ -49,7 +49,7 @@
             <ol>
               <li>文字色</li>
               <li>背景色</li>
-              <li>文字サイズ</li>
+              <li>文字大小</li>
               <li>フォーマット（「時：分」表示）</li>
               <li>別タブメッセージ表示有無</li>
               <li>タブの色分け</li>
@@ -95,7 +95,7 @@
         チャット文字設定
         <ol>
           <li>背景色</li>
-          <li>文字サイズ</li>
+          <li>文字大小</li>
           <li>フォーマット（「時：分」表示）</li>
           <li>別タブメッセージ表示有無</li>
           <li>タブの色分け</li>

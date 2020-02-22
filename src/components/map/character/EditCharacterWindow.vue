@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="キャラクター変更"
+    titleText="修改角色"
     display-property="private.display.editCharacterWindow"
     align="center"
     fixSize="653, 377"

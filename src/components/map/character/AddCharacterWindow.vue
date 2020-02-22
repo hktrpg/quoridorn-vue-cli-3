@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="キャラクター置き場"
+    titleText="角色儲存畫面"
     display-property="private.display.addCharacterWindow"
     align="center"
     fixSize="200, 200"

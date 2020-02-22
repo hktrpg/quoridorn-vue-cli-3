@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="マスク変更"
+    titleText="修改地圖迷霧"
     display-property="private.display.editMapMaskWindow"
     align="center"
     fixSize="285, 198"

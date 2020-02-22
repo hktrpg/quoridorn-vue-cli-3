@@ -1,14 +1,14 @@
 <template>
   <spec-frame
     property="environmentSpec"
-    label-str="動作環境"
+    label-str="運作環境"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 現在の推奨環境
+     ! 現在的推薦環境
      !--------------------->
-    <spec-item class-str="spec" label-str="現在の推奨環境">
+    <spec-item class-str="spec" label-str="現在的推薦環境">
       <li>
         <i class="icon-windows8"></i>
         Windows10 -
@@ -23,9 +23,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 理想の推奨環境
+     ! 理想的推薦環境
      !--------------------->
-    <spec-item class-str="spec" label-str="理想の推奨環境">
+    <spec-item class-str="spec" label-str="理想的推薦環境">
       <li>
         <i class="icon-appleinc"></i>
         Macintosh -
@@ -76,8 +76,8 @@
       <li>
         <i class="icon-appleinc"></i>
         Macintosh
-        <br />→ 自分へのクリスマスプレゼント兼ねてMac買いました！<br />→
-        対応決定なので順次気になった所は直していきます。
+        <br />→ 自分へ的クリスマスプレゼント兼ねてMac買いました！<br />→
+        対応決定な的で順次気になった所は直していきます。
       </li>
     </spec-item>
   </spec-frame>

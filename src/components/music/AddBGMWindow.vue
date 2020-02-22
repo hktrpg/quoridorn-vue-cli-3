@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="BGM追加画面"
+    titleText="新增BGM畫面"
     display-property="private.display.addBGMWindow"
     align="right-bottom"
     fixSize="300, 365"
@@ -9,7 +9,7 @@
   >
     <div class="contents">
       <fieldset>
-        <legend @contextmenu.prevent>読込</legend>
+        <legend @contextmenu.prevent>讀取</legend>
         <!-- URL -->
         <label class="url">
           <span @contextmenu.prevent>URL</span>

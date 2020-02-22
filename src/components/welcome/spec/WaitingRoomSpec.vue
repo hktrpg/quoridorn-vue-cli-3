@@ -13,9 +13,9 @@
       <li>「キャラクター待合室」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         キャラクターのコマをドロップインすることでキャラクター待合室に移動
       </li>

@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="画像アップローダ"
+    titleText="圖片上傳"
     display-property="private.display.fileUploaderWindow"
     align="center"
     fixSize="530, 400"

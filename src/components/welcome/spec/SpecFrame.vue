@@ -4,7 +4,7 @@
     <label :id="refProp" @click="clickLink">
       <span>{{ labelStr }}</span>
       <span class="deco-new" v-if="lastVersion === version">[NEW]</span>
-      <span class="deco-fixed" v-if="!isSpecFixed">[仕様未確定]</span>
+      <span class="deco-fixed" v-if="!isSpecFixed">[規格未確定]</span>
     </label>
     <div class="accordion" v-if="isOpened">
       <slot />

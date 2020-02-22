@@ -981,7 +981,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   private async chatLogDeleteButtonOnClick(): Promise<any> {
     if (!this.isGameMaster) {
       alert(
-        "仕様的な考慮不足によりGM専用機能です。\nGM以外でも可能になるよう、近いうちに改修します。\nGMにログ取得を促してくださいませ。"
+        "規格的な考慮不足によりGM専用機能です。\nGM以外でも可能になるよう、近いうちに改修します。\nGMにログ取得を促してくださいませ。"
       );
       return;
     }
@@ -1090,7 +1090,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
     // 単位を初期化
     this.unitList = [];
 
-    // 聊天視窗提交オプション選擇中のEnterは特別仕様
+    // 聊天視窗提交オプション選擇中のEnterは特別規格
     if (this.chatOptionSelectMode) {
       if (this.chatOptionSelectMode === "chatFormat") {
         const chatFormat: any = this.chatFormats.filter(

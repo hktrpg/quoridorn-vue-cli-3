@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="rangeSpec"
-    label-str="範囲"
+    label-str="範圍"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -10,12 +10,12 @@
      !--------------------->
     <spec-item class-str="operation" label-str="起動操作">
       <li>画面上部メニューの「コマ」を選択</li>
-      <li>「範囲追加」を選択</li>
+      <li>「範圍追加」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>名前の設定</li>
       <li>「射界」の設定 → 別項「射界」参照</li>
     </spec-item>
@@ -39,7 +39,7 @@
      !--------------------->
     <spec-item class-str="unSupport" label-str="実装しない機能">
       <li>
-        どどんとふの各システム用に用意された「範囲追加」は対応しない
+        どどんとふの各システム用に用意された「範圍追加」は対応しない
         <br />→
         基本機能が全て実装できた後の「個別システム対応」のフェーズで対応するかも
       </li>

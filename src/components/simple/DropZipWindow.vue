@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="部屋データ読込"
+    titleText="讀取房間ZIP"
     display-property="private.display.dropZipWindow"
     align="center"
     fixSize="300, 100"
@@ -69,7 +69,7 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
     };
 
     // zipデータをマージする
-    // TODO とりあえず、インポートするデータの取捨選択は考慮しない（第一リリース仕様）
+    // TODO とりあえず、インポートするデータの取捨選択は考慮しない（第一リリース規格）
     this.dropZipList.forEach(
       ({ fileName, saveData }: { fileName: string; saveData: any }) => {
         const publicData: any = saveData.public;

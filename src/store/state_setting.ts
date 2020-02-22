@@ -16,24 +16,24 @@ export default {
     /** 権限 */
     roles: [
       {
-        label: "プレイヤー",
+        label: "玩家",
         value: "PL",
-        description: "部屋の設定や他のプレイヤーの設定の一部が変更不可です。"
+        description: "無法更改某些房間和其他玩家的設定。"
       },
       {
-        label: "ゲームマスター",
+        label: "GM",
         value: "GM",
-        description: "すべての部屋設定とプレイヤーの設定を変更可能です。"
+        description: "可以更改所有房間和其他玩家的設定。"
       },
       {
-        label: "サブGM",
-        value: "サブGM",
-        description: "見た目が異なるだけで、ゲームマスターと同等の権限です。"
+        label: "副GM",
+        value: "副GM",
+        description: "外觀不同，與GM有相同的權限。"
       },
       {
-        label: "見学者",
-        value: "見学者",
-        description: "部屋の設定、プレイヤーたちの設定は一切変更できません。"
+        label: "觀戰者",
+        value: "觀戰者",
+        description: "無法變更所有房間和玩家的設定。"
       }
     ],
     systemLog: {

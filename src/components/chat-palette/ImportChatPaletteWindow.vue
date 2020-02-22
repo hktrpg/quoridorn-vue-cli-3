@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="聊天組合版讀取視窗"
+    titleText="聊天組合版讀取畫面"
     display-property="private.display.importChatPaletteWindow"
     align="center"
     fixSize="348, 540"

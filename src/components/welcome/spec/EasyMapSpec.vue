@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="easyMapSpec"
-    label-str="簡易マップ"
+    label-str="簡易地圖"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -9,13 +9,13 @@
      ! 起動操作
      !--------------------->
     <spec-item class-str="operation" label-str="起動操作">
-      <li>画面上部メニューの「マップ」を選択</li>
-      <li>「簡易マップ作成」を選択</li>
+      <li>画面上部メニューの「地圖」を選択</li>
+      <li>「簡易地圖作成」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         マス目を色(透過度つき)で塗りつぶす機能
       </li>

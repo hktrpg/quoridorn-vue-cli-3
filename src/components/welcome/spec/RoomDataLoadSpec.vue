@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="roomDataLoadSpec"
-    label-str="部屋データ読込機能"
+    label-str="房間數據讀取功能"
     lastVersion="1.0.0"
     :isSpecFixed="false"
   >
@@ -13,9 +13,9 @@
       <li>「ロード」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         読み込ませたファイルのどのデータを使うかを選択できるようにする
       </li>

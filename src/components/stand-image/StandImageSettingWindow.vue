@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="立ち絵設定"
+    titleText="立繪設定"
     display-property="private.display.standImageSettingWindow"
     align="center"
     fixSize="676, 540"

@@ -13,9 +13,9 @@
       <li>「バージョン」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>バージョン番号を表示する</li>
     </spec-item>
     <!----------------------

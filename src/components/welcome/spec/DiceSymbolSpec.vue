@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="diceSymbolSpec"
-    label-str="ダイスシンボル"
+    label-str="骰子Symbol"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -15,9 +15,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         ダイスの種類を選んでダイスをドラッグしてマップにドロップして配置
       </li>

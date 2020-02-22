@@ -14,9 +14,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様 - 操作">
+    <spec-item class-str="spec" label-str="規格 - 操作">
       <li>
         アクターを選択する
       </li>
@@ -36,9 +36,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様 - 詳細">
+    <spec-item class-str="spec" label-str="規格 - 詳細">
       <li>
         画像ファイル名を<br />
         ベース画像：ファイル名.拡張子<br />

@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="MapSaveSpec"
-    label-str="マップ状態保存機能"
+    label-str="地圖狀態保存功能"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -13,9 +13,9 @@
       <li>「マップ状態保存」を選択</li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>
         現在のマップの状態をセーブデータとして保存する
       </li>

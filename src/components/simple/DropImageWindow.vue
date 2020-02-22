@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="圖片データ登録"
+    titleText="上傳圖片"
     display-property="private.display.dropImageWindow"
     align="center"
     fixSize="385, 660"

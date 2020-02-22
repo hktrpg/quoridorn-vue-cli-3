@@ -1,10 +1,10 @@
 <template>
   <window-frame
-    titleText="マスク作成"
+    titleText="新增地圖迷霧"
     display-property="private.display.addMapMaskWindow"
     align="center"
     fixSize="285, 195"
-    message="ドラッグ＆ドロップで配置"
+    message="拖動放置"
     @open="open"
     @reset="open"
   >
@@ -16,7 +16,7 @@
             <input
               type="text"
               v-model="name"
-              placeholder="表示文字"
+              placeholder="文字顯示"
               ref="input"
               @keydown.enter.stop
               @keyup.enter.stop
@@ -42,7 +42,7 @@
           </td>
         </tr>
         <tr>
-          <th>色：</th>
+          <th>顏色：</th>
           <td>
             <input
               type="color"
@@ -55,7 +55,7 @@
           </td>
         </tr>
         <tr>
-          <th>高さ：</th>
+          <th>高度：</th>
           <td>
             <input
               type="number"
@@ -69,7 +69,7 @@
           </td>
         </tr>
         <tr>
-          <th>幅：</th>
+          <th>寛度：</th>
           <td>
             <input
               type="number"
@@ -105,7 +105,7 @@
                 @keyup.enter.stop
                 @keydown.229.stop
                 @keyup.229.stop
-              />複数作成</label
+              />新增多個</label
             >
           </td>
         </tr>

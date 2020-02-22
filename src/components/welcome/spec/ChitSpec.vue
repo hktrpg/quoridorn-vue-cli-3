@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="chitSpec"
-    label-str="チット追加"
+    label-str="新增聊天"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -22,9 +22,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 仕様
+     ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="仕様">
+    <spec-item class-str="spec" label-str="規格">
       <li>マップオブジェクトの一種</li>
       <li>
         画像とマウスオーバー時に表示される説明文のみが設定できる

@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="BGM編輯画面"
+    titleText="BGM編輯畫面"
     display-property="private.display.editBGMWindow"
     align="right-bottom"
     fixSize="300, 365"
@@ -9,7 +9,7 @@
   >
     <div class="contents">
       <fieldset>
-        <legend @contextmenu.prevent>読込</legend>
+        <legend @contextmenu.prevent>讀取</legend>
         <!-- URL -->
         <label class="url">
           <span @contextmenu.prevent>URL</span>
@@ -27,16 +27,16 @@
             @click="isHideUrl = !isHideUrl"
             @contextmenu.prevent
           >
-            編輯するにはここをクリックしてください。
+            點擊此處進行編輯。
           </div>
         </label>
       </fieldset>
       <fieldset>
-        <legend @contextmenu.prevent>表示</legend>
+        <legend @contextmenu.prevent>顯示</legend>
         <div class="firstWide">
-          <!-- 表示タイトル -->
+          <!-- 顯示タイトル -->
           <label class="titleStr">
-            <span @contextmenu.prevent>タイトル</span>
+            <span @contextmenu.prevent>標題</span>
             <input type="text" v-model="title" />
           </label>
         </div>
@@ -51,12 +51,12 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend @contextmenu.prevent>再生</legend>
+        <legend @contextmenu.prevent>播放</legend>
         <div>
           <!-- タグ -->
           <label class="tag">
             <span
-              title="再生中のBGMはタグによって一意になります"
+              title="播放中のBGMはタグによって一意になります"
               @contextmenu.prevent
               >タグ</span
             >
@@ -79,9 +79,9 @@
           <ctrl-button class="preview" @click="preview">プレビュー</ctrl-button>
         </div>
         <div>
-          <!-- 再生開始 -->
+          <!-- 播放開始 -->
           <label class="start">
-            <span @contextmenu.prevent>再生開始</span>
+            <span @contextmenu.prevent>播放開始</span>
             <input
               type="number"
               step="0.1"
@@ -92,9 +92,9 @@
             <span @contextmenu.prevent>秒</span></label
           >
           〜
-          <!-- 再生終了 -->
+          <!-- 播放終了 -->
           <label class="end">
-            <span @contextmenu.prevent>再生終了</span>
+            <span @contextmenu.prevent>播放終了</span>
             <input
               type="number"
               step="0.1"
@@ -137,13 +137,13 @@
             @click="change('isLoop')"
             @contextmenu.prevent
           >
-            <i class="icon-loop"></i>リピート{{ isLoop ? "あり" : "なし" }}
+            <i class="icon-loop"></i>Loop{{ isLoop ? "是" : "否" }}
           </span>
         </div>
         <div>
-          <!-- 多重再生時強制再スタート -->
+          <!-- 多重播放時強制再スタート -->
           <label>
-            <span @contextmenu.prevent>多重再生時強制再スタート</span>
+            <span @contextmenu.prevent>多次播放期間強制重啟</span>
             <input type="checkbox" v-model="forceReset" />
           </label>
         </div>
@@ -215,9 +215,9 @@ export default class EditBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
   private isMute: boolean = false;
   private volume: number = 0.8;
   private options: any[] = [
-    { value: "0", label: "なし" },
+    { value: "0", label: "無" },
     { value: "1", label: "末尾文字" },
-    { value: "2", label: "正規表現" }
+    { value: "2", label: "正則表達式" }
   ];
   private tags: string[] = ["BGM", "SE"];
   private chatLinkage: string = "0";
@@ -234,7 +234,7 @@ export default class EditBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
     const key = this.key;
     const bgmObj = this.bgmList.filter((bgmObj: any) => bgmObj.key === key)[0];
     if (!bgmObj) {
-      alert("そのBGMは既に削除されたようです。");
+      alert("背景音樂已被刪除。");
       this.windowClose("private.display.editBGMWindow");
     }
     this.isHideUrl = true;
