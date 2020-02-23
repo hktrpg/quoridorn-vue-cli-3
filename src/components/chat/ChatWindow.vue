@@ -109,7 +109,7 @@
         <span class="icon">
           <i
             class="icon-cloud-check"
-            title="點名・投票設定"
+            title="點名・投票設定(未實裝)"
             @click="rollCallSettingButtonOnClick"
             @keydown.space.stop="rollCallSettingButtonOnClick"
             @keydown.enter.stop="rollCallSettingButtonOnClick"
@@ -121,7 +121,7 @@
         <span class="icon">
           <i
             class="icon-bell"
-            title="鬧鐘設定"
+            title="鬧鐘設定(未實裝)"
             @click="alermSettingButtonOnClick"
             @keydown.space.stop="alermSettingButtonOnClick"
             @keydown.enter.stop="alermSettingButtonOnClick"
@@ -145,7 +145,7 @@
         <span class="icon">
           <i
             class="icon-film"
-            title="ＣｕｔＩｎ設定"
+            title="ＣｕｔＩｎ設定(未實裝)"
             @click="cutInSettingButtonOnClick"
             @keydown.space.stop="cutInSettingButtonOnClick"
             @keydown.enter.stop="cutInSettingButtonOnClick"
@@ -1005,7 +1005,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
    */
   private rollCallSettingButtonOnClick(): void {
     // TODO
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 
   /**
@@ -1013,7 +1013,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
    */
   private alermSettingButtonOnClick(): void {
     // TODO
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 
   /**
@@ -1028,7 +1028,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
    */
   private cutInSettingButtonOnClick(): void {
     // TODO
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 
   /**
@@ -1050,7 +1050,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
    */
   private rangeSettingButtonOnClick(): void {
     // TODO
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 
   /**

@@ -1112,7 +1112,7 @@ export default {
       payload: any
     ) => {
       if (payload.key === "groupTargetTab-0") {
-        alert("これは削除できません。");
+        alert("無法刪除。");
         return;
       }
       const obj = rootGetters.getObj(payload.key);

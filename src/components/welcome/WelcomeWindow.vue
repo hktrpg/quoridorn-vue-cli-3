@@ -81,7 +81,7 @@
             </div>
             <div class="menu">
               <environment-spec /><!-- 動作環境 -->
-              <menu-bar-spec /><!-- メインメニュー -->
+              <menu-bar-spec /><!-- 主菜單 -->
               <room-data-save-spec /><!-- 部屋データ保存 -->
               <room-data-load-spec /><!-- 部屋データ読込 -->
               <chat-log-save-spec /><!-- チャットログ保存 -->

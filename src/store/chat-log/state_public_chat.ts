@@ -3,7 +3,7 @@ export default {
   state: {
     /** チャットのタブ */
     tab: {
-      list: [{ key: "chatTab-1", name: "メイン" }],
+      list: [{ key: "chatTab-1", name: "分頁" }],
       isVertical: false
     },
 
@@ -13,7 +13,7 @@ export default {
         {
           key: "groupTargetTab-0",
           isSecret: false,
-          name: "全体",
+          name: "全部人",
           targetTab: null,
           isAll: true,
           group: []

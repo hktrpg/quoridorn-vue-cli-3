@@ -158,7 +158,7 @@ export default {
       { dispatch, rootGetters }: { dispatch: any; rootGetters: any },
       { peerId, isWait }: { peerId: string; isWait: boolean }
     ) {
-      qLog(`退室を感知 => peerId: ${peerId}`);
+      qLog(`檢測到退出 => peerId: ${peerId}`);
       const index = rootGetters.members.findIndex(
         (member: any) => member.peerId === peerId
       );
@@ -173,7 +173,7 @@ export default {
       if (rootGetters.members[0].peerId === rootGetters.peerId(isWait)) {
         dispatch("addChatLog", {
           name: rootGetters.systemLog.name,
-          text: `「${player.name}」が退室しました。`,
+          text: `「${player.name}」離開了房間。`,
           tab: rootGetters.systemLog.tab,
           target: "groupTargetTab-0",
           from: rootGetters.systemLog.from,
@@ -1137,7 +1137,7 @@ export default {
       // チャット追加
       dispatch("addChatLog", {
         name: rootGetters.systemLog.name,
-        text: `「${playerName}」が入室しました。`,
+        text: `「${playerName}」已進入房間。`,
         tab: rootGetters.systemLog.tab,
         target: "groupTargetTab-0",
         from: rootGetters.systemLog.from,

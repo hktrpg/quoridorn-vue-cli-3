@@ -82,7 +82,7 @@
      !--------------------->
     <spec-item class-str="ref" label-str="関連項目">
       <li>
-        <spec-link property="menuBar" title-str="">メインメニュー</spec-link>
+        <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>
     </spec-item>
   </spec-frame>

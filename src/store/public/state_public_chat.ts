@@ -4,8 +4,8 @@ export default {
     /** チャットのタブ */
     tab: {
       list: [
-        { key: "chatTab-0", name: "統合", isTotal: true },
-        { key: "chatTab-1", name: "メイン", isTotal: false }
+        { key: "chatTab-0", name: "整合", isTotal: true },
+        { key: "chatTab-1", name: "主要", isTotal: false }
       ],
       maxKey: 1,
       isVertical: false,
@@ -35,7 +35,7 @@ export default {
         from: "Quoridorn",
         tab: "chatTab-1",
         target: "groupTargetTab-0",
-        text: "ようこそQuoridornへ！",
+        text: "歡迎來到冰丼 @ HKTRPG",
         color: "color-Quoridorn",
         statusName: "◆",
         isDiceBot: false,
@@ -87,7 +87,7 @@ export default {
         from: "Quoridorn",
         tab: "chatTab-1",
         target: "groupTargetTab-0",
-        text: "チャットログを初期化しました。",
+        text: "初始化聊天記錄。",
         color: "color-Quoridorn",
         statusName: "◆",
         isDiceBot: false,
