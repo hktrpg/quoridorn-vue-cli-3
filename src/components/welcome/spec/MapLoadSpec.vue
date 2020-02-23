@@ -6,21 +6,21 @@
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作">
-      <li>画面上部メニューの「マップ」を選択</li>
-      <li>「マップ切り替え」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法">
+      <li>畫面上方菜單的「マップ」選擇</li>
+      <li>「マップ切り替え」選擇</li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        マップ状態保存機能で保存したデータを参照させることで、マップ状態を復元する
+        マップ状態保存機能で保存したデータを參考させることで、マップ状態を復元是
       </li>
       <li>
-        復元時に、復元前に配置されていた以下のデータを削除するか選択する
+        復元時に、復元前に配置されていた以下的データを刪除是か選択是
         <ol>
           <li>フロアタイル</li>
           <li>マップマスク</li>
@@ -29,30 +29,30 @@
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>なし</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
       <li>
-        本機能自体が未実装
+        本機能自体が未實裝
         <br />→ 初回リリースには含めない。しばらくは運用でカバーをお願いします。
       </li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

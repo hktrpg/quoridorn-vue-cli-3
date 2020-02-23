@@ -14,7 +14,7 @@
       ref="contents"
       @click="contentsOnClick"
     >
-      <!-- ボタン表示エリア -->
+      <!-- 鍵表示エリア -->
       <div class="buttonArea">
         <label
           v-for="(infoObj, index) in publicCounterRemoconList"
@@ -32,21 +32,21 @@
 
       <!-- 操作エリア -->
       <div class="playOperationArea">
-        <!-- セーブボタン -->
+        <!-- セーブ鍵 -->
         <ctrl-button class="save" @click="saveButtonOnClick">
           セーブ
         </ctrl-button>
 
-        <!-- ロードボタン -->
+        <!-- ロード鍵 -->
         <ctrl-button class="load" @click="loadButtonOnClick">
           ロード
         </ctrl-button>
 
         <span style="flex: 1"></span>
 
-        <!-- ボタン追加ボタン -->
+        <!-- 鍵新增鍵 -->
         <ctrl-button class="add" @click="addButtonOnClick">
-          ボタン追加
+          鍵新增
         </ctrl-button>
       </div>
     </div>
@@ -114,7 +114,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
    */
   private saveButtonOnClick() {
     // TODO
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 
   /**
@@ -122,11 +122,11 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
    */
   private loadButtonOnClick() {
     // TODO
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 
   /**
-   * カウンターリモコンボタンを追加する
+   * カウンターリモコン鍵を新增是
    */
   private addButtonOnClick() {
     this.setProperty({
@@ -139,7 +139,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * カウンターリモコンのメニューを表示する
+   * カウンターリモコン的菜單を表示是
    * @param event
    * @param remoconKey
    */
@@ -165,7 +165,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * 子画面の内側のクリックで、展開しているカウンターリモコンの選択肢を消す
+   * 子畫面的内側的クリックで、展開しているカウンターリモコン的選択肢を消す
    */
   private contentsOnClick() {
     // ブロックを初期化
@@ -173,7 +173,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
   }
 
   /*********************************************************************************************************************
-   * カウンターリモコンで指定する情報の選択を開始
+   * カウンターリモコンで指定是情報的選択を開始
    * @param remoconObj
    * @param event
    */
@@ -186,7 +186,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
 
     /**=================================================================================================================
      * カウンター更新処理<br />
-     * カウンターリモコン指定情報の選択を全て終えた時に呼び出す
+     * カウンターリモコン指定情報的選択を全て終えた時に呼び出す
      * @param counterName
      * @param value
      * @param character
@@ -196,7 +196,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
       value: string,
       character: any
     ) => {
-      // 対象のプロパティを特定
+      // 対象的プロパティを特定
       let prop: string;
       switch (counterName) {
         case "イニシアティブ":
@@ -252,7 +252,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
             .replace("{4}", `（${counterName}：${beforeValue}->${afterValue}）`)
         });
 
-        // 実際にイニシアティブ表の値を更新
+        // 実際にイニシアティブ表的値を更新
         const propertyObj: any = {};
         propertyObj[prop] = afterValue;
         this.changeListObj({
@@ -267,12 +267,12 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
 
       const beforeValue: number = parseInt(character.property[prop], 10);
       if (/^-?[0-9]+$/.test(value)) {
-        // カウンターリモコンに指定されていた変更値が数値だった場合、または値を選択された場合
+        // カウンターリモコンに指定されていた変更値が数値だった場合、または値選擇された場合
         // 即更新 -------------------------------------------------------------------------------------------------------
         commit(beforeValue, parseInt(value, 10));
       } else {
         // カウンターリモコンに指定されていた変更値が数値ではなかった場合
-        // BCDice-apiで評価してもらい、その応答の値を利用する
+        // BCDice-apiで評価してもらい、そ的応答的値を利用是
         this.sendBcdiceServer({
           system: "DiceBot",
           command: `${value}`
@@ -285,7 +285,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
               const matchResult = json.result.match(
                 /^.+＞ ([^＞]+) ＞ [^＞]+$/
               );
-              // 応答の結果をもって更新 -----------------------------------------------------------------------------------
+              // 応答的結果をもって更新 -----------------------------------------------------------------------------------
               commit(
                 beforeValue,
                 parseInt(resultValue, 10),
@@ -300,7 +300,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
     };
 
     /**=================================================================================================================
-     * プロックを追加する処理
+     * プロックを新增是処理
      * @param event
      * @param level
      * @param counterName
@@ -323,11 +323,11 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
       };
 
       /**---------------------------------------------------------------------------------------------------------------
-       * 値の選択肢を追加する処理
+       * 値的選択肢を新增是処理
        */
       const addValueItems: Function = () => {
         blockInfo.isEnd = true;
-        blockInfo.label = "値の選択";
+        blockInfo.label = "値的選択";
         blockInfo.itemList = [];
         for (let i: number = range![0]; i <= range![1]; i++) {
           const text =
@@ -360,10 +360,10 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
       };
 
       /**---------------------------------------------------------------------------------------------------------------
-       * 範囲の選択肢を追加する処理
+       * 範囲的選択肢を新增是処理
        */
       const addRangeItems: Function = () => {
-        blockInfo.label = "範囲の選択";
+        blockInfo.label = "範囲的選択";
         blockInfo.itemList = [];
         const diff = 10;
         let min = -90;
@@ -400,13 +400,13 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
       };
 
       /**---------------------------------------------------------------------------------------------------------------
-       * キャラクターの選択肢を追加する処理
+       * キャラクター的選択肢を新增是処理
        */
       const addCharacterItems: Function = () => {
         if (remoconObj.modifyValue) {
           blockInfo.isEnd = true;
         }
-        blockInfo.label = "キャラクターの選択";
+        blockInfo.label = "キャラクター的選択";
         blockInfo.itemList = this.getMapObjectList({
           kind: "character",
           place: "field"
@@ -416,14 +416,14 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
           };
 
           if (remoconObj.modifyValue) {
-            // 変更する値も決まっている場合
+            // 変更是値も決まっている場合
             result.onMouse = () => {};
             result.onClick = () => {
               // カウンター更新処理
               doChange(counterName, remoconObj.modifyValue, character);
             };
           } else {
-            // 変更する値は決まってない場合
+            // 変更是値は決まってない場合
             result.onMouse = (
               event: any,
               blockIndex: number,
@@ -446,7 +446,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
       };
 
       /**---------------------------------------------------------------------------------------------------------------
-       * カウンターの選択肢を追加する処理
+       * カウンター的選択肢を新增是処理
        */
       const addCounterItems: Function = () => {
         const usePropertyList: any[] = this.propertyList.concat();
@@ -459,7 +459,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
           property: "イニシアティブ"
         });
 
-        blockInfo.label = "カウンターの選択";
+        blockInfo.label = "カウンター的選択";
         blockInfo.itemList = usePropertyList
           .filter((prop: any) => prop.type !== "checkbox")
           .map((prop: any) => ({
@@ -487,9 +487,9 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
         // キャラクターが選択されていない場合
         addCharacterItems();
       } else if (!remoconObj.modifyValue) {
-        // 変更する値が決まってない場合
+        // 変更是値が決まってない場合
         if (!range) {
-          // 範囲が未指定の場合
+          // 範囲が未指定的場合
           addRangeItems();
         } else {
           // 範囲が指定されている場合

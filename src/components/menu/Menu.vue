@@ -1,6 +1,6 @@
 <template>
   <div :style="menuStyle" id="menu" @contextmenu.prevent>
-    <!-- 操作ボタングループ -->
+    <!-- 操作鍵グループ -->
     <div class="span-group">
       <span
         @click="menuClick()"
@@ -52,7 +52,7 @@
         Demo
       </span>
     </div>
-    <!-- 部屋情報 -->
+    <!-- 房間情報 -->
     <div
       class="menu-button"
       @click="clickRoomInfo"
@@ -245,9 +245,9 @@
      ! Demo
      !-------------------------------------------------->
     <div class="hoverMenu hoverMenu9" v-show="isShow('Demo')">
-      <div class="item" @click="clickDevHistory">開発履歴</div>
+      <div class="item" @click="clickDevHistory">開發歷史</div>
       <hr />
-      <div class="item" @click="clickBufForm">不具合の報告</div>
+      <div class="item" @click="clickBufForm">不具合的報告</div>
     </div>
   </div>
 </template>
@@ -298,12 +298,12 @@ export default class Menu extends Vue {
     this.isConnectHover = flg;
   }
 
-  /** 部屋情報ボタン押下 */
+  /** 房間情報鍵押下 */
   clickRoomInfo(): void {
     this.windowOpen("private.display.roomInfoWindow");
   }
 
-  /** 共用筆記ボタン押下 */
+  /** 共用筆記鍵押下 */
   clickPublicMemo() {
     this.addListObj({
       propName: "publicMemo",
@@ -314,7 +314,7 @@ export default class Menu extends Vue {
     });
   }
 
-  /** 登出ボタン押下 */
+  /** 登出鍵押下 */
   clickLogOut(): void {
     location.href = location.href.replace(/\?.+$/, "");
   }
@@ -348,11 +348,11 @@ export default class Menu extends Vue {
   /* --------------------
    * 顯示
    * ----------------- */
-  /** フォントサイズ調整 */
+  /** フォント大小調整 */
   clickSettingFontSize(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "フォントサイズ變更",
+      value: "フォント大小變更",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -393,13 +393,13 @@ export default class Menu extends Vue {
 
   /** 墓場 */
   clickGraveyard(): void {
-    alert("「墓場」は棋子管理盒画面に統合されました。");
+    alert("「墓場」は棋子管理盒畫面に統合されました。");
     this.menuClick();
   }
 
   /** 角色待合室 */
   clickWaitingRoom(): void {
-    alert("「角色待合室」は棋子管理盒画面に統合されました。");
+    alert("「角色待合室」は棋子管理盒畫面に統合されました。");
     this.menuClick();
   }
 
@@ -466,11 +466,11 @@ export default class Menu extends Vue {
     this.menuClick();
   }
 
-  /** タグ編輯 */
+  /** 標籤編輯 */
   clickTagEdit(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "圖片タグ編輯",
+      value: "圖片標籤編輯",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -523,13 +523,13 @@ export default class Menu extends Vue {
   /* --------------------
    * Demo
    * ----------------- */
-  /** 開発履歴 */
+  /** 開發歷史 */
   clickDevHistory(): void {
     this.windowOpen("private.display.devLogWindow");
     this.menuClick();
   }
 
-  /** 不具合の報告 */
+  /** 不具合的報告 */
   clickBufForm(): void {
     window.open("https://9224.teacup.com/quoridorn_bug/bbs", "_blank");
     this.menuClick();
@@ -543,20 +543,20 @@ export default class Menu extends Vue {
 
   get roomInfoTitle(): string {
     return this.isRoomJoined === true
-      ? "メンバーの一覧を見たり、部屋の設定を変えることができますよ。"
-      : "お部屋に入っていません。\n「接線」ボタンを押してお部屋を作りましょう！！";
+      ? "メンバー的列表を見たり、房間的設定を変えることができますよ。"
+      : "お房間に入っていません。\n「接線」鍵を押してお房間を作りましょう！！";
   }
 
   get publicMemoTitle(): string {
     return this.isRoomJoined === true
       ? "メンバーに共有したいテキストはこちらにどうぞ"
-      : "部屋に入る前から準備しておくのですね！？\nなんと準備の良いお方でしょう！";
+      : "房間に入る前から準備しておく的ですね！？\nなんと準備的良いお方でしょう！";
   }
 
   get logoutTitle(): string {
     return this.isRoomJoined === true
-      ? "この部屋から退室するのですか？"
-      : "お部屋に入っていません。\n「接線」ボタンを押してお部屋を作りましょう！！";
+      ? "こ的房間から退室是的ですか？"
+      : "お房間に入っていません。\n「接線」鍵を押してお房間を作りましょう！！";
   }
 }
 </script>

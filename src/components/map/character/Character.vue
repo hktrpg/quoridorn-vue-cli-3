@@ -222,7 +222,7 @@ export default class Character extends PieceMixin {
     const numberPropertyList: any[] = [];
     this.propertyList.forEach((prop: any, index: number) => {
       if (prop.type === "number") {
-        // 最小値の取得
+        // 最小値的取得
         let min: number | null = null;
         if (prop.min !== null) {
           min = prop.min;
@@ -233,10 +233,10 @@ export default class Character extends PieceMixin {
           }
         }
 
-        // 現在値の取得
+        // 現在値的取得
         const value: number = property[prop.property];
 
-        // 最大値の取得
+        // 最大値的取得
         let max: number | null = null;
         if (prop.max !== null) {
           max = prop.max;

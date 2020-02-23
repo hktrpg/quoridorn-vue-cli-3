@@ -9,7 +9,7 @@ module.exports = {
   pages: {
     main: {
       entry: "src/main.ts", // エントリーポイントとなるjs
-      template: "public/index.html", // テンプレートのHTML
+      template: "public/index.html", // テンプレート的HTML
       filename: "index.html" // build時に出力されるファイル名
     },
     chatLog: {
@@ -58,7 +58,7 @@ module.exports = {
       // new BundleAnalyzerPlugin()
     ]
   },
-  // yamlローダーの追加
+  // yamlローダー的新增
   chainWebpack: config => {
     config.module
       .rule("yaml")

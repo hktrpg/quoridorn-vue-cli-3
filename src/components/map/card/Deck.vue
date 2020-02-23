@@ -38,7 +38,7 @@
           :objKey="deckHoverKey"
           ref="centerCard"
         />
-        カードなし
+        カード無
       </div>
     </fieldset>
   </div>

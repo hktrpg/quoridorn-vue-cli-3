@@ -22,7 +22,7 @@ export default class CharacterSelect extends Mixins<SelectMixin>(SelectMixin) {
   private get useCharacterList(): any[] {
     const resultList: any[] = [];
 
-    // 配置場所の絞り込み
+    // 配置場所的絞り込み
     if (this.placeList.length) {
       this.placeList.forEach(place =>
         Array.prototype.push.apply(

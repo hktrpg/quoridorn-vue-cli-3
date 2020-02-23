@@ -1,7 +1,7 @@
 export default {
-  /** 画像 */
+  /** 圖片 */
   state: {
-    /** 画像のタグ */
+    /** 圖片的標籤 */
     tags: {
       list: [
         { key: "imgTag-0", name: "(全て)" },
@@ -13,13 +13,13 @@ export default {
       maxKey: 4
     },
 
-    /** 画像のプリセットデータ */
+    /** 圖片的プリセットデータ */
     list: [],
     maxKey: -1
   },
   actions: {
     /** ========================================================================
-     * 画像のタブの構成を変更する
+     * 圖片的タブ的構成を変更是
      */
     imageTagChange: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -32,7 +32,7 @@ export default {
   },
   mutations: {
     /**
-     * 画像のタブの構成を変更する
+     * 圖片的タブ的構成を変更是
      * @param state
      * @param key
      * @param imageList
@@ -78,11 +78,11 @@ export default {
         }
         return !findFlg;
       });
-      // 削除リストに基づいてタグを消していく
+      // 刪除リストに基づいて標籤を消していく
       deleteList.forEach((delTagObj: any) =>
         state.tags.list.splice(state.tags.list.indexOf(delTagObj), 1)
       );
-      // 追加リストに基づいてタグを追加していく
+      // 新增リストに基づいて標籤を新增していく
       let maxKey = state.tags.maxKey;
       addList.forEach(add => {
         // 欠番を埋める方式は不採用
@@ -92,7 +92,7 @@ export default {
         });
       });
       state.tags.maxKey = maxKey;
-      // セレクトボックスに表示される項目は、入力された内容の末尾の指定を使う
+      // セレクトボックスに表示される項目は、入力された内容的末尾的指定を使う
       const imageObj = imageList.filter(imageObj => imageObj.key === key)[0];
       const tagTexts = imageObj.currentTag.replace(regExp, ",").split(",");
       imageObj.selectTag = tagTexts[tagTexts.length - 1];

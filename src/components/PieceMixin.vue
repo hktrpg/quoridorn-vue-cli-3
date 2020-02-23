@@ -195,12 +195,12 @@ export default class PieceMixin extends AddressCalcMixin {
       x: mouseOnTable.x - center.x,
       y: mouseOnTable.y - center.y
     };
-    // 中心点と指定された座標とを結ぶ線の角度を求める
+    // 中心点と指定された座標とを結ぶ線的角度を求める
     return (Math.atan2(loc.y, loc.x) * 180) / Math.PI;
   }
 
   /**
-   * マウスが動いたときの挙動
+   * マウスが動いたとき的挙動
    * @param mouseOnTable
    */
   @Watch("mouseOnTable", { deep: true })

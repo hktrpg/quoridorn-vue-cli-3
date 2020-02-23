@@ -4,7 +4,7 @@
     <hr />
     <div class="item" @click.left.prevent="editItemOnClick">編輯</div>
     <hr />
-    <div class="item" @click.left.prevent="deleteItemOnClick">削除</div>
+    <div class="item" @click.left.prevent="deleteItemOnClick">刪除</div>
   </context-frame>
 </template>
 

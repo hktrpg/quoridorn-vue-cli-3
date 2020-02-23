@@ -1,7 +1,7 @@
 <template>
   <div class="masterVolumeComponent" @contextmenu.prevent>
     <div class="attrArea">
-      <span class="title" title="すべてのBGMの再生音量を割合で補正します">
+      <span class="title" title="すべて的BGM的播放音量を割合で補正します">
         【マスターボリューム】
       </span>
     </div>
@@ -27,9 +27,9 @@ import VolumeComponent from "@/components/music/component/VolumeComponent.vue";
   }
 })
 export default class MasterVolumeComponent extends Vue {
-  /** Vuexの action への参照 */
+  /** Vuex的 action へ的參考 */
   @Action("setProperty") private setProperty: any;
-  /** Vuexの getter への参照 */
+  /** Vuex的 getter へ的參考 */
   @Getter("masterMute") private masterMute: any;
   @Getter("masterVolume") private masterVolume: any;
 
@@ -42,7 +42,7 @@ export default class MasterVolumeComponent extends Vue {
   }
 
   /**
-   * マスターミュートを設定する
+   * マスターミュートを設定是
    * @param mute
    */
   mute(this: any, mute: boolean): void {
@@ -55,7 +55,7 @@ export default class MasterVolumeComponent extends Vue {
   }
 
   /**
-   * マスターボリュームを設定する
+   * マスターボリュームを設定是
    * @param volume
    */
   volume(this: any, volume: number): void {

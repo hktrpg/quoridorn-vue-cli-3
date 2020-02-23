@@ -1,12 +1,12 @@
 <template>
   <div class="actor-tab-container">
-    <!-- タブのコンテナー -->
+    <!-- タブ的コンテナー -->
     <div
       class="actor-tabs"
       :class="{ isDiagonal: isDiagonal }"
       @contextmenu.prevent
     >
-      <!-- 表示するタブを選択するためのタブ -->
+      <!-- 表示是タブ選擇是ため的タブ -->
       <label class="tab addButton">
         <self-actor-select
           :selectedActorList="standActorList"
@@ -160,7 +160,7 @@ export default class ActorTabComponent extends Vue {
     if (selectActorKey) {
       const actor = this.getObj(selectActorKey);
 
-      // 先頭に追加
+      // 先頭に新增
       this.standActorList.unshift(actor);
       this.activeId = "";
       setTimeout(() => {

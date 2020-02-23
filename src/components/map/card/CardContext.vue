@@ -1,7 +1,7 @@
 <template>
   <context-frame displayProperty="private.display.cardContext">
     <div class="item" @click.left.prevent="draw">1枚引く</div>
-    <div class="item" @click.left.prevent="choice">展開する</div>
+    <div class="item" @click.left.prevent="choice">展開是</div>
     <div class="item" @click.left.prevent="reverse">裏返す</div>
     <div class="item" @click.left.prevent="shuffle">シャッフル</div>
   </context-frame>

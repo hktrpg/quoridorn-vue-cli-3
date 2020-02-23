@@ -69,7 +69,7 @@ export default class Range extends Mixins<RangeMixins>(
 
     // TODO use distanceMode
 
-    // canvasの中心点
+    // canvas的中心点
     const rect = super.rect;
     const center = {
       x: rect.left + rect.width / 2,
@@ -163,7 +163,7 @@ export default class Range extends Mixins<RangeMixins>(
       /* ========== */
 
       /* ==========
-       * 範囲にかぶっているかどうかの判定
+       * 範囲にかぶっているかどうか的判定
        */
       const checkPoints = [
         { x: left, y: top },
@@ -179,7 +179,7 @@ export default class Range extends Mixins<RangeMixins>(
       /* ========== */
 
       /* ==========
-       * 障害物の角の座標情報の算出
+       * 障害物的角的座標情報的算出
        */
       info.corners.push(createCornerFunc(left, top));
       info.corners.push(createCornerFunc(left, bottom));
@@ -197,7 +197,7 @@ export default class Range extends Mixins<RangeMixins>(
       /* ========== */
 
       /* ==========
-       * 最小角度と最大角度の算出
+       * 最小角度と最大角度的算出
        */
       info.angle.min.angle = 360;
       info.angle.max.angle = -360;
@@ -223,7 +223,7 @@ export default class Range extends Mixins<RangeMixins>(
       /* ========== */
 
       /* ==========
-       * 角度の算出用情報
+       * 角度的算出用情報
        */
       const minPI = info.angle.min.angle * (Math.PI / 180);
       const maxPI = info.angle.max.angle * (Math.PI / 180);
@@ -255,7 +255,7 @@ export default class Range extends Mixins<RangeMixins>(
       // window.console.log('LB:', LB.x, LB.y)
 
       /* ==========
-       * ブロックの算出
+       * ブロック的算出
        */
       aList.forEach((a, i) => {
         // window.console.log('a:', a)
@@ -275,7 +275,7 @@ export default class Range extends Mixins<RangeMixins>(
       /* ========== */
 
       /* ==========
-       * 経過終点の算出
+       * 経過終点的算出
        */
       const baseFuncFunc = (block: any, point: any) => () => {
         if (info.angle.min.block === point || info.angle.max.block === point)
@@ -302,30 +302,30 @@ export default class Range extends Mixins<RangeMixins>(
       const funcRB = baseFuncFunc(RB, 10);
       const funcLB = baseFuncFunc(LB, 14);
       if (info.angle.min.block < 2 || info.angle.min.block >= 14) {
-        funcLT(); // 左上の角
-        funcRT(); // 右上の角
-        funcRB(); // 右下の角
-        funcLB(); // 左下の角
+        funcLT(); // 左上的角
+        funcRT(); // 右上的角
+        funcRB(); // 右下的角
+        funcLB(); // 左下的角
       } else if (info.angle.min.block < 6) {
-        funcRT(); // 右上の角
-        funcRB(); // 右下の角
-        funcLB(); // 左下の角
-        funcLT(); // 左上の角
+        funcRT(); // 右上的角
+        funcRB(); // 右下的角
+        funcLB(); // 左下的角
+        funcLT(); // 左上的角
       } else if (info.angle.min.block < 10) {
-        funcRB(); // 右下の角
-        funcLB(); // 左下の角
-        funcLT(); // 左上の角
-        funcRT(); // 右上の角
+        funcRB(); // 右下的角
+        funcLB(); // 左下的角
+        funcLT(); // 左上的角
+        funcRT(); // 右上的角
       } else if (info.angle.min.block < 14) {
-        funcLB(); // 左下の角
-        funcLT(); // 左上の角
-        funcRT(); // 右上の角
-        funcRB(); // 右下の角
+        funcLB(); // 左下的角
+        funcLT(); // 左上的角
+        funcRT(); // 右上的角
+        funcRB(); // 右下的角
       }
       /* ========== */
 
       /* ==========
-       * 接角の算出
+       * 接角的算出
        */
       if (info.angle.min.index === 0 && info.angle.max.index === 3) {
         info.tangentCornerIndex = 1;
@@ -368,7 +368,7 @@ export default class Range extends Mixins<RangeMixins>(
     /* ========== */
 
     /* ==========
-     * 円とターゲットとの間の空間の処理（両サイド）
+     * 円とターゲットと的間的空間的処理（両サイド）
      */
     infoList.forEach(info => {
       const transParentFunc = (side: string) => {
@@ -420,7 +420,7 @@ export default class Range extends Mixins<RangeMixins>(
     /* ========== */
 
     /* ==========
-     * 円とターゲットとの間の空間の処理（両サイド）
+     * 円とターゲットと的間的空間的処理（両サイド）
      */
     infoList.forEach(info => {
       const transParentFunc = (side: string) => {
@@ -461,27 +461,27 @@ export default class Range extends Mixins<RangeMixins>(
     /* ========== */
 
     /* ==========
-     * 透明で上書き
+     * 透明で覆蓋
      */
     infoList.forEach(info => {
       ctx.beginPath();
-      // 開始角度のターゲットの角
+      // 開始角度的ターゲット的角
       let p = info.corners[info.angle.min.index];
       ctx.moveTo(p.canvasX, p.canvasY);
-      // 開始角度の終点
+      // 開始角度的終点
       p = info.angle.min.end;
       ctx.lineTo(p.x, p.y);
-      // ターゲットに隠れたCanvasの角
+      // ターゲットに隠れたCanvas的角
       info.angle.middleEndPoints.forEach((p: any) => {
         ctx.lineTo(p.x, p.y);
       });
-      // 終了角度の終点
+      // 完結角度的終点
       p = info.angle.max.end;
       ctx.lineTo(p.x, p.y);
-      // 終了角度のターゲットの角
+      // 完結角度的ターゲット的角
       p = info.corners[info.angle.max.index];
       ctx.lineTo(p.canvasX, p.canvasY);
-      // ターゲットの手前の角
+      // ターゲット的手前的角
       if (info.tangentCornerIndex !== -1) {
         const tangentCorner = info.corners[info.tangentCornerIndex];
         ctx.lineTo(tangentCorner.canvasX, tangentCorner.canvasY);
@@ -538,11 +538,11 @@ export default class Range extends Mixins<RangeMixins>(
     ctx: CanvasRenderingContext2D,
     color: string = "rgba(0, 0, 0, 0)"
   ) {
-    // 重なり部分をクリアする設定
+    // 重なり部分をクリア是設定
     ctx.globalCompositeOperation = "destination-out";
     ctx.fillStyle = "rgba(0, 0, 0, 1)";
     ctx.fill();
-    // 半透明色での塗りつぶし
+    // 半透明色で的塗りつぶし
     ctx.globalCompositeOperation = "source-over";
     ctx.fillStyle = color;
     ctx.fill();

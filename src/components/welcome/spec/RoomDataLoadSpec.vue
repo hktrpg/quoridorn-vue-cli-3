@@ -6,46 +6,46 @@
     :isSpecFixed="false"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作">
-      <li>画面上部メニューの「ファイル」を選択</li>
-      <li>「ロード」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法">
+      <li>畫面上方菜單的「ファイル」選擇</li>
+      <li>「ロード」選擇</li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        読み込ませたファイルのどのデータを使うかを選択できるようにする
+        読み込ませたファイル的ど的データを使うか選擇できるように是
       </li>
       <li>
-        データの取り込み方法は以下の通り
+        データ的取り込み方法は以下的通り
         <ol>
           <li>
             差分取り込み
             <ol class="importTypeItem">
               <li>
-                取り込み対象情報と完全に一致するデータが無ければ、追加する形で取り込む
+                取り込み対象情報と完全に一致是データが無ければ、新增是形で讀取
               </li>
               <li>
-                「画像を参照するデータ」を一緒にロードした場合、その「参照画像ID」を適切に設定。<br />
-                画像を取り込んでいた場合は新しく割り振られた画像IDを設定。<br />
-                既存に全く同じデータが存在して取り込まなかった場合は既存の画面IDを設定。
+                「圖片を參考是データ」を一緒にロードした場合、そ的「參考圖片ID」を適切に設定。<br />
+                圖片を取り込んでいた場合は新しく割り振られた圖片IDを設定。<br />
+                既存に全く同じデータが存在して取り込まなかった場合は既存的畫面IDを設定。
               </li>
             </ol>
           </li>
         </ol>
       </li>
       <li>
-        読み込めるデータと取り込み方法は以下の通り
+        読み込めるデータと取り込み方法は以下的通り
         <ol>
           <li>
-            <div class="kind">画像データ</div>
+            <div class="kind">圖片データ</div>
             <ol class="kindItem">
-              <li>タグ</li>
-              <li>パスワード</li>
-              <li>画像データもしくはURL</li>
+              <li>標籤</li>
+              <li>密碼</li>
+              <li>圖片データもしくはURL</li>
             </ol>
             <div class="importType">取り込み方法：差分取り込み</div>
           </li>
@@ -55,9 +55,9 @@
               <label>情報項目：</label>
               <ol>
                 <li>キャラクター機能で使う情報すべて</li>
-                <li>そのキャラの立ち絵設定</li>
-                <li>そのキャラのチャットパレット</li>
-                <li>そのキャラのイニシアティブ表の情報</li>
+                <li>そ的キャラ的立ち絵設定</li>
+                <li>そ的キャラ的チャットパレット</li>
+                <li>そ的キャラ的イニシアティブ表的情報</li>
               </ol>
             </div>
             <div class="importType">
@@ -70,7 +70,7 @@
               <label>情報項目：</label>
               <ol>
                 <li>山札情報</li>
-                <li>各カードの所在と順序と状態(裏表など)</li>
+                <li>各カード的所在と順序と状態(裏表など)</li>
               </ol>
             </div>
             <div class="importType">
@@ -83,7 +83,7 @@
               <label>情報項目：</label>
               <ol>
                 <li>BGM機能で使う情報すべて</li>
-                <li>再生中のBGM情報</li>
+                <li>播放中的BGM情報</li>
               </ol>
             </div>
             <div class="importType">
@@ -96,7 +96,7 @@
               <label>情報項目：</label>
               <ol>
                 <li>カットイン機能で使う情報すべて</li>
-                <li>再生中のカットイン情報</li>
+                <li>播放中的カットイン情報</li>
               </ol>
             </div>
             <div class="importType">
@@ -140,29 +140,29 @@
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>なし</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
       <li>
-        取り込みデータを選んでのロードは初回リリースでは対象外とする。
+        取り込みデータを選んで的ロードは初回リリースでは対象外と是。
       </li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

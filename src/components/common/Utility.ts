@@ -112,7 +112,7 @@ export function qLog(...a: any): void {
         .map(line => `${indent}${line}`)
         .join("\n");
 
-      // Objectを整形して出力するかそ的まま出力するか
+      // Objectを整形して出力是かそ的まま出力是か
       if (jsonStr.length > 0) {
         format += "%O";
         logs.push(arg);
@@ -330,7 +330,7 @@ export function conversion(num: number, unitName: string): any {
 }
 
 /**
- * 文字列をクリップボードにコピーする
+ * 文字列をクリップボードにコピー是
  *
  * @param text
  */
@@ -354,7 +354,7 @@ export function execCopy(text: string): boolean {
 }
 
 /**
- * 拡張子を除去する
+ * 拡張子を除去是
  *
  * @param fileName
  */
@@ -364,7 +364,7 @@ export function removeExt(fileName: string): string {
 }
 
 /**
- * ファイル名から情報を取得する
+ * ファイル名から情報を取得是
  *
  * @param fileName
  */
@@ -566,7 +566,7 @@ export function toInitiativeObjList(
 }
 
 /**
- * 合計值を算出する
+ * 合計值を算出是
  *
  * @param list
  */
@@ -575,7 +575,7 @@ export function sum(list: number[]): number {
 }
 
 /**
- * イニシアティブ表的各列的幅を再計算する
+ * イニシアティブ表的各列的幅を再計算是
  *
  * @param widthList
  * @param formatObjList
@@ -613,7 +613,7 @@ export function arrangeInitiativeWidthList(
 }
 
 /**
- * リストから特定的要素を削除する
+ * リストから特定的要素を刪除是
  *
  * @param list
  * @param filterFunc
@@ -645,13 +645,13 @@ function createBase64DataSet(
   imageFile: any,
   { w, h }: { w: number; h: number }
 ): any {
-  // 画像的読み込み処理
+  // 圖片的読み込み処理
   const normalLoad = new Promise<String>(
     (resolve: Function, reject: Function) => {
       try {
         const reader: any = new FileReader();
         reader.onload = () => {
-          // サムネイル画像でない場合はプレーンな画像データからBase64データを取得する
+          // サムネイル圖片でない場合はプレーンな圖片データからBase64データを取得是
           resolve(reader.result);
         };
         reader.readAsDataURL(imageFile);
@@ -660,14 +660,14 @@ function createBase64DataSet(
       }
     }
   );
-  // サムネイル画像的読み込み処理
+  // サムネイル圖片的読み込み処理
   const thumbnailLoad = new Promise<String>(
     (resolve: Function, reject: Function) => {
-      // 画像的読み込み処理
+      // 圖片的読み込み処理
       try {
         const reader: any = new FileReader();
         reader.onload = function(event: any) {
-          // サムネイル画像作成的場合は小さくて決まったサイズ的画像データに加工する（アニメGIFも最初的１コマ的静止画になる）
+          // サムネイル圖片作成的場合は小さくて決まった大小的圖片データに加工是（アニメGIFも最初的１コマ的静止画になる）
 
           const image = new Image();
           image.onload = function() {
@@ -676,14 +676,14 @@ function createBase64DataSet(
               h: image.height
             };
 
-            // 大きい場合は、比率を保ったまま縮小する
+            // 大きい場合は、比率を保ったまま縮小是
             if (useSize.w > w || useSize.h > h) {
               const scale = Math.min(w / useSize.w, h / useSize.h);
               useSize.w = useSize.w * scale;
               useSize.h = useSize.h * scale;
             }
 
-            // 画像を描画してデータを取り出す（Base64変換的実装）
+            // 圖片を描画してデータを取り出す（Base64変換的實裝）
             const canvas: HTMLCanvasElement = document.createElement(
               "canvas"
             ) as HTMLCanvasElement;

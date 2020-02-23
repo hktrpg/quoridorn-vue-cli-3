@@ -2,7 +2,7 @@
   <context-frame displayProperty="private.display.diceSymbolContext">
     <template v-if="!isAbsoluteHide">
       <div class="item" @click.left.prevent="openOnClick" v-if="isHide">
-        ダイス目を公開する
+        ダイス目を公開是
       </div>
 
       <div class="item" @click.left.prevent="diceRollOnClick">
@@ -29,7 +29,7 @@
       <hr />
 
       <div class="item" @click.left.prevent="deleteDiceOnClick">
-        ダイスの削除
+        ダイス的刪除
       </div>
     </template>
 
@@ -87,7 +87,7 @@ export default class DiceSymbolContext extends Mixins<WindowMixin>(
               text: `ダイス合計：${pips}(${command} = [${pips}])`
             });
           }
-          // 応答の結果をもって更新 -----------------------------------------------------------------------------------
+          // 応答的結果をもって更新 -----------------------------------------------------------------------------------
           this.changePipsOnClick(pips);
           return;
         }
@@ -100,9 +100,7 @@ export default class DiceSymbolContext extends Mixins<WindowMixin>(
     const diceObj: any = this.getObj(this.objKey);
     const ownerPlayer: any = this.getObj(diceObj.owner);
 
-    let text: string = `「${
-      ownerPlayer.name
-    }」のダイスシンボルの値が変更されました。`;
+    let text: string = `「${ownerPlayer.name}」的ダイスシンボル的値が変更されました。`;
     if (!diceObj.isHide) text += `(${diceObj.pips}→${pips})`;
     // ログに出力
     this.addChatLog({ text });
@@ -124,7 +122,7 @@ export default class DiceSymbolContext extends Mixins<WindowMixin>(
     let text: string = [
       "「",
       ownerPlayer.name,
-      "」のダイスがオープンされました。出目は",
+      "」的ダイスがオープンされました。出目は",
       diceObj.pips,
       `(${diceObj.faceNum}面ダイス)です`
     ].join("");

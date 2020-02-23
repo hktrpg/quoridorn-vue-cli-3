@@ -11,7 +11,7 @@
       <div class="playOperationArea" @contextmenu.prevent>
         <ctrl-button @click="doPlay">送信</ctrl-button>
         <span class="space"></span>
-        <ctrl-button @click="doPreview">プレビュー(自分のみ)</ctrl-button>
+        <ctrl-button @click="doPreview">プレビュー(自分的み)</ctrl-button>
       </div>
       <div class="tableContainer">
         <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">
@@ -19,15 +19,15 @@
             <tr>
               <th :style="colStyle(0)">連動</th>
               <divider :index="0" prop="settingBGMWindow" />
-              <th :style="colStyle(1)">タグ</th>
+              <th :style="colStyle(1)">標籤</th>
               <divider :index="1" prop="settingBGMWindow" />
               <th :style="colStyle(2)">種別</th>
               <divider :index="2" prop="settingBGMWindow" />
-              <th :style="colStyle(3)">タイトル</th>
+              <th :style="colStyle(3)">標題</th>
               <divider :index="3" prop="settingBGMWindow" />
               <th :style="colStyle(4)">時間</th>
               <divider :index="4" prop="settingBGMWindow" />
-              <th :style="colStyle(5)">繰</th>
+              <th :style="colStyle(5)">重覆播放</th>
               <divider :index="5" prop="settingBGMWindow" />
               <th :style="colStyle(6)">音量</th>
               <divider :index="6" prop="settingBGMWindow" />
@@ -36,7 +36,7 @@
           </thead>
           <tbody>
             <!-- ===============================================================
-              コンテンツ
+              內容
             -->
             <setting-bgm-tr-component
               v-for="bgmObj in bgmList"
@@ -66,10 +66,10 @@
         </table>
       </div>
       <div class="operateArea" @contextmenu.prevent>
-        <ctrl-button @click="doAdd" ref="button">追加</ctrl-button>
+        <ctrl-button @click="doAdd" ref="button">新增</ctrl-button>
         <ctrl-button @click="doModify">変更</ctrl-button>
         <ctrl-button @click="doCopy">コピー</ctrl-button>
-        <ctrl-button @click="doDelete">削除</ctrl-button>
+        <ctrl-button @click="doDelete">刪除</ctrl-button>
         <ctrl-button @click="doUp">↑</ctrl-button>
         <ctrl-button @click="doDown">↓</ctrl-button>
         <template v-if="isGameMaster">
@@ -141,7 +141,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   private doModify(): void {
     if (!this.selectLineKey) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     this.setProperty({
@@ -154,7 +154,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   private doCopy(): void {
     if (!this.selectLineKey) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     const bgmObj = JSON.parse(
@@ -171,7 +171,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   private doDelete(): void {
     if (!this.selectLineKey) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     const index = this.bgmList.findIndex(
@@ -190,7 +190,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   private doUp(): void {
     if (!this.selectLineKey) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     const index = this.bgmList.findIndex(
@@ -204,7 +204,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   private doDown(): void {
     if (!this.selectLineKey) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     const index = this.bgmList.findIndex(
@@ -241,7 +241,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
   //   window.console.log(`changeSortMode: ${val}`);
   //   if (val) {
   //     setTimeout(() => {
-  //       alert("未実装の機能です。");
+  //       alert("未實裝的機能です。");
   //     }, 20);
   //   }
   // }
@@ -259,7 +259,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
       (bgmObj: any) => bgmObj.key === this.selectLineKey
     );
     if (!addBgmObj) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     this.setProperty({
@@ -311,7 +311,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
     };
   }
 
-  /* Start 列幅可変テーブルのプロパティ */
+  /* Start 列幅可変テーブル的プロパティ */
   private get selectLineKey(): string {
     return this.$store.state.private.display.settingBGMWindow.selectLineKey;
   }
@@ -339,7 +339,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
   private get colStyle(): any {
     return (index: number) => ({ width: `${this.widthList[index]}px` });
   }
-  /* End 列幅可変テーブルのプロパティ */
+  /* End 列幅可変テーブル的プロパティ */
 }
 </script>
 
@@ -393,7 +393,7 @@ button {
     flex: 1;
   }
 }
-/* Start 列幅可変テーブルのCSS */
+/* Start 列幅可変テーブル的CSS */
 .tableContainer {
   overflow-y: scroll;
   flex: 1;
@@ -502,7 +502,7 @@ table {
     }
   }
 }
-/* End 列幅可変テーブルのCSS */
+/* End 列幅可変テーブル的CSS */
 .comment {
   font-size: 10px;
   font-weight: bold;

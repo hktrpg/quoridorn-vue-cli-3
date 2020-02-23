@@ -27,7 +27,7 @@ export default {
       const outputNormalChat = (commandStr: string) => {
         if (!/[@><+-/*=0-9a-zA-Z()"?^$]+/.test(commandStr)) {
           // -------------------
-          // プレイヤー発言
+          // 玩家発言
           // -------------------
           dispatch("addChatLog", {
             name: rootGetters.getViewName(actorKey),
@@ -88,7 +88,7 @@ export default {
                 diceBot: currentDiceBotSystem
               });
 
-              // 隠しダイスロール結果画面に反映
+              // 隠しダイスロール結果畫面に反映
               commit("addSecretDice", {
                 name: rootGetters.getViewName(actorKey),
                 diceBot: currentDiceBotSystem,
@@ -104,7 +104,7 @@ export default {
               });
             } else {
               // -------------------
-              // プレイヤー発言
+              // 玩家発言
               // -------------------
               dispatch("addChatLog", {
                 name: rootGetters.getViewName(actorKey),
@@ -156,7 +156,7 @@ export default {
       )[0];
       const useCustomDiceBotObj = customDiceBotObj || customDiceBotRoomSysObj;
       if (!useCustomDiceBotObj) {
-        // 独自ダイスボットが見つからなかったので通常のチャット処理
+        // 独自ダイスボットが見つからなかった的で通常的チャット処理
         outputNormalChat(commandStr);
       } else {
         // 独自ダイスボットが見つかった
@@ -205,7 +205,7 @@ export default {
             tableTitle,
             diceResultStr,
             " → ",
-            customDiceBotResult ? customDiceBotResult.value : "該当値なし"
+            customDiceBotResult ? customDiceBotResult.value : "該当値無"
           ].join("");
 
           dispatch("setProperty", {
@@ -213,7 +213,7 @@ export default {
             value: {
               message: customDiceBotResult
                 ? customDiceBotResult.value
-                : ["該当値なし", diceRollResult].join("\n"),
+                : ["該当値無", diceRollResult].join("\n"),
               isView: true
             },
             isNotice: true,
@@ -243,7 +243,7 @@ export default {
       }
     },
     /** ========================================================================
-     * チャットログを追加する
+     * チャットログを新增是
      */
     addChatLog: (
       { dispatch, rootGetters }: { dispatch: Function; rootGetters: any },
@@ -285,7 +285,7 @@ export default {
           if (tab === "chatTab-0") tab = "chatTab-1";
 
           /*
-           * 立ち絵の表示
+           * 立ち絵的表示
            */
           const actor: any = rootGetters.getObj(from);
           if (actor) {
@@ -316,7 +316,7 @@ export default {
             useTargetText = targetName === "全体" ? "" : " > " + targetName;
           }
 
-          // ダイスボットメッセージの表示判定
+          // ダイスボットメッセージ的表示判定
           if (isDiceBot && !/^[^→]+→[ →0-9,[\]]+$/.test(text)) {
             dispatch("setProperty", {
               property: `public.chat.diceBotMessage`,
@@ -430,7 +430,7 @@ export default {
     },
 
     /** ========================================================================
-     * チャットタブ追加処理
+     * チャットタブ新增処理
      */
     addChatTab: (
       { dispatch }: { dispatch: Function },
@@ -517,7 +517,7 @@ export default {
     },
 
     /** ========================================================================
-     * チャットタブ削除処理
+     * チャットタブ刪除処理
      */
     deleteChatTab: (
       { dispatch }: { dispatch: Function },
@@ -590,7 +590,7 @@ export default {
     },
 
     /** ========================================================================
-     * 画像を追加する
+     * 圖片を新增是
      */
     addImage: ({ dispatch }: { dispatch: Function }, payload: any): string => {
       return dispatch("sendNoticeOperation", {
@@ -652,7 +652,7 @@ export default {
     },
 
     /** ========================================================================
-     * イニシアティブ表のパラメータの設定を変更する
+     * イニシアティブ表的パラメータ的設定を変更是
      */
     setInitiativeParams: (
       { dispatch }: { dispatch: Function },
@@ -667,11 +667,11 @@ export default {
       { dispatch, rootState }: { dispatch: Function; rootState: any },
       { format }: { format: string }
     ) => {
-      // 数値配列の合計値を求める
+      // 数値配列的合計値を求める
       const sum = (list: number[]): number =>
         list.reduce((accumlator, current) => accumlator + current);
 
-      // １行のテキストをパースしてイニシアティブ表用のオブジェクト配列を生成
+      // １行的テキストをパースしてイニシアティブ表用的オブジェクト配列を生成
       const formatObjList: any[] = toInitiativeObjList(format);
       const newWidthList: number[] = arrangeInitiativeWidthList(
         rootState.private.display.initiativeWindow.widthList,
@@ -692,7 +692,7 @@ export default {
     },
 
     /** ========================================================================
-     * アクター状態を追加する
+     * アクター状態を新增是
      */
     addActorStatus: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -712,7 +712,7 @@ export default {
     },
 
     /** ========================================================================
-     * アクター状態を削除する
+     * アクター状態を刪除是
      */
     deleteActorStatus: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -732,7 +732,7 @@ export default {
     },
 
     /** ========================================================================
-     * 立ち絵差分を追加する
+     * 立ち絵差分を新增是
      */
     addStandImageDiff: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -756,7 +756,7 @@ export default {
     },
 
     /** ========================================================================
-     * 立ち絵差分を削除する
+     * 立ち絵差分を刪除是
      */
     deleteStandImageDiff: (
       { dispatch }: { dispatch: Function },
@@ -780,7 +780,7 @@ export default {
     },
 
     /** ========================================================================
-     * 立ち絵差分を編輯する
+     * 立ち絵差分を編輯是
      */
     editStandImageDiff: (
       { dispatch }: { dispatch: Function },
@@ -831,7 +831,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリストにオブジェクトを追加する
+     * publicリストにオブジェクトを新增是
      * @param dispatch
      * @param rootGetters
      * @param payload
@@ -872,7 +872,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリストの中の指定されたkeyのオブジェクト情報を変更する
+     * publicリスト的中的指定されたkey的オブジェクト情報を変更是
      * @param dispatch
      * @param payload
      */
@@ -906,7 +906,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリストの中の指定されたkeyのオブジェクト情報を変更する
+     * publicリスト的中的指定されたkey的オブジェクト情報を変更是
      * @param dispatch
      * @param payload
      */
@@ -933,7 +933,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリストの中の指定されたkeyのオブジェクトを削除する
+     * publicリスト的中的指定されたkey的オブジェクトを刪除是
      * @param dispatch
      * @param payload
      */
@@ -964,7 +964,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリストの中の指定されたkeyのオブジェクトをコピーする
+     * publicリスト的中的指定されたkey的オブジェクトをコピー是
      * @param dispatch
      * @param payload
      */
@@ -991,7 +991,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリストの中の指定されたkeyのオブジェクトの位置を変更する
+     * publicリスト的中的指定されたkey的オブジェクト的位置を変更是
      * @param dispatch
      * @param payload
      */
@@ -1023,7 +1023,7 @@ export default {
     },
 
     /** ========================================================================
-     * デッキのシャッフル
+     * デッキ的シャッフル
      */
     shuffleDeck: ({ dispatch }: { dispatch: Function }) => {
       dispatch("sendNoticeOperation", { value: {}, method: "doShuffleDeck" });
@@ -1037,7 +1037,7 @@ export default {
     }) => {
       const cardList = rootGetters.deckCardList.concat();
       for (let i = cardList.length - 1; i >= 0; i--) {
-        // 0~iのランダムな数値を取得
+        // 0~i的ランダムな数値を取得
         const rand = Math.floor(Math.random() * (i + 1));
 
         // [cardList[i], cardList[rand]] = [cardList[rand], cardList[i]]
@@ -1052,7 +1052,7 @@ export default {
     },
 
     /** ========================================================================
-     * カードのドロー
+     * カード的ドロー
      */
     drawCard: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", { value: payload, method: "doDrawCard" });
@@ -1073,7 +1073,7 @@ export default {
     },
 
     /** ========================================================================
-     * グループチャットの追加
+     * グループチャット的新增
      */
     addGroupTargetTab: ({ dispatch }: { dispatch: Function }, payload: any) => {
       return dispatch("sendNoticeOperation", {
@@ -1096,7 +1096,7 @@ export default {
     },
 
     /** ========================================================================
-     * グループチャットの削除
+     * グループチャット的刪除
      */
     deleteGroupTargetTab: (
       { dispatch }: { dispatch: Function },
@@ -1121,7 +1121,7 @@ export default {
     },
 
     /** ========================================================================
-     * カウンターリモコンの追加
+     * カウンターリモコン的新增
      */
     addCounterRemocon: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {

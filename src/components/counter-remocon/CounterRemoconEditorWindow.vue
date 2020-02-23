@@ -10,7 +10,7 @@
   >
     <div class="contents" @contextmenu.prevent>
       <label>
-        <span class="label">ボタン名:</span>
+        <span class="label">鍵名:</span>
         <input
           type="text"
           v-model="buttonName"
@@ -105,11 +105,11 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
   private modifyValue: string = "";
   private sampleValue: number = 0;
   private sampleDiceValue: string = "";
-  private message: string = "{0}の{1}を{2}した{4}";
+  private message: string = "{0}的{1}を{2}した{4}";
   private exampleText: string = "";
 
   /*********************************************************************************************************************
-   * 子画面表示時
+   * 子畫面表示時
    */
   private initWindow() {
     const counterRemocon = this.getObj(this.counterRemoconEditorKey);
@@ -130,18 +130,18 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
         : "イニシアティブ";
       this.modifyType = this.COUNTER_REMOCON_TYPE.PLUS;
       this.modifyValue = "";
-      this.message = "{0}の{1}を{2}した{4}";
-      this.exampleText = `の${this.counterName}をした`;
+      this.message = "{0}的{1}を{2}した{4}";
+      this.exampleText = `的${this.counterName}をした`;
     }
   }
 
   /*********************************************************************************************************************
-   * コミットボタン押下時
+   * コミット鍵押下時
    */
   private commitButtonOnClick() {
-    // 入力チェック
+    // 入力檢查
     const messageList: string[] = [];
-    if (!this.buttonName) messageList.push("ボタン名は必須です。");
+    if (!this.buttonName) messageList.push("鍵名は必須です。");
     if (messageList.length) {
       alert(messageList.join("\n"));
       return;
@@ -176,14 +176,14 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
   }
 
   /*********************************************************************************************************************
-   * 取消ボタン押下時
+   * 取消鍵押下時
    */
   private cancelButtonOnClick() {
     this.windowClose("private.display.counterRemoconEditorWindow");
   }
 
   /*********************************************************************************************************************
-   * 実行例の更新
+   * 実行例的更新
    */
   @Watch("counterName")
   @Watch("modifyType")
@@ -228,7 +228,7 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
   }
 
   /*********************************************************************************************************************
-   * 変更値の評価
+   * 変更値的評価
    */
   @Watch("modifyValue")
   onChangeModifyValue() {

@@ -6,26 +6,26 @@
     :isSpecFixed="false"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作">
-      <li>チャット画面のアイコン<span class="icon-list2"></span>をクリック</li>
+    <spec-item class-str="operation" label-str="操作方法">
+      <li>チャット畫面的アイコン<span class="icon-list2"></span>をクリック</li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格 - 操作">
       <li>
-        表示するパレット数を選ぶ
+        表示是パレット数を選ぶ
       </li>
       <li>
-        アクターを選択する
+        アクター選擇是
       </li>
-      <li>編輯ボタンやセーブ・ロードをして利用する文を設定する</li>
+      <li>編輯鍵やセーブ・ロードをして利用是文を設定是</li>
       <li>
         表示されている行をダブルクリックでチャットに即反映
       </li>
-      <li>（ワンクリックで画面上部の入力欄で編輯可能状態になる）</li>
+      <li>（ワンクリックで畫面上方的入力欄で編輯可能状態になる）</li>
     </spec-item>
     <!----------------------
      ! 規格
@@ -42,36 +42,36 @@
       </li>
       <li>
         自動連投機能<br />
-        1つのタブとして実装し、各行を一定時間おきに自動でチャットに流す機能
+        1つ的タブとして實裝し、各行を一定時間おきに自動でチャットに流す機能
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>複数のチャパレを同時に使いたい</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>複数的チャパレを同時に使いたい</li>
       <li>タブは斜め表示可能にして欲しい</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
-      <li>どどんとふと同じ変数処理<br />→ いずれ実装</li>
-      <li>自動連投機能<br />→ いずれ実装</li>
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
+      <li>どどんとふと同じ変数処理<br />→ いずれ實裝</li>
+      <li>自動連投機能<br />→ いずれ實裝</li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="chatWindowSpec" title-str=""
-          >チャット画面</spec-link
+          >チャット畫面</spec-link
         >
       </li>
     </spec-item>

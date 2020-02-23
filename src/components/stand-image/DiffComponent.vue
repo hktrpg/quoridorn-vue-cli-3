@@ -1,6 +1,6 @@
 <template>
   <div class="container" @contextmenu.prevent>
-    <!-- 画像 -->
+    <!-- 圖片 -->
     <div class="img-container">
       <div
         class="img"
@@ -52,7 +52,7 @@
         })
       "
     >
-      削除
+      刪除
     </span>
   </div>
 </template>
@@ -95,14 +95,14 @@ export default class DiffComponent extends Vue {
   @Getter("imageList") private imageList: any;
 
   /**
-   * 画像選択
+   * 圖片選択
    */
   chooseImage(): void {
     const image = this.diff.image;
     const tag = this.diff.tag;
     Promise.resolve()
       .then(() =>
-        // リアクティブのための更新と、それに伴うコールバックの一時無効のための指定
+        // リアクティブ的ため的更新と、それに伴うコールバック的一時無効的ため的指定
         this.setProperty({
           property: "private.display.imageSelectorWindow",
           value: {
@@ -139,7 +139,7 @@ export default class DiffComponent extends Vue {
       time: this.time
     };
 
-    // 画像のファイル名の情報を利用
+    // 圖片的ファイル名的情報を利用
     const imageObj: any = this.imageList.filter(
       (image: any) => image.key === imageKey.replace(":R", "")
     )[0];

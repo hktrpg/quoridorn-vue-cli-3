@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="BGM導入畫畫"
+    titleText="BGM導入畫面"
     display-property="private.display.importBGMWindow"
     align="center"
     fixSize="394, 334"
@@ -30,15 +30,15 @@
             <tr>
               <th :style="colStyle(0)">連動</th>
               <divider :index="0" prop="importBGMWindow" />
-              <th :style="colStyle(1)">タグ</th>
+              <th :style="colStyle(1)">標籤</th>
               <divider :index="1" prop="importBGMWindow" />
               <th :style="colStyle(2)">種別</th>
               <divider :index="2" prop="importBGMWindow" />
-              <th :style="colStyle(3)">タイトル</th>
+              <th :style="colStyle(3)">標題</th>
               <divider :index="3" prop="importBGMWindow" />
               <th :style="colStyle(4)">時間</th>
               <divider :index="4" prop="importBGMWindow" />
-              <th :style="colStyle(5)">繰</th>
+              <th :style="colStyle(5)">重覆播放</th>
               <divider :index="5" prop="importBGMWindow" />
               <th :style="colStyle(6)">音量</th>
               <divider :index="6" prop="importBGMWindow" />
@@ -77,12 +77,12 @@
         </table>
       </div>
       <div class="operateArea">
-        <ctrl-button @click="doDelete">削除</ctrl-button>
+        <ctrl-button @click="doDelete">刪除</ctrl-button>
         <ctrl-button @click="doUp">↑</ctrl-button>
         <ctrl-button @click="doDown">↓</ctrl-button>
         <div class="space"></div>
         <import-type-radio v-model="importType" />
-        <ctrl-button @click="doImport">取り込む</ctrl-button>
+        <ctrl-button @click="doImport">讀取</ctrl-button>
       </div>
     </div>
   </window-frame>
@@ -155,7 +155,7 @@ export default class ImportBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
 
       if (ext !== "json") {
         reset();
-        alert("JSONファイルを指定してください。");
+        alert("請指定一個JSON文件。");
         return;
       }
 
@@ -164,7 +164,7 @@ export default class ImportBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
         json = JSON.parse(text);
       } catch (err) {
         reset();
-        alert("JSONファイルのフォーマットが壊れています。");
+        alert("JSON格式文件已損壞。");
         return;
       }
       if (json.saveDataTypeName === "Quoridorn_BGM_01") {
@@ -177,7 +177,7 @@ export default class ImportBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
         this.bgmList = json.saveData;
       } else {
         reset();
-        alert("ファイルフォーマットが違います。\n（正：Quoridorn_BGM_01）");
+        alert("文件格式錯誤。\n（正：Quoridorn_BGM_01）");
       }
     });
 
@@ -207,7 +207,7 @@ export default class ImportBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   private doDelete(): void {
     if (!this.selectLineKey) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     const index = this.bgmList.findIndex(
@@ -222,7 +222,7 @@ export default class ImportBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   private doUp(): void {
     if (!this.selectLineKey) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     const index = this.bgmList.findIndex(
@@ -236,7 +236,7 @@ export default class ImportBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   private doDown(): void {
     if (!this.selectLineKey) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     const index = this.bgmList.findIndex(
@@ -273,7 +273,7 @@ export default class ImportBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
       (bgmObj: any) => bgmObj.key === this.selectLineKey
     );
     if (!addBgmObj) {
-      alert("BGMを選択してください");
+      alert("請選擇BGM");
       return;
     }
     this.setProperty({
@@ -382,7 +382,7 @@ export default class ImportBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
         return `【末尾文字】\n${bgmObj.chatLinkageSearch}`;
       if (bgmObj.chatLinkage === 2)
         return `【正規表現】\n${bgmObj.chatLinkageSearch}`;
-      return "なし";
+      return "無";
     };
   }
 }

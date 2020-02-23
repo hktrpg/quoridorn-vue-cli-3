@@ -376,7 +376,7 @@ export default class ChatLog extends Vue {
       JSON.stringify(this.chatLogList("chatTab-0"))
     );
     chatLogs.forEach((logObj: any) => {
-      // タブの指定
+      // タブ的指定
       const tabObj: any = this.chatTabList.filter(
         (tabObj: any) => tabObj.key === logObj.tab
       )[0];

@@ -30,7 +30,7 @@
               @click="isOpenSwitch = true"
               class="switchButton"
             >
-              画像切替設定
+              圖片切換設定
             </ctrl-button>
             <span v-show="isOpenSwitch" class="switchImage">
               <img
@@ -47,14 +47,14 @@
               />
             </span>
             <ctrl-button v-show="isOpenSwitch" @click.prevent="addSwitch">
-              追加
+              新增
             </ctrl-button>
             <ctrl-button
               v-show="isOpenSwitch"
               @click.prevent="deleteSwitch"
               :disabled="!isCanSwitchDelete"
             >
-              削除
+              刪除
             </ctrl-button>
           </div>
         </div>
@@ -70,7 +70,7 @@
               <input
                 type="text"
                 class="name"
-                placeholder="必ず入力してください"
+                placeholder="必須輸入"
                 v-model="name"
                 @keydown.enter.stop
                 @keyup.enter.stop
@@ -81,7 +81,7 @@
           </div>
           <div class="pieceOptions">
             <label>
-              <span @contextmenu.prevent>サイズ：</span>
+              <span @contextmenu.prevent>大小：</span>
               <input
                 type="number"
                 class="size"
@@ -104,18 +104,18 @@
                 @keyup.229.stop
               />
               <span>
-                マップマスクの下に隠す
-                <br />(イニシアティブ表で非表示)
+                隱藏在地圖迷霧下方
+                <br />(在先攻表中隱藏)
               </span>
             </label>
           </div>
           <div class="urlArea">
             <label>
-              <span @contextmenu.prevent>参照URL：</span>
+              <span @contextmenu.prevent>參考URL：</span>
               <input
                 type="text"
                 v-model="url"
-                placeholder="キャラクターシートのURL"
+                placeholder="角色卡的URL"
                 @keydown.enter.stop
                 @keyup.enter.stop
                 @keydown.229.stop
@@ -126,7 +126,7 @@
         </div>
 
         <label class="v-box flex-max">
-          <span @contextmenu.prevent>その他</span>
+          <span @contextmenu.prevent>其他</span>
           <textarea
             class="otherText flex-max"
             v-model="text"
@@ -204,7 +204,10 @@ export default class EditCharacterWindow extends Mixins<WindowMixin>(
 
   private addSwitch(): void {
     const nextKey: number =
-      Math.max.apply(null, this.switchImageList.map(image => image.key)) + 1;
+      Math.max.apply(
+        null,
+        this.switchImageList.map(image => image.key)
+      ) + 1;
 
     this.switchImageList.push({
       key: nextKey,
@@ -253,7 +256,7 @@ export default class EditCharacterWindow extends Mixins<WindowMixin>(
       image => image.key === this.switchCurrentKey
     );
     const switchImageObj = this.switchImageList[index];
-    // 削除
+    // 刪除
     this.switchImageList.splice(index, 1);
     this.switchCurrentKey = this.switchImageList[
       index < this.switchImageList.length
@@ -265,7 +268,7 @@ export default class EditCharacterWindow extends Mixins<WindowMixin>(
   private commit(): void {
     this.name = this.name.trim();
     if (!this.name) {
-      alert(`名前を入力してください。`);
+      alert(`請輸入你的名字。`);
       return;
     }
     this.changeListObj({

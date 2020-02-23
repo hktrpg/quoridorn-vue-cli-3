@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="圖片預覽"
+    titleText="預覽圖片"
     display-property="private.display.imageViewWindow"
     align="center"
     baseSize="418, 339"

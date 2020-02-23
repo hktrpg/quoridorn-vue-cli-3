@@ -34,7 +34,7 @@ export default new Vuex.Store({
     saveChat: saveChat
   },
   state: {
-    // 以下は揮発性データ（操作中の一時的な記憶領域として使うだけなので、保存データには含めない）
+    // 以下は揮発性データ（操作中的一時的な記憶領域として使うだけな的で、保存データには含めない）
     mouse: { x: 0, y: 0, drag: { from: { x: 0, y: 0 }, move: { x: 0, y: 0 } } },
 
     self: { webRtcPeer: null, webRtcPeerWait: null },
@@ -117,7 +117,7 @@ export default new Vuex.Store({
   actions: {
     /**
      * =================================================================================================================
-     * 起動時の最初の処理
+     * 起動時的最初的処理
      * @param dispatch
      * @param state
      * @param rootState
@@ -126,7 +126,7 @@ export default new Vuex.Store({
      */
     onMount({ dispatch, state, rootState, rootGetters, commit }) {
       /* ----------------------------------------------------------------------
-       * URLパラメータの処理
+       * URLパラメータ的処理
        */
       let roomName = getUrlParam("roomName");
       const roomPassword = getUrlParam("roomPassword");
@@ -137,7 +137,7 @@ export default new Vuex.Store({
 
       if (roomName && roomName.endsWith(CreateNewRoom.ENTRANCE_ROOM_NAME)) {
         alert(
-          `「${CreateNewRoom.ENTRANCE_ROOM_NAME}」で終わる部屋名は使えません。`
+          `「${CreateNewRoom.ENTRANCE_ROOM_NAME}」で終わる房間名は使えません。`
         );
         roomName = null;
       }
@@ -146,7 +146,7 @@ export default new Vuex.Store({
       state.param.roomPassword = roomPassword;
       state.param.playerName = playerName;
       state.param.playerPassword = playerPassword;
-      // 選択肢と一致していれば、権限をセットする
+      // 選択肢と一致していれば、權限をセット是
       if (rootGetters.roles.findIndex(role => role.value === playerType) >= 0) {
         state.param.playerType = playerType;
       } else {
@@ -155,7 +155,7 @@ export default new Vuex.Store({
       state.param.system = system;
 
       /* ------------------------------
-       * URLを書き換える（リロードなし）
+       * URLを書き換える（リロード無）
        */
       const paramList = [];
       if (state.param.roomName !== null)
@@ -173,13 +173,13 @@ export default new Vuex.Store({
       const newUrl = `?${paramList.join("&")}`;
       window.history.replaceState("", "", newUrl);
 
-      // state_settingの初期化
+      // state_setting的初期化
       commit("init_state_setting");
 
       dispatch("onTest");
 
       /* ----------------------------------------------------------------------
-       * 初期表示画面の設定
+       * 初期表示畫面的設定
        */
       setTimeout(() => {
         dispatch("windowOpen", "private.display.chatWindow");
@@ -192,19 +192,19 @@ export default new Vuex.Store({
       }, 0);
 
       /* ----------------------------------------------------------------------
-       * チャットタブの設定
+       * チャットタブ的設定
        */
       // dispatch("changeChatTab", { tabsText: "雑談" });
 
       /* ----------------------------------------------------------------------
-       * ダイスの設定
+       * ダイス的設定
        */
       rootGetters.loadYaml("/static/conf/dice.yaml").then(dice => {
         state.dice = dice;
       });
 
       /* ----------------------------------------------------------------------
-       * カード情報の設定
+       * カード情報的設定
        */
       const cardSetName = null;
       // const cardSetName = "花札";
@@ -234,7 +234,7 @@ export default new Vuex.Store({
       });
 
       /* ----------------------------------------------------------------------
-       * BGMの設定
+       * BGM的設定
        */
       rootGetters.loadYaml("/static/conf/bgm.yaml").then(bgmList => {
         bgmList.forEach((bgm, index) => (bgm.key = `bgm-${index}`));
@@ -243,7 +243,7 @@ export default new Vuex.Store({
       });
 
       /* ----------------------------------------------------------------------
-       * 画像の設定
+       * 圖片的設定
        */
       rootGetters.loadYaml("/static/conf/image.yaml").then(imageList => {
         imageList.forEach((image, index) => {
@@ -273,7 +273,7 @@ export default new Vuex.Store({
       });
 
       /* ----------------------------------------------------------------------
-       * チャットフォーマットの設定
+       * チャットフォーマット的設定
        */
       rootGetters
         .loadYaml("/static/conf/chatFormat.yaml")
@@ -287,7 +287,7 @@ export default new Vuex.Store({
         });
 
       /* ----------------------------------------------------------------------
-       * 接続設定の設定
+       * 連接設定的設定
        */
       rootGetters.loadYaml("/static/conf/connect.yaml").then(setting => {
         rootState.setting.connect.skywayKey = setting.skywayKey;
@@ -295,7 +295,7 @@ export default new Vuex.Store({
         rootState.setting.connect.bcdiceServer = setting.bcdiceServer;
 
         /* ----------------------------------------------------------------------
-         * ダイスシステムの検証
+         * ダイスシステム的検証
          */
         dispatch("getBcdiceSystemList")
           .then(systemList => {
@@ -306,19 +306,15 @@ export default new Vuex.Store({
             if (index === -1) system = "DiceBot";
           })
           .catch(() => {
-            alert(
-              `BCDice-apiサーバ\n${
-                setting.bcdiceServer
-              }\nの接続に失敗しました。`
-            );
+            alert(`BCDice-apiサーバ\n${setting.bcdiceServer}\n的連線失敗。`);
           });
 
         /* ----------------------------------------------------------------------
-         * 初期入室の処理
+         * 初期進房的処理
          */
         if (roomName) {
           /* ------------------------------
-           * 部屋存在チェック
+           * 房間存在檢查
            */
           dispatch("loading", true);
           Promise.resolve()
@@ -342,7 +338,7 @@ export default new Vuex.Store({
                 system,
                 isWait: false
               };
-              // 「新しい部屋をつくる」画面で入力される項目が指定されていれば新規部屋作成を試みる
+              // 「新しい房間をつくる」畫面で入力される項目が指定されていれば新的房間作成を試みる
               if (
                 !isExist &&
                 roomPassword !== null &&
@@ -353,7 +349,7 @@ export default new Vuex.Store({
                 baseArg.playerType = baseArg.playerType || "PL";
                 return dispatch("doNewRoom", baseArg);
               }
-              // 「この部屋に入る」画面で入力される項目が指定されていれば既存部屋への入室を試みる
+              // 「こ的房間に入る」畫面で入力される項目が指定されていれば既存房間へ的進房を試みる
               if (isExist && roomPassword !== null) {
                 baseArg.useWindow = true;
                 baseArg.useAlert = true;
@@ -368,7 +364,7 @@ export default new Vuex.Store({
 
     /**
      * =================================================================================================================
-     * ルームメンバがいる場合は部屋主に対して処理の通知を出し、そうでない場合はこの場で処理を実行する
+     * ルームメンバがいる場合は房間主に対して処理的通知を出し、そうでない場合はこ的場で処理を実行是
      * @param state
      * @param isStart
      */
@@ -379,7 +375,7 @@ export default new Vuex.Store({
 
     /**
      * =================================================================================================================
-     * ルームメンバがいる場合は部屋主に対して処理の通知を出し、そうでない場合はこの場で処理を実行する
+     * ルームメンバがいる場合は房間主に対して処理的通知を出し、そうでない場合はこ的場で処理を実行是
      * @param dispatch
      * @param rootGetters
      * @param method
@@ -410,7 +406,7 @@ export default new Vuex.Store({
 
     /**
      * =================================================================================================================
-     * 指定されたプロパティパスの値を反転させる
+     * 指定されたプロパティパス的値を反転させる
      * @param dispatch
      * @param getters
      * @param commit
@@ -435,7 +431,7 @@ export default new Vuex.Store({
       }
     },
     /**
-     * 指定されたプロパティパスの値を反転させる
+     * 指定されたプロパティパス的値を反転させる
      * @param getters
      * @param commit
      * @param property
@@ -452,7 +448,7 @@ export default new Vuex.Store({
 
     /**
      * =================================================================================================================
-     * stateに対するあらゆるデータ格納を代理する関数
+     * stateに対是あらゆるデータ格納を代理是関数
      * @param dispatch
      * @param payload
      */
@@ -467,7 +463,7 @@ export default new Vuex.Store({
       }
     },
     /**
-     * stateに対するあらゆるデータ格納を代理する関数
+     * stateに対是あらゆるデータ格納を代理是関数
      * @param commit
      * @param payload
      * @returns {*}
@@ -479,7 +475,7 @@ export default new Vuex.Store({
 
     /**
      * =================================================================================================================
-     * 指定されたプロパティパスにある配列を空にする
+     * 指定されたプロパティパスにある配列を空に是
      * @param dispatch
      * @param payload
      */
@@ -494,7 +490,7 @@ export default new Vuex.Store({
       }
     },
     /**
-     * 指定されたプロパティパスにある配列を空にする
+     * 指定されたプロパティパスにある配列を空に是
      * @param getters
      * @param property
      * @param logOff
@@ -512,11 +508,11 @@ export default new Vuex.Store({
   },
   mutations: {
     /**
-     * stateに対するあらゆるデータ格納を代理する関数
+     * stateに対是あらゆるデータ格納を代理是関数
      * @param state
      * @param property プロパティパス
-     * @param value 代入する値
-     * @param logOff true:ログを出力しない
+     * @param value 代入是値
+     * @param logOff true:ログを出力否
      */
     doSetProperty: (state, { property, value, logOff = false }) => {
       if (!logOff) {
@@ -530,7 +526,7 @@ export default new Vuex.Store({
           // if (!logOff) window.console.log("【1】call propProc", JSON.parse(JSON.stringify(target[prop])), props, value);
           propProc(target[prop], props, value);
         } else {
-          // 値の適用
+          // 値的適用
           if (
             !(value instanceof Object) ||
             value instanceof Array ||
@@ -562,7 +558,7 @@ export default new Vuex.Store({
                   // if (!logOff) window.console.log("【6】call propProc2", JSON.parse(JSON.stringify(target[prop])), "=", val);
                   propProc2(target[prop], val);
                 }
-                // 配列の場合、リアクティブになるよう、splice関数で更新する
+                // 配列的場合、リアクティブになるよう、splice関数で更新是
                 if (target instanceof Array) {
                   const index = parseInt(prop, 10);
                   // if (!logOff) window.console.log("【7】splice propProc2", JSON.parse(JSON.stringify(target)), index, target[index]);
@@ -578,7 +574,7 @@ export default new Vuex.Store({
             propProc2(target[prop], value);
           }
         }
-        // 配列の場合、リアクティブになるよう、splice関数で更新する
+        // 配列的場合、リアクティブになるよう、splice関数で更新是
         if (target instanceof Array) {
           const index = parseInt(prop, 10);
           // if (!logOff) window.console.log("【8】splice propProc", JSON.parse(JSON.stringify(target)), index, target[index]);
@@ -611,8 +607,8 @@ export default new Vuex.Store({
   getters: {
     loadYaml: state =>
       /**
-       * 指定されたURLのyamlを読み込み、オブジェクトを返却する
-       * @param yamlPath yamlファイルのURL
+       * 指定されたURL的yamlを読み込み、オブジェクトを返却是
+       * @param yamlPath yamlファイル的URL
        * @returns {*}
        */
       yamlPath => {
@@ -622,7 +618,7 @@ export default new Vuex.Store({
           .then(text => yaml.safeLoad(text))
           .catch(err => {
             window.console.log(
-              "yamlファイルの読み込みに失敗しました",
+              "yamlファイル的読み込みに失敗しました",
               yamlPath
             );
             throw err;
@@ -631,8 +627,8 @@ export default new Vuex.Store({
 
     loadJson: state =>
       /**
-       * 指定されたURLのjsonを読み込み、オブジェクトを返却する
-       * @param jsonPath jsonファイルのURL
+       * 指定されたURL的jsonを読み込み、オブジェクトを返却是
+       * @param jsonPath jsonファイル的URL
        * @returns {*}
        */
       jsonPath => {
@@ -642,7 +638,7 @@ export default new Vuex.Store({
           .then(text => JSON.parse(text))
           .catch(err => {
             window.console.log(
-              "jsonファイルの読み込みに失敗しました",
+              "jsonファイル的読み込みに失敗しました",
               jsonPath
             );
             throw err;
@@ -651,7 +647,7 @@ export default new Vuex.Store({
 
     getStateValue: state =>
       /**
-       * stateから指定されたプロパティパスの値を取得する
+       * stateから指定されたプロパティパス的値を取得是
        * @param property
        * @returns {*}
        */
@@ -665,7 +661,7 @@ export default new Vuex.Store({
 
     isWindowOpen: (state, getters) =>
       /**
-       * isDisplayに相当するプロパティ値を取得する
+       * isDisplayに相当是プロパティ値を取得是
        * @param displayProperty
        * @returns {*}
        */
@@ -676,7 +672,7 @@ export default new Vuex.Store({
 
     getKeyObj: () =>
       /**
-       * keyをプロパティとして持つオブジェクトの配列から指定されたkeyを持つオブジェクトを検索する
+       * keyをプロパティとして持つオブジェクト的配列から指定されたkeyを持つオブジェクトを検索是
        * @param list
        * @param key
        * @returns {*}
@@ -696,7 +692,7 @@ export default new Vuex.Store({
 
     parseColor: () =>
       /**
-       * 文字をparseしてカラー編輯オブジェクトを生成する
+       * 文字をparseしてカラー編輯オブジェクトを生成是
        * @param colorText
        * @returns {*}
        */
@@ -735,7 +731,7 @@ export default new Vuex.Store({
 
     objToString: () =>
       /**
-       * 指定されたオブジェクトの内容を示す文字列を生成する
+       * 指定されたオブジェクト的内容を示す文字列を生成是
        * @param obj
        * @returns {string}
        */

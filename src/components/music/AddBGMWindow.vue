@@ -27,9 +27,9 @@
       <fieldset>
         <legend @contextmenu.prevent>表示</legend>
         <div class="firstWide">
-          <!-- 表示タイトル -->
+          <!-- 表示標題 -->
           <label class="titleStr">
-            <span @contextmenu.prevent>タイトル</span>
+            <span @contextmenu.prevent>標題</span>
             <input
               type="text"
               v-model="title"
@@ -58,14 +58,14 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend @contextmenu.prevent>再生</legend>
+        <legend @contextmenu.prevent>播放</legend>
         <div>
-          <!-- タグ -->
+          <!-- 標籤 -->
           <label class="tag">
             <span
-              title="再生中のBGMはタグによって一意になります"
+              title="播放中的BGMは標籤によって一意になります"
               @contextmenu.prevent
-              >タグ</span
+              >標籤</span
             ><input
               type="text"
               v-model="tag"
@@ -93,9 +93,9 @@
           <ctrl-button class="preview" @click="preview">プレビュー</ctrl-button>
         </div>
         <div>
-          <!-- 再生時間 -->
+          <!-- 播放時間 -->
           <label class="playLength">
-            <span title="0で全て再生" @contextmenu.prevent>時間</span>
+            <span title="0で全て播放" @contextmenu.prevent>時間</span>
             <input
               type="number"
               min="0"
@@ -149,14 +149,14 @@
             <i
               class="icon-loop"
               @click="change('isLoop')"
-              :title="'リピート再生' + (isLoop ? 'あり' : 'なし')"
+              :title="'リピート播放' + (isLoop ? 'あり' : '無')"
             ></i>
           </span>
         </div>
         <div>
-          <!-- 多重再生時強制再スタート -->
+          <!-- 多重播放時強制再スタート -->
           <label>
-            <span @contextmenu.prevent>多重再生時強制再スタート</span>
+            <span @contextmenu.prevent>多重播放時強制再スタート</span>
             <input
               type="checkbox"
               v-model="forceReset"
@@ -184,7 +184,7 @@
             v-show="chatLinkage === '1' || chatLinkage === '2'"
           >
             <input
-              :placeholder="chatLinkage === 1 ? '' : 'Javascriptの正規表現'"
+              :placeholder="chatLinkage === 1 ? '' : 'Javascript的正規表現'"
               type="text"
               v-model="chatLinkageSearch"
               @keydown.enter.stop
@@ -244,7 +244,7 @@ export default class AddBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
   private isMute: boolean = false;
   private volume: number = 0.8;
   private options: any[] = [
-    { value: "0", label: "なし" },
+    { value: "0", label: "無" },
     { value: "1", label: "末尾文字" },
     { value: "2", label: "正規表現" }
   ];

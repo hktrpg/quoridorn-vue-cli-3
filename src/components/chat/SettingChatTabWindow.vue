@@ -30,7 +30,7 @@
           </label>
         </template>
       </draggable>
-      <ctrl-button @click="addTab" ref="button">追加</ctrl-button>
+      <ctrl-button @click="addTab" ref="button">新增</ctrl-button>
       <label>
         垂直分頁<input
           type="checkbox"

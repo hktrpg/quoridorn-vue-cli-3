@@ -4,7 +4,7 @@
     display-property="private.display.addFloorTileWindow"
     align="center"
     fixSize="653, 271"
-    message="画像を直接マップにドラッグ＆ドロップで配置"
+    message="圖片を直接マップにドラッグ＆ドロップで配置"
     @open="open"
     @reset="open"
   >

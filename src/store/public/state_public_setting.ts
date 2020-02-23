@@ -1,11 +1,11 @@
 export default {
   /** 設定(public) */
   state: {
-    /** マス目を表示するか */
+    /** マス目を表示是か */
     gridLine: true,
-    /** 座標を表示するか */
+    /** 座標を表示是か */
     gridId: true,
-    /** 回転マーカーを表示するかどうか */
+    /** 回転マーカーを表示是かどうか */
     pieceRotateMarker: true,
     /** マス目に合わせて動かすかどうか */
     isFitGrid: true

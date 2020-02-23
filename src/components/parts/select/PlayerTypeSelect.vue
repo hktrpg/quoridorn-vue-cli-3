@@ -25,7 +25,7 @@ export default class PlayerTypeSelect extends Mixins<SelectMixin>(SelectMixin) {
     resultList.unshift({
       key: null,
       value: "",
-      text: "権限",
+      text: "權限",
       disabled: true
     });
     return resultList;

@@ -22,7 +22,7 @@
       v-if="place !== 'graveyard'"
       @click.left.prevent="moveToGraveyard"
     >
-      墓場に移動（削除）
+      墓場に移動（刪除）
     </div>
     <hr />
     <div class="item" @click.left.prevent="changeIsHideBorder(!isBorderHide)">
@@ -35,7 +35,7 @@
     >
       <hr />
       <div class="item" @click.left.prevent="openRefURL">
-        データ参照先URLを開く
+        データ參考先URLを開く
       </div>
     </template>
     <template v-if="isGameMaster">

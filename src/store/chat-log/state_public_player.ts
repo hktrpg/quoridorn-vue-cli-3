@@ -1,5 +1,5 @@
 export default {
-  /** プレイヤー */
+  /** 玩家 */
   state: {
     list: []
   },

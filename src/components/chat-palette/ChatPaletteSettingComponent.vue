@@ -136,7 +136,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレットの１行が送信された時の挙動
+   * チャットパレット的１行が送信された時的挙動
    * @param actor
    * @param text
    */
@@ -156,7 +156,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレットの１行が選択された時の挙動
+   * チャットパレット的１行が選択された時的挙動
    * @param actor
    * @param index
    */
@@ -166,7 +166,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレットを編輯する
+   * チャットパレットを編輯是
    * @param actor
    */
   private edit(actor: any) {
@@ -180,7 +180,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレットをセーブする
+   * チャットパレットをセーブ是
    * @param actor
    */
   private doExport(actor: any) {
@@ -194,7 +194,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレットを讀取する
+   * チャットパレットを讀取是
    * @param actor
    */
   private doImport(actor: any) {

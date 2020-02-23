@@ -6,47 +6,47 @@
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作">
-      <li>画面上部メニューの「表示」を選択</li>
-      <li>「ウィンド配置初期化」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法">
+      <li>畫面上方菜單的「表示」選擇</li>
+      <li>「ウィンド配置初期化」選擇</li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        部屋の初期表示画面設定に従って画面表示の有無をリセットする
+        房間的初期表示畫面設定に従って畫面表示的有無をリセット是
       </li>
       <li>
-        各画面ごとに設定されている初期表示位置に従って画面の位置をリセットする
+        各畫面ごとに設定されている初期表示位置に従って畫面的位置をリセット是
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>なし</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
       <li>
-        本機能自体が未実装<br />→ 優先度低め。余裕があれば初回リリースに含める。
+        本機能自体が未實裝<br />→ 優先度低め。余裕があれば初回リリースに含める。
       </li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

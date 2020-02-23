@@ -48,7 +48,7 @@ export default class CreateRoomFromRoomData extends Vue {
   }
 
   /**
-   * 確定ボタン押下時
+   * 確定鍵押下時
    */
   commit(): void {
     if (!this.files.length) {

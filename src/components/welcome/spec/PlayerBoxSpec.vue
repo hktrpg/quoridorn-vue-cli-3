@@ -6,56 +6,56 @@
     :isSpecFixed="false"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作">
-      <li>画面上部メニューの「表示」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法">
+      <li>畫面上方菜單的「表示」選擇</li>
       <li>「ウィンドウ」にカーソルをあてる</li>
-      <li>「棋子管理盒表示」を選択</li>
+      <li>「棋子管理盒表示」選擇</li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        セレクトボックスからプレイヤーを選ぶことで、そのプレイヤーが所持するオブジェクトの一覧を表示する。
+        セレクトボックスから玩家を選ぶことで、そ的玩家が所持是オブジェクト的列表を表示是。
       </li>
-      <li>プレイヤーのチャット文字色を変更できる</li>
+      <li>玩家的チャット文字色を変更できる</li>
       <li>
-        プレイヤーが所持するキャラクターのチャット文字色を変更できる
+        玩家が所持是キャラクター的チャット文字色を変更できる
       </li>
       <li>「キャラクター待合室」を兼ねる</li>
       <li>「墓場」を兼ねる</li>
       <li>
-        その他簡易的な設定変更機能を随時追加していく予定
+        其他簡易的な設定変更機能を随時新增していく予定
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
+    <spec-item class-str="request" label-str="用戶要求">
       <li>
         キャラクター待合室にいるキャラクターを編輯したい
       </li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
       <li>
-        その他簡易的な設定変更機能<br />→ 便利そうな機能があれば追加していく。
+        其他簡易的な設定変更機能<br />→ 便利そうな機能があれば新增していく。
       </li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

@@ -60,7 +60,7 @@ export default class StandImageComponent extends Vue {
 
   @Watch("standImage", { deep: true })
   onChangeStandImage(standImage: any) {
-    // 稼働中のタイマーは取消
+    // 稼働中的タイマーは取消
     if (this.timer !== -1) clearTimeout(this.timer);
 
     if (!standImage) return;
@@ -86,7 +86,7 @@ export default class StandImageComponent extends Vue {
 
     const promiseList = [];
 
-    // ベースのロード
+    // ベース的ロード
     let baseImageElm: HTMLImageElement | null = null;
     const baseImageReverse: boolean = /:R/.test(standImage.base);
     promiseList.push(
@@ -95,7 +95,7 @@ export default class StandImageComponent extends Vue {
       })
     );
 
-    // 差分のロード
+    // 差分的ロード
     this.diffImageList.splice(0, this.diffImageList.length);
     let diffImageList: any[] = [];
     standImage.diffList.forEach((diff: any, index: number) => {
@@ -153,7 +153,7 @@ export default class StandImageComponent extends Vue {
   }
 
   /**
-   * 描画を開始する
+   * 描画を開始是
    */
   private startPaint() {
     this.timeIndex = 0;
@@ -182,10 +182,10 @@ export default class StandImageComponent extends Vue {
 
     const translate: number[] = [0, 0];
     if (ratioW < ratioH) {
-      // 横長の場合は下寄せにする
+      // 横長的場合は下寄せに是
       translate[1] = this.height - canvasSize.h * ratio;
     } else {
-      // 縦長の場合は左寄せでいいので何もしない
+      // 縦長的場合は左寄せでいい的で何も否
     }
     const transformList: string[] = [];
     transformList.push(`translate(${translate[0]}px, ${translate[1]}px)`);
@@ -197,7 +197,7 @@ export default class StandImageComponent extends Vue {
   }
 
   /**
-   * 描画する
+   * 描画是
    */
   paint(this: any): void {
     const time = this.timeList[this.timeIndex];
@@ -222,7 +222,7 @@ export default class StandImageComponent extends Vue {
       }
 
       if (this.drawDiff) {
-        // 差分の描画
+        // 差分的描画
         this.diffImageList.forEach((diff: any) => {
           const start = this.animationLength * diff.start * 10;
           const end = this.animationLength * diff.end * 10;
@@ -302,7 +302,7 @@ export default class StandImageComponent extends Vue {
     type: number
   ) {
     if (type === 1) {
-      // 半透明色での塗りつぶし
+      // 半透明色で的塗りつぶし
       ctx.globalCompositeOperation = "destination-out";
       ctx.fillStyle = "rgba(0, 0, 0, 1)";
       ctx.fillRect(rec.x, rec.y, rec.w, rec.h);
@@ -310,7 +310,7 @@ export default class StandImageComponent extends Vue {
       ctx.fillStyle = "rgba(0, 0, 0, 0)";
       ctx.fillRect(rec.x, rec.y, rec.w, rec.h);
     }
-    // 画像の描画
+    // 圖片的描画
     if (isReverse) {
       ctx.scale(-1, 1);
       ctx.drawImage(image, -rec.x, rec.y, -rec.w, rec.h);

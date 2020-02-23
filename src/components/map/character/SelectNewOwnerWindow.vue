@@ -8,7 +8,7 @@
   >
     <div class="container" @contextmenu.prevent>
       <label
-        >「{{ characterName }}」<br />の新しいオーナーを選んでください。</label
+        >「{{ characterName }}」<br />的新しいオーナーを選んでください。</label
       >
       <player-select v-model="currentPlayerKey" />
       <div class="operation-area">

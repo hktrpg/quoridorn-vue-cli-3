@@ -9,7 +9,7 @@
   >
     <div class="contents">
       <div class="welcomeMessage">
-        房間「{{ useRoomName }}」歡迎你！<br />輸入玩家信息。
+        房間「{{ useRoomName }}」歡迎你！<br />請輸入玩家信息。
       </div>
       <fieldset class="playerInfo">
         <legend>你的資料</legend>
@@ -133,7 +133,7 @@ export default class InputPlayerInfoWindow extends Mixins<WindowMixin>(
   }
 
   commit() {
-    // 輸入チェック
+    // 輸入檢查
     const errorMsg = [];
     this.inputPlayerName = this.inputPlayerName.trim();
     if (!this.inputPlayerName) errorMsg.push("・玩家名");

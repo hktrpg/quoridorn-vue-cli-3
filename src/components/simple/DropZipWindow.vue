@@ -6,9 +6,9 @@
     fixSize="300, 100"
   >
     <div class="contents" @contextmenu.prevent>
-      <div v-if="!saveDataList">部屋データを読み込んでいます...</div>
-      <!-- TODO 初回リリース対応としては部分ロードはしない
-      <div v-if="saveDataList">複数のセーブデータで同じ項目を読み込ませる場合、各セーブデータで順次上書きされていきます。</div>
+      <div v-if="!saveDataList">房間データを読み込んでいます...</div>
+      <!-- TODO 初回リリース対応としては部分ロードは否
+      <div v-if="saveDataList">複数的セーブデータで同じ項目を読み込ませる場合、各セーブデータで順次覆蓋されていきます。</div>
       <fieldset v-for="(saveDataObj, index) in saveDataList" :key="index">
         <legend>{{saveDataObj.fileName}}</legend>
         <ctrl-ctrl-button @click="allSelect(index)">全て対象</button><ctrl-button @click="allDisSelect(index)">全て除外</ctrl-button>
@@ -21,7 +21,7 @@
       </fieldset>
       -->
       <div v-if="saveDataList">
-        現段階では部分的ロードは行えません。<br />全てのデータをロードします。
+        現段階では部分的ロードは行えません。<br />全て的データをロードします。
       </div>
       <div class="operateArea">
         <ctrl-button @click="commit" :disabled="!saveDataList">
@@ -60,7 +60,7 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
   private saveDataList: any[] = [];
 
   commit(): void {
-    // zipデータの配列のマージ先
+    // zipデータ的配列的マージ先
     const importData: any = {
       publicData: null,
       delKeyList: [],
@@ -68,8 +68,8 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
       dropZipRoomCreate: this.dropZipRoomCreate
     };
 
-    // zipデータをマージする
-    // TODO とりあえず、インポートするデータの取捨選択は考慮しない（第一リリース規格）
+    // zipデータをマージ是
+    // TODO とりあえず、インポート是データ的取捨選択は考慮否（第一リリース規格）
     this.dropZipList.forEach(
       ({ fileName, saveData }: { fileName: string; saveData: any }) => {
         const publicData: any = saveData.public;
@@ -78,21 +78,21 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
         // const delKeyList: string[] = saveData.delKeyList;
         // const addObjList: any[] = saveData.addObjList;
 
-        // TODO セーブデータの互換性の処理
+        // TODO セーブデータ的互換性的処理
 
-        // publicデータのマージ（先勝ち）
+        // publicデータ的マージ（先勝ち）
         if (!importData.publicData) {
           // TODO 本当はもっと細かい単位で処理したい
           importData.publicData = publicData;
         }
 
-        // // 削除リストのマージ
+        // // 刪除リスト的マージ
         // delKeyList.forEach(delKey => {
         //   if (importData.delKeyList.indexOf(delKey) !== -1) return;
         //   importData.delKeyList.push(delKey);
         // });
         //
-        // // 追加リストのマージ
+        // // 新增リスト的マージ
         // addObjList.forEach(addObj => {
         //   const index = importData.addObjList.findIndex((impAddObj: any) => {
         //     return JSON.stringify(addObj) === JSON.stringify(impAddObj);
@@ -134,31 +134,31 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
       const publicData = saveDataObj.saveData.public;
       if (publicData.setting) {
         useList.push({
-          label: "設定情報(マス目表示、回転マーカーの表示など)",
+          label: "設定情報(マス目表示、回転マーカー的表示など)",
           isUse: true,
           target: "setting"
         });
       }
       if (publicData.room) {
         useList.push({
-          label: "部屋情報(継続卓なら必須)",
+          label: "房間情報(継続卓なら必須)",
           isUse: true,
           target: "room"
         });
       }
       if (publicData.chat) {
         useList.push({
-          label: "チャット履歴(部屋情報とセットで)",
+          label: "チャット履歴(房間情報とセットで)",
           isUse: true,
           target: "chat"
         });
       }
       if (publicData.image) {
-        useList.push({ label: "画像情報", isUse: true, target: "image" });
+        useList.push({ label: "圖片情報", isUse: true, target: "image" });
       }
       if (publicData.map) {
         useList.push({
-          label: "マップ情報(画像情報とセットで)",
+          label: "マップ情報(圖片情報とセットで)",
           isUse: true,
           target: "map"
         });
@@ -172,14 +172,14 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
       }
       if (publicData.character) {
         useList.push({
-          label: "キャラクター情報(画像情報とセットで)",
+          label: "キャラクター情報(圖片情報とセットで)",
           isUse: true,
           target: "character"
         });
       }
       if (publicData.chit) {
         useList.push({
-          label: "チット情報(画像情報とセットで)",
+          label: "チット情報(圖片情報とセットで)",
           isUse: true,
           target: "chit"
         });

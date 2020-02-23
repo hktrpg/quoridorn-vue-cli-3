@@ -38,11 +38,11 @@ export default class ImportTypeRadio extends Vue {
   private get optionInfoList() {
     return [
       {
-        text: "上書き",
+        text: "覆蓋",
         value: "1"
       },
       {
-        text: "追加",
+        text: "新增",
         value: "2"
       }
     ];

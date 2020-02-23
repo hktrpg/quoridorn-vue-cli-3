@@ -40,7 +40,7 @@
           </thead>
           <tbody>
             <!-- ===============================================================
-              コンテンツ
+              內容
             -->
             <tr
               v-for="groupTargetTab in groupTargetTabList"
@@ -48,7 +48,7 @@
               @click="selectLine(groupTargetTab.key)"
               :class="{ isActive: selectLineKey === groupTargetTab.key }"
             >
-              <!-- 私下チェック -->
+              <!-- 私下檢查 -->
               <td :style="colStyle(0)">
                 <span
                   class="icon-checkmark"
@@ -80,7 +80,7 @@
               </td>
               <divider :index="2" prop="settingChatTargetTabWindow" />
 
-              <!-- 編輯ボタン -->
+              <!-- 編輯鍵 -->
               <td :style="colStyle(4)">
                 <ctrl-button
                   @click="edit(groupTargetTab.key)"
@@ -178,7 +178,7 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
     if (this.selectLineKey) {
       this.deleteGroupTargetTab({ key: this.selectLineKey });
     } else {
-      alert("刪除対象を選択してください。");
+      alert("刪除対象選擇してください。");
     }
   }
 
@@ -263,10 +263,10 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
   ) {
     const newArr = groupTargetTab.group.concat();
     if (flg) {
-      // 增加の場合
+      // 增加的場合
       newArr.push(player.key);
     } else {
-      // 除外の場合
+      // 除外的場合
       const index = groupTargetTab.group.indexOf(player.key);
       newArr.splice(index, 1);
     }
@@ -279,7 +279,7 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
       : tab.group.map((g: string) => this.getViewName(g)).join(", ");
   }
 
-  /* Start 列幅可変テーブルのプロパティ */
+  /* Start 列幅可変テーブル的プロパティ */
   private get selectLineKey() {
     return this.$store.state.private.display.settingChatTargetTabWindow
       .selectLineKey;
@@ -312,7 +312,7 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
   private get colStyle() {
     return (index: number) => ({ width: `${this.widthList[index]}px` });
   }
-  /* End 列幅可変テーブルのプロパティ */
+  /* End 列幅可変テーブル的プロパティ */
 
   private get windowSize() {
     return this.$store.state.private.display.settingChatTargetTabWindow
@@ -360,7 +360,7 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
   text-align: center;
 }
 
-/* Start 列幅可変テーブルのCSS */
+/* Start 列幅可変テーブル的CSS */
 .tableContainer {
   overflow-y: scroll;
   flex: 1;
@@ -483,5 +483,5 @@ button {
     background-color: lightgrey;
   }
 }
-/* End 列幅可変テーブルのCSS */
+/* End 列幅可変テーブル的CSS */
 </style>

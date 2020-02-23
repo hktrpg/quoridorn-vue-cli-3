@@ -6,19 +6,19 @@
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作１">
-      <li>画面上部メニューの「ファイル」を選択</li>
-      <li>「チャットログ取得」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法１">
+      <li>畫面上方菜單的「ファイル」選擇</li>
+      <li>「チャットログ取得」選擇</li>
     </spec-item>
-    <spec-item class-str="operation" label-str="起動操作２">
+    <spec-item class-str="operation" label-str="操作方法２">
       <li>
-        チャット画面のアイコン<span class="icon-file-text"></span>をクリック
+        チャット畫面的アイコン<span class="icon-file-text"></span>をクリック
       </li>
     </spec-item>
-    <spec-item class-str="operation" label-str="起動操作３">
-      <li>チャットログ削除をする際、チャットログを保存してから削除される</li>
+    <spec-item class-str="operation" label-str="操作方法３">
+      <li>チャットログ刪除を是際、チャットログを保存してから刪除される</li>
     </spec-item>
     <!----------------------
      ! 規格
@@ -29,36 +29,36 @@
         >（いずれ閲覧制限などを設けてPLなどでも保存できるようにしたい）
       </li>
       <li>
-        単一HTMLファイルをダウンロードする
+        単一HTMLファイルをダウンロード是
       </li>
       <li>
-        ダウンロードしたHTMLの機能を使って他の形式のログを生成する<br />（どどんとふHTML,
+        ダウンロードしたHTML的機能を使って他的形式的ログを生成是<br />（どどんとふHTML,
         どどんとふTXT, JSON）
       </li>
-      <li>ログデータは暗号化する</li>
+      <li>ログデータは暗号化是</li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>なし</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
-      <li>閲覧制限によりPLでも適切なログをダウンロードできるようにする</li>
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
+      <li>閲覧制限によりPLでも適切なログをダウンロードできるように是</li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

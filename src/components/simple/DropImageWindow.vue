@@ -12,12 +12,12 @@
         <div>
           <img class="image" v-img="imageObj.image" draggable="false" />
           <ctrl-button class="passwordButton" @click="passwordButtonOnClick">
-            隠し圖片パスワード設定
+            隠し圖片密碼設定
           </ctrl-button>
           <label class="passwordLabel">
-            隠し圖片パスワード：{{ imageObj.password !== "" ? "あり" : "なし" }}
+            隠し圖片密碼：{{ imageObj.password !== "" ? "あり" : "無" }}
           </label>
-          <span class="tagLabel">付与するタグ(半角・全角スペースで区切り)</span>
+          <span class="tagLabel">付与是標籤(半角・全角スペースで区切り)</span>
           <input
             class="tagInput"
             type="text"
@@ -114,11 +114,11 @@ export default class DropImageWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   private passwordButtonOnClick(): void {
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 
   private changeTag(key: string): void {
-    // 入力によってタグの追加・削除が発生する可能性があるので、タグリストを整理してもらう
+    // 入力によって標籤的新增・刪除が発生是可能性がある的で、標籤リストを整理してもらう
     window.console.log("changeTag");
     this.imageTagChange({ key: key, imageList: this.imageList });
   }
@@ -129,7 +129,7 @@ export default class DropImageWindow extends Mixins<WindowMixin>(WindowMixin) {
     imgObj.currentTag = imgObj.selectTag;
     // const index = this.imageList.indexOf(imgObj)
     // this.imageList.splice(index, 1, imgObj)
-    // 選択によってタグの削除が発生する可能性があるので、タグリストを整理してもらう
+    // 選択によって標籤的刪除が発生是可能性がある的で、標籤リストを整理してもらう
     this.imageTagChange({ key: key, imageList: this.imageList });
   }
 

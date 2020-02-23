@@ -6,27 +6,27 @@
     :isSpecFixed="false"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作">
+    <spec-item class-str="operation" label-str="操作方法">
       <li>
-        画面上部に最初から表示されているメニュー
+        畫面上方に最初から表示されている菜單
       </li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
-      <li>角丸のボタンと展開型の選択肢で構成する</li>
+      <li>角丸的鍵と展開型的選択肢で構成是</li>
       <li>
-        項目は今後の機能増強に伴って増減する可能性あり
-        <span class="unFixed">[規格未確定事項]</span>
+        項目は今後的機能増強に伴って増減是可能性あり
+        <span class="unFixed">[規格未確定項目]</span>
       </li>
       <li>
-        メニュー項目
+        菜單項目
         <ol>
           <li>
-            展開型の選択肢
+            展開型的選択肢
             <ol>
               <li>
                 ファイル
@@ -82,7 +82,7 @@
                   </li>
                   <li>
                     <spec-link property="changeFontSizeWindow" title-str="">
-                      フォントサイズ調整
+                      フォント大小調整
                     </spec-link>
                   </li>
                   <li>
@@ -97,17 +97,17 @@
                 <ol>
                   <li>
                     <spec-link property="addCharacterWindow" title-str="">
-                      キャラクター追加
+                      キャラクター新增
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="addRangeWindow" title-str="">
-                      範囲追加
+                      範囲新增
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="addChitWindow" title-str="">
-                      チット追加
+                      チット新增
                     </spec-link>
                   </li>
                   <li>
@@ -132,12 +132,12 @@
                   </li>
                   <li>
                     <spec-link property="editFloorTileMode" title-str="">
-                      フロアタイル追加
+                      フロアタイル新增
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="addMapMaskWindow" title-str="">
-                      マップマスク追加
+                      マップマスク新增
                     </spec-link>
                   </li>
                   <li>
@@ -158,7 +158,7 @@
                 </ol>
               </li>
               <li>
-                画像
+                圖片
                 <ol>
                   <li>
                     <spec-link property="fileUploaderWindow" title-str="">
@@ -167,12 +167,12 @@
                   </li>
                   <li>
                     <spec-link property="editImageTagWindow" title-str="">
-                      タグ編輯
+                      標籤編輯
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="deleteImageWindow" title-str="">
-                      画像削除
+                      圖片刪除
                     </spec-link>
                   </li>
                 </ol>
@@ -182,7 +182,7 @@
                 <ol>
                   <li>
                     <spec-link property="welcomeWindowSpec" title-str="">
-                      ようこそ画面
+                      ようこそ畫面
                     </spec-link>
                   </li>
                   <li>
@@ -207,22 +207,22 @@
           <li>
             <spec-link
               property="roomInfoWindow"
-              title-str="「プレイルーム情報表示画面」の項へ"
+              title-str="「プレイルーム情報表示畫面」的項へ"
             >
-              「プレイルーム情報表示」ボタン
+              「プレイルーム情報表示」鍵
             </spec-link>
           </li>
           <li>
             <spec-link
               property="addPublicMemoWindow"
-              title-str="「共有メモ追加画面」の項へ"
+              title-str="「共有メモ新增畫面」的項へ"
             >
-              「共有メモ」ボタン
+              「共有メモ」鍵
             </spec-link>
           </li>
           <li>
-            <spec-link property="logout" title-str="「ログアウト」の項へ">
-              「ログアウト」ボタン
+            <spec-link property="logout" title-str="「登出」的項へ">
+              「登出」鍵
             </spec-link>
           </li>
         </ol>
@@ -231,34 +231,34 @@
     <!----------------------
      ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="展開型の選択肢の規格">
+    <spec-item class-str="spec" label-str="展開型的選択肢的規格">
       <li>
-        初期表示の各項目を選択すると展開モードになる
+        初期表示的各項目選擇是と展開モードになる
       </li>
       <li>
         展開モード中はマウス移動に合わせて各選択肢が展開・格納される
       </li>
       <li>
-        展開モードが解除されるのは初期表示の各項目を再度選択するか、画面を起動する選択肢を選択した場合
+        展開モードが解除される的は初期表示的各項目を再度選択是か、畫面を起動是選択肢選擇した場合
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>なし</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
-      <li>なし</li>
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
   </spec-frame>
 </template>

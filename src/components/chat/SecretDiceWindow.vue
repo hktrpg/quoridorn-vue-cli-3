@@ -46,7 +46,7 @@ export default class SecretDiceWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   publish(index: number): void {
     const secretDiceObj = this.secretDiceList[index];
-    // プレイヤー発言
+    // 玩家発言
     this.addChatLog({
       name: secretDiceObj.name,
       text: secretDiceObj.text,
@@ -81,7 +81,7 @@ export default class SecretDiceWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   @Watch("secretDiceList")
   onChangeSecretDiceList(secretDiceList: any[]): void {
-    // シークレットダイスの結果のリストの変動を感知して、表示内容があればこの画面を表示する
+    // シークレットダイス的結果的リスト的変動を感知して、表示内容があればこ的畫面を表示是
     if (secretDiceList.length) {
       this.windowOpen("private.display.secretDiceWindow");
     } else {

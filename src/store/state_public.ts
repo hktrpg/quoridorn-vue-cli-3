@@ -44,7 +44,7 @@ export default {
   mutations: {},
   getters: {
     /**
-     * すべての障害物を取得
+     * すべて的障害物を取得
      * @param state
      * @param getters
      * @param rootState
@@ -120,10 +120,10 @@ export default {
         // チャットタブ
         return rootGetters.chatTabList.filter(filterFunc)[0];
       } else if (kind === "imgTag") {
-        // イメージタグ
+        // イメージ標籤
         return rootGetters.imageTagList.filter(filterFunc)[0];
       } else {
-        // その他
+        // 其他
         return rootState.public[kind]
           ? rootState.public[kind].list.filter(filterFunc)[0]
           : undefined;
@@ -142,7 +142,7 @@ export default {
         // グループチャットタブ
         list = rootGetters.groupTargetTabList;
       } else {
-        // その他
+        // 其他
         list = rootState.public[kind].list;
       }
       const index = findIndexFunc(list);
@@ -154,7 +154,7 @@ export default {
     getViewName: (state: any, getters: any) => (key: string): string => {
       const obj = getters.getObj(key);
       if (!obj) {
-        if (key && key.split("-")[0] === "chatTab") return "削除済";
+        if (key && key.split("-")[0] === "chatTab") return "已刪除";
         return key;
       }
       const kind = obj.key.split("-")[0];

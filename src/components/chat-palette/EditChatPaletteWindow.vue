@@ -51,7 +51,7 @@ export default class EditChatPaletteWindow extends Mixins<WindowMixin>(
   private text: string = "";
 
   /**
-   * 画面が開いた時の挙動
+   * 畫面が開いた時的挙動
    */
   private open() {
     this.text = this.chatPaletteText;

@@ -1,13 +1,13 @@
 export default {
   /** チャット */
   state: {
-    /** チャットのタブ */
+    /** チャット的タブ */
     tab: {
       list: [{ key: "chatTab-1", name: "分頁" }],
       isVertical: false
     },
 
-    /** グループチャットのタブ */
+    /** グループチャット的タブ */
     groupTargetTab: {
       list: [
         {
@@ -21,10 +21,10 @@ export default {
       ]
     },
 
-    /** チャットのリスト */
+    /** チャット的リスト */
     logs: [],
 
-    /** 入力中のルームメイトのpeerId一覧 */
+    /** 入力中的ルームメイト的peerId列表 */
     inputting: {},
 
     diceBotMessage: {
@@ -35,7 +35,7 @@ export default {
   actions: {
     /**
      * NOTICE_INPUT
-     * ルームメンバの入力中状態の通知
+     * ルームメンバ的入力中状態的通知
      * @param commit
      * @param key
      */
@@ -53,7 +53,7 @@ export default {
   },
   mutations: {
     /**
-     * チャットログを設定する
+     * チャットログを設定是
      * @param state
      * @param logs
      * @returns { *[] }
@@ -62,7 +62,7 @@ export default {
       state.logs = logs;
     },
     /**
-     * チャットタブを設定する
+     * チャットタブを設定是
      * @param state
      * @param chatTabs
      * @returns { *[] }
@@ -71,7 +71,7 @@ export default {
       state.tab.list = chatTabs;
     },
     /**
-     * グループチャットタブを設定する
+     * グループチャットタブを設定是
      * @param state
      * @param groupTargetTabList
      * @returns { *[] }

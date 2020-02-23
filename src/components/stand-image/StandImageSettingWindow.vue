@@ -40,7 +40,7 @@
                 "
                 v-if="!status.standImage.isSystemLock"
               >
-                状態の削除
+                状態的刪除
               </span>
             </div>
             <div class="tab-contents">
@@ -49,7 +49,7 @@
                 v-if="status.standImage.ref || status.standImage.isSystemLock"
               >
                 <span v-if="status.standImage.ref">
-                  状態「{{ status.standImage.ref }}」のデータを参照しています
+                  状態「{{ status.standImage.ref }}」的データを參考しています
                 </span>
                 <span v-if="status.standImage.isSystemLock">
                   初期データとして必要なため<br />編輯できません
@@ -58,7 +58,7 @@
               <div class="base">
                 <label>ベース</label>
 
-                <!-- ベース画像 -->
+                <!-- ベース圖片 -->
                 <stand-image-component
                   :standImage="getViewStatus(status).standImage"
                   :drawDiff="isPreview"
@@ -83,11 +83,11 @@
                     @click="addDiff()"
                     :disabled="status.standImage.isSystemLock"
                   >
-                    差分追加
+                    差分新增
                   </ctrl-button>
                 </div>
                 <label>
-                  サイズの自動調整
+                  大小的自動調整
                   <input
                     type="checkbox"
                     :checked="getViewStatus(status).standImage.autoResize"
@@ -312,7 +312,7 @@ export default class StandImageSettingWindow extends Mixins<WindowMixin>(
     const baseTag = status.standImage.baseTag;
     Promise.resolve()
       .then(() =>
-        // リアクティブのための更新と、それに伴うコールバックの一時無効のための指定
+        // リアクティブ的ため的更新と、それに伴うコールバック的一時無効的ため的指定
         this.setProperty({
           property: "private.display.imageSelectorWindow",
           value: {
@@ -341,7 +341,7 @@ export default class StandImageSettingWindow extends Mixins<WindowMixin>(
 
               const isReverse: boolean = /:R/.test(imageKey);
 
-              // 画像のファイル名の情報を利用
+              // 圖片的ファイル名的情報を利用
               const baseImage: any = this.imageList.filter(
                 (image: any) => image.key === imageKey.replace(":R", "")
               )[0];
@@ -408,10 +408,10 @@ export default class StandImageSettingWindow extends Mixins<WindowMixin>(
 
     const translate: number[] = [0, 0];
     if (ratioW < ratioH) {
-      // 横長の場合は下寄せにする
+      // 横長的場合は下寄せに是
       translate[1] = 256 - canvasSize.h * ratio;
     } else {
-      // 縦長の場合は左寄せでいいので何もしない
+      // 縦長的場合は左寄せでいい的で何も否
     }
     const transformList: string[] = [];
     transformList.push(`translate(${translate[0]}px, ${translate[1]}px)`);

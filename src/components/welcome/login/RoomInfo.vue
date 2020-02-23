@@ -6,7 +6,7 @@
       <span>{{ roomName }}</span>
     </label>
     <label>
-      パスワード：
+      密碼：
       <span>{{ roomPassword || "沒有密碼" }}</span>
     </label>
     <label>
@@ -69,7 +69,7 @@ export default class RoomInfo extends Vue {
   }
 
   /**
-   * テキストをクリップボードにコピーする
+   * テキストをクリップボードにコピー是
    * @param event
    */
   doCopy(event: any): void {

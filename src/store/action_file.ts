@@ -8,7 +8,7 @@ import moment from "moment";
 export default {
   actions: {
     /** ========================================================================
-     * セーブデータ作成を開始する
+     * セーブデータ作成を開始是
      * @param dispatch
      * @param rootState
      * @param rootGetters
@@ -23,18 +23,18 @@ export default {
       rootGetters: any;
     }) {
       if (rootGetters.members.length === 0) {
-        alert("現在「保存」機能はご利用いただけません。");
+        alert("當前不可使用「保存」功能。");
         return;
       }
 
-      // 連想配列の中身を空にする
+      // 連想配列的中身を空に是
       for (const playerKey in rootGetters.volatilePrivateData) {
         if (!rootGetters.volatilePrivateData.hasOwnProperty(playerKey))
           continue;
         delete rootGetters.volatilePrivateData[playerKey];
       }
 
-      // privateデータのコピー
+      // privateデータ的コピー
       const privateData = JSON.parse(JSON.stringify(rootState.private));
 
       // 開いてないディスプレイ情報は送信データに含めない
@@ -48,10 +48,10 @@ export default {
         }
       }
 
-      // 自分のprivateデータを一時領域に保存する
+      // 自分的privateデータを一時領域に保存是
       rootGetters.volatilePrivateData[rootGetters.playerKey] = privateData;
 
-      // 1人だったら即保存処理、複数人だったらprivateデータをクリエストする
+      // 1人だったら即保存処理、複数人だったらprivateデータをクリエスト是
       if (rootGetters.members.length === 1) {
         dispatch("doExport");
       } else {
@@ -60,7 +60,7 @@ export default {
     },
 
     /** ========================================================================
-     * セーブデータ作成を実行する
+     * セーブデータ作成を実行是
      * @param dispatch
      * @param rootState
      * @param rootGetters
@@ -75,7 +75,7 @@ export default {
       rootGetters: any;
     }) {
       // ------------------------------------------------------------
-      // セーブデータのベース作成
+      // セーブデータ的ベース作成
       const saveData = JSON.parse(
         JSON.stringify({
           public: rootState.public,
@@ -89,7 +89,7 @@ export default {
           continue;
 
         // ------------------------------------------------------------
-        // セーブデータ内のplayerのリストに各プレイヤーのprivateデータを持たせる
+        // セーブデータ内的player的リストに各玩家的privateデータを持たせる
         const playerPrivateObj: any =
           rootGetters.volatilePrivateData[playerKey];
         saveData.public.player.list.forEach((player: any) => {
@@ -98,7 +98,7 @@ export default {
         });
       }
 
-      // お試しデータのカードデッキはとりあえず削除
+      // お試しデータ的カードデッキはとりあえず刪除
       delete saveData.public.deck;
 
       /*
@@ -135,7 +135,7 @@ export default {
       encryptListObj(saveData.public.map, "list");
       encryptListObj(saveData.public.counterRemocon, "list");
 
-      // // listに対する差分を取り扱う
+      // // listに対是差分を取り扱う
       // const addKeyList: string[] = [];
       // const delKeyList: string[] = [];
       // saveData.public.historyList.forEach((history: any) => {
@@ -144,7 +144,7 @@ export default {
       // });
       //
       // // ------------------------------------------------------------
-      // // 削除したデータが追加したデータに含まれている場合は双方のリストから消す
+      // // 刪除したデータが新增したデータに含まれている場合は双方的リストから消す
       // const delKeyDelList: string[] = [];
       // delKeyList.forEach((delKey: string) => {
       //   const index = addKeyList.findIndex(
@@ -163,19 +163,19 @@ export default {
       // );
       //
       // // ------------------------------------------------------------
-      // // この時点で削除リストはプリセットデータの削除のみとなっているはず
-      // // → 対象のkeyのリストが保存データに含まれれば、ロード時に十分なデータとなる
+      // // こ的時点で刪除リストはプリセットデータ的刪除的みとなっているはず
+      // // → 対象的key的リストが保存データに含まれれば、ロード時に十分なデータとなる
       // saveData.delKeyList = delKeyList;
       //
       // // ============================================================
       //
-      // // ここからは追加データ間の関連データを調べ、差分データとして用意する
+      // // ここからは新增データ間的関連データを調べ、差分データとして用意是
       // const imageKeyList = addKeyList.filter(
       //   key => key.split("-")[0] === "image"
       // );
       //
       // /** -----------------------------------------------------------
-      //  * imageKeyListに含まれるなら間接参照keyに変換する
+      //  * imageKeyListに含まれるなら間接參考keyに変換是
       //  */
       // const getAfterKey = (beforeKey: string) => {
       //   const index: number = imageKeyList.findIndex(
@@ -186,7 +186,7 @@ export default {
       // };
       //
       // const addObjList: any[] = addKeyList.map(key => {
-      //   // オブジェクトのデータを文字列化し、そこに含まれるイメージkeyを必要に応じて置換する
+      //   // オブジェクト的データを文字列化し、そこに含まれるイメージkeyを必要に応じて置換是
       //   let objStr = JSON.stringify(rootGetters.getObj(key));
       //   (objStr.match(/image-([0-9])+/g) || []).forEach((imageKey: string) => {
       //     objStr = objStr.replace(
@@ -196,7 +196,7 @@ export default {
       //   });
       //   return JSON.parse(objStr);
       //
-      //   // // 画像を持つオブジェクトなら "useImageList" があるはず
+      //   // // 圖片を持つオブジェクトなら "useImageList" があるはず
       //   // const obj = JSON.parse(JSON.stringify(rootGetters.getObj(key)));
       //   // let useImageList = obj.useImageList;
       //   // if (useImageList) {
@@ -225,7 +225,7 @@ export default {
       //   }
       // });
       //
-      // // 追加データに記録されるものは二重管理となるため削除
+      // // 新增データに記録されるも的は二重管理となるため刪除
       // delete saveData.public.character;
       // delete saveData.public.chit;
       // delete saveData.public.mapMask;
@@ -233,10 +233,10 @@ export default {
       // delete saveData.public.bgm;
       // delete saveData.public.diceSymbol;
       //
-      // // セーブデータに追加差分データを含める
+      // // セーブデータに新增差分データを含める
       // saveData.addObjList = addObjList;
 
-      // zipファイルの生成
+      // zipファイル的生成
       const zip = new JSZip();
       zip.file("save.json", JSON.stringify(saveData, undefined, 2));
       zip.generateAsync({ type: "blob" }).then((blob: any) => {
@@ -360,7 +360,7 @@ export default {
       decryptListObj(publicData.counterRemocon, "list");
 
       const importFunc = () => {
-        // FIXME チャットデータは上書きでいいの…かな？（差分方式がいい気もしている
+        // FIXME チャットデータは覆蓋でいい的…かな？（差分方式がいい気もしている
         dispatch("setProperty", {
           property: "public",
           value: publicData,
@@ -380,7 +380,7 @@ export default {
           dispatch("delObj", delKey);
         });
 
-        // 画像のみを先行して追加し、割り振られるkeyを他のオブジェクトから参照させる
+        // 圖片的みを先行して新增し、割り振られるkeyを他的オブジェクトから參考させる
         const imageAddPromiseList: PromiseLike<any>[] = addObjList
           .filter(addObj => addObj.key.split("-")[0] === "image")
           .map(addObj =>
@@ -393,14 +393,14 @@ export default {
 
         return Promise.all([...imageAddPromiseList]).then(
           (imageList: string[]) => {
-            // 画像を全て読み込み終えたら、他のオブジェクトの追加を処理する
+            // 圖片を全て読み込み終えたら、他的オブジェクト的新增を処理是
             const otherObjectPromiseList = addObjList
-              // 画像以外を処理対象とする
+              // 圖片以外を処理対象と是
               .filter(addObj => addObj.key.split("-")[0] !== "image")
               .map(addObj => {
                 const type = addObj.key.split("-")[0];
 
-                // // image参照の差分ロード
+                // // image參考的差分ロード
                 // let useImageList: string = addObj.useImageList;
                 // if (useImageList) {
                 //   useImageList.split("|").forEach(useImage => {
@@ -428,7 +428,7 @@ export default {
                 );
                 addObj = JSON.parse(addObjStr);
 
-                // グループチャットデータのロード
+                // グループチャットデータ的ロード
                 if (type === "groupTargetTab") {
                   rootGetters.groupTargetTabList.push({
                     key: `groupTargetTab-${++rootGetters.groupTargetTab
@@ -444,7 +444,7 @@ export default {
 
                 delete addObj.key;
 
-                // リストに追加
+                // リストに新增
                 return dispatch("addListObj", addObj);
               });
             return Promise.all(otherObjectPromiseList);
@@ -456,19 +456,19 @@ export default {
       const roomName = publicData.room.name;
       const system = publicData.room.system;
       if (!dropZipRoomCreate) {
-        // 部屋を作らないシンプルなロード
+        // 房間を作らないシンプルなロード
         importFunc().then(() => {});
         return;
       }
       if (!publicData.room) {
-        // 部屋を作る操作なのにセーブデータに部屋情報が含まれてないならここで終わり
-        alert("部屋情報が含まれていません。\n処理を中断します。");
+        // 房間を作る操作な的にセーブデータに房間情報が含まれてないならここで終わり
+        alert("沒有房間信息。 \n停止處理。");
         return;
       }
       dispatch("loading", true);
-      // セーブデータに部屋情報があるなら、入室処理を行う
+      // セーブデータに房間情報があるなら、進房処理を行う
       const checkFunc = (roomName: string) => {
-        // 部屋の存在チェック
+        // 房間的存在檢查
         Promise.resolve()
           .then(() => dispatch("simpleJoinRoom", { roomName: roomName }))
           .then((peerId: string) => {
@@ -481,16 +481,16 @@ export default {
           })
           .then((isExist: boolean) => {
             if (isExist) {
-              // 既存部屋と部屋名が衝突しちゃったら回避する
+              // 既存房間と房間名が衝突しちゃったら回避是
               const msg: string[] = [];
-              msg.push(`部屋「${roomName}」は既に存在します。`);
-              msg.push(`部屋名を変更して再挑戦しますか？`);
+              msg.push(`房間「${roomName}」已經存在。`);
+              msg.push(`變更房間名稱然後重試？`);
               const result = window.confirm(msg.join("\n"));
               if (result) {
                 const inputRoomNameFunc = (): string | null => {
-                  const inputStr: string | null = window.prompt("新規部屋名");
+                  const inputStr: string | null = window.prompt("新的房間名");
                   if (inputStr === null) {
-                    if (window.confirm("ロードを中止しますか？")) return null;
+                    if (window.confirm("停止載入？")) return null;
                   }
                   return inputStr || inputRoomNameFunc();
                 };
@@ -507,7 +507,7 @@ export default {
               .then(
                 () =>
                   new Promise((resolve: Function) => {
-                    // プレイヤー情報を入力してもらう
+                    // 玩家情報を入力してもらう
                     dispatch("setProperty", {
                       property: "private.display.inputPlayerInfoWindow",
                       value: {
@@ -526,9 +526,9 @@ export default {
                     );
                   })
               )
-              // プレイヤー情報を入力してもらったら部屋を新規作成して入室する
+              // 玩家情報を入力してもらったら房間を新的作成して進房是
               .then((payload: any) => {
-                // privateデータの復元
+                // privateデータ的復元
                 const playerData: any = publicData.player.list.filter(
                   (player: any) => player.name === payload.playerName
                 )[0];

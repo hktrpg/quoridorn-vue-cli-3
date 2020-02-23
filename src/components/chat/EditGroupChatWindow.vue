@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="グループチャット編輯画面"
+    titleText="グループチャット編輯畫面"
     display-property="private.display.editGroupChatWindow"
     align="center"
     :fixSize="`${windowSize.w}, ${windowSize.h}`"
@@ -60,7 +60,7 @@
             </thead>
             <tbody>
               <!-- ===============================================================
-                コンテンツ
+                內容
               -->
               <tr
                 v-for="target in targetList"
@@ -68,7 +68,7 @@
                 @click="selectLine(target.key)"
                 :class="{ isActive: selectLineKey === target.key }"
               >
-                <!-- 對像チェック -->
+                <!-- 對像檢查 -->
                 <td :style="colStyle(0)" class="target">
                   <input
                     type="checkbox"
@@ -248,10 +248,10 @@ export default class EditGroupChatWindow extends Mixins<WindowMixin>(
   ) {
     const newArr = groupTargetTab.group.concat();
     if (flg) {
-      // 追加の場合
+      // 新增的場合
       newArr.push(player.key);
     } else {
-      // 除外の場合
+      // 除外的場合
       const index = groupTargetTab.group.indexOf(player.key);
       newArr.splice(index, 1);
     }
@@ -294,7 +294,7 @@ export default class EditGroupChatWindow extends Mixins<WindowMixin>(
     )[0];
   }
 
-  /* Start 列幅可変テーブルのプロパティ */
+  /* Start 列幅可変テーブル的プロパティ */
   private get selectLineKey() {
     return this.$store.state.private.display.editGroupChatWindow.selectLineKey;
   }
@@ -323,7 +323,7 @@ export default class EditGroupChatWindow extends Mixins<WindowMixin>(
   private get colStyle() {
     return (index: number) => ({ width: `${this.widthList[index]}px` });
   }
-  /* End 列幅可変テーブルのプロパティ */
+  /* End 列幅可変テーブル的プロパティ */
 
   private get windowSize() {
     return this.$store.state.private.display.editGroupChatWindow.windowSize;
@@ -333,7 +333,7 @@ export default class EditGroupChatWindow extends Mixins<WindowMixin>(
     const result: any[] = [];
     this.playerList.forEach((player: any) => {
       result.push(player);
-      // 破壊的に追加
+      // 破壊的に新增
       result.push.apply(
         result,
         this.getMapObjectList({
@@ -358,7 +358,7 @@ export default class EditGroupChatWindow extends Mixins<WindowMixin>(
     resultList.unshift({
       key: "0",
       value: "",
-      text: "指定なし",
+      text: "無指定",
       disabled: false
     });
     return resultList;
@@ -398,7 +398,7 @@ label {
   }
 }
 
-/* Start 列幅可変テーブルのCSS */
+/* Start 列幅可変テーブル的CSS */
 .tableContainer {
   flex: 1;
   width: 100%;
@@ -529,5 +529,5 @@ table thead {
     }
   }
 }
-/* End 列幅可変テーブルのCSS */
+/* End 列幅可変テーブル的CSS */
 </style>

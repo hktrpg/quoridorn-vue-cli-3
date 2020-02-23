@@ -48,7 +48,7 @@
         </ul>
       </li>
       <li>
-        <span class="unSelectable">【画像関係】</span>
+        <span class="unSelectable">【圖片関係】</span>
         <ul class="detail illustration">
           <li>
             <div>
@@ -122,7 +122,7 @@
             </div>
             <div>
               <span class="unSelectable">網站名稱：</span>
-              みんなの知識 ちょっと便利帳
+              みんな的知識 ちょっと便利帳
               <span class="unSelectable">
                 (
                 <a target="_blank" href="https://www.benricho.org/">

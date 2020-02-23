@@ -6,58 +6,58 @@
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作１">
-      <li>画面上部メニューの「マップ」を選択</li>
-      <li>「マップマスク追加」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法１">
+      <li>畫面上方菜單的「マップ」選擇</li>
+      <li>「マップマスク新增」選擇</li>
     </spec-item>
-    <spec-item class-str="operation" label-str="起動操作２">
+    <spec-item class-str="operation" label-str="操作方法２">
       <li>マップを右クリック</li>
       <li>
-        表示されたメニューの「マップマスク追加」を選択
+        表示された菜單的「マップマスク新增」選擇
       </li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
-      <li>中に表示する文字の入力</li>
-      <li>表示色（＋透明度）の選択</li>
-      <li>サイズ指定</li>
+      <li>中に表示是文字的入力</li>
+      <li>表示色（＋透明度）的選択</li>
+      <li>大小指定</li>
       <li>
-        「射界」の設定 → 後述の「射界」の項参照
+        「射界」的設定 → 後述的「射界」的項參考
       </li>
       <li>
-        マップマスクはすべてのマップオブジェクトの中で最も下に表示される
+        マップマスクはすべて的マップオブジェクト的中で最も下に表示される
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>なし</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
       <li>
         「射界」機能
         <br />→
-        マップマスクへの反映は優先度低め。余裕があれば初回リリースに含める。
+        マップマスクへ的反映は優先度低め。余裕があれば初回リリースに含める。
       </li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

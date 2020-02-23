@@ -6,7 +6,7 @@ export default {
   },
   actions: {
     /**
-     * BGMをインポートする
+     * BGMをインポート是
      */
     importBgmList: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -19,14 +19,14 @@ export default {
       { bgmList, addType }: { bgmList: any[]; addType: string }
     ) => {
       if (addType === "1") {
-        // 上書き
+        // 覆蓋
         bgmList.forEach(
           (bgmObj: any, index: number) => (bgmObj.key = `bgm-${index}`)
         );
         state.list = bgmList;
         state.maxKey = bgmList.length;
       } else {
-        // 追加
+        // 新增
         bgmList.forEach((bgmObj: any, index: number) => {
           bgmObj.key = `bgm-${index + state.maxKey + 1}`;
           state.list.push(bgmObj);

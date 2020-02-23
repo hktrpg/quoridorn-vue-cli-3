@@ -9,7 +9,7 @@
     @reset="open"
   >
     <div class="contents" @contextmenu.prevent>
-      <!-- 画像選択エリア -->
+      <!-- 圖片選択エリア -->
       <div class="image-container">
         <div
           class="image-block"
@@ -28,26 +28,26 @@
       </div>
 
       <div class="ctrl-type-1">
-        <label>対応画像：JPEG/GIF/PNG</label>
+        <label>対応圖片：JPEG/GIF/PNG</label>
         <ctrl-select
           :disabled="true"
           :optionInfoList="[
             {
               key: null,
               value: '',
-              text: '部屋専用のみ',
+              text: '房間専用的み',
               disabled: true
             }
           ]"
         />
         <ctrl-button @click="passwordButtonOnClick">
-          隠し画像パスワード設定
+          隠し圖片密碼設定
         </ctrl-button>
       </div>
 
       <div class="ctrl-type-1">
         <label for="fileUploader-tag">
-          付与するタグ（半角・全角スペースで区切り）：
+          付与是標籤（半角・全角スペースで区切り）：
         </label>
         <input
           type="text"
@@ -63,7 +63,7 @@
 
       <div class="ctrl-type-2">
         <ctrl-file-selector @change="fileOnChange" ref="button">
-          アップロード対象画像選択
+          アップロード対象圖片選択
         </ctrl-file-selector>
         <ctrl-button :disabled="!useImageList.length" @click="commitOnClick">
           アップロード
@@ -124,7 +124,7 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * selectボックスが選択されたら、入力欄の内容を更新する
+   * selectボックスが選択されたら、入力欄的内容を更新是
    */
   @Watch("selectImageTag")
   private onChangeSelectImageTag(selectImageTag: string) {
@@ -137,11 +137,11 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
   }
 
   private passwordButtonOnClick() {
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 
   /**
-   * 入力欄に入力されたら、selectボックスの内容を更新する
+   * 入力欄に入力されたら、selectボックス的内容を更新是
    */
   @Watch("inputImageTag")
   private onChangeInputImageTag(inputImageTag: string) {
@@ -236,7 +236,7 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
       });
     });
     this.open();
-    this.windowMessage = "画像の読み込みが完了しました。";
+    this.windowMessage = "圖片的読み込みが完了しました。";
   }
 
   private cancelOnClick() {

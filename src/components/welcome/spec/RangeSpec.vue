@@ -6,48 +6,48 @@
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作">
-      <li>画面上部メニューの「コマ」を選択</li>
-      <li>「範圍追加」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法">
+      <li>畫面上方菜單的「コマ」選擇</li>
+      <li>「範圍新增」選擇</li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
-      <li>名前の設定</li>
-      <li>「射界」の設定 → 別項「射界」参照</li>
+      <li>名前的設定</li>
+      <li>「射界」的設定 → 別項「射界」參考</li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>別項「射界」参照</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>別項「射界」參考</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
-      <li>本機能自体が未実装</li>
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
+      <li>本機能自体が未實裝</li>
       <li>
-        中身の処理はキャラクターに簡易実装されているが、バグが数点ある
+        中身的処理はキャラクターに簡易實裝されているが、バグが数点ある
       </li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
+    <spec-item class-str="unSupport" label-str="未實現的功能">
       <li>
-        どどんとふの各システム用に用意された「範圍追加」は対応しない
+        どどんとふ的各システム用に用意された「範圍新增」は対応否
         <br />→
-        基本機能が全て実装できた後の「個別システム対応」のフェーズで対応するかも
+        基本機能が全て實裝できた後的「個別システム対応」的フェーズで対応是かも
       </li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

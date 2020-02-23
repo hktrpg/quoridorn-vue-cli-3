@@ -119,7 +119,7 @@ export default {
   state: {},
   actions: {
     /**
-     * 画面の配置を初期化する
+     * 畫面的配置を初期化是
      */
     doResetWindowLocate({
       rootState,
@@ -146,7 +146,7 @@ export default {
     },
 
     /**
-     * 指定されたプロパティパスの子画面を開く
+     * 指定されたプロパティパス的子畫面を開く
      * @param dispatch
      * @param rootGetters
      * @param property
@@ -162,7 +162,7 @@ export default {
     },
 
     /**
-     * 指定されたプロパティパスの子画面を閉じる
+     * 指定されたプロパティパス的子畫面を閉じる
      * @param dispatch
      * @param state
      * @param rootGetters
@@ -179,7 +179,7 @@ export default {
     },
 
     /**
-     * 指定されたプロパティパスの子画面をアクティブにする
+     * 指定されたプロパティパス的子畫面をアクティブに是
      * @param rootState
      * @param property
      * @param isClose
@@ -192,7 +192,7 @@ export default {
       const dispName = splits[splits.length - 1];
       // window.console.log(`windowActive => ${ dispName }`);
 
-      // displayの表示済みの画面を表示順ソートしたプロパティのリスト（指定のもの含まない）
+      // display的表示済み的畫面を表示順ソートしたプロパティ的リスト（指定的も的含まない）
       const propList = Object.entries(rootState.private.display)
         .map(([key, value]) => ({ key, value }))
         .filter((obj: any) => {
@@ -207,7 +207,7 @@ export default {
         })
         .map((obj: any) => obj.key);
 
-      // 指定以外の画面のz-indexを順番に再設定
+      // 指定以外的畫面的z-indexを順番に再設定
       propList.forEach((propName: string, index: number) => {
         if (isClose && index === propList.length - 1) {
           rootState.private.display[propName].zIndex = index + 100001;
@@ -216,14 +216,14 @@ export default {
         }
       });
 
-      // 指定された画面のz-indexを最大に設定（モーダルスクリーンより手前にする）
+      // 指定された畫面的z-indexを最大に設定（モーダルスクリーンより手前に是）
       if (!isClose)
         rootState.private.display[dispName].zIndex = propList.length + 100001;
     }
   },
   mutations: {},
   getters: {
-    // TODO デプロイするとこれ動かない！なんでぇ！！！
+    // TODO デプロイ是とこれ動かない！なんでぇ！！！
     getWindowParam: (state: any) => (windowName: string): any =>
       state[windowName],
     display: (state: any) => state

@@ -82,21 +82,21 @@ export default class ChatLogViewer extends Vue {
   private viewOption!: boolean;
 
   /**
-   * チャットログ表示タブを選択されたときの挙動
-   * @param key タブのkey
+   * チャットログ表示タブ選擇されたとき的挙動
+   * @param key タブ的key
    */
   @Emit("onSelect")
   private onSelect(key: string): void {}
 
   /**
-   * チャットログ表示タブをホバーされたときの挙動
-   * @param key タブのkey
+   * チャットログ表示タブをホバーされたとき的挙動
+   * @param key タブ的key
    */
   @Emit("onHover")
   private onHover(key: string): void {}
 
   /**
-   * チャットタブ追加ボタンクリックイベントハンドラ
+   * チャットタブ新增鍵クリックイベントハンドラ
    */
   @Emit("editTab")
   private editTab(): void {}

@@ -50,7 +50,7 @@ export default class MapBoard extends Mixins<CanvasMixin>(CanvasMixin) {
     // ctx.globalAlpha = 1
     // ctx.drawImage(img, 0, 0, this.canvasSize.w, this.canvasSize.h)
 
-    // マス目の描画
+    // マス目的描画
     if (this.isDrawGridLine) {
       ctx.strokeStyle = this.gridColor;
       ctx.globalAlpha = 1;
@@ -75,7 +75,7 @@ export default class MapBoard extends Mixins<CanvasMixin>(CanvasMixin) {
         }
       }
 
-      // マウス下のマスを強調表示
+      // マウス下的マスを強調表示
       ctx.strokeStyle = this.gridColor;
       ctx.strokeStyle = "red";
       ctx.globalAlpha = 1;
@@ -88,7 +88,7 @@ export default class MapBoard extends Mixins<CanvasMixin>(CanvasMixin) {
       ctx.stroke();
     }
 
-    // 中心点の描画
+    // 中心点的描画
     // ctx.strokeStyle = "red";
     // ctx.globalAlpha = 1;
     // const center = {
@@ -101,7 +101,7 @@ export default class MapBoard extends Mixins<CanvasMixin>(CanvasMixin) {
     // this.drawLine(ctx, center.x, center.y - 5, 0, 10);
 
     /*
-    // マウス座標の描画
+    // マウス座標的描画
     const mouseMark = {
       x: this.mouseOnCanvas.x - 10,
       y: this.mouseOnCanvas.y - 10
@@ -111,7 +111,7 @@ export default class MapBoard extends Mixins<CanvasMixin>(CanvasMixin) {
     // window.console.log(this.mouseOnCanvas)
     */
 
-    // マス座標の描画
+    // マス座標的描画
     if (this.isDrawGridId) {
       ctx.fillStyle = this.gridColor;
       ctx.globalAlpha = 1;

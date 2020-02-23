@@ -2,18 +2,18 @@ import CryptoJS from "crypto-js";
 import { saveJson } from "@/components/common/Utility";
 
 export default {
-  // FIXME settingのデータは別経路で保存する？
+  // FIXME setting的データは別経路で保存是？
   state: {
     /** バージョン */
     version: "1.0.2",
     magicWord: "I walk slowly, but I never walk backward.",
-    /** 接続情報 */
+    /** 連接情報 */
     connect: {
       skywayKey: "",
       type: "",
       bcdiceServer: ""
     },
-    /** 権限 */
+    /** 權限 */
     roles: [
       {
         label: "玩家",
@@ -27,12 +27,12 @@ export default {
       },
       {
         label: "副GM",
-        value: "副GM",
+        value: "サブGM",
         description: "外觀不同，與GM有相同的權限。"
       },
       {
         label: "觀戰者",
-        value: "觀戰者",
+        value: "見学者",
         description: "無法變更所有房間和玩家的設定。"
       }
     ],
@@ -53,7 +53,7 @@ export default {
 
   actions: {
     onTest({ rootGetters }: { rootGetters: any }) {
-      // 特定の位置にファイルが置いてあったら変換する
+      // 特定的位置にファイルが置いてあったら変換是
       rootGetters
         .loadJson("/static/mod/bgm.json")
         .then((bgmJson: any) => {
@@ -88,7 +88,7 @@ export default {
     },
 
     /**
-     * ダイスボット一覧を取得する
+     * ダイスボット列表を取得是
      * @param state
      */
     getBcdiceSystemList({ state }: { state: any }) {
@@ -111,7 +111,7 @@ export default {
     },
 
     /**
-     * ダイスボットの情報を取得する
+     * ダイスボット的情報を取得是
      * @param state
      * @param system
      */
@@ -133,7 +133,7 @@ export default {
     },
 
     /**
-     * ダイスコマンドを送信して結果を取得する
+     * ダイスコマンドを送信して結果を取得是
      * @param state
      * @param system
      * @param command
@@ -167,7 +167,7 @@ export default {
   mutations: {
     init_state_setting: (state: any) => {
       /* ----------------------------------------------------------------------
-       * チャット整形に使う正規表現の初期化
+       * チャット整形に使う正規表現的初期化
        */
       const colorFormat = "#[0-9a-f]+|rgba? *\\([0-9., ]+\\)|[a-z]+";
       const lineStyleFormat = "solid|double|dotted|dashed|wavy";

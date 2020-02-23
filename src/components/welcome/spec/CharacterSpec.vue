@@ -6,16 +6,16 @@
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作１">
-      <li>画面上部メニューの「コマ」を選択</li>
-      <li>「角色追加」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法１">
+      <li>畫面上方菜單的「コマ」選擇</li>
+      <li>「角色新增」選擇</li>
     </spec-item>
-    <spec-item class-str="operation" label-str="起動操作２">
+    <spec-item class-str="operation" label-str="操作方法２">
       <li>マップを右クリック</li>
       <li>
-        表示されたメニューの「角色追加」を選択
+        表示された菜單的「角色新增」選擇
       </li>
     </spec-item>
     <!----------------------
@@ -23,30 +23,30 @@
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        画像選択 → 後述の「画像選択」の項参照
+        圖片選択 → 後述的「圖片選択」的項參考
       </li>
       <li>
-        画像切替設定（コマダブルクリックで画像を切替えるための設定）
+        圖片切換設定（コマダブルクリックで圖片を切換えるため的設定）
       </li>
       <li>名前入力</li>
-      <li>サイズ設定</li>
-      <li>参照URLの指定</li>
-      <li>マップマスクの下に隠す設定</li>
-      <li>その他情報の指定</li>
-      <li>イニシアティブ表の情報の入力</li>
+      <li>大小設定</li>
+      <li>參考URL的指定</li>
+      <li>隱藏在地圖迷霧下方設定</li>
+      <li>其他情報的指定</li>
+      <li>イニシアティブ表的情報的入力</li>
       <li>
-        「射界」の設定 → 後述の「射界」の項参照
+        「射界」的設定 → 後述的「射界」的項參考
       </li>
-      <li>追加後に編輯可能</li>
-      <li>追加後に削除可能</li>
-      <li>追加後にGMはオーナー権限を変更可</li>
+      <li>新增後に編輯可能</li>
+      <li>新增後に刪除可能</li>
+      <li>新增後にGMはオーナー權限を変更可</li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
+    <spec-item class-str="request" label-str="用戶要求">
       <li>
-        画像指定時に回転させたい（画像を用意する枚数削減）
+        圖片指定時に回転させたい（圖片を用意是枚数削減）
         <br />→ いずれ作りたい
       </li>
       <li>
@@ -55,21 +55,21 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
-      <li>イニシアティブ表の情報の入力<br />→ いずれ作りたい</li>
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
+      <li>イニシアティブ表的情報的入力<br />→ いずれ作りたい</li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

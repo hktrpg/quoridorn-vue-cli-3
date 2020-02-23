@@ -14,18 +14,18 @@
       <div class="attrArea">
         <span
           class="tag"
-          :title="'【タグ】\n' + tag"
+          :title="'【標籤】\n' + tag"
           ref="elm"
           @contextmenu.prevent
           >{{ tag }}</span
         ><!--
-     --><span class="title selectable" :title="'【タイトル】\n' + title">{{
+     --><span class="title selectable" :title="'【標題】\n' + title">{{
           title
         }}</span
         ><!--
      --><span class="icon loop" disabled v-if="isLoop" @contextmenu.prevent
           ><!--
-       --><i class="icon-loop" title="ループ再生します"></i
+       --><i class="icon-loop" title="ループ播放します"></i
           ><!--
        --></span
         >
@@ -305,7 +305,7 @@ export default class BGMCoreComponent extends Vue {
     return end;
   }
   get thumbnailTitle(this: any): string {
-    let title = `【タイトル】\n${this.title}`;
+    let title = `【標題】\n${this.title}`;
     if (this.isYoutube) {
       title += `\n\n【URL】\n${this.url}`;
     }

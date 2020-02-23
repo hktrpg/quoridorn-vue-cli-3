@@ -52,9 +52,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
+    <spec-item class-str="request" label-str="用戶要求">
       <li>
         <i class="icon-appleinc"></i>
         Macintosh (-
@@ -63,9 +63,9 @@
       </li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
       <li>
         <i class="icon-windows"></i>
         Windows10 -

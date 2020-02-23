@@ -2,7 +2,7 @@
   <context-frame displayProperty="private.display.mapMaskContext">
     <div class="item" @click.left.prevent="editObj">変更</div>
     <div class="item" @click.left.prevent="copyObj">複製</div>
-    <div class="item" @click.left.prevent="deleteObj">削除</div>
+    <div class="item" @click.left.prevent="deleteObj">刪除</div>
     <hr />
     <div class="item" @click.left.prevent="changeLock">
       固定{{ isLock ? "を解除" : "" }}

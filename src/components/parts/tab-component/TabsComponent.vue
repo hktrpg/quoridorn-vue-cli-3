@@ -31,7 +31,7 @@
 
     <slot />
 
-    <!-- タブ設定ボタン -->
+    <!-- タブ設定鍵 -->
     <span
       class="tab addButton"
       @click="tabAddButtonOnClick"
@@ -75,21 +75,21 @@ export default class TabsComponent extends Vue {
   private viewOption!: boolean;
 
   /**
-   * チャットログ表示タブを選択されたときの挙動
-   * @param key タブのkey
+   * チャットログ表示タブ選擇されたとき的挙動
+   * @param key タブ的key
    */
   @Emit("onSelect")
   private chatTabOnSelect(key: string): void {}
 
   /**
-   * チャットログ表示タブをホバーされたときの挙動
-   * @param key タブのkey
+   * チャットログ表示タブをホバーされたとき的挙動
+   * @param key タブ的key
    */
   @Emit("onHover")
   private chatTabOnHover(key: string): void {}
 
   /**
-   * チャットタブ追加ボタンクリックイベントハンドラ
+   * チャットタブ新增鍵クリックイベントハンドラ
    */
   @Emit("editTab")
   private tabAddButtonOnClick(): void {}

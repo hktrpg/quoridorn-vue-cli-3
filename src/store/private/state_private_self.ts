@@ -1,5 +1,5 @@
 export default {
-  /** 接続情報 */
+  /** 連接情報 */
   state: {
     peerId: null,
     peerIdWait: null,

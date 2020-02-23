@@ -228,10 +228,10 @@ export default class App2 extends Vue {
   @Getter("publicMemo") private publicMemo: any;
 
   private mounted() {
-    // bcdiceの使用準備
+    // bcdice的使用準備
     this.onMount();
 
-    // Youtubeの使用準備
+    // Youtube的使用準備
     const script: HTMLScriptElement = document.createElement("script");
     script.src = "static/lib/YoutubeManager.js";
     const firstScript: HTMLScriptElement = document.getElementsByTagName(
@@ -296,7 +296,7 @@ body {
   overflow: hidden;
 }
 
-/* サイズ調整（コンテンツを比率を変えずに内側にフィット） */
+/* 大小調整（內容を比率を変えずに内側にフィット） */
 img {
   object-fit: contain;
 }

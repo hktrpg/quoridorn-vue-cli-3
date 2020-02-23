@@ -21,9 +21,9 @@
           </thead>
           <tbody>
             <!-- ===============================================================
-            コンテンツ
+            內容
           -->
-            <!-- ユーザが手動で追加したもの -->
+            <!-- ユーザが手動で新增したも的 -->
             <tr
               v-for="customDiceBot in customDiceBotList"
               :key="customDiceBot.key"
@@ -55,7 +55,7 @@
               <td colspan="5"></td>
             </tr>
 
-            <!-- 設定ファイルから追加したもの -->
+            <!-- 設定ファイルから新增したも的 -->
             <tr
               v-for="customDiceBot in customDiceBotRoomSysList"
               :key="customDiceBot.key"
@@ -96,7 +96,7 @@
       </div>
       <div>
         <ctrl-button @click="addButtonOnClick" ref="button"
-          >新規作成</ctrl-button
+          >新的作成</ctrl-button
         >
         <ctrl-button @click="copyButtonOnClick">複製</ctrl-button>
         <ctrl-button @click="changeButtonOnClick">變更</ctrl-button>
@@ -318,7 +318,7 @@ export default class CustomDiceBotTableWindow extends Mixins<WindowMixin>(
     );
   }
 
-  /* Start 列幅可変テーブルのプロパティ */
+  /* Start 列幅可変テーブル的プロパティ */
   private get selectLineKey() {
     return this.$store.state.private.display.customDiceBotTableWindow
       .selectLineKey;
@@ -350,7 +350,7 @@ export default class CustomDiceBotTableWindow extends Mixins<WindowMixin>(
   private get colStyle() {
     return (index: number) => ({ width: `${this.widthList[index]}px` });
   }
-  /* End 列幅可変テーブルのプロパティ */
+  /* End 列幅可変テーブル的プロパティ */
 }
 </script>
 
@@ -384,7 +384,7 @@ tr.separator {
   background-color: #b7babc;
 }
 
-/* Start 列幅可変テーブルのCSS */
+/* Start 列幅可変テーブル的CSS */
 .tableContainer {
   overflow-y: scroll;
   flex: 1;
@@ -540,5 +540,5 @@ button {
     background-color: lightgrey;
   }
 }
-/* End 列幅可変テーブルのCSS */
+/* End 列幅可変テーブル的CSS */
 </style>

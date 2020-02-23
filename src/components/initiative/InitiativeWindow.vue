@@ -9,7 +9,7 @@
   >
     <div class="contents">
       <div class="playOperationArea" @contextmenu.prevent>
-        <!-- 擴大ボタン -->
+        <!-- 擴大鍵 -->
         <ctrl-button
           @click="arrangeWindowSize(true)"
           v-if="isWindowViewScroll"
@@ -18,7 +18,7 @@
           ◁︎擴大
         </ctrl-button>
 
-        <!-- 縮小ボタン -->
+        <!-- 縮小鍵 -->
         <ctrl-button
           @click="arrangeWindowSize(false)"
           v-if="!isWindowViewScroll"
@@ -30,7 +30,7 @@
         <!-- 空白 -->
         <div style="flex: 1;"></div>
 
-        <!-- 設定ボタン -->
+        <!-- 設定鍵 -->
         <ctrl-button
           class="setting"
           @click="openSettingWindow"
@@ -40,7 +40,7 @@
         </ctrl-button>
       </div>
       <div class="playOperationArea" @contextmenu.prevent>
-        <!-- 取消ボタン -->
+        <!-- 取消鍵 -->
         <ctrl-button
           class="back"
           @click="roundBack"
@@ -49,7 +49,7 @@
           取消
         </ctrl-button>
 
-        <!-- 次へボタン -->
+        <!-- 次へ鍵 -->
         <ctrl-button
           class="next"
           @click="roundNext"
@@ -61,7 +61,7 @@
         <!-- 空白 -->
         <div style="flex: 1;"></div>
 
-        <!-- 戰鬥開始ボタン -->
+        <!-- 戰鬥開始鍵 -->
         <ctrl-button
           class="start"
           @click="battleStart"
@@ -70,7 +70,7 @@
           戰鬥開始
         </ctrl-button>
 
-        <!-- 戰鬥終了ボタン -->
+        <!-- 戰鬥完結鍵 -->
         <ctrl-button
           class="end"
           @click="battleEnd"
@@ -114,7 +114,7 @@
               />
               <th :style="colStyle(3)" title="名稱">名稱</th>
 
-              <!-- 追加パラメータ -->
+              <!-- 新增パラメータ -->
               <template v-for="(property, index) in propertyList">
                 <divider
                   :key="`th-${index}-divider`"
@@ -144,7 +144,7 @@
           </thead>
           <tbody>
             <!-- ===============================================================
-              コンテンツ
+              內容
             -->
             <tr
               v-for="character in sortCharacterList"
@@ -222,7 +222,7 @@
                 {{ character.name }}
               </td>
 
-              <!-- 追加パラメータ -->
+              <!-- 新增パラメータ -->
               <template v-for="(property, index) in propertyList">
                 <divider
                   :key="`td-${index}-divider`"
@@ -375,7 +375,7 @@
               />
               <td :style="colStyle(3)"></td>
 
-              <!-- 追加パラメータ -->
+              <!-- 新增パラメータ -->
               <template v-for="(property, index) in propertyList">
                 <divider
                   :key="`space-${index}-divider`"
@@ -902,7 +902,7 @@ export default class InitiativeWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   private editButtonOnClick() {
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 }
 </script>

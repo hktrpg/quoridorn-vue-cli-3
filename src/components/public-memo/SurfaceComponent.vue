@@ -2,7 +2,7 @@
   <div class="surfaceComponent">
     <template v-if="isEditMode">
       <label>
-        タブの名前
+        タブ的名前
         <input
           type="text"
           v-model="localValue"
@@ -13,7 +13,7 @@
           @keyup.229.stop
         />
       </label>
-      <!-- タブの設定 -->
+      <!-- タブ的設定 -->
       <div class="tabSettingArea">
         <ctrl-button
           class="left"
@@ -29,11 +29,11 @@
         >
           ＞
         </ctrl-button>
-        <span class="icon-cross" @click.stop="deleteTab()">タブを削除</span>
+        <span class="icon-cross" @click.stop="deleteTab()">タブを刪除</span>
         <span class="icon-copy" @click.stop="copyTab()">タブをコピー</span>
       </div>
 
-      <!-- 閲覧権限の設定 -->
+      <!-- 閲覧權限的設定 -->
       <div class="targetListArea">
         <actor-select
           v-model="selectedActorKey"
@@ -57,15 +57,15 @@
       </div>
     </template>
 
-    <!-- 閲覧権限がない場合 -->
+    <!-- 閲覧權限がない場合 -->
     <div v-if="!isViewableSurface()" class="disabled">
-      {{ !isViewableSurface() ? "あなたにこの面は開示されていません。" : "" }}
+      {{ !isViewableSurface() ? "あなたにこ的面は開示されていません。" : "" }}
     </div>
 
-    <!-- 閲覧権限がある場合 -->
+    <!-- 閲覧權限がある場合 -->
     <template v-if="isViewableSurface()">
       <div v-if="!isFront && surface.contentsList.length === 0" class="warning">
-        ※ 裏面が白紙なので、このタブは面がありません。
+        ※ 裏面が白紙な的で、こ的タブは面がありません。
       </div>
       <template v-for="(contents, itemIndex) in surface.contentsList">
         <!-- 大見出し -->
@@ -169,7 +169,7 @@
           ></span>
         </div>
 
-        <!-- チェックボックス -->
+        <!-- 檢查ボックス -->
         <div
           v-if="contents.kind === 'checkbox'"
           class="item checkbox"
@@ -208,7 +208,7 @@
           ></span>
         </div>
 
-        <!-- 画像 -->
+        <!-- 圖片 -->
         <div
           v-if="contents.kind === 'images'"
           class="item imageContainer"
@@ -340,7 +340,7 @@ export default class SurfaceComponent extends Vue {
   ) {}
 
   /**
-   * テキストエリアに入力される度に、必要に応じてテキストエリアの表示サイズを拡張する
+   * テキストエリアに入力される度に、必要に応じてテキストエリア的表示大小を拡張是
    */
   private textareaOnInput(event: any) {
     const textarea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
@@ -350,13 +350,13 @@ export default class SurfaceComponent extends Vue {
   }
 
   /**
-   * この面の内容を表示して良いかどうかを調べる
+   * こ的面的内容を表示して良いかどうかを調べる
    */
   private isViewableSurface(): boolean {
     // ターゲットが指定されていないなら公開情報
     if (this.surface.targetList.length === 0) return true;
 
-    // ターゲットが指定されているので、許可されているか調べる
+    // ターゲットが指定されている的で、許可されているか調べる
     return this.targetActorList.filter(actor => {
       const type: string = actor.key.split("-")[0];
       if (type === "character") {
@@ -396,7 +396,7 @@ export default class SurfaceComponent extends Vue {
   }
 
   /**
-   * 画像設定をクリックした時
+   * 圖片設定をクリックした時
    */
   private imageConfigOnClick(
     event: any,
@@ -440,7 +440,7 @@ export default class SurfaceComponent extends Vue {
       ];
       Promise.resolve()
         .then(() =>
-          // リアクティブのための更新と、それに伴うコールバックの一時無効のための指定
+          // リアクティブ的ため的更新と、それに伴うコールバック的一時無効的ため的指定
           this.setProperty({
             property: "private.display.imageSelectorWindow",
             value: {
@@ -477,7 +477,7 @@ export default class SurfaceComponent extends Vue {
   }
 
   /**
-   * 編輯中モードで画像を選択された時
+   * 編輯中モードで圖片選擇された時
    * @param itemIndex
    * @param imageIndex
    * @param imageKey

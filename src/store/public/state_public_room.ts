@@ -1,5 +1,5 @@
 export default {
-  /** 部屋情報 */
+  /** 房間情報 */
   state: {
     name: "",
     members: [],
@@ -9,7 +9,7 @@ export default {
   actions: {},
   mutations: {
     /**
-     * ルームメンバを空にする
+     * ルームメンバを空に是
      * @param state
      * @returns { *[] }
      */

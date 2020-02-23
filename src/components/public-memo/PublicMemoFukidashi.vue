@@ -46,7 +46,7 @@ export default class PublicMemoFukidashi extends Vue {
     // ターゲットが指定されていないなら公開情報
     if (surface.targetList.length === 0) return false;
 
-    // ターゲットが指定されているので、許可されているか調べる
+    // ターゲットが指定されている的で、許可されているか調べる
     return !this.getTargetActorList(surface).filter(actor => {
       const type: string = actor.key.split("-")[0];
       if (type === "character") {

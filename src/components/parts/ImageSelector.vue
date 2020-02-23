@@ -15,7 +15,7 @@
     <!-- 絞り込み情報 -->
     <div class="imageInfo">
       <div class="selectedImage">
-        <label>タグ名：</label>
+        <label>標籤名稱：</label>
         <image-tag-select
           class="tagSelect"
           v-model="selectImageTag"
@@ -23,8 +23,8 @@
         />
         <span>{{ selectedTagIndexText }}</span>
       </div>
-      <ctrl-button @click="onClickHideImage">隠し画像</ctrl-button>
-      <ctrl-button @click="doReverse">反</ctrl-button>
+      <ctrl-button @click="onClickHideImage">隱藏圖片</ctrl-button>
+      <ctrl-button @click="doReverse">反轉</ctrl-button>
     </div>
   </div>
 </template>
@@ -99,7 +99,7 @@ export default class ImageSelector extends Vue {
   }
 
   private onClickHideImage() {
-    alert("未実装です。");
+    alert("未實裝此功能。");
   }
 
   private get selectedTagIndexText() {

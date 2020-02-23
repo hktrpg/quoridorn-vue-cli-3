@@ -6,7 +6,7 @@ import moment from "moment";
 export default {
   actions: {
     /**========================================================================
-     * 指定された名前の部屋に接続する
+     * 指定された名前的房間に連接是
      *=========================================================================
      * @param rootState
      * @param commit
@@ -26,16 +26,16 @@ export default {
       { roomName, isWait = false }: { roomName: string; isWait: boolean }
     ): Promise<any> {
       return new Promise((resolve: Function, reject: Function) => {
-        // qLog(`Peer接続開始 => Non Info.`);
+        // qLog(`Peer連接開始 => Non Info.`);
 
         const connectFunc = () => {
-          // peer接続作成
+          // peer連接作成
           let peer: any = null;
           try {
             peer = new Peer({ key: rootGetters.skywayKey, debug: 1 });
           } catch (err) {
             alert(
-              "connect.yamlの設定を見直してください。\n現在の値：" +
+              "請查看connect.yaml的設定。\n現在的値：" +
                 rootGetters.skywayKey
             );
             reject.call(null);
@@ -44,14 +44,14 @@ export default {
           commit("updateWebRtcPeer", { peer: peer, isWait: isWait });
 
           /* ------------------------------
-           * Peer接続成功時
+           * Peer連接成功時
            */
           peer.on("open", (peerId: string) => {
-            // qLog(`Peer接続成功 => PeerId: ${peerId}`);
+            // qLog(`Peer連接成功 => PeerId: ${peerId}`);
             const isSfu =
               rootGetters && rootGetters.connectType.toUpperCase() === "SFU";
             const connectStr = isSfu ? "SFU方式" : "Mesh方式";
-            // qLog(`Room接続開始 => Room: ${roomName}, 接続方式: ${connectStr}`);
+            // qLog(`Room連接開始 => Room: ${roomName}, 連接方式: ${connectStr}`);
             const room = peer.joinRoom(
               roomName,
               isSfu ? { mode: "sfu" } : undefined
@@ -60,18 +60,18 @@ export default {
             commit("updatePeerId", { peerId: peerId, isWait: isWait });
 
             /* ------------------------------
-             * Room接続成功時
+             * Room連接成功時
              */
             room.on("open", () => {
-              // qLog(`Room接続成功 => Room: ${roomName}`);
+              // qLog(`Room連接成功 => Room: ${roomName}`);
               resolve(peerId);
             });
           });
 
-          // 画面が閉じられたらPeer接続を破棄
-          // TODO 複数呼び出されたら上書きされてしまう問題
+          // 畫面が閉じられたらPeer連接を破棄
+          // TODO 複数呼び出されたら覆蓋されてしまう問題
           window.onunload = window.onbeforeunload = () => {
-            // マップ編輯中のロックを解除
+            // マップ編輯中的ロックを解除
             if (rootGetters.isMapEditing === rootGetters.peerId(isWait)) {
               dispatch("setProperty", {
                 property: "public.map.isEditing",
@@ -90,7 +90,7 @@ export default {
           };
 
           /* ------------------------------
-           * エラーハンドリング
+           * 錯誤ハンドリング
            */
           peer.on("error", (err: any) => {
             window.console.error(err.type);
@@ -98,26 +98,26 @@ export default {
             if (
               err.message.indexOf("Please make sure the peerId is correct") > 0
             ) {
-              // 切断済みの相手に対するSkyWayAPIの内部的な処理によるエラーのため無視する
+              // 切断済み的相手に対是SkyWayAPI的内部的な処理による錯誤的ため無視是
               window.console.error(err.message);
               return;
             }
 
-            // その他エラー
+            // 其他錯誤
             reject.call(null);
             const msg: string[] = [];
-            msg.push("接続に失敗しました。");
+            msg.push("連線失敗。");
             msg.push(
-              "たまたま通信処理の調子が悪い可能性があるので、画面を再読み込みしてもらうと直るかもしれません。"
+              "可能發生了通訊條件不好的情況，因此，需要重新加載去進行修復。"
             );
-            msg.push("原因は以下のメッセージを参考にしてください。");
+            msg.push("原因請參考以下信息。");
             msg.push("");
             msg.push(err.message);
             alert(msg.join("\n"));
           });
         };
 
-        // 既にPeer接続していたら、その接続は破棄する
+        // 既にPeer連接していたら、そ的連接は破棄是
         const room = rootGetters.webRtcRoom(isWait);
         if (room) {
           room.close();
@@ -137,17 +137,17 @@ export default {
     },
 
     /**========================================================================
-     * 誰かが入室してきた場合の処理
+     * 誰かが進房してきた場合的処理
      *=========================================================================
      * @param payload
      * @param peerId
      */
     onJoinMember(payload: any, { peerId }: { peerId: string }) {
-      // qLog(`入室を感知 => peerId: ${peerId}`);
+      // qLog(`檢測到進入 => peerId: ${peerId}`);
     },
 
     /**========================================================================
-     * 誰かが退室した場合の処理
+     * 誰かが退室した場合的処理
      *=========================================================================
      * @param dispatch
      * @param rootGetters
@@ -164,7 +164,7 @@ export default {
       );
       if (index < 0) return;
 
-      // メンバーリストから削除する
+      // メンバーリストから刪除是
       const member = rootGetters.members.splice(index, 1)[0];
       const player = rootGetters.playerList.filter(
         (p: any) => p.key === member.playerKey
@@ -184,7 +184,7 @@ export default {
 
     /**========================================================================
      * NOTICE_NEW_MEMBER
-     * 新規ルームメンバー通知を受け取ったとき
+     * 新的ルームメンバー通知を受け取ったとき
      *=========================================================================
      * @param rootState
      * @param dispatch
@@ -209,7 +209,7 @@ export default {
         );
         return;
       }
-      // 自分が親だったら、入ってきた人に部屋情報を教えてあげる
+      // 自分が親だったら、入ってきた人に房間情報を教えてあげる
       if (rootGetters.members[0].peerId === rootGetters.peerId(isWait)) {
         dispatch("sendRoomData", {
           type: "NOTICE_ROOM_INFO",
@@ -222,7 +222,7 @@ export default {
 
     /**========================================================================
      * NOTICE_ROOM_INFO
-     * ルームメンバーの情報を受け取ったとき
+     * ルームメンバー的情報を受け取ったとき
      *=========================================================================
      * @param rootState
      * @param dispatch
@@ -274,17 +274,17 @@ export default {
     ) {
       let isShowWindow = false;
       let isError = false;
-      // 部屋パスワードチェック
+      // 房間密碼檢查
       if (value.room.password !== (roomPassword || "")) {
         if (useAlert)
           alert(
-            `部屋${roomName}は存在しましたが、\nご指定の部屋パスワードでは入室できませんでした。`
+            `房間${roomName}存在、\n但我們無法使用指定的密碼進入。`
           );
 
         if (rootGetters.isWait) {
           commit("updateIsJoined", false);
         }
-        // window.console.log("部屋パスワードエラー", rootGetters.isWait);
+        // window.console.log("房間密碼錯誤", rootGetters.isWait);
         reject.call(null);
         return;
       } else {
@@ -294,12 +294,12 @@ export default {
         (p: any) => p.name === playerName
       )[0];
       if (myPlayer) {
-        // 同名プレイヤーが既に部屋にいる場合
+        // 同名玩家が既に房間にいる場合
 
-        // プレイヤーパスワードチェック
+        // 玩家密碼檢查
         if (myPlayer.password !== (playerPassword || "")) {
-          if (useAlert) alert(`プレイヤーパスワードの入力をお願いします。`);
-          // window.console.log("プレイヤーパスワードエラー");
+          if (useAlert) alert(`請輸入玩家密碼。`);
+          // window.console.log("玩家密碼錯誤");
           isShowWindow = true;
           isError = true;
         } else {
@@ -315,7 +315,7 @@ export default {
         }
       }
 
-      // 受け取ったpublic情報でローカルを更新する
+      // 受け取ったpublic情報でローカルを更新是
       const volatileList = value.chat.tab.list.map(
         (tabObj: any, index: number) => ({
           key: tabObj.key,
@@ -328,7 +328,7 @@ export default {
       Vue.set(rootState.private.chat, "tab", volatileList);
       Vue.set(rootState, "public", value);
 
-      // イニシアティブ表の列の適用
+      // イニシアティブ表的列的適用
       dispatch("setInitiativeParams", {
         format: rootGetters.rowStr.trim()
       });
@@ -362,7 +362,7 @@ export default {
         }
       }
 
-      // 入室通知
+      // 進房通知
       resolve({
         playerName: playerName,
         playerPassword: playerPassword,
@@ -396,7 +396,7 @@ export default {
 
     /**========================================================================
      * NOTICE_OPERATION
-     * 親によるDO_METHODの発令要請を受けた時
+     * 親によるDO_METHOD的発令要請を受けた時
      *=========================================================================
      * @param rootState
      * @param dispatch
@@ -421,7 +421,7 @@ export default {
         );
         return;
       }
-      // 自分が親だったら、この通知を処理して、ルームメンバーに土管する
+      // 自分が親だったら、こ的通知を処理して、ルームメンバーに土管是
       if (rootGetters.members[0].peerId === rootGetters.peerId(isWait)) {
         value.processTime = parseInt(moment().format("YYYYMMDDHHmmss"), 10);
         dispatch("sendRoomData", {
@@ -435,7 +435,7 @@ export default {
     },
 
     /**========================================================================
-     * 部屋データを受け取ったとき
+     * 房間データを受け取ったとき
      *=========================================================================
      * @param rootState
      * @param dispatch
@@ -494,7 +494,7 @@ export default {
       const value: any = message.data.value;
       const method: string = message.data.method;
 
-      // ターゲットでなければ処理しない
+      // ターゲットでなければ処理否
       const targets = message.data.targets;
       if (
         targets &&
@@ -510,15 +510,15 @@ export default {
       // qLog(`RoomData受信 => TYPE: ${type}, ${methodMsg}VALUE:`, value);
 
       /*
-       * 通信内容に従って処理する
+       * 通信内容に従って処理是
        */
-      // 新規ルームメンバー通知を受け取ったとき
+      // 新的ルームメンバー通知を受け取ったとき
       if (type === "NOTICE_NEW_MEMBER")
         dispatch("onNoticeNewMember", {
           fromPeerId: fromPeerId,
           isWait: isWait
         });
-      // ルームメンバーの情報を受け取ったとき
+      // ルームメンバー的情報を受け取ったとき
       if (type === "NOTICE_ROOM_INFO")
         dispatch("onNoticeRoomInfo", {
           roomName: roomName,
@@ -533,9 +533,9 @@ export default {
           useAlert: useAlert,
           value: value
         });
-      // 新規ルームメンバーの自己紹介を受け取ったとき
+      // 新的ルームメンバー的自己紹介を受け取ったとき
       if (type === "NOTICE_SELF_INFO") {
-        // Player追加
+        // Player新增
         dispatch("addPlayer", {
           peerId: fromPeerId,
           name: value.playerName,
@@ -553,23 +553,23 @@ export default {
           ) > -1;
         if (isContainMe && members.length > 1) {
           const msg: string[] = [];
-          msg.push("あなたと同じプレイヤーとして入室した人が現れました。");
-          msg.push("これがもしあなた本人による入室なら良いのですが、");
-          msg.push("そうでない場合は成りすましの影響が出ます。");
+          msg.push("あなたと同じ玩家として進房した人が現れました。");
+          msg.push("これがもしあなた本人による進房なら良い的ですが、");
+          msg.push("そうでない場合は成りすまし的影響が出ます。");
           msg.push("");
-          msg.push("対処するには以下の手順をとってください。");
+          msg.push("対処是には以下的手順をとってください。");
           msg.push(
-            "１. 速やかに部屋データを保存(Ctrl + S もしくは Command + S)する"
+            "１. 速やかに房間データを保存(Ctrl + S もしくは Command + S)是"
           );
-          msg.push("２. ルームメンバーに成りすましの可能性を教える");
-          msg.push("３. 部屋を作り直す");
-          msg.push("４. （あなたは別のパスワードでログインする）");
+          msg.push("２. ルームメンバーに成りすまし的可能性を教える");
+          msg.push("３. 房間を作り直す");
+          msg.push("４. （あなたは別的密碼でログイン是）");
           setTimeout(() => alert(msg!.join("\n")), 0);
         }
       }
-      // privateデータの要求を受けたとき
+      // privateデータ的要求を受けたとき
       if (type === "REQUEST_PRIVATE_DATA") {
-        // 同じプレイヤーの中で一番最初に入室した画面のみ、privateデータを送信する
+        // 同じ玩家的中で一番最初に進房した畫面的み、privateデータを送信是
         const player = rootGetters.getPlayer(rootGetters.peerId(isWait));
         const members = rootGetters.getMembers(player.key);
         if (members[0].peerId === rootGetters.peerId(isWait)) {
@@ -596,16 +596,16 @@ export default {
       // privateデータを受けたとき
       if (type === "SEND_PRIVATE_DATA")
         dispatch("onSendPrivateData", { value: value, peerId: fromPeerId });
-      // 親によるDO_METHODの発令要請を受けた時
+      // 親によるDO_METHOD的発令要請を受けた時
       if (type === "NOTICE_OPERATION")
         dispatch("onNoticeOperation", {
           value: value,
           method: method,
           isWait: isWait
         });
-      // 入力中の通知を受けたとき
+      // 入力中的通知を受けたとき
       if (type === "NOTICE_INPUT") dispatch("noticeInput", value);
-      // 画面操作を受け取ったとき
+      // 畫面操作を受け取ったとき
       if (type === "DO_METHOD") {
         delete value.isNotice;
         dispatch(method, value);
@@ -613,7 +613,7 @@ export default {
     },
 
     /**========================================================================
-     * WebRTCでPeer接続し、Roomにも接続する
+     * WebRTCでPeer連接し、Roomにも連接是
      *=========================================================================
      */
     createPeer() {
@@ -621,7 +621,7 @@ export default {
     },
 
     /**========================================================================
-     * 入室手続きを始める
+     * 進房手続きを始める
      *=========================================================================
      * @param dispatch
      * @param commit
@@ -672,13 +672,13 @@ export default {
       }
     ) {
       return new Promise((resolve: Function, reject: Function) => {
-        // メンバーのリセット
+        // メンバー的リセット
         commit("emptyMember");
 
         const room = rootGetters.webRtcRoom(isWait);
 
         /* ------------------------------
-         * 誰かが入室してきた場合
+         * 誰かが進房してきた場合
          */
         if (room._events.peerJoin) delete room._events.peerJoin;
         room.on("peerJoin", (peerId: string) => {
@@ -694,7 +694,7 @@ export default {
         });
 
         /* ------------------------------
-         * 部屋データを受信した場合
+         * 房間データを受信した場合
          */
         if (room._events.data) delete room._events.data;
         room.on("data", (message: any) => {
@@ -714,7 +714,7 @@ export default {
           });
         });
 
-        // ルームメンバーに自己紹介する
+        // ルームメンバーに自己紹介是
         dispatch("sendRoomData", {
           type: "NOTICE_NEW_MEMBER",
           isWait: isWait
@@ -723,7 +723,7 @@ export default {
     },
 
     /**========================================================================
-     * 部屋の存在確認チェック
+     * 房間的存在確認檢查
      *=========================================================================
      * @param dispatch
      * @param rootGetters
@@ -741,10 +741,10 @@ export default {
       }
     ) {
       return new Promise((resolve: Function) => {
-        // 入力チェック
+        // 入力檢查
         if (!roomName) {
-          window.console.error(`部屋名は必須項目です。`);
-          alert(`部屋名は必須項目です。`);
+          window.console.error(`房間名は必須項目です。`);
+          alert(`必須填寫房間名稱。`);
           return;
         }
 
@@ -757,7 +757,7 @@ export default {
         room.on("log", (logs: string[]) => {
           const peerIdList: string[] = [];
           logs.forEach((log: string) => {
-            // 部屋存在チェック処理
+            // 房間存在檢查処理
             const logObj = JSON.parse(log);
 
             const logTexts = [];
@@ -787,7 +787,7 @@ export default {
           let isExist = peerIdList.length > 0;
           // qLog(
           //   `Room存在確認 => name: ${roomName} 存在: ${
-          //     isExist ? "する" : "しない"
+          //     isExist ? "是" : "否"
           //   } peerId:`,
           //   peerIdList
           // );
@@ -802,7 +802,7 @@ export default {
     },
 
     /**========================================================================
-     * ログアウト処理（画面遷移なし）
+     * 登出処理（畫面遷移無）
      *=========================================================================
      * @param dispatch
      * @param commit
@@ -817,7 +817,7 @@ export default {
       commit: Function;
       rootGetters: any;
     }) {
-      qLog("ログアウト");
+      qLog("登出");
       dispatch("setProperty", {
         property: "public.room",
         value: {
@@ -846,7 +846,7 @@ export default {
     },
 
     /**========================================================================
-     * ログアウト処理（待ち中の通信の廃棄）
+     * 登出処理（待ち中的通信的廃棄）
      *=========================================================================
      * @param commit
      * @param rootGetters
@@ -895,7 +895,7 @@ export default {
     },
 
     /**========================================================================
-     * 新しい部屋をつくる
+     * 新しい房間をつくる
      *=========================================================================
      * @param dispatch
      * @param roomName
@@ -930,7 +930,7 @@ export default {
       }
     ): Promise<any> {
       return new Promise((resolve: Function) => {
-        // 部屋に接続する
+        // 房間に連接是
         dispatch("joinPlayer", {
           roomName: roomName,
           roomPassword: roomPassword,
@@ -947,7 +947,7 @@ export default {
             if (err) window.console.error(err);
           });
 
-        // 利用システムの設定
+        // 利用システム的設定
         dispatch("setProperty", {
           property: "public.room",
           value: {
@@ -973,7 +973,7 @@ export default {
     },
 
     /**========================================================================
-     * 入室処理
+     * 進房処理
      *=========================================================================
      * @param dispatch
      * @param roomName
@@ -1014,7 +1014,7 @@ export default {
       }
     ): Promise<any> {
       return new Promise((resolve: Function, reject: Function) => {
-        // 部屋に接続する
+        // 房間に連接是
         dispatch("joinPlayer", {
           roomName,
           roomPassword: roomPassword || "",
@@ -1060,7 +1060,7 @@ export default {
 
     /**
      * ====================================================================================================
-     * 入室後の処理
+     * 進房後的処理
      */
     afterRoomJoin(
       {
@@ -1092,7 +1092,7 @@ export default {
         isWait: boolean;
       }
     ) {
-      // プレイヤーを追加する
+      // 玩家を新增是
       dispatch("addPlayer", {
         peerId: rootGetters.peerId(isWait),
         name: playerName,
@@ -1108,7 +1108,7 @@ export default {
         logOff: true
       });
 
-      // URLを書き換える（リロードなし）
+      // URLを書き換える（リロード無）
       const paramList: string[] = [];
       paramList.push(`roomName=${roomName}`);
       paramList.push(`roomPassword=${roomPassword || ""}`);
@@ -1132,9 +1132,9 @@ export default {
         logOff: true
       });
 
-      // qLog(`Room: ${roomName} のルームメンバーとして認識されました。`);
+      // qLog(`Room: ${roomName} 的ルームメンバーとして認識されました。`);
 
-      // チャット追加
+      // チャット新增
       dispatch("addChatLog", {
         name: rootGetters.systemLog.name,
         text: `「${playerName}」已進入房間。`,
@@ -1158,10 +1158,10 @@ export default {
         isWait: isWait
       });
 
-      // モーダル状態の解除
+      // モーダル状態的解除
       commit("updateIsModal", false);
 
-      // 入室状態
+      // 進房状態
       commit("updateIsJoined", true);
     }
   }

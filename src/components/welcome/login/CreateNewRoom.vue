@@ -6,9 +6,9 @@
       輸入房間名稱，檢查是否已創建房間。
     </div>
     <div class="existMsg" v-if="!!paramRoomName">
-      檢查完成：房間名「{{ paramRoomName }}」{{
-        isRoomExist ? "可以進入" : "沒有房間"
-      }}
+      檢查完成：{{ isRoomExist ? "可以進入" : "沒有房間" }} 「{{
+        paramRoomName
+      }}」
     </div>
 
     <label class="roomName">
@@ -28,11 +28,11 @@
     </label>
 
     <!----------------------
-     ! 房間ができるのを待つ
+     ! 房間ができる的を待つ
     !--------------------->
     <sub-block-title
       @open="openWaitRoom"
-      text="等待這名稱的房間建立"
+      text="等待使用這名稱的房間建立"
       v-if="!isRoomExist"
     />
 
@@ -90,7 +90,7 @@
     </div>
 
     <!----------------------
-     ! この房間に入る
+     ! こ的房間に入る
     !--------------------->
     <sub-block-title
       @open="openNewRoom"
@@ -135,7 +135,7 @@
     </div>
     <div class="subBlock newRoom" v-if="isViewNewRoom && !isRoomExist">
       <label class="roomPassword">
-        入室密碼：
+        進房密碼：
         <input
           type="password"
           v-model="roomPassword"
@@ -179,7 +179,7 @@
         </label>
         <div class="description">管理房間用。請注意不要忘記！</div>
         <div class="description">
-          権限詳情
+          權限詳情
           <a @click="onClickDescription" href="javascript:void(0);">在這裡</a>
         </div>
       </fieldset>
@@ -281,11 +281,11 @@ export default class CreateNewRoom extends Vue {
 
   /**
    * ====================================================================================================
-   * 房間名を入力してチェックボタンを押下した際の処理
+   * 房間名を入力して檢查鍵を押下した際的処理
    */
   commitRoomName() {
     /* ------------------------------
-     * 入力チェック
+     * 入力檢查
      */
     const errorMsg = [];
     if (!this.roomName) errorMsg.push("・房間名");
@@ -295,7 +295,7 @@ export default class CreateNewRoom extends Vue {
     }
 
     /* ------------------------------
-     * URLを書き換える（リロードなし）
+     * URLを書き換える（リロード無）
      */
     const paramList: string[] = [];
     paramList.push(`roomName=${this.roomName}`);
@@ -320,7 +320,7 @@ export default class CreateNewRoom extends Vue {
     });
 
     /* ------------------------------
-     * 房間存在チェック
+     * 房間存在檢查
      */
     this.loading(true);
     Promise.resolve()
@@ -357,15 +357,15 @@ export default class CreateNewRoom extends Vue {
       })
       .then(() => this.loading(false))
       .catch(() => this.loading(false));
-    // end of 房間存在チェック
+    // end of 房間存在檢查
   }
 
   /**
    * ====================================================================================================
-   * 房間建て・入室振り分け
+   * 房間建て・進房振り分け
    */
   roomProcess(isNewRoom: boolean) {
-    // 入力チェック
+    // 入力檢查
     const errorMsg = [];
     if (!this.roomName) errorMsg.push("・房間名");
     if (isNewRoom && !this.playerName) errorMsg.push("・用戶名");
@@ -374,7 +374,7 @@ export default class CreateNewRoom extends Vue {
       return;
     }
 
-    // 存在チェックしてから決める
+    // 存在檢查してから決める
     this.loading(true);
     Promise.resolve()
       .then(() => this.checkRoomName({ roomName: this.roomName }))
@@ -407,10 +407,10 @@ export default class CreateNewRoom extends Vue {
 
   /**
    * ====================================================================================================
-   * 房間ができるのを待つ
+   * 房間ができる的を待つ
    */
   doWaitRoom() {
-    // 入力チェック
+    // 入力檢查
     const errorMsg = [];
     if (!this.roomName) errorMsg.push("・房間名");
     if (errorMsg.length > 0) {
@@ -418,7 +418,7 @@ export default class CreateNewRoom extends Vue {
       return;
     }
 
-    // まず目的の房間の存在チェックする
+    // まず目的的房間的存在檢查是
     Promise.resolve()
       .then(() => this.checkRoomName({ roomName: this.roomName }))
       .then((isExist: boolean) => {
@@ -434,14 +434,14 @@ export default class CreateNewRoom extends Vue {
           useAlert: true
         };
         if (isExist) {
-          // 存在したら普通に入室する
+          // 存在したら普通に進房是
           alert(`房間${this.roomName}剛剛已經新增了\n請進入。`);
           this.loading(true);
           return this.doJoinRoom(joinArg);
         } else {
-          // 存在しなかったら待合室に入りつつ、目的の房間ができるのをチェックしながら待つ
+          // 存在しなかったら待合室に入りつつ、目的的房間ができる的を檢查しながら待つ
 
-          // 再帰呼び出しでチェックし続け、房間ができたら入室する
+          // 再帰呼び出しで檢查し続け、房間ができたら進房是
           const checkFunc = () => {
             Promise.resolve()
               .then(() => this.checkRoomName({ roomName: this.roomName }))
@@ -468,10 +468,10 @@ export default class CreateNewRoom extends Vue {
           };
           checkFunc();
 
-          // モーダル状態の解除
+          // モーダル状態的解除
           this.updateIsModal(false);
 
-          // エントランス房間に接続する
+          // エントランス房間に連接是
           this.loading(true);
           const entranceRoomName =
             this.roomName + CreateNewRoom.ENTRANCE_ROOM_NAME;
@@ -520,7 +520,7 @@ export default class CreateNewRoom extends Vue {
 
   /**
    * ====================================================================================================
-   * 権限に関する説明リンクをクリックした際の処理
+   * 權限に関是説明リンクをクリックした際的処理
    */
   onClickDescription(): void {
     alert(

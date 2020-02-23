@@ -19,10 +19,10 @@
       @click="setMute()"
       v-show="mutable"
     >
-      <!-- ミュート解除ボタン -->
+      <!-- ミュート解除鍵 -->
       <i class="icon-volume-high" v-show="!mute"></i>
 
-      <!-- ミュートボタン -->
+      <!-- ミュート鍵 -->
       <i class="icon-volume-mute2" v-show="mute"></i>
     </span>
 
@@ -58,7 +58,7 @@ export default class VolumeComponent extends Vue {
 
   /** フェード種別 */
   private fade: number = VolumeComponent.FADE_NONE;
-  /** フェード中の保存音量 */
+  /** フェード中的保存音量 */
   private fadingVolume: number = 0;
 
   @Watch("initVolume", { immediate: true })
@@ -67,7 +67,7 @@ export default class VolumeComponent extends Vue {
   }
 
   /**
-   * このコンポーネントにミュートを設定する
+   * こ的コンポーネントにミュートを設定是
    * @param mute: boolean
    */
   setMute(this: any, mute: boolean = !this.mute): void {
@@ -75,7 +75,7 @@ export default class VolumeComponent extends Vue {
   }
 
   /**
-   * このコンポーネントに音量を設定する
+   * こ的コンポーネントに音量を設定是
    * @param volume: number
    */
   public setVolume(this: any, volume: number): void {
@@ -112,7 +112,7 @@ export default class VolumeComponent extends Vue {
   }
 
   /**
-   * フィールド変数 mute を監視し、その値で muteイベント を発火する
+   * フィールド変数 mute を監視し、そ的値で muteイベント を発火是
    * @param mute
    */
   @Watch("mute")
@@ -120,7 +120,7 @@ export default class VolumeComponent extends Vue {
   onChangeMute(mute: boolean): void {}
 
   /**
-   * フィールド変数 volume を監視し、その値で volumeイベント を発火する
+   * フィールド変数 volume を監視し、そ的値で volumeイベント を発火是
    * @param volume
    */
   @Watch("volume")

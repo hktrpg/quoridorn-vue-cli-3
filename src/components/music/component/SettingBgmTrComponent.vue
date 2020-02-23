@@ -5,7 +5,7 @@
     @dblclick="doDblClick"
   >
     <td :style="colStyle(0)" :title="linkageStr(bgmObj)" @contextmenu.prevent>
-      {{ bgmObj.chatLinkage > 0 ? "あり" : "なし" }}
+      {{ bgmObj.chatLinkage > 0 ? "あり" : "無" }}
     </td>
     <divider :index="0" prop="settingBGMWindow" />
     <td :style="colStyle(1)" @contextmenu.prevent>
@@ -98,7 +98,7 @@ export default class SettingBgmTrComponent extends Vue {
     };
   }
 
-  /* Start 列幅可変テーブルのプロパティ */
+  /* Start 列幅可変テーブル的プロパティ */
   private get selectLineKey(): string {
     return this.$store.state.private.display[this.windowParam].selectLineKey;
   }
@@ -126,7 +126,7 @@ export default class SettingBgmTrComponent extends Vue {
   private get colStyle(): any {
     return (index: number) => ({ width: `${this.widthList[index]}px` });
   }
-  /* End 列幅可変テーブルのプロパティ */
+  /* End 列幅可変テーブル的プロパティ */
 
   private get fadeStr(): Function {
     return (bgmObj: any): string => {
@@ -155,7 +155,7 @@ export default class SettingBgmTrComponent extends Vue {
         return `【末尾文字】\n${bgmObj.chatLinkageSearch}`;
       if (bgmObj.chatLinkage === 2)
         return `【正規表現】\n${bgmObj.chatLinkageSearch}`;
-      return "なし";
+      return "無";
     };
   }
 }
@@ -211,7 +211,7 @@ button {
     flex: 1;
   }
 }
-/* Start 列幅可変テーブルのCSS */
+/* Start 列幅可変テーブル的CSS */
 .tableContainer {
   overflow-y: scroll;
   flex: 1;
@@ -320,7 +320,7 @@ table {
     }
   }
 }
-/* End 列幅可変テーブルのCSS */
+/* End 列幅可変テーブル的CSS */
 .comment {
   font-size: 10px;
   font-weight: bold;

@@ -7,7 +7,7 @@
     @open="open"
     @reset="open"
     :fontSizeBar="!isEditMode || isPreview"
-    :message="isEditMode && !isPreview ? '確定ボタンを押すと反映' : ''"
+    :message="isEditMode && !isPreview ? '確定鍵を押すと反映' : ''"
   >
     <div class="contents">
       <div class="title" v-if="usePublicMemoObj">
@@ -19,7 +19,7 @@
           v-model="usePublicMemoObj.title"
           v-if="isEditMode && !isPreview"
           @input="textareaOnInput"
-          placeholder="タイトル"
+          placeholder="標題"
           @keydown.enter.stop
           @keyup.enter.stop
           @keydown.229.stop
@@ -46,7 +46,7 @@
           <input
             type="text"
             @change="addTab"
-            placeholder="追加タブの名前"
+            placeholder="新增タブ的名前"
             ref="input"
             @keydown.enter.stop
             @keyup.enter.stop
@@ -113,39 +113,39 @@
       </div>
     </div>
 
-    <!-- 項目操作メニュー -->
+    <!-- 項目操作菜單 -->
     <div
       class="hover-menu"
       v-if="hoverMenuItemIndex >= 0 && hoverMenuImageIndex === -1"
       :style="{ top: hoverMenuY + 'px', left: hoverMenuX + 'px' }"
       @mouseleave="configOnClose"
     >
-      <div @click.stop="insertTitleItemOnClick">下に大見出しを追加</div>
-      <div @click.stop="insertSubTitleItemOnClick">下に小見出しを追加</div>
-      <div @click.stop="insertTextItemOnClick">下にテキストを追加</div>
+      <div @click.stop="insertTitleItemOnClick">下に大見出しを新增</div>
+      <div @click.stop="insertSubTitleItemOnClick">下に小見出しを新增</div>
+      <div @click.stop="insertTextItemOnClick">下にテキストを新增</div>
       <div @click.stop="insertCheckboxItemOnClick">
-        下にチェックボックスを追加
+        下に檢查ボックスを新增
       </div>
-      <div @click.stop="insertHrItemOnClick">下に区切り線を追加</div>
+      <div @click.stop="insertHrItemOnClick">下に区切り線を新增</div>
       <div @click.stop="insertImageFrameItemOnClick">
-        下に画像ブロックを追加
+        下に圖片ブロックを新增
       </div>
-      <div @click.stop="deleteItemOnClick" v-if="hoverMenuItemIndex">削除</div>
+      <div @click.stop="deleteItemOnClick" v-if="hoverMenuItemIndex">刪除</div>
     </div>
 
-    <!-- 画像操作メニュー -->
+    <!-- 圖片操作菜單 -->
     <div
       class="hover-menu"
       v-if="hoverMenuItemIndex >= 0 && hoverMenuImageIndex >= 0"
       :style="{ top: hoverMenuY + 'px', left: hoverMenuX + 'px' }"
       @mouseleave="configOnClose"
     >
-      <div @click.stop="insertImageOnClick">左に画像を追加</div>
+      <div @click.stop="insertImageOnClick">左に圖片を新增</div>
       <div
         @click.stop="deleteImageOnClick"
         :class="{ disabled: !imageDeletable }"
       >
-        削除
+        刪除
       </div>
     </div>
   </window-frame>
@@ -210,7 +210,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   private deleteTab() {
     const tabList: any[] = this.usePublicMemoObj.tabList;
     const tabName: string = tabList[this.currentTabIndex].tabName;
-    const msg: string = `${tabName}を本当に削除しますか？`;
+    const msg: string = `${tabName}を本当に刪除しますか？`;
     setTimeout(() => {
       if (window.confirm(msg)) {
         tabList.splice(this.currentTabIndex, 1);
@@ -291,10 +291,10 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   private commitButtonOnClick() {
-    // ルームメイトにも反映する
+    // ルームメイトにも反映是
     this.changeListObj(this.usePublicMemoObj);
 
-    // 画面を閉じる
+    // 畫面を閉じる
     this.windowClose("private.display.publicMemoWindow");
   }
 
@@ -318,7 +318,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * テキストエリアに入力される度に、必要に応じてテキストエリアの表示サイズを拡張する
+   * テキストエリアに入力される度に、必要に応じてテキストエリア的表示大小を拡張是
    */
   private textareaOnInput(event: any) {
     const textarea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
@@ -328,7 +328,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 項目設定メニューを開く
+   * 項目設定菜單を開く
    */
   private surfaceItemConfigOnOpen(
     index: number,
@@ -342,7 +342,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 画像設定メニューを開く
+   * 圖片設定菜單を開く
    */
   private surfaceImageConfigOnOpen(
     itemIndex: number,
@@ -366,7 +366,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 設定メニューを閉じる
+   * 設定菜單を閉じる
    */
   private configOnClose() {
     this.hoverMenuItemIndex = -1;
@@ -374,7 +374,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * タイトル追加が押下された時
+   * 標題新增が押下された時
    */
   private insertTitleItemOnClick() {
     this.insertContents({
@@ -384,7 +384,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * サブタイトル追加が押下された時
+   * サブ標題新增が押下された時
    */
   private insertSubTitleItemOnClick() {
     this.insertContents({
@@ -394,7 +394,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * テキスト追加が押下された時
+   * テキスト新增が押下された時
    */
   private insertTextItemOnClick() {
     this.insertContents({
@@ -406,12 +406,12 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   private insertCheckboxItemOnClick() {
     this.insertContents({
       kind: "checkbox",
-      text: "チェック項目"
+      text: "檢查項目"
     });
   }
 
   /**
-   * 区切り線追加が押下された時
+   * 区切り線新增が押下された時
    */
   private insertHrItemOnClick() {
     this.insertContents({
@@ -420,7 +420,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 画像フレーム追加が押下された時
+   * 圖片フレーム新增が押下された時
    */
   private insertImageFrameItemOnClick() {
     this.insertContents({
@@ -446,7 +446,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 項目削除が押下された時
+   * 項目刪除が押下された時
    */
   private deleteItemOnClick() {
     const contentsList: any[] = this.useSurfaceObj.contentsList;
@@ -455,7 +455,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 画像追加が押下された時
+   * 圖片新增が押下された時
    */
   private insertImageOnClick() {
     this.useSurfaceObj.contentsList[
@@ -468,7 +468,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 画像削除が押下された時
+   * 圖片刪除が押下された時
    */
   private deleteImageOnClick() {
     if (!this.imageDeletable) return;
@@ -500,7 +500,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 使うタブのリスト
+   * 使うタブ的リスト
    */
   private get usePublicMemoTabList(): any[] {
     return this.usePublicMemoObj ? this.usePublicMemoObj.tabList : [];

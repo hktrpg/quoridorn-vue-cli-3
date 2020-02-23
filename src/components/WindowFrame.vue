@@ -12,7 +12,7 @@
     class="window"
     v-if="isDisplay"
   >
-    <!-- タイトルバー -->
+    <!-- 標題バー -->
     <div
       class="window-title"
       :class="{ fix: isFix }"
@@ -23,7 +23,7 @@
       @touchcancel="event => move(event, false, true)"
       @contextmenu.prevent
     >
-      <!-- タイトル文言 -->
+      <!-- 標題文言 -->
       <div>
         <span>{{ titleText }}</span>
         <span class="message" v-if="message">{{ message }}</span>
@@ -54,7 +54,7 @@
         />
       </label>
 
-      <!-- 閉じるボタン -->
+      <!-- 閉じる鍵 -->
       <span v-if="!isBanClose" @contextmenu.prevent>
         <i
           class="icon-cross window-close"
@@ -68,12 +68,12 @@
       </span>
     </div>
 
-    <!-- コンテンツ -->
+    <!-- 內容 -->
     <div class="_contents" :style="{ fontSize: fontSize + 'px' }" @wheel.stop>
       <slot />
     </div>
 
-    <!-- サイズ変更つまみ -->
+    <!-- 大小変更つまみ -->
     <window-frame-knob name="corner-left-top" @resize="resize" v-if="!isFix" />
     <window-frame-knob
       name="corner-left-bottom"
@@ -402,7 +402,7 @@ export default class WindowFrame extends Vue {
           .getElementById("mapBoardFrame")!
           .dispatchEvent(new MouseEvent("mouseUp", evtObj));
       };
-      // コンテキストメニュー防止
+      // コンテキスト菜單防止
       const contextMenuListener = () => {
         return false;
       };

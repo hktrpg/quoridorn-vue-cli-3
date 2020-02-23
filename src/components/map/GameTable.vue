@@ -216,7 +216,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
     };
 
     if (this.rollObj.isRolling) {
-      // マップ上のオブジェクトを回転中の場合
+      // マップ上的オブジェクトを回転中的場合
       this.setProperty({
         property: `map.rollObj.isRolling`,
         value: false,
@@ -236,7 +236,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
     }
 
     if (this.moveObj.isMoving) {
-      // マップ場のオブジェクトを移動中の場合
+      // マップ場的オブジェクトを移動中的場合
       this.setProperty({
         property: `map.moveObj.isMoving`,
         value: false,
@@ -248,14 +248,14 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       ) as HTMLElement;
 
       if (/\./.test(this.moveObj.key)) {
-        // WindowFrameの場合
+        // WindowFrame的場合
         (Array.from(
           targetObjElm.getElementsByClassName("window-title")
         ) as HTMLElement[]).forEach((elm: HTMLElement) =>
           dispatchMouseUpEvent(elm)
         );
       } else {
-        // マップオブジェクトの場合
+        // マップオブジェクト的場合
         dispatchMouseUpEvent(targetObjElm);
       }
 
@@ -327,7 +327,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
 
     if (!this.isOverEvent) {
       if (!isRoll) {
-        // 右ドラッグが解除されたのが子画面上でなく、調整後に回転していない場合のみ右コンテキストメニューを表示する
+        // 右ドラッグが解除された的が子畫面上でなく、調整後に回転していない場合的み右コンテキスト菜單を表示是
         const obj = {
           x: pageX,
           y: pageY
@@ -401,7 +401,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
   }
 
   private drop(this: any, event: any): void {
-    // ドロップされた物の種類
+    // ドロップされた物的種類
     const kind = event.dataTransfer.getData("kind");
 
     const offsetX = event.dataTransfer.getData("offsetX");
@@ -423,9 +423,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
     }
 
     qLog(
-      `  [methods] drop on GameTable => type: ${kind}, address: (${
-        canvasAddress.grid.column
-      },${canvasAddress.grid.row})`
+      `  [methods] drop on GameTable => type: ${kind}, address: (${canvasAddress.grid.column},${canvasAddress.grid.row})`
     );
 
     const pieceObj: any = {
@@ -452,7 +450,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       isBorderHide: false
     };
 
-    // マップマスクの作成
+    // マップマスク的作成
     if (kind === "mapMask") {
       const name = event.dataTransfer.getData("name");
       const color = event.dataTransfer.getData("color");
@@ -476,7 +474,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // キャラクターの作成
+    // キャラクター的作成
     if (kind === "character") {
       const name = event.dataTransfer.getData("name");
       const size = event.dataTransfer.getData("size");
@@ -569,7 +567,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // フロアタイルの作成
+    // フロアタイル的作成
     if (kind === "floorTile") {
       const currentImageTag = event.dataTransfer.getData("currentImageTag");
       const imageKey = event.dataTransfer.getData("imageKey");
@@ -597,7 +595,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // チットの作成
+    // チット的作成
     if (kind === "chit") {
       const currentImageTag = event.dataTransfer.getData("currentImageTag");
       const imageKey = event.dataTransfer.getData("imageKey");
@@ -625,7 +623,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // ダイスシンボルの作成
+    // ダイスシンボル的作成
     if (kind === "diceSymbol") {
       const faceNum = event.dataTransfer.getData("faceNum");
       const type = event.dataTransfer.getData("type");
@@ -650,13 +648,13 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
     // ファイルがドロップされてる
     const files = event.dataTransfer.files;
 
-    // ファイルの種類に応じて振り分け
+    // ファイル的種類に応じて振り分け
     const imageFiles: any[] = [];
     const zipFiles: any[] = [];
     for (const file of files) {
       window.console.log(file.type);
       if (file.type.indexOf("image/") === 0) {
-        // 画像
+        // 圖片
         imageFiles.push(file);
       } else if (file.type.indexOf("zip") >= 0) {
         // zip
@@ -664,9 +662,9 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       }
     }
 
-    // 画像ファイルの処理
+    // 圖片ファイル的処理
     if (imageFiles.length > 0) {
-      // どこに使う画像ファイルなのかを選んでもらう
+      // どこに使う圖片ファイルな的かを選んでもらう
       const _: any = this;
       fileToBase64(imageFiles).then((values: any[]) => {
         values.forEach((valueObj: any, index: number) => {
@@ -680,7 +678,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       this.windowOpen("private.display.dropImageWindow");
     }
 
-    // zipファイルの処理
+    // zipファイル的処理
     if (zipFiles.length > 0) {
       this.importStart({ zipFiles: zipFiles, isRoomCreate: false });
     }
@@ -806,12 +804,12 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
 
   &:before {
     content: "";
-    background: inherit; /*.bgImageで設定した背景画像を継承する*/
+    background: inherit; /*.bgImageで設定した背景圖片を継承是*/
     -webkit-filter: blur(10px);
     -ms-filter: blur(10px);
     filter: blur(10px);
     position: absolute;
-    /*ブラー効果で画像の端がボヤけた分だけ位置を調整*/
+    /*ブラー効果で圖片的端がボヤけた分だけ位置を調整*/
     top: -10px;
     left: -10px;
     right: -10px;

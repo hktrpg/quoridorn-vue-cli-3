@@ -1,7 +1,7 @@
 export default {
   /** チャット */
   state: {
-    /** チャットのタブ */
+    /** チャット的タブ */
     tab: {
       list: [
         { key: "chatTab-0", name: "整合", isTotal: true },
@@ -12,7 +12,7 @@ export default {
       isViewTime: false,
       isViewTotalTab: false
     },
-    /** グループチャットのタブ */
+    /** グループチャット的タブ */
     groupTargetTab: {
       list: [
         {
@@ -27,7 +27,7 @@ export default {
       maxKey: 0
     },
 
-    /** チャットのリスト */
+    /** チャット的リスト */
     logs: [
       {
         owner: "Quoridorn",
@@ -43,7 +43,7 @@ export default {
       }
     ],
 
-    /** 入力中のルームメイトのpeerId一覧 */
+    /** 入力中的ルームメイト的peerId列表 */
     inputting: {},
 
     diceBotMessage: {
@@ -54,7 +54,7 @@ export default {
   actions: {
     /**
      * NOTICE_INPUT
-     * ルームメンバの入力中状態の通知
+     * ルームメンバ的入力中状態的通知
      * @param commit
      * @param key
      */
@@ -71,7 +71,7 @@ export default {
     },
 
     /** ========================================================================
-     * チャットタブ追加処理
+     * チャットタブ新增処理
      */
     deleteChatLog: ({ dispatch }: { dispatch: Function }): string => {
       return dispatch("sendNoticeOperation", {
@@ -97,7 +97,7 @@ export default {
   },
   mutations: {
     /**
-     * ルームメンバの入力中状態の変化
+     * ルームメンバ的入力中状態的変化
      * @param state
      * @param key
      * @param add
@@ -107,11 +107,11 @@ export default {
       state: any,
       { key, add }: { key: string; add: number }
     ) {
-      // プロパティが無ければ、リアクティブになる形式で登録をする
+      // プロパティが無ければ、リアクティブになる形式で登録を是
       if (!state.inputting[key]) {
         this._vm.$set(state.inputting, key, 0);
       }
-      // 値の足し込み
+      // 値的足し込み
       state.inputting[key] += add;
     }
   },

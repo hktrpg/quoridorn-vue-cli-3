@@ -6,18 +6,18 @@
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作１">
-      <li>画面上部メニューの「ファイル」を選択</li>
-      <li>「セーブ」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法１">
+      <li>畫面上方菜單的「ファイル」選擇</li>
+      <li>「セーブ」選擇</li>
     </spec-item>
-    <spec-item class-str="operation" label-str="起動操作２">
+    <spec-item class-str="operation" label-str="操作方法２">
       <li>
         ショートカットで起動
         <ul>
-          <li>Windowsの場合：Ctrl + s</li>
-          <li>Macの場合：Command + s</li>
+          <li>Windows的場合：Ctrl + s</li>
+          <li>Mac的場合：Command + s</li>
         </ul>
       </li>
     </spec-item>
@@ -26,50 +26,50 @@
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        その時点でのQuoridornの状態をzipファイルでダウンロード
+        そ的時点で的Quoridorn的状態をzipファイルでダウンロード
       </li>
       <li>
-        メニューから選択できるオプション
-        <a href="#ref_menuOption_selectSaveData">「セーブデータの選択」</a>
-        が有効の場合、zipファイルに含めるデータを選ぶ画面
-        <a href="#ref_selectSaveDataWindow">「セーブデータ選択画面」</a>
-        を表示する
+        菜單から選択できるオプション
+        <a href="#ref_menuOption_selectSaveData">「セーブデータ的選択」</a>
+        が有効的場合、zipファイルに含めるデータを選ぶ畫面
+        <a href="#ref_selectSaveDataWindow">「セーブデータ選択畫面」</a>
+        を表示是
       </li>
       <li>
-        セーブデータを選択しない場合、すべての状態をzipファイルとしてダウンロードする
+        セーブデータ選擇否場合、すべて的状態をzipファイルとしてダウンロード是
       </li>
       <li>
-        画像や音楽のデータ部分、秘匿チャットの内容については暗号化を施す
+        圖片や音楽的データ部分、秘匿チャット的内容については暗号化を施す
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>なし</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
-      <li>Macの場合のショートカット<br />→ Macが買えたら実装する</li>
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
+      <li>Mac的場合的ショートカット<br />→ Macが買えたら實裝是</li>
       <li>
-        <a href="#ref_selectSaveDataWindow">「セーブデータ選択画面」</a>
-        が未実装のため、画面表示機能がない
+        <a href="#ref_selectSaveDataWindow">「セーブデータ選択畫面」</a>
+        が未實裝的ため、畫面表示機能がない
         <br />→ 初回リリースには含めない機能。
       </li>
-      <li>データの暗号化<br />→ 初回リリースに含める機能。</li>
+      <li>データ的暗号化<br />→ 初回リリースに含める機能。</li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

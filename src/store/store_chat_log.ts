@@ -18,7 +18,7 @@ export default new Vuex.Store({
   actions: {
     /**
      * =================================================================================================================
-     * 起動時の最初の処理
+     * 起動時的最初的処理
      * @param dispatch
      * @param commit
      * @param state
@@ -26,7 +26,7 @@ export default new Vuex.Store({
      * @param rootGetters
      */
     onMount({ dispatch, commit, state, rootState, rootGetters }) {
-      // state_settingの初期化
+      // state_setting的初期化
       commit("init_state_setting");
 
       const decode = (text: string) => {
@@ -70,23 +70,23 @@ export default new Vuex.Store({
         // チャットタブ
         return rootGetters.chatTabList.filter(filterFunc)[0];
       } else if (kind === "imgTag") {
-        // イメージタグ
+        // イメージ標籤
         return rootGetters.imageTagList.filter(filterFunc)[0];
       } else if (kind === "player") {
-        // プレイヤー
+        // 玩家
         return rootGetters.playerList.filter(filterFunc)[0];
       } else if (kind === "character") {
         // キャラクター
         return rootGetters.characterList.filter(filterFunc)[0];
       } else {
-        // その他
+        // 其他
         return null;
       }
     },
     getViewName: (state: any, getters: any) => (key: string): string => {
       const obj = getters.getObj(key);
       if (!obj) {
-        if (key.split("-")[0] === "chatTab") return "削除済";
+        if (key.split("-")[0] === "chatTab") return "已刪除";
         return key;
       }
       const kind = obj.key.split("-")[0];

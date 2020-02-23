@@ -5,7 +5,7 @@ import * as Mustache from "mustache";
 export default {
   actions: {
     /** ========================================================================
-     * HTML形式でチャットログをダウンロードする
+     * HTML形式でチャットログをダウンロード是
      * @param rootGetters
      */
     async saveChatLogHtml({ rootGetters }: { rootGetters: any }) {
@@ -52,7 +52,7 @@ export default {
             saveAs(blob, `${title}.html`);
           })
 
-          // エラー処理
+          // 錯誤処理
           .catch((err: any) => window.console.error(err))
       );
     }

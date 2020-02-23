@@ -6,21 +6,21 @@
     :isSpecFixed="true"
   >
     <!----------------------
-     ! 起動操作
+     ! 操作方法
      !--------------------->
-    <spec-item class-str="operation" label-str="起動操作">
-      <li>画面上部メニューの「表示」を選択</li>
+    <spec-item class-str="operation" label-str="操作方法">
+      <li>畫面上方菜單的「表示」選擇</li>
       <li>「ウィンドウ」にカーソルをあてる</li>
-      <li>「骰子表示」を選択</li>
+      <li>「骰子表示」選擇</li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        以下の骰子を表示し、選択するとそれを画面に追加。<br />
-        追加された骰子を選択することでアニメーション付きで骰子ロールを行う。<br />
-        骰子ロール結果はチャットに反映する。
+        以下的骰子を表示し、選択是とそれを畫面に新增。<br />
+        新增された骰子選擇是ことでアニメーション付きで骰子ロールを行う。<br />
+        骰子ロール結果はチャットに反映是。
         <ol>
           <li>４面骰子</li>
           <li>６面骰子</li>
@@ -32,29 +32,29 @@
       </li>
     </spec-item>
     <!----------------------
-     ! ユーザ要望
+     ! 用戶要求
      !--------------------->
-    <spec-item class-str="request" label-str="ユーザ要望">
-      <li>なし</li>
+    <spec-item class-str="request" label-str="用戶要求">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 未実装事項
+     ! 未實裝項目
      !--------------------->
-    <spec-item class-str="unImplemented" label-str="未実装事項">
+    <spec-item class-str="unImplemented" label-str="未實裝項目">
       <li>
-        本機能自体が未実装<br />→ 優先順位低め。初回リリースには含めない。
+        本機能自体が未實裝<br />→ 優先順位低め。初回リリースには含めない。
       </li>
     </spec-item>
     <!----------------------
-     ! 実装しない機能
+     ! 未實現的功能
      !--------------------->
-    <spec-item class-str="unSupport" label-str="実装しない機能">
-      <li>なし</li>
+    <spec-item class-str="unSupport" label-str="未實現的功能">
+      <li>無</li>
     </spec-item>
     <!----------------------
-     ! 関連項目
+     ! 相關項目
      !--------------------->
-    <spec-item class-str="ref" label-str="関連項目">
+    <spec-item class-str="ref" label-str="相關項目">
       <li>
         <spec-link property="menuBar" title-str="">主菜單</spec-link>
       </li>

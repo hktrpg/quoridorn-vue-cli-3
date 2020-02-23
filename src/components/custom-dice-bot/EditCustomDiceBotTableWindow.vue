@@ -205,7 +205,7 @@ export default class EditCustomDiceBotTableWindow extends Mixins<WindowMixin>(
     return useList.filter((info: any) => info.key === this.objKey)[0];
   }
 
-  /* Start 列幅可変テーブルのプロパティ */
+  /* Start 列幅可変テーブル的プロパティ */
   private get selectLineKey() {
     return this.$store.state.private.display.editCustomDiceBotTableWindow
       .selectLineKey;
@@ -239,7 +239,7 @@ export default class EditCustomDiceBotTableWindow extends Mixins<WindowMixin>(
   private get colStyle() {
     return (index: number) => ({ width: `${this.widthList[index]}px` });
   }
-  /* End 列幅可変テーブルのプロパティ */
+  /* End 列幅可変テーブル的プロパティ */
 
   private get windowSize() {
     return this.$store.state.private.display.editCustomDiceBotTableWindow

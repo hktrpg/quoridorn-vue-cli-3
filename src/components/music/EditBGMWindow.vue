@@ -18,7 +18,7 @@
             v-model="url"
             v-if="!url || isYoutube || !isHideUrl"
             ref="urlElm"
-            placeholder="指定なしで「停止」の操作になります"
+            placeholder="變為無指定的「停止」操作"
           />
           <!-- URLマスク -->
           <div
@@ -34,7 +34,7 @@
       <fieldset>
         <legend @contextmenu.prevent>顯示</legend>
         <div class="firstWide">
-          <!-- 顯示タイトル -->
+          <!-- 顯示標題 -->
           <label class="titleStr">
             <span @contextmenu.prevent>標題</span>
             <input type="text" v-model="title" />
@@ -44,7 +44,7 @@
           <!-- クレジットURL -->
           <label class="creditUrl">
             <span @contextmenu.prevent>CreditURL</span>
-            <input type="text" v-model="creditUrl" placeholder="未実装" />
+            <input type="text" v-model="creditUrl" placeholder="未實裝" />
           </label>
           <!-- クレジット取得 -->
           <ctrl-button class="getCredit" @click="getCredit">取得</ctrl-button>
@@ -53,12 +53,12 @@
       <fieldset>
         <legend @contextmenu.prevent>播放</legend>
         <div>
-          <!-- タグ -->
+          <!-- 標籤 -->
           <label class="tag">
             <span
-              title="播放中のBGMはタグによって一意になります"
+              title="播放中的BGMは標籤によって一意になります"
               @contextmenu.prevent
-              >タグ</span
+              >標籤</span
             >
             <input type="text" v-model="tag" list="bgmTagComboboxValues" />
           </label>
@@ -92,9 +92,9 @@
             <span @contextmenu.prevent>秒</span></label
           >
           〜
-          <!-- 播放終了 -->
+          <!-- 播放完結 -->
           <label class="end">
-            <span @contextmenu.prevent>播放終了</span>
+            <span @contextmenu.prevent>播放完結</span>
             <input
               type="number"
               step="0.1"
@@ -164,7 +164,7 @@
             v-show="chatLinkage === '1' || chatLinkage === '2'"
           >
             <input
-              :placeholder="chatLinkage === '1' ? '' : 'Javascriptの正規表現'"
+              :placeholder="chatLinkage === '1' ? '' : 'Javascript的正規表現'"
               type="text"
               v-model="chatLinkageSearch"
             />

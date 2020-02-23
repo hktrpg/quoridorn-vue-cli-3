@@ -28,11 +28,11 @@ export default class AddressCalcMixin extends Vue {
   calcCoordinate(screenX: number, screenY: number, oldAngle: number): any {
     // スクロール倍率を考慮
     const zoom = (1000 - this.wheel) / 1000.0;
-    // canvas上のマス座標を計算する
+    // canvas上的マス座標を計算是
     const cr: any = document
       .getElementById("map-canvas")!
       .getBoundingClientRect();
-    // canvasの中心点
+    // canvas的中心点
     const center = {
       x: cr.x + cr.width / 2,
       y: cr.y + cr.height / 2
@@ -42,11 +42,11 @@ export default class AddressCalcMixin extends Vue {
       x: screenX - center.x,
       y: screenY - center.y
     };
-    // 中心点と指定された座標とを結ぶ線の角度を求める
+    // 中心点と指定された座標とを結ぶ線的角度を求める
     const angle = (Math.atan2(loc.y, loc.x) * 180) / Math.PI;
-    // 中心点と指定された座標とを結ぶ線の長さを求める
+    // 中心点と指定された座標とを結ぶ線的長さを求める
     const distance = Math.sqrt(Math.pow(loc.x, 2) + Math.pow(loc.y, 2)) * zoom;
-    // マップ回転前の角度を求める
+    // マップ回転前的角度を求める
     const angleBeforeAround = this.arrangeAngle(angle - oldAngle);
     const planeLocateScreen = {
       x: center.x + distance * Math.cos((angleBeforeAround * Math.PI) / 180),
@@ -85,9 +85,9 @@ export default class AddressCalcMixin extends Vue {
     // window.console.log(`screen(${this.f(screenX)}, ${this.f(screenY)}), angle:${this.f(angle)}, distance:${this.f(distance)} plane(${this.f(planeLocate.x)}, ${this.f(planeLocate.y)})`)
     return {
       angle: angle, // 角度
-      planeLocateScreen: planeLocateScreen, // マップ回転前のスクリーンベースの座標
-      planeLocateCanvas: planeLocateCanvas, // マップ回転前のキャンバスベースの座標
-      planeLocateTable: planeLocateTable // マップ回転前のテーブルベースの座標
+      planeLocateScreen: planeLocateScreen, // マップ回転前的スクリーンベース的座標
+      planeLocateCanvas: planeLocateCanvas, // マップ回転前的キャンバスベース的座標
+      planeLocateTable: planeLocateTable // マップ回転前的テーブルベース的座標
     };
   }
 
@@ -115,15 +115,15 @@ export default class AddressCalcMixin extends Vue {
     offsetX: number = 0,
     offsetY: number = 0
   ): any {
-    // 回転やズームの前のスクリーン座標がどこになるかを計算し、そこをベースにマップ上の座標を算出する
+    // 回転やズーム的前的スクリーン座標がどこになるかを計算し、そこをベースにマップ上的座標を算出是
     let planeLocateCanvas: any = this.calcCoordinate(screenX, screenY, oldAngle)
       .planeLocateCanvas;
 
-    // ドロップ先のマス座標を算出
+    // ドロップ先的マス座標を算出
     let gridC: number = Math.ceil(planeLocateCanvas.x / this.gridSize);
     let gridR: number = Math.ceil(planeLocateCanvas.y / this.gridSize);
 
-    // 掴んだときの対象の相対位置を考慮
+    // 掴んだとき的対象的相対位置を考慮
     let offsetGridX: number = offsetX / this.gridSize;
     let offsetGridY: number = offsetY / this.gridSize;
     if (offsetGridX > 0) {

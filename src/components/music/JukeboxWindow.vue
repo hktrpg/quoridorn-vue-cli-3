@@ -1,7 +1,7 @@
 <template
   ><!-- 150, 209 -->
   <window-frame
-    titleText="播放中BGM一覧"
+    titleText="播放中BGM列表"
     fixSize="222, 274"
     display-property="private.display.jukeboxWindow"
     align="right-bottom"
@@ -82,7 +82,7 @@ export default class JukeboxWindow extends Mixins<WindowMixin>(WindowMixin) {
   private add(addBgmObj: any): void {
     if (!addBgmObj) return;
 
-    // 強制リスタートじゃなければ、もともと再生されてる曲を中断しない。
+    // 強制リスタートじゃなければ、もともと播放されてる曲を中断しない。
     if (!addBgmObj.isReject && !addBgmObj.forceReset) {
       const bgmObj: any = this.playList.filter(
         (bgmObj: any) => bgmObj.key === addBgmObj.key
@@ -92,13 +92,13 @@ export default class JukeboxWindow extends Mixins<WindowMixin>(WindowMixin) {
       }
     }
 
-    // タグが同じものはプレイリストから削除する
+    // 標籤が同じものはプレイリストから刪除する
     const delList = this.playList.filter(plObj => {
       const bgmObj = this.bgmList.filter(
         (bgmObj: any) => bgmObj.key === plObj.key
       )[0];
       if (!bgmObj) {
-        // 見つからなかったらタイミング悪く削除されたということなので、削除リストに追加
+        // 見つからなかったらタイミング悪く刪除されたということなので、刪除リストに新增
         return true;
       }
       return addBgmObj.tag === bgmObj.tag;
@@ -108,7 +108,7 @@ export default class JukeboxWindow extends Mixins<WindowMixin>(WindowMixin) {
       this.playList.splice(index, 1);
     });
 
-    // 追加処理
+    // 新增処理
     if (addBgmObj.url !== "") {
       setTimeout(() => {
         this.playList.unshift(addBgmObj);

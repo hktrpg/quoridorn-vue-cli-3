@@ -68,7 +68,7 @@
             <login />
           </div>
           <!--------------------------------
-           ! タブ２ - 規格一覧
+           ! タブ２ - 規格列表
            !------------------------------->
           <div id="panel2" class="tab_panel">
             <div class="spec-header">
@@ -82,12 +82,12 @@
             <div class="menu">
               <environment-spec /><!-- 動作環境 -->
               <menu-bar-spec /><!-- 主菜單 -->
-              <room-data-save-spec /><!-- 部屋データ保存 -->
-              <room-data-load-spec /><!-- 部屋データ読込 -->
+              <room-data-save-spec /><!-- 房間データ保存 -->
+              <room-data-load-spec /><!-- 房間データ読込 -->
               <chat-log-save-spec /><!-- チャットログ保存 -->
               <file-upload-spec /><!-- ファイルアップローダー -->
-              <edit-image-tag-spec /><!-- (画像)タグ編輯 -->
-              <delete-image-spec /><!-- 画像削除 -->
+              <edit-image-tag-spec /><!-- (圖片)標籤編輯 -->
+              <delete-image-spec /><!-- 圖片刪除 -->
               <character-spec /><!-- キャラクター -->
               <chit-spec /><!-- チット -->
               <map-mask-spec /><!-- マップマスク -->
@@ -100,7 +100,7 @@
               <dice-spec /><!-- ダイス -->
               <chat-palette-spec /><!-- チャットパレット -->
               <public-memo-spec /><!-- 共有メモ -->
-              <change-font-size-spec /><!-- フォントサイズ変更 -->
+              <change-font-size-spec /><!-- フォント大小変更 -->
               <initiative-spec /><!-- イニシアティブ -->
               <counter-remocon-spec /><!-- カウンターリモコン -->
               <custom-dice-bot-spec /><!-- 独自ダイスボット -->
@@ -113,11 +113,11 @@
               <map-save-spec /><!-- マップ状態保存 -->
               <map-load-spec /><!-- マップ切り替え -->
               <reset-all-window-spec /><!-- ウィンドウ配置初期化機能 -->
-              <welcome-window-spec /><!-- ようこそ画面 -->
+              <welcome-window-spec /><!-- ようこそ畫面 -->
               <room-info-spec /><!-- プレイルーム情報 -->
               <version-spec /><!-- バージョン -->
               <official-site-link-spec /><!-- オフィシャルサイト -->
-              <logout-spec /><!-- ログアウト -->
+              <logout-spec /><!-- 登出 -->
             </div>
             <span class="toTop" @click="scrollTo()">
               <span class="rotate90">＜</span>

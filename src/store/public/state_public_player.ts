@@ -1,11 +1,11 @@
 export default {
-  /** プレイヤー */
+  /** 玩家 */
   state: {
     list: []
   },
   actions: {
     /**
-     * プレイヤーを追加する
+     * 玩家を新增是
      * @param dispatch
      * @param commit
      * @param rootGetters
@@ -85,7 +85,7 @@ export default {
           ]
         });
       } else {
-        // privateデータの復元
+        // privateデータ的復元
         const privateData = player.private;
         if (privateData && isSelf) {
           const peerId = rootGetters.peerId(isWait);

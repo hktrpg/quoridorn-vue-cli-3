@@ -9,8 +9,8 @@ export default {
         counterName: "",
         modifyType: "2",
         modifyValue: "",
-        message: "{0}の{1}を{2}した{4}",
-        exampleText: "[選択キャラ]の[選択項目]を0した（[選択項目]：3->3）"
+        message: "{0}的{1}を{2}した{4}",
+        exampleText: "[選択キャラ]的[選択項目]を0した（[選択項目]：3->3）"
       }
     ],
     maxKey: 0
