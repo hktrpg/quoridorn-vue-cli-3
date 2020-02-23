@@ -46,7 +46,7 @@
 
         <!-- 鍵新增鍵 -->
         <ctrl-button class="add" @click="addButtonOnClick">
-          新增鍵
+          新增按鈕
         </ctrl-button>
       </div>
     </div>

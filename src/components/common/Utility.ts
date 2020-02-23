@@ -575,6 +575,7 @@ export function sum(list: number[]): number {
 }
 
 /**
+ * 先攻表的各列的幅を再計算是
  *
  * @param widthList
  * @param formatObjList
