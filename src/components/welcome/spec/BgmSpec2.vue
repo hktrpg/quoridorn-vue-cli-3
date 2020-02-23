@@ -18,7 +18,7 @@
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        「URL」と「標題」と「標籤」を入力して「確定」鍵を押せばOK
+        「URL」と「標題」と「標籤」を輸入して「確定」鍵を押せばOK
       </li>
       <li>
         指定できる形式
@@ -30,7 +30,7 @@
                 Youtube動画的URLをそ的ままURLに指定すればOK
               </li>
               <li>
-                利用している「YoutubeAPI」的利用規約として、Youtubeコントローラー（Youtube的畫面）を非表示にはできない
+                利用している「YoutubeAPI」的利用規約として、Youtubeコントローラー（Youtube的畫面）を不顯示にはできない
               </li>
             </ul>
           </li>

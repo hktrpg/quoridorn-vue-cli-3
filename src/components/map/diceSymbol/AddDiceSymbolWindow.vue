@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="ダイスシンボル生成"
+    titleText="新增骰子"
     display-property="private.display.addDiceSymbolWindow"
     align="center"
     fixSize="240, 130"
@@ -10,7 +10,7 @@
     <div class="container" @contextmenu.prevent>
       <div class="control">
         <label>
-          <span>ダイス目</span>
+          <span>骰子數量</span>
           <input
             type="number"
             min="1"
@@ -24,7 +24,7 @@
           />
         </label>
         <label>
-          <span>ダイス種別</span>
+          <span>骰子類別</span>
           <ctrl-select
             v-model="faceNum"
             :optionInfoList="faceNumOptionInfoList"
@@ -51,7 +51,7 @@
             @keydown.229.stop
             @keyup.229.stop
           />
-          <span>ダイス目を隠して置く</span>
+          <span>隱藏骰子數量</span>
         </label>
       </div>
       <div class="imageContainer">

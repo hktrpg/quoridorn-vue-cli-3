@@ -114,10 +114,10 @@ export default {
       const kind = key.split("-")[0];
       const filterFunc: Function = (obj: any) => obj.key === key;
       if (kind === "groupTargetTab") {
-        // グループチャットタブ
+        // グループ聊天視窗タブ
         return rootGetters.groupTargetTabList.filter(filterFunc)[0];
       } else if (kind === "chatTab") {
-        // チャットタブ
+        // 聊天視窗タブ
         return rootGetters.chatTabList.filter(filterFunc)[0];
       } else if (kind === "imgTag") {
         // イメージ標籤
@@ -139,7 +139,7 @@ export default {
       const findIndexFunc: Function = () =>
         list.findIndex(obj => obj.key === key);
       if (kind === "groupTargetTab") {
-        // グループチャットタブ
+        // グループ聊天視窗タブ
         list = rootGetters.groupTargetTabList;
       } else {
         // 其他

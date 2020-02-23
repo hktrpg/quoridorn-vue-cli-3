@@ -1,5 +1,5 @@
 export default {
-  /** 共有メモ */
+  /** 共用筆記 */
   state: {
     maxKey: 0,
     list: []

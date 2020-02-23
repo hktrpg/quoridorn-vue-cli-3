@@ -71,7 +71,7 @@
               </td>
               <divider :index="2" prop="settingChatTargetTabWindow" />
 
-              <!-- 送信先 -->
+              <!-- 送出先 -->
               <td
                 :style="colStyle(3)"
                 style="text-align: left; padding: 0 0.3rem;"
@@ -178,7 +178,7 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
     if (this.selectLineKey) {
       this.deleteGroupTargetTab({ key: this.selectLineKey });
     } else {
-      alert("刪除対象選擇してください。");
+      alert("刪除對像選擇してください。");
     }
   }
 
@@ -275,7 +275,7 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
 
   private getViewNames(tab: any) {
     return tab.isAll
-      ? "全員"
+      ? "所有人"
       : tab.group.map((g: string) => this.getViewName(g)).join(", ");
   }
 

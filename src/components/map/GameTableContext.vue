@@ -28,7 +28,7 @@
       手札置き場的新增(未實裝)
     </div>
     <div class="item" @click.left.prevent="createMessageCard">
-      メッセージカード新增(未實裝)
+      信息卡新增(未實裝)
     </div>
     <hr />
     <div class="item" @click.left.prevent="resetWindowLocate">
@@ -67,7 +67,7 @@ export default class GameTableContext extends Mixins<WindowMixin>(WindowMixin) {
   private addMapMarker(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "地圖標記新增",
+      value: "新增地圖標記",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -96,7 +96,7 @@ export default class GameTableContext extends Mixins<WindowMixin>(WindowMixin) {
 
   private createHandCardArea(): void {
     qLog(`  [methods] select context => item: GameTable.createHandCardArea`);
-    alert("未實裝的機能です。");
+    alert("未實裝此功能。");
     this.windowClose("private.display.gameTableContext");
   }
 
@@ -104,7 +104,7 @@ export default class GameTableContext extends Mixins<WindowMixin>(WindowMixin) {
     qLog(`  [methods] select context => item: GameTable.createMessageCard`);
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "メッセージカード新增",
+      value: "新增新信息卡",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");

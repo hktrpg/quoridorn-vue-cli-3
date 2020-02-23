@@ -1,5 +1,5 @@
 export default {
-  /** マップ */
+  /** 地圖 */
   state: {
     angle: {
       total: 0

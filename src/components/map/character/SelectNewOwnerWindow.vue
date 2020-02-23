@@ -7,9 +7,7 @@
     @open="open"
   >
     <div class="container" @contextmenu.prevent>
-      <label
-        >「{{ characterName }}」<br />的新しいオーナーを選んでください。</label
-      >
+      <label>「{{ characterName }}」<br />選擇一個新的所有者。</label>
       <player-select v-model="currentPlayerKey" />
       <div class="operation-area">
         <ctrl-button @click="commit" :disabled="!currentPlayerKey">

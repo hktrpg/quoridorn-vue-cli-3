@@ -349,7 +349,7 @@ export function execCopy(text: string): boolean {
   const result = document.execCommand("copy");
 
   document.body.removeChild(temp);
-  // true なら実行できている falseなら失敗か対応していないか
+  // true なら実行できている falseなら失敗か支援していないか
   return result;
 }
 

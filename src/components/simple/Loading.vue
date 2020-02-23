@@ -1,6 +1,6 @@
 <template>
   <div class="loading" v-show="isLoading" @contextmenu.prevent>
-    <span>お待ちください</span>
+    <span>請稍候</span>
     <span class="icon icon-spinner2"></span>
   </div>
 </template>

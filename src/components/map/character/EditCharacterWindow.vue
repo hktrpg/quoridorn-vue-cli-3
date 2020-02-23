@@ -66,7 +66,7 @@
         <div class="v-box">
           <div class="nameArea">
             <label>
-              <span @contextmenu.prevent>名前：</span>
+              <span @contextmenu.prevent>名字：</span>
               <input
                 type="text"
                 class="name"

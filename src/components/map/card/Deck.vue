@@ -8,7 +8,7 @@
     <fieldset>
       <legend>{{ deck.name }}</legend>
       <div class="refArea">
-        【出典元情報】
+        【來源情報】
         <div v-if="deck.author">作者：{{ deck.author }}</div>
         <div v-if="deck.title">作品名：{{ deck.title }}</div>
         <div class="refUrlContainer">

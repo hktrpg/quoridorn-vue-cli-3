@@ -6,7 +6,7 @@
         :class="{ open: isViewVisualBlock }"
         @click="onClickLegend('isViewVisualBlock')"
       >
-        視點
+        視點角度
       </legend>
       <div v-show="isViewVisualBlock">
         <label v-for="player in playerList" :key="player.key"

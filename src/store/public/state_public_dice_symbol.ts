@@ -1,5 +1,5 @@
 export default {
-  /** ダイスシンボル */
+  /** 骰子シンボル */
   state: {
     list: [],
     maxKey: -1

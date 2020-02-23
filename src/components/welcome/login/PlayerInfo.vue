@@ -68,7 +68,7 @@ export default class RoomInfo extends Vue {
     // const text = event.target.previousElementSibling.value;
     const text = event.target.parentNode.previousElementSibling.value;
     if (!execCopy(text)) {
-      alert("文字內容を複製できませんでした。");
+      alert("無法複製文字內容。");
     }
     alert(text);
   }
@@ -108,7 +108,7 @@ dt {
   padding: 0 0 0 0.5em;
 
   &.isNotExits::before {
-    content: "[不在] ";
+    content: "[不存在] ";
   }
   &.isMe::before {
     content: "[自己] ";

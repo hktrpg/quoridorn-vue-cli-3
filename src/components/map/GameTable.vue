@@ -216,7 +216,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
     };
 
     if (this.rollObj.isRolling) {
-      // マップ上的オブジェクトを回転中的場合
+      // 地圖上的オブジェクトを回転中的場合
       this.setProperty({
         property: `map.rollObj.isRolling`,
         value: false,
@@ -236,7 +236,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
     }
 
     if (this.moveObj.isMoving) {
-      // マップ場的オブジェクトを移動中的場合
+      // 地圖場的オブジェクトを移動中的場合
       this.setProperty({
         property: `map.moveObj.isMoving`,
         value: false,
@@ -255,14 +255,14 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
           dispatchMouseUpEvent(elm)
         );
       } else {
-        // マップオブジェクト的場合
+        // 地圖オブジェクト的場合
         dispatchMouseUpEvent(targetObjElm);
       }
 
       return;
     }
 
-    // マップを動かしている場合
+    // 地圖を動かしている場合
     const obj = {
       move: {
         dragging: {
@@ -327,7 +327,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
 
     if (!this.isOverEvent) {
       if (!isRoll) {
-        // 右ドラッグが解除された的が子畫面上でなく、調整後に回転していない場合的み右コン文字內容菜單を表示是
+        // 右ドラッグが解除された的が子畫面上でなく、調整後に回転していない場合的み右コン文字內容菜單を顯示是
         const obj = {
           x: pageX,
           y: pageY
@@ -450,7 +450,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       isBorderHide: false
     };
 
-    // マップマスク的新增
+    // 地圖迷霧的新增
     if (kind === "mapMask") {
       const name = event.dataTransfer.getData("name");
       const color = event.dataTransfer.getData("color");
@@ -474,7 +474,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // キャラクター的新增
+    // 角色的新增
     if (kind === "character") {
       const name = event.dataTransfer.getData("name");
       const size = event.dataTransfer.getData("size");
@@ -567,7 +567,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // フロアタイル的新增
+    // 地形的新增
     if (kind === "floorTile") {
       const currentImageTag = event.dataTransfer.getData("currentImageTag");
       const imageKey = event.dataTransfer.getData("imageKey");
@@ -595,7 +595,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // チット的新增
+    // 棋子的新增
     if (kind === "chit") {
       const currentImageTag = event.dataTransfer.getData("currentImageTag");
       const imageKey = event.dataTransfer.getData("imageKey");
@@ -623,7 +623,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // ダイスシンボル的新增
+    // 骰子シンボル的新增
     if (kind === "diceSymbol") {
       const faceNum = event.dataTransfer.getData("faceNum");
       const type = event.dataTransfer.getData("type");

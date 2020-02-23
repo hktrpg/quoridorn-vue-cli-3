@@ -2,11 +2,11 @@
   <context-frame displayProperty="private.display.diceSymbolContext">
     <template v-if="!isAbsoluteHide">
       <div class="item" @click.left.prevent="openOnClick" v-if="isHide">
-        ダイス目を公開是
+        骰子數量公開
       </div>
 
       <div class="item" @click.left.prevent="diceRollOnClick">
-        ダイスを振る
+        投擲骰子
       </div>
 
       <hr />
@@ -17,19 +17,19 @@
         class="item"
         @click.left.prevent="changePipsOnClick(pips)"
       >
-        ダイス目を{{ pips }}に
+        骰子數量{{ pips }}
       </div>
 
       <hr v-if="!isHide" />
 
       <div class="item" @click.left.prevent="hideOnClick" v-if="!isHide">
-        ダイス目を隠す
+        隱藏骰子數量
       </div>
 
       <hr />
 
       <div class="item" @click.left.prevent="deleteDiceOnClick">
-        ダイス的刪除
+        刪除骰子
       </div>
     </template>
 
@@ -38,7 +38,7 @@
       v-if="isAbsoluteHide"
       @click.left.prevent="closeContextOnClick"
     >
-      操作できません
+      無法操作
     </div>
   </context-frame>
 </template>
@@ -84,7 +84,7 @@ export default class DiceSymbolContext extends Mixins<WindowMixin>(
           // ログに出力
           if (!diceObj.isHide) {
             this.addChatLog({
-              text: `ダイス合計：${pips}(${command} = [${pips}])`
+              text: `骰子合共：${pips}(${command} = [${pips}])`
             });
           }
           // 応答的結果をもって更新 -----------------------------------------------------------------------------------
@@ -92,7 +92,7 @@ export default class DiceSymbolContext extends Mixins<WindowMixin>(
           return;
         }
       }
-      alert("実行結果で数値が取得できませんでした。\n取消します。");
+      alert("在執行結果中無法獲得數值。\n取消操作。");
     });
   }
 
@@ -100,13 +100,13 @@ export default class DiceSymbolContext extends Mixins<WindowMixin>(
     const diceObj: any = this.getObj(this.objKey);
     const ownerPlayer: any = this.getObj(diceObj.owner);
 
-    let text: string = `「${ownerPlayer.name}」的ダイスシンボル的値が変更されました。`;
+    let text: string = `「${ownerPlayer.name}」已更改骰子數量。`;
     if (!diceObj.isHide) text += `(${diceObj.pips}→${pips})`;
     // ログに出力
     this.addChatLog({ text });
     this.windowClose("private.display.diceSymbolContext");
 
-    // ダイスシンボルに反映
+    // 骰子シンボルに反映
     this.changeListObj({
       key: this.objKey,
       pips,
@@ -122,9 +122,9 @@ export default class DiceSymbolContext extends Mixins<WindowMixin>(
     let text: string = [
       "「",
       ownerPlayer.name,
-      "」的ダイスがオープンされました。出目は",
+      "」的骰子已打開。數目的",
       diceObj.pips,
-      `(${diceObj.faceNum}面ダイス)です`
+      `是(${diceObj.faceNum}面骰子)`
     ].join("");
     // ログに出力
     this.addChatLog({ text, isDiceBot: true });

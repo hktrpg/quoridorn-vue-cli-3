@@ -61,7 +61,7 @@
         </div>
       </fieldset>
       <fieldset class="marginAreaSettings">
-        <legend>途白外圍</legend>
+        <legend>塗白外圍</legend>
         <div>
           <div class="marginGridSize">
             <label

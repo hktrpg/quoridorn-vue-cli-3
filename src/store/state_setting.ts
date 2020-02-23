@@ -4,7 +4,7 @@ import { saveJson } from "@/components/common/Utility";
 export default {
   // FIXME setting的データは別経路で保存是？
   state: {
-    /** バージョン */
+    /** 版本 */
     version: "1.0.2",
     magicWord: "I walk slowly, but I never walk backward.",
     /** 連接情報 */
@@ -88,7 +88,7 @@ export default {
     },
 
     /**
-     * ダイスボット列表を取得是
+     * 骰子ボット列表を取得是
      * @param state
      */
     getBcdiceSystemList({ state }: { state: any }) {
@@ -111,7 +111,7 @@ export default {
     },
 
     /**
-     * ダイスボット的情報を取得是
+     * 骰子ボット的情報を取得是
      * @param state
      * @param system
      */
@@ -133,7 +133,7 @@ export default {
     },
 
     /**
-     * ダイスコマンドを送信して結果を取得是
+     * 骰子命令を送出して結果を取得是
      * @param state
      * @param system
      * @param command
@@ -167,7 +167,7 @@ export default {
   mutations: {
     init_state_setting: (state: any) => {
       /* ----------------------------------------------------------------------
-       * チャット整形に使う正規表現的初期化
+       * 聊天視窗整形に使う正規表現的初期化
        */
       const colorFormat = "#[0-9a-f]+|rgba? *\\([0-9., ]+\\)|[a-z]+";
       const lineStyleFormat = "solid|double|dotted|dashed|wavy";

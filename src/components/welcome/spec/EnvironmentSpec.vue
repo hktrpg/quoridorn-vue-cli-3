@@ -77,7 +77,7 @@
         <i class="icon-appleinc"></i>
         Macintosh
         <br />→ 自分へ的クリスマスプレゼント兼ねてMac買いました！<br />→
-        対応決定な的で順次気になった所は直していきます。
+        支援決定な的で順次気になった所は直していきます。
       </li>
     </spec-item>
   </spec-frame>

@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="グループチャット編輯畫面"
+    titleText="群組聊天視窗編輯畫面"
     display-property="private.display.editGroupChatWindow"
     align="center"
     :fixSize="`${windowSize.w}, ${windowSize.h}`"
@@ -260,7 +260,7 @@ export default class EditGroupChatWindow extends Mixins<WindowMixin>(
 
   private getViewNames(tab: any) {
     return tab.isAll
-      ? "全員"
+      ? "所有人"
       : tab.group.map((g: string) => this.getViewName(g)).join(", ");
   }
 

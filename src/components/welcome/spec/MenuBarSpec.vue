@@ -10,14 +10,14 @@
      !--------------------->
     <spec-item class-str="operation" label-str="操作方法">
       <li>
-        畫面上方に最初から表示されている菜單
+        畫面上方に最初から顯示されている菜單
       </li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
-      <li>角丸的鍵と展開型的選択肢で構成是</li>
+      <li>角丸的鍵と展開型的選擇肢で構成是</li>
       <li>
         項目は今後的機能増強に伴って増減是可能性あり
         <span class="unFixed">[規格未確定項目]</span>
@@ -26,7 +26,7 @@
         菜單項目
         <ol>
           <li>
-            展開型的選択肢
+            展開型的選擇肢
             <ol>
               <li>
                 ファイル
@@ -40,34 +40,34 @@
                 </ol>
               </li>
               <li>
-                表示
+                顯示
                 <ol>
                   <li>
-                    ウィンドウ
+                    視窗ウ
                     <ol>
                       <li>
                         <spec-link property="chatWindow" title-str="">
-                          チャット表示
+                          顯示聊天視窗
                         </spec-link>
                       </li>
                       <li>
                         <spec-link property="settingViewDice" title-str="">
-                          ダイス表示
+                          顯示骰子
                         </spec-link>
                       </li>
                       <li>
                         <spec-link property="initiativeWindow" title-str="">
-                          先攻表示
+                          顯示先攻
                         </spec-link>
                       </li>
                       <li>
                         <spec-link property="resourceWindow" title-str="">
-                          先攻表示
+                          顯示先攻
                         </spec-link>
                       </li>
                       <li>
                         <spec-link property="chatPaletteWindow" title-str="">
-                          對話組合版表示
+                          顯示對話組合版
                         </spec-link>
                       </li>
                       <li>
@@ -75,19 +75,19 @@
                           property="counterRemoteControlWindow"
                           title-str=""
                         >
-                          累計遙控器表示
+                          顯示累計遙控器
                         </spec-link>
                       </li>
                     </ol>
                   </li>
                   <li>
                     <spec-link property="changeFontSizeWindow" title-str="">
-                      フォント大小調整
+                      調整字體大小
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="resetAllWindow" title-str="">
-                      ウィンド配置初期化
+                      視窗配置初期化
                     </spec-link>
                   </li>
                 </ol>
@@ -97,17 +97,17 @@
                 <ol>
                   <li>
                     <spec-link property="addCharacterWindow" title-str="">
-                      キャラクター新增
+                      新增角色
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="addRangeWindow" title-str="">
-                      範囲新增
+                      範圍新增
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="addChitWindow" title-str="">
-                      チット新增
+                      新增棋子
                     </spec-link>
                   </li>
                   <li>
@@ -117,42 +117,42 @@
                   </li>
                   <li>
                     <spec-link property="waitingRoomWindow" title-str="">
-                      キャラクター待合室
+                      角色等候室
                     </spec-link>
                   </li>
                 </ol>
               </li>
               <li>
-                マップ
+                地圖
                 <ol>
                   <li>
                     <spec-link property="editMapWindow" title-str="">
-                      マップ変更
+                      地圖變更
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="editFloorTileMode" title-str="">
-                      フロアタイル新增
+                      地形新增
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="addMapMaskWindow" title-str="">
-                      マップマスク新增
+                      地圖迷霧新增
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="createEasyMapWindow" title-str="">
-                      簡易マップ新增
+                      簡易地圖新增
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="saveMapWindow" title-str="">
-                      マップ狀態保存
+                      地圖狀態保存
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="loadMapWindow" title-str="">
-                      マップ切り替え
+                      地圖切換
                     </spec-link>
                   </li>
                 </ol>
@@ -162,7 +162,7 @@
                 <ol>
                   <li>
                     <spec-link property="fileUploaderWindow" title-str="">
-                      ファイルアップローダー
+                      檔案上傳
                     </spec-link>
                   </li>
                   <li>
@@ -182,22 +182,22 @@
                 <ol>
                   <li>
                     <spec-link property="welcomeWindowSpec" title-str="">
-                      ようこそ畫面
+                      歡迎畫面
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="versionWindow" title-str="">
-                      バージョン
+                      版本
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="manualWindow" title-str="">
-                      マニュアル
+                      說明書
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="officialSiteLink" title-str="">
-                      オフィシャルサイトへ
+                      官方網站
                     </spec-link>
                   </li>
                 </ol>
@@ -207,17 +207,17 @@
           <li>
             <spec-link
               property="roomInfoWindow"
-              title-str="「プレイルーム情報表示畫面」的項へ"
+              title-str="「房間情報顯示畫面」的項へ"
             >
-              「プレイルーム情報表示」鍵
+              「房間情報顯示」鍵
             </spec-link>
           </li>
           <li>
             <spec-link
               property="addPublicMemoWindow"
-              title-str="「共有メモ新增畫面」的項へ"
+              title-str="「共用筆記新增畫面」的項へ"
             >
-              「共有メモ」鍵
+              「共用筆記」鍵
             </spec-link>
           </li>
           <li>
@@ -231,15 +231,15 @@
     <!----------------------
      ! 規格
      !--------------------->
-    <spec-item class-str="spec" label-str="展開型的選択肢的規格">
+    <spec-item class-str="spec" label-str="展開型的選擇肢的規格">
       <li>
-        初期表示的各項目選擇是と展開モードになる
+        初期顯示的各項目選擇是と展開モードになる
       </li>
       <li>
         展開モード中はマウス移動に合わせて各選択肢が展開・格納される
       </li>
       <li>
-        展開モードが解除される的は初期表示的各項目を再度選択是か、畫面を起動是選択肢選擇した場合
+        展開モードが解除される的は初期顯示的各項目を再度選択是か、畫面を起動是選択肢選擇した場合
       </li>
     </spec-item>
     <!----------------------

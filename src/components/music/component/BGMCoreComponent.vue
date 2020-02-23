@@ -25,7 +25,7 @@
         ><!--
      --><span class="icon loop" disabled v-if="isLoop" @contextmenu.prevent
           ><!--
-       --><i class="icon-loop" title="ループ播放します"></i
+       --><i class="icon-loop" title="循環播放"></i
           ><!--
        --></span
         >
@@ -445,7 +445,7 @@ export default class BGMCoreComponent extends Vue {
   box-sizing: border-box;
   border: 1px solid black;
   border-radius: 5px;
-  /* 縮小表示で限界を超えた小さいフォント対応 */
+  /* 縮小顯示で限界を超えた小さい字體支援 */
   max-width: calc((3em + 2px * 2) / 0.8);
   transform-origin: left;
   transform: scale(0.8);

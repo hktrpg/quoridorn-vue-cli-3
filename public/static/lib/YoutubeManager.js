@@ -32,9 +32,7 @@ const YoutubeControlManager = () => {
 
       const usePlayer = playerArr[useIndex];
       if (!usePlayer) {
-        alert(
-          "アクティブなYoutube播放的上限を超えました。\nこ的操作を取消します。"
-        );
+        alert("超出了有效的YouTube播放限制。  n取消此操作。");
         return false;
       }
       const index = playerArr.indexOf(usePlayer);
@@ -317,7 +315,7 @@ const YoutubeControlManager = () => {
             list: "search", // 検索クエリ使用
             listType: "search", // 検索クエリ使用
             loop: 1, // 0:ループ否 or 1:ループ是 後で再設定是
-            rel: 0, // 関連動画出さない
+            rel: 0, // 関聯動画出さない
             showinfo: 0 // 動画名とか出さない
           }
         });

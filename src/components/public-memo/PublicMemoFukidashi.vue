@@ -10,16 +10,16 @@
         <template
           v-if="!tabObj.back.contentsList.length && isHide(tabObj.front)"
         >
-          <br /><span>（閲覧不可）</span>
+          <br /><span>（不可閲覧）</span>
         </template>
         <ul v-if="tabObj.back.contentsList.length">
           <li>
             <span>表</span>
-            <span v-if="isHide(tabObj.front)">（閲覧不可）</span>
+            <span v-if="isHide(tabObj.front)">（不可閲覧）</span>
           </li>
           <li>
             <span>裏</span>
-            <span v-if="isHide(tabObj.back)">（閲覧不可）</span>
+            <span v-if="isHide(tabObj.back)">（不可閲覧）</span>
           </li>
         </ul>
       </li>

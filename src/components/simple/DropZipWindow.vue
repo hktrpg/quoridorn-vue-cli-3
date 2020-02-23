@@ -6,12 +6,12 @@
     fixSize="300, 100"
   >
     <div class="contents" @contextmenu.prevent>
-      <div v-if="!saveDataList">房間データを読み込んでいます...</div>
-      <!-- TODO 初回リリース対応としては部分讀取は否
-      <div v-if="saveDataList">複数的儲存データで同じ項目を読み込ませる場合、各儲存データで順次覆蓋されていきます。</div>
+      <div v-if="!saveDataList">載入房間資料中...</div>
+      <!-- TODO 初回リリース支援としては部分讀取は否
+      <div v-if="saveDataList">複数的儲存資料有同樣的數據的情況下、各儲存資料將按順序覆蓋。</div>
       <fieldset v-for="(saveDataObj, index) in saveDataList" :key="index">
         <legend>{{saveDataObj.fileName}}</legend>
-        <ctrl-ctrl-button @click="allSelect(index)">全て対象</button><ctrl-button @click="allDisSelect(index)">全て除外</ctrl-button>
+        <ctrl-ctrl-button @click="allSelect(index)">全部對像</button><ctrl-button @click="allDisSelect(index)">全部除外</ctrl-button>
         <div class="useCheckList">
           <label v-for="propObj in saveDataObj.useList" :key="propObj.label">
             <input type="checkbox" v-model="propObj.isUse" />
@@ -21,7 +21,7 @@
       </fieldset>
       -->
       <div v-if="saveDataList">
-        現段階では部分的讀取は行えません。<br />全て的データを讀取します。
+        在此階段無法部分讀取。 <br />將讀取所有資料。
       </div>
       <div class="operateArea">
         <ctrl-button @click="commit" :disabled="!saveDataList">
@@ -60,7 +60,7 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
   private saveDataList: any[] = [];
 
   commit(): void {
-    // zipデータ的配列的マージ先
+    // zip資料的配列的マージ先
     const importData: any = {
       publicData: null,
       delKeyList: [],
@@ -68,8 +68,8 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
       dropZipRoomCreate: this.dropZipRoomCreate
     };
 
-    // zipデータをマージ是
-    // TODO とりあえず、インポート是データ的取捨選択は考慮否（第一リリース規格）
+    // zip資料をマージ是
+    // TODO とりあえず、インポート是資料的取捨選擇は考慮否（第一リリース規格）
     this.dropZipList.forEach(
       ({ fileName, saveData }: { fileName: string; saveData: any }) => {
         const publicData: any = saveData.public;
@@ -78,9 +78,9 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
         // const delKeyList: string[] = saveData.delKeyList;
         // const addObjList: any[] = saveData.addObjList;
 
-        // TODO 儲存データ的互換性的処理
+        // TODO 儲存資料的互換性的処理
 
-        // publicデータ的マージ（先勝ち）
+        // public資料的マージ（先勝ち）
         if (!importData.publicData) {
           // TODO 本当はもっと細かい単位で処理したい
           importData.publicData = publicData;
@@ -134,59 +134,59 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
       const publicData = saveDataObj.saveData.public;
       if (publicData.setting) {
         useList.push({
-          label: "設定情報(マス目表示、回転マーカー的表示など)",
+          label: "設定資料(方格、旋轉標記顯示)",
           isUse: true,
           target: "setting"
         });
       }
       if (publicData.room) {
         useList.push({
-          label: "房間情報(継続卓なら必須)",
+          label: "房間資料(續團必須有)",
           isUse: true,
           target: "room"
         });
       }
       if (publicData.chat) {
         useList.push({
-          label: "チャット履歴(房間情報とセットで)",
+          label: "聊天視窗履歴(房間資料集合)",
           isUse: true,
           target: "chat"
         });
       }
       if (publicData.image) {
-        useList.push({ label: "圖片情報", isUse: true, target: "image" });
+        useList.push({ label: "圖片資料", isUse: true, target: "image" });
       }
       if (publicData.map) {
         useList.push({
-          label: "マップ情報(圖片情報とセットで)",
+          label: "地圖資料(圖片資料集合)",
           isUse: true,
           target: "map"
         });
       }
       if (publicData.mapMask) {
         useList.push({
-          label: "マップマスク情報",
+          label: "地圖迷霧資料",
           isUse: true,
           target: "mapMask"
         });
       }
       if (publicData.character) {
         useList.push({
-          label: "キャラクター情報(圖片情報とセットで)",
+          label: "角色資料(圖片資料集合)",
           isUse: true,
           target: "character"
         });
       }
       if (publicData.chit) {
         useList.push({
-          label: "チット情報(圖片情報とセットで)",
+          label: "棋子資料(圖片資料集合)",
           isUse: true,
           target: "chit"
         });
       }
       if (publicData.publicMemo) {
         useList.push({
-          label: "共有メモ",
+          label: "共用筆記",
           isUse: true,
           target: "publicMemo"
         });

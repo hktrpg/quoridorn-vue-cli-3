@@ -1,10 +1,10 @@
 <template>
   <window-frame
-    titleText="チット新增"
+    titleText="新增棋子"
     display-property="private.display.addChitWindow"
     align="center"
     fixSize="653, 271"
-    message="圖片を直接マップにドラッグ＆ドロップで配置"
+    message="將圖片直接拖放到地圖上"
     @open="open"
     @reset="open"
   >
@@ -27,7 +27,7 @@
       />
 
       <div class="rowsNum">
-        <label>縦マス：</label>
+        <label>垂直：</label>
         <input
           type="number"
           min="1"
@@ -41,7 +41,7 @@
         />
       </div>
       <div class="columnsNum">
-        <label>横マス：</label>
+        <label>橫向：</label>
         <input
           type="number"
           min="1"

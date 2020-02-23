@@ -60,7 +60,7 @@
       :class="{ isDisconnect: !isRoomJoined }"
     >
       <span :class="{ isDisconnect: !isRoomJoined }">{{
-        `${roomName}` || "未接線"
+        `${roomName}` || "未連線"
       }}</span>
       ：
       <span>{{ members.length }}</span>
@@ -85,7 +85,7 @@
      !-------------------------------------------------->
     <div class="hoverMenu hoverMenu2" v-show="isShow('檔案')">
       <div class="item" @click="clickExport">儲存</div>
-      <div class="item" @click="clickImport">讀取</div>
+      <div class="item" @click="clickImport">讀取(未實裝)</div>
       <hr @mouseenter="menuHover('檔案')" />
       <div class="item" @click="clickChatLog">獲取聊天記錄</div>
     </div>
@@ -136,7 +136,7 @@
         @click="clickSettingFontSize"
         @mouseenter="menuHover('顯示')"
       >
-        字體大小調整
+        字體大小調整(未實裝)
       </div>
       <hr @mouseenter="menuHover('顯示')" />
       <div
@@ -152,12 +152,14 @@
      !-------------------------------------------------->
     <div class="hoverMenu hoverMenu4" v-show="isShow('方塊')">
       <div class="item" @click="clickAddCharacter">添加角色</div>
-      <div class="item" @click="clickAddRange">添加範圍</div>
+      <div class="item" @click="clickAddRange">添加範圍(未實裝)</div>
       <hr />
       <div class="item" @click="clickAddChit">添加棋子</div>
       <hr />
-      <div class="item" @click="clickGraveyard">墓場</div>
-      <div class="item" @click="clickWaitingRoom">角色等候室</div>
+      <div class="item" @click="clickGraveyard">墓場(整合到棋子管理盒)</div>
+      <div class="item" @click="clickWaitingRoom">
+        角色等候室(整合到棋子管理盒)
+      </div>
       <hr />
       <menu-boolean-item property="public.setting.pieceRotateMarker">
         顯示旋轉標誌
@@ -170,10 +172,10 @@
       <div class="item" @click="clickChangeMap">變更地圖</div>
       <div class="item" @click="clickAddFloorTile">添加地圖版塊</div>
       <div class="item" @click="clickAddMapMask">添加地圖迷霧</div>
-      <div class="item" @click="clickCreateEasyMap">製作簡易地圖</div>
+      <div class="item" @click="clickCreateEasyMap">製作簡易地圖(未實裝)</div>
       <hr />
-      <div class="item" @click="clickSaveMap">保存地圖狀態</div>
-      <div class="item" @click="clickSwitchMap">切換地圖</div>
+      <div class="item" @click="clickSaveMap">保存地圖狀態(未實裝)</div>
+      <div class="item" @click="clickSwitchMap">切換地圖(未實裝)</div>
     </div>
     <!--------------------------------------------------
      ! 圖片
@@ -194,7 +196,8 @@
       <div class="item" @click="clickVersion">版本</div>
       <div class="item" @click="clickManual" disabled>Manual(未實裝)</div>
       <hr />
-      <div class="item" @click="clickOfficialSite">官網</div>
+      <div class="item" @click="clickOfficialSite">冰丼官網</div>
+      <div class="item" @click="clickHKTRPG">HKTRPG官網</div>
     </div>
     <!--------------------------------------------------
      ! 視窗
@@ -348,11 +351,11 @@ export default class Menu extends Vue {
   /* --------------------
    * 顯示
    * ----------------- */
-  /** フォント大小調整 */
+  /** 字體大小調整 */
   clickSettingFontSize(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "フォント大小變更",
+      value: "字體大小變更",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -374,11 +377,11 @@ export default class Menu extends Vue {
     this.menuClick();
   }
 
-  /** 範囲添加 */
+  /** 範圍添加 */
   clickAddRange(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "範囲添加",
+      value: "範圍添加",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -393,13 +396,13 @@ export default class Menu extends Vue {
 
   /** 墓場 */
   clickGraveyard(): void {
-    alert("「墓場」は棋子管理盒畫面に統合されました。");
+    alert("「墓場」由棋子管理盒畫面整合。");
     this.menuClick();
   }
 
-  /** 角色待合室 */
+  /** 角色等候室 */
   clickWaitingRoom(): void {
-    alert("「角色待合室」は棋子管理盒畫面に統合されました。");
+    alert("「角色等候室」由棋子管理盒畫面整合。");
     this.menuClick();
   }
 
@@ -439,18 +442,18 @@ export default class Menu extends Vue {
   clickSaveMap(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "地圖保存",
+      value: "保存地圖",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
     this.menuClick();
   }
 
-  /** 地圖切り替え */
+  /** 地圖切換 */
   clickSwitchMap(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "地圖切り替え",
+      value: "切換地圖",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -470,7 +473,7 @@ export default class Menu extends Vue {
   clickTagEdit(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "圖片標籤編輯",
+      value: "編輯圖片標籤",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -481,7 +484,7 @@ export default class Menu extends Vue {
   clickDeleteImage(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "圖片刪除",
+      value: "刪除圖片",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -503,11 +506,11 @@ export default class Menu extends Vue {
     this.menuClick();
   }
 
-  /** マニュアル */
+  /** 說明書 */
   clickManual(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "マニュアル",
+      value: "說明書",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -517,6 +520,10 @@ export default class Menu extends Vue {
   /** オフィシャルサイトへ */
   clickOfficialSite(): void {
     window.open("http://quoridorn.com/", "_blank");
+    this.menuClick();
+  }
+  clickHKTRPG(): void {
+    window.open("https://www.hktrpg.com/", "_blank");
     this.menuClick();
   }
 
@@ -543,20 +550,20 @@ export default class Menu extends Vue {
 
   get roomInfoTitle(): string {
     return this.isRoomJoined === true
-      ? "メンバー的列表を見たり、房間的設定を変えることができますよ。"
-      : "お房間に入っていません。\n「接線」鍵を押してお房間を作りましょう！！";
+      ? "您可以看到成員列列表並更改房間設定。"
+      : "不在房間裡。 \n通過按「連線」鍵來創建一間房間！！";
   }
 
   get publicMemoTitle(): string {
     return this.isRoomJoined === true
-      ? "メンバーに共有したいテキストはこちらにどうぞ"
-      : "房間に入る前から準備しておく的ですね！？\nなんと準備的良いお方でしょう！";
+      ? "點擊此處與成員共享資料"
+      : "進入房間前做一些準備是個好主意！？\n你是個好人！";
   }
 
   get logoutTitle(): string {
     return this.isRoomJoined === true
-      ? "こ的房間から退室是的ですか？"
-      : "お房間に入っていません。\n「接線」鍵を押してお房間を作りましょう！！";
+      ? "你確定要離開房間嗎？"
+      : "不在房間裡。 \n通過按「連線」鍵來創建一間房間！！";
   }
 }
 </script>

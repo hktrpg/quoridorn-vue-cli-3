@@ -1,5 +1,5 @@
 export default {
-  /** カスタムダイスボット */
+  /** カスタム骰子ボット */
   state: {
     list: [],
     maxKey: -1,

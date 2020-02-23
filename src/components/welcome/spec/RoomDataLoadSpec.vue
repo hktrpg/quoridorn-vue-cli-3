@@ -17,51 +17,51 @@
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        読み込ませたファイル的ど的データを使うか選擇できるように是
+        読み込ませたファイル的ど的資料を使うか選擇できるように是
       </li>
       <li>
-        データ的取り込み方法は以下的通り
+        資料的取り込み方法は以下的通り
         <ol>
           <li>
-            差分取り込み
+            變化取り込み
             <ol class="importTypeItem">
               <li>
-                取り込み対象情報と完全に一致是データが無ければ、新增是形で讀取
+                取り込み對像情報と完全に一致是資料が無ければ、新增是形で讀取
               </li>
               <li>
-                「圖片を參考是データ」を一緒に讀取した場合、そ的「參考圖片ID」を適切に設定。<br />
+                「圖片を參考是資料」を一緒に讀取した場合、そ的「參考圖片ID」を適切に設定。<br />
                 圖片を取り込んでいた場合は新しく割り振られた圖片IDを設定。<br />
-                既存に全く同じデータが存在して取り込まなかった場合は既存的畫面IDを設定。
+                既存に全く同じ資料が存在して取り込まなかった場合は既存的畫面IDを設定。
               </li>
             </ol>
           </li>
         </ol>
       </li>
       <li>
-        読み込めるデータと取り込み方法は以下的通り
+        読み込める資料と取り込み方法は以下的通り
         <ol>
           <li>
-            <div class="kind">圖片データ</div>
+            <div class="kind">圖片資料</div>
             <ol class="kindItem">
               <li>標籤</li>
               <li>密碼</li>
-              <li>圖片データもしくはURL</li>
+              <li>圖片資料もしくはURL</li>
             </ol>
-            <div class="importType">取り込み方法：差分取り込み</div>
+            <div class="importType">取り込み方法：變化取り込み</div>
           </li>
           <li>
-            <div class="kind">キャラクター</div>
+            <div class="kind">角色</div>
             <div class="kindItem">
               <label>情報項目：</label>
               <ol>
-                <li>キャラクター機能で使う情報すべて</li>
-                <li>そ的キャラ的立ち絵設定</li>
-                <li>そ的キャラ的對話組合版</li>
-                <li>そ的キャラ的先攻表的情報</li>
+                <li>角色功能で使う情報すべて</li>
+                <li>そ的角色的立繪設定</li>
+                <li>そ的角色的對話組合版</li>
+                <li>そ的角色的先攻表的情報</li>
               </ol>
             </div>
             <div class="importType">
-              <label>取り込み方法：</label><span>差分取り込み</span>
+              <label>取り込み方法：</label><span>變化取り込み</span>
             </div>
           </li>
           <li>
@@ -74,7 +74,7 @@
               </ol>
             </div>
             <div class="importType">
-              <label>取り込み方法：</label><span>差分取り込み</span>
+              <label>取り込み方法：</label><span>變化取り込み</span>
             </div>
           </li>
           <li>
@@ -82,12 +82,12 @@
             <div class="kindItem">
               <label>情報項目：</label>
               <ol>
-                <li>BGM機能で使う情報すべて</li>
+                <li>BGM功能で使う情報すべて</li>
                 <li>播放中的BGM情報</li>
               </ol>
             </div>
             <div class="importType">
-              <label>取り込み方法：</label><span>差分取り込み</span>
+              <label>取り込み方法：</label><span>變化取り込み</span>
             </div>
           </li>
           <li>
@@ -95,45 +95,45 @@
             <div class="kindItem">
               <label>情報項目：</label>
               <ol>
-                <li>カットイン機能で使う情報すべて</li>
+                <li>カットイン功能で使う情報すべて</li>
                 <li>播放中的カットイン情報</li>
               </ol>
             </div>
             <div class="importType">
-              <label>取り込み方法：</label><span>差分取り込み</span>
+              <label>取り込み方法：</label><span>變化取り込み</span>
             </div>
           </li>
           <li>
-            <div class="kind">範囲</div>
+            <div class="kind">範圍</div>
           </li>
           <li>
-            <div class="kind">チット</div>
+            <div class="kind">棋子</div>
           </li>
           <li>
-            <div class="kind">フロアタイル</div>
+            <div class="kind">地形</div>
           </li>
           <li>
-            <div class="kind">マップマスク</div>
+            <div class="kind">地圖迷霧</div>
           </li>
           <li>
-            <div class="kind">簡易マップ</div>
+            <div class="kind">簡易地圖</div>
           </li>
           <li>
-            <div class="kind">マップマーカー</div>
+            <div class="kind">地圖マーカー</div>
           </li>
           <li>
-            <div class="kind">ダイスシンボル</div>
+            <div class="kind">骰子シンボル</div>
           </li>
           <li>
-            <div class="kind">ダイスボット表</div>
+            <div class="kind">骰子ボット表</div>
           </li>
           <li>
-            <div class="kind">ダイスシンボル</div>
+            <div class="kind">骰子シンボル</div>
             <div class="kindItem">
-              <label>情報項目：</label><span>当該機能で使う情報すべて。</span>
+              <label>情報項目：</label><span>当該功能で使う情報すべて。</span>
             </div>
             <div class="importType">
-              <label>取り込み方法：</label><span>差分取り込み</span>
+              <label>取り込み方法：</label><span>變化取り込み</span>
             </div>
           </li>
         </ol>
@@ -150,7 +150,7 @@
      !--------------------->
     <spec-item class-str="unImplemented" label-str="未實裝項目">
       <li>
-        取り込みデータを選んで的讀取は初回リリースでは対象外と是。
+        取り込み資料を選んで的讀取は初回リリースでは對像外と是。
       </li>
     </spec-item>
     <!----------------------

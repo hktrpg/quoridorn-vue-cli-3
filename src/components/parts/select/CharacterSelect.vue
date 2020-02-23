@@ -64,7 +64,7 @@ export default class CharacterSelect extends Mixins<SelectMixin>(SelectMixin) {
       resultList.unshift({
         key: null,
         value: null,
-        text: "キャラクターが居ません",
+        text: "角色不在",
         disabled: true
       });
 

@@ -9,7 +9,7 @@
     @reset="open"
   >
     <div class="contents" @contextmenu.prevent>
-      <!-- 圖片選択エリア -->
+      <!-- 圖片選擇エリア -->
       <div class="image-container">
         <div
           class="image-block"
@@ -28,26 +28,26 @@
       </div>
 
       <div class="ctrl-type-1">
-        <label>対応圖片：JPEG/GIF/PNG</label>
+        <label>支援圖片：JPEG/GIF/PNG</label>
         <ctrl-select
           :disabled="true"
           :optionInfoList="[
             {
               key: null,
               value: '',
-              text: '房間専用的み',
+              text: '房間専用',
               disabled: true
             }
           ]"
         />
         <ctrl-button @click="passwordButtonOnClick">
-          隠し圖片密碼設定
+          隱藏圖片密碼設定
         </ctrl-button>
       </div>
 
       <div class="ctrl-type-1">
         <label for="fileUploader-tag">
-          付与是標籤（半角・全角スペースで区切り）：
+          加上標籤（半型・全型和空格分隔）：
         </label>
         <input
           type="text"
@@ -63,12 +63,12 @@
 
       <div class="ctrl-type-2">
         <ctrl-file-selector @change="fileOnChange" ref="button">
-          アップ讀取対象圖片選択
+          選擇要讀取的對像圖片
         </ctrl-file-selector>
         <ctrl-button :disabled="!useImageList.length" @click="commitOnClick">
-          アップ讀取
+          讀取
         </ctrl-button>
-        <ctrl-button @click="cancelOnClick">閉じる</ctrl-button>
+        <ctrl-button @click="cancelOnClick">關閉</ctrl-button>
       </div>
     </div>
   </window-frame>
@@ -104,7 +104,7 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
   @Getter("imageTagList") private imageTagList: any;
   @Getter("playerKey") private playerKey: any;
 
-  private inputImageTag: string = "キャラクター";
+  private inputImageTag: string = "角色";
   private selectImageTag: string = "imgTag-2";
   private useImageList: any[] = [];
   private hoverImageKey: number | null = null;
@@ -112,7 +112,7 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
   private windowMessage: string = "";
 
   private open() {
-    this.inputImageTag = "キャラクター";
+    this.inputImageTag = "角色";
     this.selectImageTag = "imgTag-2";
     this.useImageList = [];
     this.hoverImageKey = null;
@@ -124,7 +124,7 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * selectボックスが選択されたら、入力欄的内容を更新是
+   * selectボックスが選擇されたら、輸入欄的内容を更新是
    */
   @Watch("selectImageTag")
   private onChangeSelectImageTag(selectImageTag: string) {
@@ -141,7 +141,7 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * 入力欄に入力されたら、selectボックス的内容を更新是
+   * 輸入欄に輸入されたら、selectボックス的内容を更新是
    */
   @Watch("inputImageTag")
   private onChangeInputImageTag(inputImageTag: string) {
@@ -236,7 +236,7 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
       });
     });
     this.open();
-    this.windowMessage = "圖片的読み込みが完了しました。";
+    this.windowMessage = "圖片加載完成。";
   }
 
   private cancelOnClick() {

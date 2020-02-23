@@ -20,7 +20,7 @@
         />
       </label>
       <!-----------------
-       ! マップ
+       ! 地圖
        !---------------->
       <fieldset class="field map">
         <legend>在地圖上的</legend>
@@ -78,7 +78,7 @@
         </ul>
       </fieldset>
       <!-----------------
-       ! キャラクター待合室
+       ! 角色等候室
        !---------------->
       <fieldset class="field waiting" v-if="currentPlayerKey === playerKey">
         <legend>在待機室的</legend>
@@ -203,7 +203,7 @@ export default class PlayerBoxWindow extends Mixins<WindowMixin>(WindowMixin) {
     resultList.push({
       key: 0,
       value: "0",
-      text: "和主要相同",
+      text: "和主要的相同",
       disabled: false
     });
     resultList.push({

@@ -5,13 +5,13 @@ import * as Mustache from "mustache";
 export default {
   actions: {
     /** ========================================================================
-     * HTML形式でチャットログをダウン讀取是
+     * HTML形式で聊天視窗ログをダウン讀取是
      * @param rootGetters
      */
     async saveChatLogHtml({ rootGetters }: { rootGetters: any }) {
       if (!rootGetters.isGameMaster) {
         alert(
-          "規格的な考慮不足によりGM専用機能です。\nGM以外でも可能になるよう、近いうちに改修します。\nGMにログ取得を促してくださいませ。"
+          "規格的な考慮不足によりGM専用功能です。\nGM以外でも可能になるよう、近いうちに改修します。\nGMにログ取得を促してくださいませ。"
         );
         return;
       }

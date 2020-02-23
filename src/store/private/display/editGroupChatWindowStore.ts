@@ -5,7 +5,7 @@ export default {
     zIndex: 1,
     windowSize: { w: 237, h: 400 },
     key: null,
-    // テーブル形式用データここから
+    // テーブル形式用資料ここから
     widthList: [25, 174], // 200
     selectLineKey: null,
     hoverDevIndex: -1,
@@ -14,7 +14,7 @@ export default {
     startX: -1,
     startLeftWidth: -1,
     startRightWidth: -1
-    // テーブル形式用データここまで
+    // テーブル形式用資料ここまで
   },
   actions: {},
   mutations: {},

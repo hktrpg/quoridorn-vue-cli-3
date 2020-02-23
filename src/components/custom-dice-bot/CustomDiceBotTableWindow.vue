@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="骰子判定表管理"
+    titleText="管理骰子判定表"
     display-property="private.display.customDiceBotTableWindow"
     align="center"
     fixSize="450, 300"

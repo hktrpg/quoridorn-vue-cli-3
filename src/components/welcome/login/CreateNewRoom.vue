@@ -281,11 +281,11 @@ export default class CreateNewRoom extends Vue {
 
   /**
    * ====================================================================================================
-   * 房間名を入力して檢查鍵を押下した際的処理
+   * 房間名を輸入して檢查鍵を押下した際的処理
    */
   commitRoomName() {
     /* ------------------------------
-     * 入力檢查
+     * 輸入檢查
      */
     const errorMsg = [];
     if (!this.roomName) errorMsg.push("・房間名");
@@ -365,7 +365,7 @@ export default class CreateNewRoom extends Vue {
    * 房間建て・進房振り分け
    */
   roomProcess(isNewRoom: boolean) {
-    // 入力檢查
+    // 輸入檢查
     const errorMsg = [];
     if (!this.roomName) errorMsg.push("・房間名");
     if (isNewRoom && !this.playerName) errorMsg.push("・用戶名");
@@ -410,7 +410,7 @@ export default class CreateNewRoom extends Vue {
    * 房間ができる的を待つ
    */
   doWaitRoom() {
-    // 入力檢查
+    // 輸入檢查
     const errorMsg = [];
     if (!this.roomName) errorMsg.push("・房間名");
     if (errorMsg.length > 0) {
@@ -520,7 +520,7 @@ export default class CreateNewRoom extends Vue {
 
   /**
    * ====================================================================================================
-   * 權限に関是説明リンクをクリックした際的処理
+   * 權限に関是説明リンク點擊した際的処理
    */
   onClickDescription(): void {
     alert(

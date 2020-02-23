@@ -18,7 +18,7 @@ import { Component, Mixins } from "vue-mixin-decorator";
 export default class ImageTagSelect extends Mixins<SelectMixin>(SelectMixin) {
   @Getter("imageTagList") private imageTagList: any;
 
-  @Prop({ type: String, default: "画像標籤" })
+  @Prop({ type: String, default: "圖片標籤" })
   protected defaultLabel!: string;
 
   private get optionInfoList(): any[] {

@@ -1,6 +1,6 @@
 <template>
   <context-frame displayProperty="private.display.characterContext">
-    <div class="item" @click.left.prevent="editObj">変更</div>
+    <div class="item" @click.left.prevent="editObj">變更</div>
     <div class="item" @click.left.prevent="copyObj">複製</div>
     <hr />
     <div
@@ -8,25 +8,25 @@
       v-if="place !== 'field'"
       @click.left.prevent="moveToField"
     >
-      マップに移動
+      移動到桌面
     </div>
     <div
       class="item"
       v-if="place !== 'waiting'"
       @click.left.prevent="moveToWaitRoom"
     >
-      キャラクター待合室に移動
+      移動到角色等候室
     </div>
     <div
       class="item"
       v-if="place !== 'graveyard'"
       @click.left.prevent="moveToGraveyard"
     >
-      墓場に移動（刪除）
+      移動到墓場（刪除）
     </div>
     <hr />
     <div class="item" @click.left.prevent="changeIsHideBorder(!isBorderHide)">
-      枠線を{{ isBorderHide ? "表示" : "非表示" }}
+      邊框{{ isBorderHide ? "顯示" : "不顯示" }}
     </div>
     <template
       v-if="
@@ -35,16 +35,16 @@
     >
       <hr />
       <div class="item" @click.left.prevent="openRefURL">
-        データ參考先URLを開く
+        打開參考URL
       </div>
     </template>
     <template v-if="isGameMaster">
       <hr />
       <div class="item" @click.left.prevent="getOwner">
-        オーナーになる
+        成為擁有者
       </div>
       <div class="item" @click.left.prevent="giveOwner">
-        オーナーを渡す
+        移交擁有者
       </div>
     </template>
   </context-frame>

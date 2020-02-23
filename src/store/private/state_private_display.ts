@@ -162,7 +162,7 @@ export default {
     },
 
     /**
-     * 指定されたプロパティパス的子畫面を閉じる
+     * 指定されたプロパティパス的子畫面を關閉
      * @param dispatch
      * @param state
      * @param rootGetters
@@ -192,7 +192,7 @@ export default {
       const dispName = splits[splits.length - 1];
       // window.console.log(`windowActive => ${ dispName }`);
 
-      // display的表示済み的畫面を表示順ソートしたプロパティ的リスト（指定的も的含まない）
+      // display的顯示済み的畫面を顯示順ソートしたプロパティ的リスト（指定的も的含まない）
       const propList = Object.entries(rootState.private.display)
         .map(([key, value]) => ({ key, value }))
         .filter((obj: any) => {

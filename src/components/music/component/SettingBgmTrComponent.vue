@@ -5,7 +5,7 @@
     @dblclick="doDblClick"
   >
     <td :style="colStyle(0)" :title="linkageStr(bgmObj)" @contextmenu.prevent>
-      {{ bgmObj.chatLinkage > 0 ? "あり" : "無" }}
+      {{ bgmObj.chatLinkage > 0 ? "有" : "無" }}
     </td>
     <divider :index="0" prop="settingBGMWindow" />
     <td :style="colStyle(1)" @contextmenu.prevent>

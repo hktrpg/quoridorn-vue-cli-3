@@ -75,7 +75,7 @@ export default class MapBoard extends Mixins<CanvasMixin>(CanvasMixin) {
         }
       }
 
-      // マウス下的マスを強調表示
+      // マウス下的マスを強調顯示
       ctx.strokeStyle = this.gridColor;
       ctx.strokeStyle = "red";
       ctx.globalAlpha = 1;

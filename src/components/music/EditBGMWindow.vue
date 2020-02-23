@@ -20,7 +20,7 @@
             ref="urlElm"
             placeholder="變為無指定的「停止」操作"
           />
-          <!-- URLマスク -->
+          <!-- URL迷霧 -->
           <div
             class="mask"
             v-if="url && !isYoutube && isHideUrl"
@@ -75,8 +75,8 @@
             :mutable="false"
             ref="volumeComponent"
           />
-          <!-- プレビュー -->
-          <ctrl-button class="preview" @click="preview">プレビュー</ctrl-button>
+          <!-- 預覽 -->
+          <ctrl-button class="preview" @click="preview">預覽</ctrl-button>
         </div>
         <div>
           <!-- 播放開始 -->
@@ -149,9 +149,9 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend @contextmenu.prevent>チャット連動</legend>
+        <legend @contextmenu.prevent>聊天視窗聯動</legend>
         <div class="lastWide">
-          <!-- チャット連動オプション -->
+          <!-- 聊天視窗聯動オプション -->
           <label class="option">
             <ctrl-select
               v-model="chatLinkage"
@@ -164,7 +164,7 @@
             v-show="chatLinkage === '1' || chatLinkage === '2'"
           >
             <input
-              :placeholder="chatLinkage === '1' ? '' : 'Javascript的正規表現'"
+              :placeholder="chatLinkage === '1' ? '' : 'Javascript的正規表示'"
               type="text"
               v-model="chatLinkageSearch"
             />
@@ -216,7 +216,7 @@ export default class EditBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
   private volume: number = 0.8;
   private options: any[] = [
     { value: "0", label: "無" },
-    { value: "1", label: "末尾文字" },
+    { value: "1", label: "末端文字" },
     { value: "2", label: "正則表達式" }
   ];
   private tags: string[] = ["BGM", "SE"];

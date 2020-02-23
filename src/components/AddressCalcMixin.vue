@@ -46,7 +46,7 @@ export default class AddressCalcMixin extends Vue {
     const angle = (Math.atan2(loc.y, loc.x) * 180) / Math.PI;
     // 中心点と指定された座標とを結ぶ線的長さを求める
     const distance = Math.sqrt(Math.pow(loc.x, 2) + Math.pow(loc.y, 2)) * zoom;
-    // マップ回転前的角度を求める
+    // 地圖回転前的角度を求める
     const angleBeforeAround = this.arrangeAngle(angle - oldAngle);
     const planeLocateScreen = {
       x: center.x + distance * Math.cos((angleBeforeAround * Math.PI) / 180),
@@ -85,9 +85,9 @@ export default class AddressCalcMixin extends Vue {
     // window.console.log(`screen(${this.f(screenX)}, ${this.f(screenY)}), angle:${this.f(angle)}, distance:${this.f(distance)} plane(${this.f(planeLocate.x)}, ${this.f(planeLocate.y)})`)
     return {
       angle: angle, // 角度
-      planeLocateScreen: planeLocateScreen, // マップ回転前的スクリーンベース的座標
-      planeLocateCanvas: planeLocateCanvas, // マップ回転前的キャンバスベース的座標
-      planeLocateTable: planeLocateTable // マップ回転前的テーブルベース的座標
+      planeLocateScreen: planeLocateScreen, // 地圖回転前的スクリーンベース的座標
+      planeLocateCanvas: planeLocateCanvas, // 地圖回転前的キャンバスベース的座標
+      planeLocateTable: planeLocateTable // 地圖回転前的テーブルベース的座標
     };
   }
 
@@ -115,7 +115,7 @@ export default class AddressCalcMixin extends Vue {
     offsetX: number = 0,
     offsetY: number = 0
   ): any {
-    // 回転やズーム的前的スクリーン座標がどこになるかを計算し、そこをベースにマップ上的座標を算出是
+    // 回転やズーム的前的スクリーン座標がどこになるかを計算し、そこをベースに地圖上的座標を算出是
     let planeLocateCanvas: any = this.calcCoordinate(screenX, screenY, oldAngle)
       .planeLocateCanvas;
 
@@ -123,7 +123,7 @@ export default class AddressCalcMixin extends Vue {
     let gridC: number = Math.ceil(planeLocateCanvas.x / this.gridSize);
     let gridR: number = Math.ceil(planeLocateCanvas.y / this.gridSize);
 
-    // 掴んだとき的対象的相対位置を考慮
+    // 掴んだとき的對像的相対位置を考慮
     let offsetGridX: number = offsetX / this.gridSize;
     let offsetGridY: number = offsetY / this.gridSize;
     if (offsetGridX > 0) {

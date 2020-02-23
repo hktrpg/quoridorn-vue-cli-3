@@ -1,5 +1,5 @@
 export default {
-  /** チャット */
+  /** 聊天視窗 */
   state: {
     tab: [
       {
@@ -30,7 +30,7 @@ export default {
     },
 
     /**
-     * チャット的タブ選擇したことをデータに反映是
+     * 聊天視窗的タブ選擇したことをデータに反映是
      * @param state
      * @param key
      */

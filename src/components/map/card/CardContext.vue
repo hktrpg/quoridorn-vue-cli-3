@@ -1,9 +1,9 @@
 <template>
   <context-frame displayProperty="private.display.cardContext">
-    <div class="item" @click.left.prevent="draw">1枚引く</div>
-    <div class="item" @click.left.prevent="choice">展開是</div>
-    <div class="item" @click.left.prevent="reverse">裏返す</div>
-    <div class="item" @click.left.prevent="shuffle">シャッフル</div>
+    <div class="item" @click.left.prevent="draw">抽一張</div>
+    <div class="item" @click.left.prevent="choice">選擇</div>
+    <div class="item" @click.left.prevent="reverse">反轉</div>
+    <div class="item" @click.left.prevent="shuffle">隨機</div>
   </context-frame>
 </template>
 

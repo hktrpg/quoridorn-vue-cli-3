@@ -1,6 +1,6 @@
 <template>
   <context-frame displayProperty="private.display.publicMemoContext">
-    <div class="item" @click.left.prevent="viewItemOnClick">表示</div>
+    <div class="item" @click.left.prevent="viewItemOnClick">顯示</div>
     <hr />
     <div class="item" @click.left.prevent="editItemOnClick">編輯</div>
     <hr />

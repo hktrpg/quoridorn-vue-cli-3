@@ -36,9 +36,9 @@
       <ctrl-select v-model="type" :optionInfoList="optionInfoList" />
     </div>
 
-    <!-- アニメーション周期 -->
+    <!-- 動畫製作周期 -->
     <div class="range">
-      <label>表示時間{{ viewTime }}</label>
+      <label>顯示時間{{ viewTime }}</label>
       <range-multiple-persent v-model="time" />
     </div>
 
@@ -95,7 +95,7 @@ export default class DiffComponent extends Vue {
   @Getter("imageList") private imageList: any;
 
   /**
-   * 圖片選択
+   * 圖片選擇
    */
   chooseImage(): void {
     const image = this.diff.image;

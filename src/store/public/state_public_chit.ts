@@ -1,5 +1,5 @@
 export default {
-  /** チット */
+  /** 棋子 */
   state: {
     list: [],
     maxKey: -1

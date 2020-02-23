@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="フロアタイル変更"
+    titleText="地形變更"
     display-property="private.display.editFloorTileWindow"
     align="center"
     fixSize="653, 305"
@@ -24,11 +24,11 @@
       />
 
       <div class="rowsNum">
-        <label>縦マス：</label>
+        <label>垂直：</label>
         <input type="number" min="1" class="size" v-model="rows" />
       </div>
       <div class="columnsNum">
-        <label>横マス：</label>
+        <label>橫向：</label>
         <input type="number" min="1" class="size" v-model="columns" />
       </div>
       <textarea

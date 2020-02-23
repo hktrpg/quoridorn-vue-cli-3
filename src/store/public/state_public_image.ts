@@ -4,11 +4,11 @@ export default {
     /** 圖片的標籤 */
     tags: {
       list: [
-        { key: "imgTag-0", name: "(全て)" },
-        { key: "imgTag-1", name: "マップ" },
-        { key: "imgTag-2", name: "キャラクター" },
-        { key: "imgTag-3", name: "フロアタイル" },
-        { key: "imgTag-4", name: "立ち絵" }
+        { key: "imgTag-0", name: "(全部)" },
+        { key: "imgTag-1", name: "地圖" },
+        { key: "imgTag-2", name: "角色" },
+        { key: "imgTag-3", name: "地形" },
+        { key: "imgTag-4", name: "立繪" }
       ],
       maxKey: 4
     },
@@ -19,7 +19,7 @@ export default {
   },
   actions: {
     /** ========================================================================
-     * 圖片的タブ的構成を変更是
+     * 圖片的タブ的構成を變更是
      */
     imageTagChange: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -32,7 +32,7 @@ export default {
   },
   mutations: {
     /**
-     * 圖片的タブ的構成を変更是
+     * 圖片的タブ的構成を變更是
      * @param state
      * @param key
      * @param imageList
@@ -54,7 +54,7 @@ export default {
 
       let addList = useTexts.concat(); // 配列をシャロ―複製
       const deleteList = state.tags.list.filter((tag: any) => {
-        // 「(全て)」は消させない
+        // 「(全部)」は消させない
         if (tag.key === "imgTag-0") {
           return;
         }
@@ -92,7 +92,7 @@ export default {
         });
       });
       state.tags.maxKey = maxKey;
-      // セレクトボックスに表示される項目は、入力された内容的末尾的指定を使う
+      // セレクトボックスに顯示される項目は、輸入された内容的末尾的指定を使う
       const imageObj = imageList.filter(imageObj => imageObj.key === key)[0];
       const tagTexts = imageObj.currentTag.replace(regExp, ",").split(",");
       imageObj.selectTag = tagTexts[tagTexts.length - 1];
@@ -118,7 +118,7 @@ export default {
     imageListFromTagKey: (state: any, getter: any): Function => (
       tagKey: string
     ): any[] => {
-      // (全て)なら全部
+      // (全部)なら全部
       if (tagKey === "imgTag-0") return getter.imageList;
 
       return getter.imageList.filter(

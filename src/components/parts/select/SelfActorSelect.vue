@@ -21,7 +21,7 @@ import { Component, Mixins } from "vue-mixin-decorator";
 export default class SelfActorSelect extends Mixins<SelectMixin>(SelectMixin) {
   @Getter("getSelfActors") private getSelfActors: any;
 
-  @Prop({ type: String, default: "アクター" })
+  @Prop({ type: String, default: "角色" })
   protected defaultLabel!: string;
 
   @Prop({ type: Array, required: true })

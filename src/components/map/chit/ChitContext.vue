@@ -1,11 +1,11 @@
 <template>
   <context-frame displayProperty="private.display.chitContext">
-    <div class="item" @click.left.prevent="editObj">変更</div>
+    <div class="item" @click.left.prevent="editObj">變更</div>
     <div class="item" @click.left.prevent="copyObj">複製</div>
     <div class="item" @click.left.prevent="deleteObj">刪除</div>
     <hr />
     <div class="item" @click.left.prevent="changeIsHideBorder(!isBorderHide)">
-      枠線を{{ isBorderHide ? "表示" : "非表示" }}
+      枠線を{{ isBorderHide ? "顯示" : "不顯示" }}
     </div>
   </context-frame>
 </template>

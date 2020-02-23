@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="deleteImageSpec"
-    label-str="圖片刪除"
+    label-str="刪除圖片"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -20,7 +20,7 @@
         既に參考可能となっている圖片選擇して刪除是
       </li>
       <li>
-        既に參考されている圖片はマークをつけて表示し、刪除対象として選択できないように是
+        既に參考されている圖片はマークをつけて顯示し、刪除對像として選擇できないように是
       </li>
     </spec-item>
     <!----------------------
@@ -33,7 +33,7 @@
      ! 未實裝項目
      !--------------------->
     <spec-item class-str="unImplemented" label-str="未實裝項目">
-      <li>本機能自体が未實裝<br />→ 初回リリースに含める</li>
+      <li>本功能自体が未實裝<br />→ 初回リリースに含める</li>
     </spec-item>
     <!----------------------
      ! 未實現的功能

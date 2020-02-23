@@ -8,7 +8,7 @@ import moment from "moment";
 export default {
   actions: {
     /** ========================================================================
-     * 儲存データ新增を開始是
+     * 儲存資料新增を開始是
      * @param dispatch
      * @param rootState
      * @param rootGetters
@@ -34,10 +34,10 @@ export default {
         delete rootGetters.volatilePrivateData[playerKey];
       }
 
-      // privateデータ的複製
+      // private資料的複製
       const privateData = JSON.parse(JSON.stringify(rootState.private));
 
-      // 開いてないディスプレイ情報は送信データに含めない
+      // 開いてないディスプレイ資料は送出資料に含めない
       for (const key in privateData.display) {
         if (!privateData.display.hasOwnProperty(key)) continue;
         if (key === "undefined" || !privateData.display[key].isDisplay) {
@@ -48,10 +48,10 @@ export default {
         }
       }
 
-      // 自分的privateデータを一時領域に保存是
+      // 自分的private資料を一時領域に保存是
       rootGetters.volatilePrivateData[rootGetters.playerKey] = privateData;
 
-      // 1人だったら即保存処理、複数人だったらprivateデータをクリエスト是
+      // 1人だったら即保存処理、複数人だったらprivate資料をクリエスト是
       if (rootGetters.members.length === 1) {
         dispatch("doExport");
       } else {
@@ -60,7 +60,7 @@ export default {
     },
 
     /** ========================================================================
-     * 儲存データ新增を実行是
+     * 儲存資料新增を実行是
      * @param dispatch
      * @param rootState
      * @param rootGetters
@@ -75,7 +75,7 @@ export default {
       rootGetters: any;
     }) {
       // ------------------------------------------------------------
-      // 儲存データ的ベース新增
+      // 儲存資料的基本新增
       const saveData = JSON.parse(
         JSON.stringify({
           public: rootState.public,
@@ -89,7 +89,7 @@ export default {
           continue;
 
         // ------------------------------------------------------------
-        // 儲存データ内的player的リストに各玩家的privateデータを持たせる
+        // 儲存資料内的player的リストに各玩家的private資料を持たせる
         const playerPrivateObj: any =
           rootGetters.volatilePrivateData[playerKey];
         saveData.public.player.list.forEach((player: any) => {
@@ -98,7 +98,7 @@ export default {
         });
       }
 
-      // お試しデータ的カードデッキはとりあえず刪除
+      // お試し資料的カードデッキはとりあえず刪除
       delete saveData.public.deck;
 
       /*
@@ -135,7 +135,7 @@ export default {
       encryptListObj(saveData.public.map, "list");
       encryptListObj(saveData.public.counterRemocon, "list");
 
-      // // listに対是差分を取り扱う
+      // // listに対是變化を取り扱う
       // const addKeyList: string[] = [];
       // const delKeyList: string[] = [];
       // saveData.public.historyList.forEach((history: any) => {
@@ -144,7 +144,7 @@ export default {
       // });
       //
       // // ------------------------------------------------------------
-      // // 刪除したデータが新增したデータに含まれている場合は双方的リストから消す
+      // // 刪除した資料が新增した資料に含まれている場合は双方的リストから消す
       // const delKeyDelList: string[] = [];
       // delKeyList.forEach((delKey: string) => {
       //   const index = addKeyList.findIndex(
@@ -163,13 +163,13 @@ export default {
       // );
       //
       // // ------------------------------------------------------------
-      // // こ的時点で刪除リストはプリセットデータ的刪除的みとなっているはず
-      // // → 対象的key的リストが保存データに含まれれば、讀取時に十分なデータとなる
+      // // こ的時点で刪除リストはプリセット資料的刪除的みとなっているはず
+      // // → 對像的key的リストが保存資料に含まれれば、讀取時に十分な資料となる
       // saveData.delKeyList = delKeyList;
       //
       // // ============================================================
       //
-      // // ここからは新增データ間的関連データを調べ、差分データとして用意是
+      // // ここからは新增資料間的関連資料を調べ、變化資料として用意是
       // const imageKeyList = addKeyList.filter(
       //   key => key.split("-")[0] === "image"
       // );
@@ -186,7 +186,7 @@ export default {
       // };
       //
       // const addObjList: any[] = addKeyList.map(key => {
-      //   // オブジェクト的データを文字列化し、そこに含まれるイメージkeyを必要に応じて置換是
+      //   // オブジェクト的資料を文字列化し、そこに含まれるイメージkeyを必要に応じて置換是
       //   let objStr = JSON.stringify(rootGetters.getObj(key));
       //   (objStr.match(/image-([0-9])+/g) || []).forEach((imageKey: string) => {
       //     objStr = objStr.replace(
@@ -225,7 +225,7 @@ export default {
       //   }
       // });
       //
-      // // 新增データに記録されるも的は二重管理となるため刪除
+      // // 新增資料に記録されるも的は二重管理となるため刪除
       // delete saveData.public.character;
       // delete saveData.public.chit;
       // delete saveData.public.mapMask;
@@ -233,10 +233,10 @@ export default {
       // delete saveData.public.bgm;
       // delete saveData.public.diceSymbol;
       //
-      // // 儲存データに新增差分データを含める
+      // // 儲存資料に新增變化資料を含める
       // saveData.addObjList = addObjList;
 
-      // zipファイル的生成
+      // zipファイル的新增
       const zip = new JSZip();
       zip.file("save.json", JSON.stringify(saveData, undefined, 2));
       zip.generateAsync({ type: "blob" }).then((blob: any) => {
@@ -360,7 +360,7 @@ export default {
       decryptListObj(publicData.counterRemocon, "list");
 
       const importFunc = () => {
-        // FIXME チャットデータは覆蓋でいい的…かな？（差分方式がいい気もしている
+        // FIXME 聊天視窗資料は覆蓋でいい的…かな？（變化方式がいい気もしている
         dispatch("setProperty", {
           property: "public",
           value: publicData,
@@ -393,14 +393,14 @@ export default {
 
         return Promise.all([...imageAddPromiseList]).then(
           (imageList: string[]) => {
-            // 圖片を全て読み込み終えたら、他的オブジェクト的新增を処理是
+            // 圖片を全部読み込み終えたら、他的オブジェクト的新增を処理是
             const otherObjectPromiseList = addObjList
-              // 圖片以外を処理対象と是
+              // 圖片以外を処理對像と是
               .filter(addObj => addObj.key.split("-")[0] !== "image")
               .map(addObj => {
                 const type = addObj.key.split("-")[0];
 
-                // // image參考的差分讀取
+                // // image參考的變化讀取
                 // let useImageList: string = addObj.useImageList;
                 // if (useImageList) {
                 //   useImageList.split("|").forEach(useImage => {
@@ -428,7 +428,7 @@ export default {
                 );
                 addObj = JSON.parse(addObjStr);
 
-                // グループチャットデータ的讀取
+                // 群組聊天視窗資料的讀取
                 if (type === "groupTargetTab") {
                   rootGetters.groupTargetTabList.push({
                     key: `groupTargetTab-${++rootGetters.groupTargetTab
@@ -461,12 +461,12 @@ export default {
         return;
       }
       if (!publicData.room) {
-        // 房間を作る操作な的に儲存データに房間情報が含まれてないならここで終わり
+        // 房間を作る操作な的に儲存資料に房間資料が含まれてないならここで終わり
         alert("沒有房間信息。 \n停止處理。");
         return;
       }
       dispatch("loading", true);
-      // 儲存データに房間情報があるなら、進房処理を行う
+      // 儲存資料に房間資料があるなら、進房処理を行う
       const checkFunc = (roomName: string) => {
         // 房間的存在檢查
         Promise.resolve()
@@ -502,12 +502,12 @@ export default {
               return;
             }
 
-            // データインポート
+            // 資料インポート
             importFunc()
               .then(
                 () =>
                   new Promise((resolve: Function) => {
-                    // 玩家情報を入力してもらう
+                    // 玩家資料を輸入してもらう
                     dispatch("setProperty", {
                       property: "private.display.inputPlayerInfoWindow",
                       value: {
@@ -526,9 +526,9 @@ export default {
                     );
                   })
               )
-              // 玩家情報を入力してもらったら房間を新的新增して進房是
+              // 玩家資料を輸入してもらったら房間を新的新增して進房是
               .then((payload: any) => {
-                // privateデータ的復元
+                // private資料的復元
                 const playerData: any = publicData.player.list.filter(
                   (player: any) => player.name === payload.playerName
                 )[0];

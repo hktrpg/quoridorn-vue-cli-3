@@ -84,38 +84,38 @@
               <menu-bar-spec /><!-- 主菜單 -->
               <room-data-save-spec /><!-- 房間データ保存 -->
               <room-data-load-spec /><!-- 房間データ読込 -->
-              <chat-log-save-spec /><!-- チャットログ保存 -->
-              <file-upload-spec /><!-- ファイルアップローダー -->
+              <chat-log-save-spec /><!-- 聊天視窗ログ保存 -->
+              <file-upload-spec /><!-- 檔案上傳 -->
               <edit-image-tag-spec /><!-- (圖片)標籤編輯 -->
               <delete-image-spec /><!-- 圖片刪除 -->
-              <character-spec /><!-- キャラクター -->
-              <chit-spec /><!-- チット -->
-              <map-mask-spec /><!-- マップマスク -->
-              <floor-tile-spec /><!-- フロアタイル -->
-              <dice-symbol-spec /><!-- ダイスシンボル -->
-              <waiting-room-spec /><!-- キャラクター待合室 -->
+              <character-spec /><!-- 角色 -->
+              <chit-spec /><!-- 棋子 -->
+              <map-mask-spec /><!-- 地圖迷霧 -->
+              <floor-tile-spec /><!-- 地形 -->
+              <dice-symbol-spec /><!-- 骰子シンボル -->
+              <waiting-room-spec /><!-- 角色等候室 -->
               <graveyard-spec /><!-- 墓場 -->
               <player-box-spec /><!-- 棋子管理盒 -->
-              <chat-spec /><!-- チャット -->
-              <dice-spec /><!-- ダイス -->
+              <chat-spec /><!-- 聊天視窗 -->
+              <dice-spec /><!-- 骰子 -->
               <chat-palette-spec /><!-- 對話組合版 -->
-              <public-memo-spec /><!-- 共有メモ -->
-              <change-font-size-spec /><!-- フォント大小変更 -->
+              <public-memo-spec /><!-- 共用筆記 -->
+              <change-font-size-spec /><!-- 字體大小變更 -->
               <initiative-spec /><!-- 資源表 -->
               <counter-remocon-spec /><!-- 累計遙控器 -->
-              <custom-dice-bot-spec /><!-- 独自ダイスボット -->
+              <custom-dice-bot-spec /><!-- 独自骰子ボット -->
               <bgm-spec /><!-- BGM -->
               <bgm-spec2 /><!-- BGM2 -->
-              <stand-image-spec /><!-- 立ち絵 -->
-              <range-spec /><!-- 範囲 -->
-              <map-spec /><!-- マップ -->
-              <easy-map-spec /><!-- 簡易マップ -->
-              <map-save-spec /><!-- マップ狀態保存 -->
-              <map-load-spec /><!-- マップ切り替え -->
-              <reset-all-window-spec /><!-- ウィンドウ配置初期化機能 -->
-              <welcome-window-spec /><!-- ようこそ畫面 -->
-              <room-info-spec /><!-- プレイルーム情報 -->
-              <version-spec /><!-- バージョン -->
+              <stand-image-spec /><!-- 立繪 -->
+              <range-spec /><!-- 範圍 -->
+              <map-spec /><!-- 地圖 -->
+              <easy-map-spec /><!-- 簡易地圖 -->
+              <map-save-spec /><!-- 地圖狀態保存 -->
+              <map-load-spec /><!-- 地圖切換 -->
+              <reset-all-window-spec /><!-- 視窗ウ配置初期化功能 -->
+              <welcome-window-spec /><!-- 歡迎畫面 -->
+              <room-info-spec /><!-- 房間情報 -->
+              <version-spec /><!-- 版本 -->
               <official-site-link-spec /><!-- オフィシャルサイト -->
               <logout-spec /><!-- 登出 -->
             </div>

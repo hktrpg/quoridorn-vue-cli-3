@@ -26,7 +26,7 @@
       <i class="icon-volume-mute2" v-show="mute"></i>
     </span>
 
-    <!-- 数値表示 -->
+    <!-- 数値顯示 -->
     <span class="volumeText" :class="{ mutable: mutable }">
       {{ Math.round(volume * 100) }}
     </span>
@@ -56,7 +56,7 @@ export default class VolumeComponent extends Vue {
   /** ミュートかどうか */
   public mute: boolean = false;
 
-  /** フェード種別 */
+  /** フェード類別 */
   private fade: number = VolumeComponent.FADE_NONE;
   /** フェード中的保存音量 */
   private fadingVolume: number = 0;

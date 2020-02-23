@@ -35,7 +35,7 @@
        ! 操作盤
        !--------------->
       <div class="oneLine dep" @contextmenu.prevent>
-        <!-- 発言者選擇 -->
+        <!-- 發言者選擇 -->
         <span class="label">你的名字：</span>
         <ctrl-select
           :tabindex="isModal ? -1 : chatTabs.length + 2"
@@ -60,7 +60,7 @@
           :disabled="isModal"
         />
 
-        <!-- ダイスボット選擇 -->
+        <!-- 骰子ボット選擇 -->
         <dice-bot-select
           ref="diceBot"
           v-model="currentDiceBotSystem"
@@ -69,7 +69,7 @@
           :disabled="isModal"
         />
 
-        <!-- ここから各種機能呼び出し鍵 -->
+        <!-- ここから各種功能呼び出し鍵 -->
         <span class="icon">
           <i
             class="icon-dice"
@@ -194,7 +194,7 @@
       </div>
 
       <!----------------
-       ! 発言
+       ! 發言
        !--------------->
       <div class="sendLine dep">
         <div class="textAreaContainer">
@@ -319,7 +319,7 @@
           </div>
 
           <!----------------
-           ! 聊天視窗オプション（対象）
+           ! 聊天視窗オプション（對像）
            !--------------->
           <div
             class="chatOptionSelector dep"
@@ -433,7 +433,7 @@
           </div>
 
           <!----------------
-           ! 聊天視窗オプション（対象）
+           ! 聊天視窗オプション（對像）
            !--------------->
           <div
             class="chatOptionSelector dep"
@@ -489,7 +489,7 @@
             </ul>
           </div>
 
-          <!-- 聊天視窗入力エリア -->
+          <!-- 聊天視窗輸入エリア -->
           <label class="chatInputArea">
             <span
               class="chatOption"
@@ -507,7 +507,7 @@
               >
             </span>
             <!----------------
-             ! 入力欄
+             ! 輸入欄
              !--------------->
             <textarea
               id="chatTextArea"
@@ -539,7 +539,7 @@
         >
       </div>
       <!----------------
-       ! 入力者表示
+       ! 輸入者顯示
        !--------------->
       <div class="inputtingArea dep" @contextmenu.prevent>
         <div v-for="name in inputtingPeerIdList" :key="name">
@@ -624,13 +624,13 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   /** Enterを押しているかどうか */
   private enterPressing: boolean = false;
-  /** 入力された聊天視窗文字 */
+  /** 輸入された聊天視窗文字 */
   private currentMessage: string = "";
-  /** 発言時に「」を付与是かどうか */
+  /** 發言時に「」を加上かどうか */
   private addBrackets: boolean = false;
-  /** 聊天視窗オプション入力モード('tab':# or 'target':@ or '') */
+  /** 聊天視窗オプション輸入モード('tab':# or 'target':@ or '') */
   private chatOptionSelectMode: string = "";
-  /** 発言先 */
+  /** 發言先 */
   private chatTarget: string = "groupTargetTab-0";
   /** 出力先的タブ */
   private outputTab: string | null = null;
@@ -638,7 +638,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   private currentDiceBotSystem: string = "DiceBot";
   /** 秘匿聊天視窗的相手 */
   private secretTarget: string = "";
-  /** 入力中的ルームメンバー的peerId的配列 */
+  /** 輸入中的ルームメンバー的peerId的配列 */
   private inputtingPeerIdList: any[] = [];
 
   private unitList: any = [];
@@ -673,13 +673,13 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 聊天視窗入力欄的入力イベントハンドラ
+   * 聊天視窗輸入欄的輸入イベントハンドラ
    * @param event イベント
    */
   private onInput(event: any): void {
     const text = event.target.value;
 
-    // コマンド（発言者選擇）
+    // 命令（發言者選擇）
     let selectFrom: string = "";
     if (text.startsWith("!") || text.startsWith("！")) {
       const useText = text.substring(1);
@@ -694,7 +694,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       });
     }
 
-    // コマンド（グループ聊天視窗選擇）
+    // 命令（グループ聊天視窗選擇）
     let selectTarget: string = "";
     if (text.startsWith(">") || text.startsWith("＞")) {
       const useText = text.substring(1);
@@ -709,7 +709,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       });
     }
 
-    // コマンド（タブ選擇）
+    // 命令（タブ選擇）
     let selectTab: string | null | undefined = undefined;
     if (text.startsWith("#") || text.startsWith("＃")) {
       const useText = text.substring(1);
@@ -726,7 +726,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       });
     }
 
-    // コマンド（部分フォーマット）
+    // 命令（部分フォーマット）
     let partsFormat: string = "";
     if (text.endsWith("&") || text.endsWith("＆")) {
       partsFormat = this.partsFormat || this.chatFormats[0].label;
@@ -774,7 +774,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 現在的聊天視窗提交対象
+   * 現在的聊天視窗提交對像
    */
   private get groupTargetName(): string | null {
     let target = this.getObj(this.chatTarget);
@@ -800,7 +800,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       return list[index];
     };
 
-    // 発言者的選擇的場合
+    // 發言者的選擇的場合
     if (this.chatOptionSelectMode === "from") {
       event.preventDefault();
       let index = this.useCommandActorList.findIndex(
@@ -814,7 +814,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
       event.preventDefault();
     }
 
-    // 発言先的選擇的場合
+    // 發言先的選擇的場合
     if (this.chatOptionSelectMode === "target") {
       event.preventDefault();
       let index = this.chatTargetList.findIndex(
@@ -859,21 +859,21 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 入力欄からフォーカスが外れた場合
+   * 輸入欄からフォーカスが外れた場合
    */
   private textAreaOnBlur(): void {
     this.resetChatOption();
   }
 
   /**
-   * 入力欄でESCキーを押下した場合
+   * 輸入欄でESCキーを押下した場合
    */
   private textAreaOnPressEsc(): void {
     this.resetChatOption();
   }
 
   /**
-   * 聊天視窗オプションを仮変更前的狀態に戻す
+   * 聊天視窗オプションを仮變更前的狀態に戻す
    */
   private resetChatOption(): void {
     if (this.chatOptionSelectMode) {
@@ -902,7 +902,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 聊天視窗ログ表示分頁選擇されたとき的挙動
+   * 聊天視窗ログ顯示分頁選擇されたとき的挙動
    * @param key タブ的key
    */
   private chatTabOnSelect(key: string): void {
@@ -915,7 +915,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 聊天視窗ログ表示分頁ホバーされたとき的挙動
+   * 聊天視窗ログ顯示分頁ホバーされたとき的挙動
    * @param key タブ的key
    */
   private chatTabOnHover(key: string): void {
@@ -969,7 +969,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * ダイスボット管理鍵クリックイベントハンドラ
+   * 骰子ボット管理鍵クリックイベントハンドラ
    */
   private diceBotSettingButtonOnClick(): void {
     this.windowOpen("private.display.customDiceBotTableWindow");
@@ -981,7 +981,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   private async chatLogDeleteButtonOnClick(): Promise<any> {
     if (!this.isGameMaster) {
       alert(
-        "規格的な考慮不足によりGM専用機能です。\nGM以外でも可能になるよう、近いうちに改修します。\nGMにログ取得を促してくださいませ。"
+        "規格的な考慮不足によりGM専用功能です。\nGM以外でも可能になるよう、近いうちに改修します。\nGMにログ取得を促してくださいませ。"
       );
       return;
     }
@@ -1039,7 +1039,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 立ち絵設定鍵クリックイベントハンドラ
+   * 立繪設定鍵クリックイベントハンドラ
    */
   private standImageSettingButtonOnClick(): void {
     this.windowOpen("private.display.standImageSettingWindow");
@@ -1054,7 +1054,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 聊天視窗オプションに表示是聊天視窗タブ的表示名的取得
+   * 聊天視窗オプションに顯示是聊天視窗タブ的顯示名的取得
    * @param tabKey
    */
   private getTabName(tabKey: string): string {
@@ -1129,7 +1129,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * グループ聊天視窗タブ的発言者的名前を取得是
+   * グループ聊天視窗タブ的發言者的名字を取得是
    * @param tabObj グループ聊天視窗オブジェクト
    */
   private otherMatcherObj(tabObj: any): string {

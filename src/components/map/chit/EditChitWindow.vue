@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="チット変更"
+    titleText="棋子變更"
     display-property="private.display.editChitWindow"
     align="center"
     fixSize="653, 305"
@@ -24,7 +24,7 @@
       />
 
       <div class="rowsNum">
-        <label>縦マス：</label>
+        <label>垂直：</label>
         <input
           type="number"
           min="1"
@@ -37,7 +37,7 @@
         />
       </div>
       <div class="columnsNum">
-        <label>横マス：</label>
+        <label>橫向：</label>
         <input
           type="number"
           min="1"

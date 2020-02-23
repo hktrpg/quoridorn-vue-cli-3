@@ -1,8 +1,8 @@
 <template>
   <div class="masterVolumeComponent" @contextmenu.prevent>
     <div class="attrArea">
-      <span class="title" title="すべて的BGM的播放音量を割合で補正します">
-        【マスターボリューム】
+      <span class="title" title="按百分比調整所有BGM的音量">
+        【主音量】
       </span>
     </div>
     <div class="controlArea">
@@ -93,7 +93,7 @@ export default class MasterVolumeComponent extends Vue {
         box-sizing: border-box;
         border: 1px solid black;
         border-radius: 5px;
-        /* 縮小表示で限界を超えた小さいフォント対応 */
+        /* 縮小顯示で限界を超えた小さい字體支援 */
         max-width: calc((3em + 2px * 2) / 0.8);
         transform-origin: left;
         transform: scale(0.8);

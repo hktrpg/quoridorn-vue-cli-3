@@ -1,5 +1,5 @@
 export default {
-  /** キャラクタープロパティ */
+  /** 角色プロパティ */
   state: {
     round: 0,
     roundPlayerKey: "",

@@ -46,7 +46,7 @@ export default class SecretDiceWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   publish(index: number): void {
     const secretDiceObj = this.secretDiceList[index];
-    // 玩家発言
+    // 玩家發言
     this.addChatLog({
       name: secretDiceObj.name,
       text: secretDiceObj.text,
@@ -56,7 +56,7 @@ export default class SecretDiceWindow extends Mixins<WindowMixin>(WindowMixin) {
       target: secretDiceObj.target,
       owner: secretDiceObj.owner
     });
-    // ダイスロール結果
+    // 骰子ロール結果
     this.addChatLog({
       name: secretDiceObj.diceBot,
       text: secretDiceObj.diceRollResult,
@@ -81,7 +81,7 @@ export default class SecretDiceWindow extends Mixins<WindowMixin>(WindowMixin) {
 
   @Watch("secretDiceList")
   onChangeSecretDiceList(secretDiceList: any[]): void {
-    // シークレットダイス的結果的リスト的変動を感知して、表示内容があればこ的畫面を表示是
+    // シークレット骰子的結果的リスト的変動を感知して、顯示内容があればこ的畫面を顯示是
     if (secretDiceList.length) {
       this.windowOpen("private.display.secretDiceWindow");
     } else {

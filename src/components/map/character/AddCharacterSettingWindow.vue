@@ -4,7 +4,7 @@
     display-property="private.display.addCharacterSettingWindow"
     align="center"
     fixSize="653, 377"
-    message="按下新增按鈕並拖放到畫面"
+    message="按下新增按鈕並拖放到桌面"
     @open="open"
     @reset="open"
   >
@@ -67,7 +67,7 @@
         <div class="v-box">
           <div class="nameArea">
             <label>
-              <span @contextmenu.prevent>名前：</span>
+              <span @contextmenu.prevent>名字：</span>
               <input
                 type="text"
                 class="name"
@@ -117,7 +117,7 @@
               <input
                 type="text"
                 v-model="url"
-                placeholder="キャラクターシート的URL"
+                placeholder="角色シート的URL"
                 @keydown.enter.stop
                 @keyup.enter.stop
                 @keydown.229.stop

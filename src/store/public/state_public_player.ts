@@ -5,7 +5,7 @@ export default {
   },
   actions: {
     /**
-     * 玩家を新增是
+     * 新增玩家
      * @param dispatch
      * @param commit
      * @param rootGetters

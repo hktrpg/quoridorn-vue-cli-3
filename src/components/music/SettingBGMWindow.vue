@@ -9,19 +9,19 @@
   >
     <div class="contents">
       <div class="playOperationArea" @contextmenu.prevent>
-        <ctrl-button @click="doPlay">送信</ctrl-button>
+        <ctrl-button @click="doPlay">送出</ctrl-button>
         <span class="space"></span>
-        <ctrl-button @click="doPreview">プレビュー(自分的み)</ctrl-button>
+        <ctrl-button @click="doPreview">預覽(自分的み)</ctrl-button>
       </div>
       <div class="tableContainer">
         <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">
           <thead @contextmenu.prevent>
             <tr>
-              <th :style="colStyle(0)">連動</th>
+              <th :style="colStyle(0)">聯動</th>
               <divider :index="0" prop="settingBGMWindow" />
               <th :style="colStyle(1)">標籤</th>
               <divider :index="1" prop="settingBGMWindow" />
-              <th :style="colStyle(2)">種別</th>
+              <th :style="colStyle(2)">類別</th>
               <divider :index="2" prop="settingBGMWindow" />
               <th :style="colStyle(3)">標題</th>
               <divider :index="3" prop="settingBGMWindow" />
@@ -67,7 +67,7 @@
       </div>
       <div class="operateArea" @contextmenu.prevent>
         <ctrl-button @click="doAdd" ref="button">新增</ctrl-button>
-        <ctrl-button @click="doModify">変更</ctrl-button>
+        <ctrl-button @click="doModify">變更</ctrl-button>
         <ctrl-button @click="doCopy">複製</ctrl-button>
         <ctrl-button @click="doDelete">刪除</ctrl-button>
         <ctrl-button @click="doUp">↑</ctrl-button>
@@ -77,7 +77,7 @@
           <ctrl-button @click="doSave">保存</ctrl-button>
           <ctrl-button @click="doImport">讀取</ctrl-button>
         </template>
-        <!--<label><input type="checkbox" @change="changeSortMode" />並べ替え許可</label>-->
+        <!--<label><input type="checkbox" @change="changeSortMode" />允許排序</label>-->
       </div>
     </div>
   </window-frame>
@@ -241,7 +241,7 @@ export default class SettingBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
   //   window.console.log(`changeSortMode: ${val}`);
   //   if (val) {
   //     setTimeout(() => {
-  //       alert("未實裝的機能です。");
+  //       alert("未實裝此功能。");
   //     }, 20);
   //   }
   // }

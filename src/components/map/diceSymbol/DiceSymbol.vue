@@ -30,9 +30,9 @@
       v-if="!isAbsoluteHide"
     />
     <div class="balloon" v-if="isHover">
-      <span v-if="ownerPlayer">[{{ ownerPlayer.name }}]的ダイス</span>
+      <span v-if="ownerPlayer">[{{ ownerPlayer.name }}]的骰子</span>
       <span>
-        {{ storeObj.isHide ? "非公開：" : "" }}
+        {{ storeObj.isHide ? "不公開：" : "" }}
         {{ isAbsoluteHide ? "" : `${storeObj.pips} / D${storeObj.faceNum}` }}
       </span>
     </div>

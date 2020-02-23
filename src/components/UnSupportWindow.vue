@@ -8,8 +8,8 @@
     @reset="open"
   >
     <div class="contents" @contextmenu.prevent>
-      <div>未實裝的機能です。</div>
-      <ctrl-button @click="close" ref="input">閉じる</ctrl-button>
+      <div>未實裝此功能。</div>
+      <ctrl-button @click="close" ref="input">關閉</ctrl-button>
     </div>
   </window-frame>
 </template>

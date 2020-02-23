@@ -12,12 +12,12 @@
         <div>
           <img class="image" v-img="imageObj.image" draggable="false" />
           <ctrl-button class="passwordButton" @click="passwordButtonOnClick">
-            隠し圖片密碼設定
+            隱藏圖片密碼設定
           </ctrl-button>
           <label class="passwordLabel">
-            隠し圖片密碼：{{ imageObj.password !== "" ? "あり" : "無" }}
+            隱藏圖片密碼：{{ imageObj.password !== "" ? "有" : "無" }}
           </label>
-          <span class="tagLabel">付与是標籤(半角・全角スペースで区切り)</span>
+          <span class="tagLabel">加上標籤(用半型/全型和空格分隔)</span>
           <input
             class="tagInput"
             type="text"
@@ -118,7 +118,7 @@ export default class DropImageWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   private changeTag(key: string): void {
-    // 入力によって標籤的新增・刪除が発生是可能性がある的で、標籤リストを整理してもらう
+    // 輸入によって標籤的新增・刪除が発生是可能性がある的で、標籤リストを整理してもらう
     window.console.log("changeTag");
     this.imageTagChange({ key: key, imageList: this.imageList });
   }
@@ -129,7 +129,7 @@ export default class DropImageWindow extends Mixins<WindowMixin>(WindowMixin) {
     imgObj.currentTag = imgObj.selectTag;
     // const index = this.imageList.indexOf(imgObj)
     // this.imageList.splice(index, 1, imgObj)
-    // 選択によって標籤的刪除が発生是可能性がある的で、標籤リストを整理してもらう
+    // 選擇によって標籤的刪除が発生是可能性がある的で、標籤リストを整理してもらう
     this.imageTagChange({ key: key, imageList: this.imageList });
   }
 
@@ -153,8 +153,8 @@ export default class DropImageWindow extends Mixins<WindowMixin>(WindowMixin) {
       image: imgObj.image,
       thumbnail: imgObj.thumbnail,
       imageArgList: imgObj.imageArgList,
-      currentTag: "キャラクター",
-      selectTag: "キャラクター",
+      currentTag: "角色",
+      selectTag: "角色",
       password: ""
     }));
   }

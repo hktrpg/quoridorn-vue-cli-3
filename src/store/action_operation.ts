@@ -22,12 +22,12 @@ export default {
         payload.currentDiceBotSystem || "DiceBot";
 
       // -------------------
-      // ダイスBot処理
+      // 骰子Bot処理
       // -------------------
       const outputNormalChat = (commandStr: string) => {
         if (!/[@><+-/*=0-9a-zA-Z()"?^$]+/.test(commandStr)) {
           // -------------------
-          // 玩家発言
+          // 玩家發言
           // -------------------
           dispatch("addChatLog", {
             name: rootGetters.getViewName(actorKey),
@@ -76,11 +76,11 @@ export default {
             });
             if (isDiceRoll && isSecretDice) {
               // -------------------
-              // シークレットダイス
+              // シークレット骰子
               // -------------------
               dispatch("addChatLog", {
                 name: rootGetters.getViewName(actorKey),
-                text: `シークレットダイス`,
+                text: `シークレット骰子`,
                 tab: outputTab,
                 statusName: statusName,
                 target: chatTarget,
@@ -88,7 +88,7 @@ export default {
                 diceBot: currentDiceBotSystem
               });
 
-              // 隠しダイスロール結果畫面に反映
+              // 隱藏骰子ロール結果畫面に反映
               commit("addSecretDice", {
                 name: rootGetters.getViewName(actorKey),
                 diceBot: currentDiceBotSystem,
@@ -104,7 +104,7 @@ export default {
               });
             } else {
               // -------------------
-              // 玩家発言
+              // 玩家發言
               // -------------------
               dispatch("addChatLog", {
                 name: rootGetters.getViewName(actorKey),
@@ -116,7 +116,7 @@ export default {
               });
               if (isDiceRoll) {
                 // -------------------
-                // ダイスロール結果
+                // 骰子ロール結果
                 // -------------------
                 dispatch("addChatLog", {
                   name: currentDiceBotSystem,
@@ -138,7 +138,7 @@ export default {
       };
 
       // -------------------
-      // 独自ダイスBot処理
+      // 独自骰子Bot処理
       // -------------------
       const commandStr = text
         .split(new RegExp("\\s+"))[0]
@@ -156,10 +156,10 @@ export default {
       )[0];
       const useCustomDiceBotObj = customDiceBotObj || customDiceBotRoomSysObj;
       if (!useCustomDiceBotObj) {
-        // 独自ダイスボットが見つからなかった的で通常的チャット処理
+        // 独自骰子ボットが見つからなかった的で通常的聊天視窗処理
         outputNormalChat(commandStr);
       } else {
-        // 独自ダイスボットが見つかった
+        // 独自骰子ボットが見つかった
         const diceRoll = useCustomDiceBotObj.diceRoll;
         const tableTitle = useCustomDiceBotObj.tableTitle;
         const diceBotSystem = useCustomDiceBotObj.diceBotSystem;
@@ -243,7 +243,7 @@ export default {
       }
     },
     /** ========================================================================
-     * チャットログを新增是
+     * 聊天視窗ログを新增是
      */
     addChatLog: (
       { dispatch, rootGetters }: { dispatch: Function; rootGetters: any },
@@ -285,7 +285,7 @@ export default {
           if (tab === "chatTab-0") tab = "chatTab-1";
 
           /*
-           * 立ち絵的表示
+           * 立繪的顯示
            */
           const actor: any = rootGetters.getObj(from);
           if (actor) {
@@ -316,7 +316,7 @@ export default {
             useTargetText = targetName === "全部人" ? "" : " > " + targetName;
           }
 
-          // ダイスボットメッセージ的表示判定
+          // 骰子ボットメッセージ的顯示判定
           if (isDiceBot && !/^[^→]+→[ →0-9,[\]]+$/.test(text)) {
             dispatch("setProperty", {
               property: `public.chat.diceBotMessage`,
@@ -350,7 +350,7 @@ export default {
           // 未読カウントアップ
           if (logObj.tab !== activeChatTab) {
             /*
-             * 自分が閲覧できるチャットかどうかを判定
+             * 自分が閲覧できる聊天視窗かどうかを判定
              */
             let doCountUp = false;
 
@@ -382,7 +382,7 @@ export default {
               }
             }
 
-            // 自分が閲覧できるチャットだったらカウントアップ
+            // 自分が閲覧できる聊天視窗だったらカウントアップ
             if (doCountUp) {
               const index = rootGetters.chatTabsOption.findIndex(
                 (tabObj: any) => tabObj.key === tab
@@ -394,7 +394,7 @@ export default {
           }
         }
 
-        // チャット文字連携処理
+        // 聊天視窗文字連携処理
         dispatch("chatLinkage", text);
       } catch (err) {
         window.console.error(err);
@@ -402,7 +402,7 @@ export default {
     },
 
     /** ========================================================================
-     * チャット文字色変更
+     * 聊天視窗文字色變更
      */
     changeChatFontColor: (
       { dispatch }: { dispatch: Function },
@@ -430,7 +430,7 @@ export default {
     },
 
     /** ========================================================================
-     * チャットタブ新增処理
+     * 聊天視窗タブ新增処理
      */
     addChatTab: (
       { dispatch }: { dispatch: Function },
@@ -473,7 +473,7 @@ export default {
     },
 
     /** ========================================================================
-     * チャットタブ更新処理
+     * 聊天視窗タブ更新処理
      */
     updateChatTab: (
       { dispatch }: { dispatch: Function },
@@ -517,7 +517,7 @@ export default {
     },
 
     /** ========================================================================
-     * チャットタブ刪除処理
+     * 聊天視窗タブ刪除処理
      */
     deleteChatTab: (
       { dispatch }: { dispatch: Function },
@@ -543,7 +543,7 @@ export default {
     },
 
     /** ========================================================================
-     * チャット文字連携処理
+     * 聊天視窗文字連携処理
      */
     chatLinkage: (
       {
@@ -652,7 +652,7 @@ export default {
     },
 
     /** ========================================================================
-     * 先攻表的パラメータ的設定を変更是
+     * 先攻表的パラメータ的設定を變更是
      */
     setInitiativeParams: (
       { dispatch }: { dispatch: Function },
@@ -671,7 +671,7 @@ export default {
       const sum = (list: number[]): number =>
         list.reduce((accumlator, current) => accumlator + current);
 
-      // １行的文字內容をパースして先攻表用的オブジェクト配列を生成
+      // １行的文字內容をパースして先攻表用的オブジェクト配列を新增
       const formatObjList: any[] = toInitiativeObjList(format);
       const newWidthList: number[] = arrangeInitiativeWidthList(
         rootState.private.display.initiativeWindow.widthList,
@@ -692,7 +692,7 @@ export default {
     },
 
     /** ========================================================================
-     * アクター狀態を新增是
+     * 角色狀態を新增是
      */
     addActorStatus: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -712,7 +712,7 @@ export default {
     },
 
     /** ========================================================================
-     * アクター狀態を刪除是
+     * 角色狀態を刪除是
      */
     deleteActorStatus: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -732,7 +732,7 @@ export default {
     },
 
     /** ========================================================================
-     * 立ち絵差分を新增是
+     * 立繪變化を新增是
      */
     addStandImageDiff: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -756,7 +756,7 @@ export default {
     },
 
     /** ========================================================================
-     * 立ち絵差分を刪除是
+     * 立繪變化を刪除是
      */
     deleteStandImageDiff: (
       { dispatch }: { dispatch: Function },
@@ -780,7 +780,7 @@ export default {
     },
 
     /** ========================================================================
-     * 立ち絵差分を編輯是
+     * 立繪變化を編輯是
      */
     editStandImageDiff: (
       { dispatch }: { dispatch: Function },
@@ -872,7 +872,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリスト的中的指定されたkey的オブジェクト情報を変更是
+     * publicリスト的中的指定されたkey的オブジェクト情報を變更是
      * @param dispatch
      * @param payload
      */
@@ -906,7 +906,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリスト的中的指定されたkey的オブジェクト情報を変更是
+     * publicリスト的中的指定されたkey的オブジェクト情報を變更是
      * @param dispatch
      * @param payload
      */
@@ -991,7 +991,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリスト的中的指定されたkey的オブジェクト的位置を変更是
+     * publicリスト的中的指定されたkey的オブジェクト的位置を變更是
      * @param dispatch
      * @param payload
      */
@@ -1023,7 +1023,7 @@ export default {
     },
 
     /** ========================================================================
-     * デッキ的シャッフル
+     * デッキ的隨機
      */
     shuffleDeck: ({ dispatch }: { dispatch: Function }) => {
       dispatch("sendNoticeOperation", { value: {}, method: "doShuffleDeck" });
@@ -1073,7 +1073,7 @@ export default {
     },
 
     /** ========================================================================
-     * グループチャット的新增
+     * グループ聊天視窗的新增
      */
     addGroupTargetTab: ({ dispatch }: { dispatch: Function }, payload: any) => {
       return dispatch("sendNoticeOperation", {
@@ -1096,7 +1096,7 @@ export default {
     },
 
     /** ========================================================================
-     * グループチャット的刪除
+     * グループ聊天視窗的刪除
      */
     deleteGroupTargetTab: (
       { dispatch }: { dispatch: Function },

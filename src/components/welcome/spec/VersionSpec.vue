@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="versionSpec"
-    label-str="バージョン"
+    label-str="版本"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -9,14 +9,14 @@
      ! 操作方法
      !--------------------->
     <spec-item class-str="operation" label-str="操作方法">
-      <li>畫面上方菜單的「ヘルプ」選擇</li>
-      <li>「バージョン」選擇</li>
+      <li>畫面上方菜單的「說明」選擇</li>
+      <li>「版本」選擇</li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
-      <li>バージョン番号を表示是</li>
+      <li>版本番号を顯示是</li>
     </spec-item>
     <!----------------------
      ! 用戶要求

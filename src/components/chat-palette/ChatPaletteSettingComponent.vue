@@ -32,7 +32,7 @@
             @keydown.229.stop
             @keyup.229.stop
           />
-          <ctrl-button @click="sendLine(actor, null)">送信</ctrl-button>
+          <ctrl-button @click="sendLine(actor, null)">送出</ctrl-button>
         </div>
 
         <div class="optionLine">
@@ -111,7 +111,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   private selectedIndex: number = -1;
   private sendTab: string = "";
   private statusName: string = "◆";
-  /** 発言先 */
+  /** 發言先 */
   private chatTarget: string = "groupTargetTab-0";
 
   public requestFocus(): void {
@@ -136,7 +136,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * 對話組合版的１行が送信された時的挙動
+   * 對話組合版的１行が送出された時的挙動
    * @param actor
    * @param text
    */

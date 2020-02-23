@@ -64,10 +64,10 @@ export default new Vuex.Store({
       const kind = key.split("-")[0];
       const filterFunc: Function = (obj: any) => obj.key === key;
       if (kind === "groupTargetTab") {
-        // グループチャットタブ
+        // グループ聊天視窗タブ
         return rootGetters.groupTargetTabList.filter(filterFunc)[0];
       } else if (kind === "chatTab") {
-        // チャットタブ
+        // 聊天視窗タブ
         return rootGetters.chatTabList.filter(filterFunc)[0];
       } else if (kind === "imgTag") {
         // イメージ標籤
@@ -76,7 +76,7 @@ export default new Vuex.Store({
         // 玩家
         return rootGetters.playerList.filter(filterFunc)[0];
       } else if (kind === "character") {
-        // キャラクター
+        // 角色
         return rootGetters.characterList.filter(filterFunc)[0];
       } else {
         // 其他

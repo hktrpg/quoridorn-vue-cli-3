@@ -1,6 +1,6 @@
 <template>
   <div class="imageSelector" @contextmenu.prevent>
-    <!-- 画像選択エリア -->
+    <!-- 画像選擇エリア -->
     <div class="choseImage">
       <img
         v-for="image in useImageList"

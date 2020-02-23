@@ -29,7 +29,7 @@
         <span class="message" v-if="message">{{ message }}</span>
       </div>
 
-      <!-- 文字大小変更 -->
+      <!-- 文字大小變更 -->
       <label v-if="fontSizeBar" class="fontSizeSlider">
         文字大小{{ fontSize }}px
         <input
@@ -45,7 +45,7 @@
         />
       </label>
 
-      <!-- 文字大小変更 -->
+      <!-- 文字大小變更 -->
       <label v-if="standImageSizeChooser" class="fontSizeSlider">
         立繪大小
         <ctrl-select
@@ -54,7 +54,7 @@
         />
       </label>
 
-      <!-- 閉じる鍵 -->
+      <!-- 關閉鍵 -->
       <span v-if="!isBanClose" @contextmenu.prevent>
         <i
           class="icon-cross window-close"
@@ -73,7 +73,7 @@
       <slot />
     </div>
 
-    <!-- 大小変更つまみ -->
+    <!-- 大小變更つまみ -->
     <window-frame-knob name="corner-left-top" @resize="resize" v-if="!isFix" />
     <window-frame-knob
       name="corner-left-bottom"
@@ -91,7 +91,7 @@
     <window-frame-knob name="side-right" @resize="resize" v-if="!isFix" />
     <window-frame-knob name="side-bottom" @resize="resize" v-if="!isFix" />
 
-    <!-- 立ち絵 -->
+    <!-- 立繪 -->
     <template v-if="isViewStandImage">
       <stand-image-component
         class="standImage"

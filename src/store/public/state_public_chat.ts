@@ -1,7 +1,7 @@
 export default {
-  /** チャット */
+  /** 聊天視窗 */
   state: {
-    /** チャット的タブ */
+    /** 聊天視窗的タブ */
     tab: {
       list: [
         { key: "chatTab-0", name: "整合", isTotal: true },
@@ -12,7 +12,7 @@ export default {
       isViewTime: false,
       isViewTotalTab: false
     },
-    /** グループチャット的タブ */
+    /** グループ聊天視窗的タブ */
     groupTargetTab: {
       list: [
         {
@@ -27,7 +27,7 @@ export default {
       maxKey: 0
     },
 
-    /** チャット的リスト */
+    /** 聊天視窗的リスト */
     logs: [
       {
         owner: "Quoridorn",
@@ -43,7 +43,7 @@ export default {
       }
     ],
 
-    /** 入力中的ルームメイト的peerId列表 */
+    /** 輸入中的ルームメイト的peerId列表 */
     inputting: {},
 
     diceBotMessage: {
@@ -54,7 +54,7 @@ export default {
   actions: {
     /**
      * NOTICE_INPUT
-     * ルームメンバ的入力中狀態的通知
+     * ルームメンバ的輸入中狀態的通知
      * @param commit
      * @param key
      */
@@ -62,7 +62,7 @@ export default {
       { commit }: { commit: Function },
       { key }: { key: string }
     ) => {
-      // 即時入力カウントアップ
+      // 即時輸入カウントアップ
       commit("inputPeerId", { key: key, add: 1 });
       // 少し経ったらカウントダウン
       setTimeout(() => {
@@ -71,7 +71,7 @@ export default {
     },
 
     /** ========================================================================
-     * チャットタブ新增処理
+     * 聊天視窗タブ新增処理
      */
     deleteChatLog: ({ dispatch }: { dispatch: Function }): string => {
       return dispatch("sendNoticeOperation", {
@@ -97,7 +97,7 @@ export default {
   },
   mutations: {
     /**
-     * ルームメンバ的入力中狀態的変化
+     * ルームメンバ的輸入中狀態的変化
      * @param state
      * @param key
      * @param add
@@ -220,7 +220,7 @@ export default {
       getters: any,
       rootState: any,
       rootGetters: any
-    ) => (name: string) => `${rootGetters.getViewName(name)}が入力中...`,
+    ) => (name: string) => `${rootGetters.getViewName(name)}輸入中...`,
     chatTargetList: (
       state: any,
       getters: any,

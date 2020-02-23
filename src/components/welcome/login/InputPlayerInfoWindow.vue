@@ -161,7 +161,7 @@ export default class InputPlayerInfoWindow extends Mixins<WindowMixin>(
 
   /**
    * ====================================================================================================
-   * 権限に関する説明リンクをクリックした際の処理
+   * 権限に関する説明リンク點擊した際の処理
    */
   onClickDescription(): void {
     alert(

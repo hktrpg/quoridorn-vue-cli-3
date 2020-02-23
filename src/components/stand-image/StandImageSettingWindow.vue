@@ -20,7 +20,7 @@
           <template slot-scope="{ status }" v-if="status">
             <div class="actorSetting">
               <label>
-                データ
+                資料
                 <actor-other-status-select
                   :actor="actor"
                   :statusName="status.name"
@@ -40,7 +40,7 @@
                 "
                 v-if="!status.standImage.isSystemLock"
               >
-                狀態的刪除
+                刪除狀態
               </span>
             </div>
             <div class="tab-contents">
@@ -49,16 +49,16 @@
                 v-if="status.standImage.ref || status.standImage.isSystemLock"
               >
                 <span v-if="status.standImage.ref">
-                  狀態「{{ status.standImage.ref }}」的データを參考しています
+                  狀態「{{ status.standImage.ref }}」的參考數據
                 </span>
                 <span v-if="status.standImage.isSystemLock">
-                  初期データとして必要なため<br />編輯できません
+                  必需有初始數據<br />無法編輯
                 </span>
               </div>
               <div class="base">
-                <label>ベース</label>
+                <label>基本</label>
 
-                <!-- ベース圖片 -->
+                <!-- 基本圖片 -->
                 <stand-image-component
                   :standImage="getViewStatus(status).standImage"
                   :drawDiff="isPreview"
@@ -68,7 +68,7 @@
 
                 <div>
                   <label>
-                    プレビュー
+                    預覽
                     <input
                       type="checkbox"
                       v-model="isPreview"
@@ -83,11 +83,11 @@
                     @click="addDiff()"
                     :disabled="status.standImage.isSystemLock"
                   >
-                    差分新增
+                    新增變化
                   </ctrl-button>
                 </div>
                 <label>
-                  大小的自動調整
+                  自動調整大小
                   <input
                     type="checkbox"
                     :checked="getViewStatus(status).standImage.autoResize"
@@ -100,7 +100,7 @@
                   />
                 </label>
                 <label>
-                  アニメーション：
+                  動畫製作：
                   <input
                     type="number"
                     :value="getViewStatus(status).standImage.animationLength"
@@ -121,7 +121,7 @@
                 <!--
                 -->
                 <label>
-                  表示位置（{{ getViewStatus(status).standImage.locate }}）
+                  顯示位置（{{ getViewStatus(status).standImage.locate }}）
                 </label>
                 <label>
                   左
@@ -142,7 +142,7 @@
                 </label>
               </div>
               <div class="diff">
-                <label>差分</label>
+                <label>變化</label>
                 <div class="v-scroll">
                   <diff-component
                     v-for="(diff, index) in getViewStatus(status).standImage

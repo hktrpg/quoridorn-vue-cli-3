@@ -1,6 +1,6 @@
 <template>
   <fieldset class="root">
-    <legend>房間情報</legend>
+    <legend>房間資料</legend>
     <label>
       房間名：
       <span>{{ roomName }}</span>

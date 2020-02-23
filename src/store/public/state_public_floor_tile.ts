@@ -1,5 +1,5 @@
 export default {
-  /** フロアタイル */
+  /** 地形 */
   state: {
     list: [],
     maxKey: -1

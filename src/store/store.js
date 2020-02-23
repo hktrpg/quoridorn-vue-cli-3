@@ -146,7 +146,7 @@ export default new Vuex.Store({
       state.param.roomPassword = roomPassword;
       state.param.playerName = playerName;
       state.param.playerPassword = playerPassword;
-      // 選択肢と一致していれば、權限をセット是
+      // 選擇肢と一致していれば、權限をセット是
       if (rootGetters.roles.findIndex(role => role.value === playerType) >= 0) {
         state.param.playerType = playerType;
       } else {
@@ -179,7 +179,7 @@ export default new Vuex.Store({
       dispatch("onTest");
 
       /* ----------------------------------------------------------------------
-       * 初期表示畫面的設定
+       * 初期顯示畫面的設定
        */
       setTimeout(() => {
         dispatch("windowOpen", "private.display.chatWindow");
@@ -192,12 +192,12 @@ export default new Vuex.Store({
       }, 0);
 
       /* ----------------------------------------------------------------------
-       * チャットタブ的設定
+       * 聊天視窗タブ的設定
        */
       // dispatch("changeChatTab", { tabsText: "雑談" });
 
       /* ----------------------------------------------------------------------
-       * ダイス的設定
+       * 骰子的設定
        */
       rootGetters.loadYaml("/static/conf/dice.yaml").then(dice => {
         state.dice = dice;
@@ -273,7 +273,7 @@ export default new Vuex.Store({
       });
 
       /* ----------------------------------------------------------------------
-       * チャットフォーマット的設定
+       * 聊天視窗フォーマット的設定
        */
       rootGetters
         .loadYaml("/static/conf/chatFormat.yaml")
@@ -295,7 +295,7 @@ export default new Vuex.Store({
         rootState.setting.connect.bcdiceServer = setting.bcdiceServer;
 
         /* ----------------------------------------------------------------------
-         * ダイス系統的検証
+         * 骰子系統的検証
          */
         dispatch("getBcdiceSystemList")
           .then(systemList => {
@@ -338,7 +338,7 @@ export default new Vuex.Store({
                 system,
                 isWait: false
               };
-              // 「新しい房間をつくる」畫面で入力される項目が指定されていれば新的房間新增を試みる
+              // 「新しい房間をつくる」畫面で輸入される項目が指定されていれば新的房間新增を試みる
               if (
                 !isExist &&
                 roomPassword !== null &&
@@ -349,7 +349,7 @@ export default new Vuex.Store({
                 baseArg.playerType = baseArg.playerType || "PL";
                 return dispatch("doNewRoom", baseArg);
               }
-              // 「こ的房間に入る」畫面で入力される項目が指定されていれば既存房間へ的進房を試みる
+              // 「こ的房間に入る」畫面で輸入される項目が指定されていれば既存房間へ的進房を試みる
               if (isExist && roomPassword !== null) {
                 baseArg.useWindow = true;
                 baseArg.useAlert = true;
@@ -692,7 +692,7 @@ export default new Vuex.Store({
 
     parseColor: () =>
       /**
-       * 文字をparseしてカラー編輯オブジェクトを生成是
+       * 文字をparseしてカラー編輯オブジェクトを新增是
        * @param colorText
        * @returns {*}
        */
@@ -731,7 +731,7 @@ export default new Vuex.Store({
 
     objToString: () =>
       /**
-       * 指定されたオブジェクト的内容を示す文字列を生成是
+       * 指定されたオブジェクト的内容を示す文字列を新增是
        * @param obj
        * @returns {string}
        */

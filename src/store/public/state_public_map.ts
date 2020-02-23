@@ -1,5 +1,5 @@
 export default {
-  /** マップ */
+  /** 地圖 */
   state: {
     list: [
       {

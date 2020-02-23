@@ -38,7 +38,7 @@
         <actor-select
           v-model="selectedActorKey"
           :selectedActorList="targetActorList"
-          defaultLabel="閲覧許可アクター"
+          defaultLabel="角色閲覧許可"
         />
         <div
           v-for="actor in targetActorList"
@@ -65,7 +65,7 @@
     <!-- 閲覧權限がある場合 -->
     <template v-if="isViewableSurface()">
       <div v-if="!isFront && surface.contentsList.length === 0" class="warning">
-        ※ 裏面が白紙な的で、こ的タブは面がありません。
+        ※ 裏面が白紙な的で、こ的タブは面が有ません。
       </div>
       <template v-for="(contents, itemIndex) in surface.contentsList">
         <!-- 標題 -->
@@ -340,7 +340,7 @@ export default class SurfaceComponent extends Vue {
   ) {}
 
   /**
-   * 文字內容エリアに入力される度に、必要に応じて文字內容エリア的表示大小を拡張是
+   * 文字內容エリアに輸入される度に、必要に応じて文字內容エリア的顯示大小を拡張是
    */
   private textareaOnInput(event: any) {
     const textarea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
@@ -350,7 +350,7 @@ export default class SurfaceComponent extends Vue {
   }
 
   /**
-   * こ的面的内容を表示して良いかどうかを調べる
+   * こ的面的内容を顯示して良いかどうかを調べる
    */
   private isViewableSurface(): boolean {
     // ターゲットが指定されていないなら公開情報
@@ -381,7 +381,7 @@ export default class SurfaceComponent extends Vue {
   }
 
   /**
-   * 項目設定をクリックした時
+   * 項目設定點擊した時
    */
   private itemConfigOnClick(event: any, index: number) {
     const locate: any = SurfaceComponent.getMenuLocate(event);
@@ -391,12 +391,12 @@ export default class SurfaceComponent extends Vue {
   private insertImage(itemIndex: number, imageIndex: number) {
     this.surface.contentsList[itemIndex].imageKeyList.splice(imageIndex, 0, {
       key: "image-0",
-      tag: "(全て)"
+      tag: "(全部)"
     });
   }
 
   /**
-   * 圖片設定をクリックした時
+   * 圖片設定點擊した時
    */
   private imageConfigOnClick(
     event: any,
@@ -424,7 +424,7 @@ export default class SurfaceComponent extends Vue {
   }
 
   /**
-   * イメージ枠をクリックした時
+   * イメージ枠點擊した時
    * @param imageKey
    * @param itemIndex
    * @param imageIndex

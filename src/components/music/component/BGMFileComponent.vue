@@ -118,7 +118,7 @@ export default class BGMFileComponent extends Vue {
     // this.jukeboxAudio.addEventListener("suspend", () =>
     //   window.console.log("suspend")
     // );
-    // DropBox共有リンク対応
+    // DropBox共有リンク支援
     this.jukeboxAudio.src = useUrl;
   }
 

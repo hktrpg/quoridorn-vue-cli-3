@@ -25,9 +25,9 @@
         </label>
       </fieldset>
       <fieldset>
-        <legend @contextmenu.prevent>表示</legend>
+        <legend @contextmenu.prevent>顯示</legend>
         <div class="firstWide">
-          <!-- 表示標題 -->
+          <!-- 顯示標題 -->
           <label class="titleStr">
             <span @contextmenu.prevent>標題</span>
             <input
@@ -89,13 +89,13 @@
             :mutable="false"
             ref="volumeComponent"
           />
-          <!-- プレビュー -->
-          <ctrl-button class="preview" @click="preview">プレビュー</ctrl-button>
+          <!-- 預覽 -->
+          <ctrl-button class="preview" @click="preview">預覽</ctrl-button>
         </div>
         <div>
           <!-- 播放時間 -->
           <label class="playLength">
-            <span title="0で全て播放" @contextmenu.prevent>時間</span>
+            <span title="0全部播放" @contextmenu.prevent>時間</span>
             <input
               type="number"
               min="0"
@@ -149,14 +149,14 @@
             <i
               class="icon-loop"
               @click="change('isLoop')"
-              :title="'リピート播放' + (isLoop ? 'あり' : '無')"
+              :title="'リピート播放' + (isLoop ? '有' : '無')"
             ></i>
           </span>
         </div>
         <div>
           <!-- 多重播放時強制再スタート -->
           <label>
-            <span @contextmenu.prevent>多重播放時強制再スタート</span>
+            <span @contextmenu.prevent>多重播放時強制重啟</span>
             <input
               type="checkbox"
               v-model="forceReset"
@@ -169,9 +169,9 @@
         </div>
       </fieldset>
       <fieldset>
-        <legend @contextmenu.prevent>チャット連動</legend>
+        <legend @contextmenu.prevent>聊天視窗聯動</legend>
         <div class="lastWide">
-          <!-- チャット連動オプション -->
+          <!-- 聊天視窗聯動オプション -->
           <label class="option">
             <ctrl-select
               v-model="chatLinkage"
@@ -184,7 +184,7 @@
             v-show="chatLinkage === '1' || chatLinkage === '2'"
           >
             <input
-              :placeholder="chatLinkage === 1 ? '' : 'Javascript的正規表現'"
+              :placeholder="chatLinkage === 1 ? '' : 'Javascript的正規表示'"
               type="text"
               v-model="chatLinkageSearch"
               @keydown.enter.stop
@@ -245,8 +245,8 @@ export default class AddBGMWindow extends Mixins<WindowMixin>(WindowMixin) {
   private volume: number = 0.8;
   private options: any[] = [
     { value: "0", label: "無" },
-    { value: "1", label: "末尾文字" },
-    { value: "2", label: "正規表現" }
+    { value: "1", label: "末端文字" },
+    { value: "2", label: "正規表示" }
   ];
   private tags: string[] = ["BGM", "SE"];
   private chatLinkage: string = "0";

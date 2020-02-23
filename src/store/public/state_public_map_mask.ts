@@ -1,5 +1,5 @@
 export default {
-  /** マップマスク */
+  /** 地圖迷霧 */
   state: {
     list: [],
     maxKey: -1

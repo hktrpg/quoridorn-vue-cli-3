@@ -117,7 +117,7 @@ export default class Range extends Mixins<RangeMixins>(
       Range.calcAngle({ relativeX: -this.centerX, relativeY: -this.centerY })
     ];
     obstacleList.forEach((obstacle: any) => {
-      // 自身は判定対象外
+      // 自身は判定對像外
       if (obstacle.key === this.objKey) return;
 
       // 情報作ってリストに全部詰める
@@ -163,7 +163,7 @@ export default class Range extends Mixins<RangeMixins>(
       /* ========== */
 
       /* ==========
-       * 範囲にかぶっているかどうか的判定
+       * 範圍にかぶっているかどうか的判定
        */
       const checkPoints = [
         { x: left, y: top },
@@ -494,7 +494,7 @@ export default class Range extends Mixins<RangeMixins>(
     /* ========== */
 
     /* ==========
-     * 各オブジェクトを強調表示
+     * 各オブジェクトを強調顯示
      */
     infoList.forEach(info => {
       ctx.beginPath();

@@ -1,13 +1,13 @@
 export default {
-  /** チャット */
+  /** 聊天視窗 */
   state: {
-    /** チャット的タブ */
+    /** 聊天視窗的タブ */
     tab: {
       list: [{ key: "chatTab-1", name: "分頁" }],
       isVertical: false
     },
 
-    /** グループチャット的タブ */
+    /** グループ聊天視窗的タブ */
     groupTargetTab: {
       list: [
         {
@@ -21,10 +21,10 @@ export default {
       ]
     },
 
-    /** チャット的リスト */
+    /** 聊天視窗的リスト */
     logs: [],
 
-    /** 入力中的ルームメイト的peerId列表 */
+    /** 輸入中的ルームメイト的peerId列表 */
     inputting: {},
 
     diceBotMessage: {
@@ -35,7 +35,7 @@ export default {
   actions: {
     /**
      * NOTICE_INPUT
-     * ルームメンバ的入力中狀態的通知
+     * ルームメンバ的輸入中狀態的通知
      * @param commit
      * @param key
      */
@@ -43,7 +43,7 @@ export default {
       { commit }: { commit: Function },
       { key }: { key: string }
     ) => {
-      // 即時入力カウントアップ
+      // 即時輸入カウントアップ
       commit("inputPeerId", { key: key, add: 1 });
       // 少し経ったらカウントダウン
       setTimeout(() => {
@@ -53,7 +53,7 @@ export default {
   },
   mutations: {
     /**
-     * チャットログを設定是
+     * 聊天視窗ログを設定是
      * @param state
      * @param logs
      * @returns { *[] }
@@ -62,7 +62,7 @@ export default {
       state.logs = logs;
     },
     /**
-     * チャット分頁設定是
+     * 聊天視窗分頁設定是
      * @param state
      * @param chatTabs
      * @returns { *[] }
@@ -71,7 +71,7 @@ export default {
       state.tab.list = chatTabs;
     },
     /**
-     * グループチャット分頁設定是
+     * グループ聊天視窗分頁設定是
      * @param state
      * @param groupTargetTabList
      * @returns { *[] }

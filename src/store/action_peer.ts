@@ -6,7 +6,7 @@ import moment from "moment";
 export default {
   actions: {
     /**========================================================================
-     * 指定された名前的房間に連接是
+     * 指定された名字的房間に連接是
      *=========================================================================
      * @param rootState
      * @param commit
@@ -35,7 +35,7 @@ export default {
             peer = new Peer({ key: rootGetters.skywayKey, debug: 1 });
           } catch (err) {
             alert(
-              "請查看connect.yaml的設定。\n現在的値：" +
+              "請查看connect.yaml的設定。\n現在的設定是： " +
                 rootGetters.skywayKey
             );
             reject.call(null);
@@ -71,7 +71,7 @@ export default {
           // 畫面が閉じられたらPeer連接を破棄
           // TODO 複数呼び出されたら覆蓋されてしまう問題
           window.onunload = window.onbeforeunload = () => {
-            // マップ編輯中的ロックを解除
+            // 地圖編輯中的ロックを解除
             if (rootGetters.isMapEditing === rootGetters.peerId(isWait)) {
               dispatch("setProperty", {
                 property: "public.map.isEditing",
@@ -108,7 +108,7 @@ export default {
             const msg: string[] = [];
             msg.push("連線失敗。");
             msg.push(
-              "可能發生了通訊條件不好的情況，因此，需要重新加載去進行修復。"
+              "可能發生了通訊條件不好的情況，因此，可能需要重新加載去進行修復。"
             );
             msg.push("原因請參考以下信息。");
             msg.push("");
@@ -334,7 +334,7 @@ export default {
       });
 
       const showInputWindow = () => {
-        // 情報を入力してもらう
+        // 情報を輸入してもらう
         dispatch("setProperty", {
           property: "private.display.inputPlayerInfoWindow",
           value: {
@@ -373,7 +373,7 @@ export default {
 
     /**========================================================================
      * SEND_PRIVATE_DATA
-     * privateデータを受けたとき
+     * private資料を受けたとき
      *=========================================================================
      * @param rootState
      * @param dispatch
@@ -435,7 +435,7 @@ export default {
     },
 
     /**========================================================================
-     * 房間データを受け取ったとき
+     * 房間資料を受け取ったとき
      *=========================================================================
      * @param rootState
      * @param dispatch
@@ -553,28 +553,28 @@ export default {
           ) > -1;
         if (isContainMe && members.length > 1) {
           const msg: string[] = [];
-          msg.push("自己と同じ玩家として進房した人が現れました。");
-          msg.push("これがもし自己本人による進房なら良い的ですが、");
-          msg.push("そうでない場合は成りすまし的影響が出ます。");
+          msg.push("一個與自己玩家名稱一樣的人出現。");
+          msg.push("如果是自己本人的話沒有問題、");
+          msg.push("但如果不是，會有假冒效果。");
           msg.push("");
-          msg.push("対処是には以下的手順をとってください。");
+          msg.push("請按照以下步驟進行處理。");
           msg.push(
-            "１. 速やかに房間データを保存(Ctrl + S もしくは Command + S)是"
+            "１. 立即保存房間數據（Ctrl + S或Command + S）"
           );
-          msg.push("２. ルームメンバーに成りすまし的可能性を教える");
-          msg.push("３. 房間を作り直す");
-          msg.push("４. （自己は別的密碼でログイン是）");
+          msg.push("２. 告訴房間成員有冒充他人的可能性");
+          msg.push("３. 重新新增房間");
+          msg.push("４. （請使用其他密碼登錄）");
           setTimeout(() => alert(msg!.join("\n")), 0);
         }
       }
-      // privateデータ的要求を受けたとき
+      // private資料的要求を受けたとき
       if (type === "REQUEST_PRIVATE_DATA") {
-        // 同じ玩家的中で一番最初に進房した畫面的み、privateデータを送信是
+        // 同じ玩家的中で一番最初に進房した畫面的み、private資料を送出是
         const player = rootGetters.getPlayer(rootGetters.peerId(isWait));
         const members = rootGetters.getMembers(player.key);
         if (members[0].peerId === rootGetters.peerId(isWait)) {
           const privateData = JSON.parse(JSON.stringify(rootState.private));
-          // 開いてないディスプレイ情報は送信データに含めない
+          // 開いてないディスプレイ情報は送出資料に含めない
           for (const key in privateData.display) {
             if (!privateData.display.hasOwnProperty(key)) continue;
             if (!privateData.display[key].isDisplay) {
@@ -593,7 +593,7 @@ export default {
           });
         }
       }
-      // privateデータを受けたとき
+      // private資料を受けたとき
       if (type === "SEND_PRIVATE_DATA")
         dispatch("onSendPrivateData", { value: value, peerId: fromPeerId });
       // 親によるDO_METHOD的発令要請を受けた時
@@ -603,7 +603,7 @@ export default {
           method: method,
           isWait: isWait
         });
-      // 入力中的通知を受けたとき
+      // 輸入中的通知を受けたとき
       if (type === "NOTICE_INPUT") dispatch("noticeInput", value);
       // 畫面操作を受け取ったとき
       if (type === "DO_METHOD") {
@@ -694,7 +694,7 @@ export default {
         });
 
         /* ------------------------------
-         * 房間データを受信した場合
+         * 房間資料を受信した場合
          */
         if (room._events.data) delete room._events.data;
         room.on("data", (message: any) => {
@@ -741,9 +741,9 @@ export default {
       }
     ) {
       return new Promise((resolve: Function) => {
-        // 入力檢查
+        // 輸入檢查
         if (!roomName) {
-          window.console.error(`房間名は必須項目です。`);
+          window.console.error(`必須填寫房間名稱。`);
           alert(`必須填寫房間名稱。`);
           return;
         }
@@ -868,7 +868,7 @@ export default {
     },
 
     /**========================================================================
-     * データ送信
+     * 資料送出
      *=========================================================================
      * @param rootGetters
      * @param payload
@@ -889,7 +889,7 @@ export default {
       //   msgList.push(payload.targets);
       //   msgList.push("this.peerId:");
       //   msgList.push(rootGetters.peerId(payload.isWait));
-      //   qLog("RoomData送信 =>", ...msgList);
+      //   qLog("RoomData送出 =>", ...msgList);
       // }
       room.send(payload);
     },
@@ -1134,7 +1134,7 @@ export default {
 
       // qLog(`Room: ${roomName} 的ルームメンバーとして認識されました。`);
 
-      // チャット新增
+      // 聊天視窗新增
       dispatch("addChatLog", {
         name: rootGetters.systemLog.name,
         text: `「${playerName}」已進入房間。`,

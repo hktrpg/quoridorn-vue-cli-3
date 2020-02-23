@@ -22,13 +22,13 @@
           @keyup.enter.stop
         />
         <span class="space"></span>
-        <ctrl-button @click="doPreview">預覧(自己)</ctrl-button>
+        <ctrl-button @click="doPreview">預覧(只有自己聽到)</ctrl-button>
       </div>
       <div class="tableContainer">
         <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">
           <thead>
             <tr>
-              <th :style="colStyle(0)">連動</th>
+              <th :style="colStyle(0)">聯動</th>
               <divider :index="0" prop="importBGMWindow" />
               <th :style="colStyle(1)">標籤</th>
               <divider :index="1" prop="importBGMWindow" />

@@ -9,13 +9,13 @@
   >
     <div class="contents">
       <div class="playOperationArea" @contextmenu.prevent>
-        <!-- 擴大鍵 -->
+        <!-- 放大鍵 -->
         <ctrl-button
           @click="arrangeWindowSize(true)"
           v-if="isWindowViewScroll"
           :disabled="isModal"
         >
-          ◁︎擴大
+          ◁︎放大
         </ctrl-button>
 
         <!-- 縮小鍵 -->
@@ -634,7 +634,7 @@ export default class InitiativeWindow extends Mixins<WindowMixin>(WindowMixin) {
   /* End 列幅可変テーブルのプロパティ */
 
   /**
-   * 指定された文字列の表示幅を取得する
+   * 指定された文字列の顯示幅を取得する
    * @param text
    */
   private getWidth(text: string): number {

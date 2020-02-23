@@ -1,7 +1,7 @@
 <template>
   <spec-frame
     property="waitingRoomSpec"
-    label-str="キャラクター待合室"
+    label-str="角色等候室"
     lastVersion="1.0.0"
     :isSpecFixed="true"
   >
@@ -10,17 +10,17 @@
      !--------------------->
     <spec-item class-str="operation" label-str="操作方法">
       <li>畫面上方菜單的「コマ」選擇</li>
-      <li>「キャラクター待合室」選擇</li>
+      <li>「角色等候室」選擇</li>
     </spec-item>
     <!----------------------
      ! 規格
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        キャラクター的コマをドロップイン是ことでキャラクター待合室に移動
+        角色的コマをドロップイン是ことで角色等候室に移動
       </li>
       <li>
-        キャラクター待合室からコマをドロップイン是ことでマップに再配置
+        角色等候室からコマをドロップイン是ことで地圖に再配置
       </li>
     </spec-item>
     <!----------------------
@@ -33,7 +33,7 @@
      ! 未實裝項目
      !--------------------->
     <spec-item class-str="unImplemented" label-str="未實裝項目">
-      <li>本機能自体が未實裝<br />→ 初回リリースに含める</li>
+      <li>本功能自体が未實裝<br />→ 初回リリースに含める</li>
     </spec-item>
     <!----------------------
      ! 未實現的功能

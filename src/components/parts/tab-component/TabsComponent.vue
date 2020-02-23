@@ -75,21 +75,21 @@ export default class TabsComponent extends Vue {
   private viewOption!: boolean;
 
   /**
-   * チャットログ表示タブ選擇されたとき的挙動
+   * 聊天視窗ログ顯示タブ選擇されたとき的挙動
    * @param key タブ的key
    */
   @Emit("onSelect")
   private chatTabOnSelect(key: string): void {}
 
   /**
-   * チャットログ表示分頁ホバーされたとき的挙動
+   * 聊天視窗ログ顯示分頁ホバーされたとき的挙動
    * @param key タブ的key
    */
   @Emit("onHover")
   private chatTabOnHover(key: string): void {}
 
   /**
-   * チャットタブ新增鍵クリックイベントハンドラ
+   * 聊天視窗タブ新增鍵クリックイベントハンドラ
    */
   @Emit("editTab")
   private tabAddButtonOnClick(): void {}

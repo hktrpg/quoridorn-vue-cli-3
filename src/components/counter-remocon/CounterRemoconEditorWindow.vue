@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="累計遙控器エディター"
+    titleText="累計遙控器編輯視窗"
     display-property="private.display.counterRemoconEditorWindow"
     align="left-top"
     fixSize="360, 220"
@@ -10,7 +10,7 @@
   >
     <div class="contents" @contextmenu.prevent>
       <label>
-        <span class="label">鍵名:</span>
+        <span class="label">快捷鍵名稱:</span>
         <input
           type="text"
           v-model="buttonName"
@@ -21,11 +21,11 @@
         />
       </label>
       <label>
-        <span class="label">キャラクター{0}:</span>
+        <span class="label">角色{0}:</span>
         <character-select v-model="target" class="full" :placeList="[]" />
       </label>
       <label>
-        <span class="label">カウンター名{1}:</span>
+        <span class="label">計數器名{1}:</span>
         <counter-select v-model="counterName" class="full" />
       </label>
       <label>
@@ -44,7 +44,7 @@
         />
       </label>
       <label>
-        <span class="label">表示メッセージ:</span>
+        <span class="label">顯示訊息:</span>
         <input
           type="text"
           v-model="message"
@@ -105,11 +105,11 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
   private modifyValue: string = "";
   private sampleValue: number = 0;
   private sampleDiceValue: string = "";
-  private message: string = "{0}的{1}を{2}した{4}";
+  private message: string = "{0}的{1}{2}，結果{4}";
   private exampleText: string = "";
 
   /*********************************************************************************************************************
-   * 子畫面表示時
+   * 子畫面顯示時
    */
   private initWindow() {
     const counterRemocon = this.getObj(this.counterRemoconEditorKey);
@@ -125,21 +125,21 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
       const firstProperty = this.propertyList[0];
       this.buttonName = "";
       this.target = "";
-      this.counterName = firstProperty ? firstProperty.property : "資源表";
+      this.counterName = firstProperty ? firstProperty.property : "先攻表";
       this.modifyType = this.COUNTER_REMOCON_TYPE.PLUS;
       this.modifyValue = "";
-      this.message = "{0}的{1}を{2}した{4}";
-      this.exampleText = `的${this.counterName}をした`;
+      this.message = "{0}的{1}{2}，結果{4}";
+      this.exampleText = `的${this.counterName}`;
     }
   }
 
   /*********************************************************************************************************************
-   * コミット鍵押下時
+   * コミット快捷鍵押下時
    */
   private commitButtonOnClick() {
-    // 入力檢查
+    // 輸入檢查
     const messageList: string[] = [];
-    if (!this.buttonName) messageList.push("鍵名は必須です。");
+    if (!this.buttonName) messageList.push("必須有快捷鍵名稱。");
     if (messageList.length) {
       alert(messageList.join("\n"));
       return;
@@ -174,7 +174,7 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
   }
 
   /*********************************************************************************************************************
-   * 取消鍵押下時
+   * 取消快捷鍵押下時
    */
   private cancelButtonOnClick() {
     this.windowClose("private.display.counterRemoconEditorWindow");
@@ -202,8 +202,8 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
     const characterName: string = character ? character.name : "";
 
     this.exampleText = this.message
-      .replace("{0}", characterName || "[選択キャラ]")
-      .replace("{1}", this.counterName || "[選択項目]")
+      .replace("{0}", characterName || "[選擇角色]")
+      .replace("{1}", this.counterName || "[選擇項目]")
       .replace(
         "{2}",
         `${
@@ -221,12 +221,12 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
       )
       .replace(
         "{4}",
-        `（${this.counterName || "[選択項目]"}：${3}->${afterValue}）`
+        `（${this.counterName || "[選擇項目]"}：${3}->${afterValue}）`
       );
   }
 
   /*********************************************************************************************************************
-   * 変更値的評価
+   * 變更値的評価
    */
   @Watch("modifyValue")
   onChangeModifyValue() {

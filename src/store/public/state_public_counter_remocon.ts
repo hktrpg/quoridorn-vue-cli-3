@@ -4,13 +4,13 @@ export default {
     list: [
       {
         key: "counterRemocon-0",
-        buttonName: "万能",
+        buttonName: "萬用",
         target: "",
         counterName: "",
         modifyType: "2",
         modifyValue: "",
-        message: "{0}的{1}を{2}した{4}",
-        exampleText: "[選択キャラ]的[選択項目]を0した（[選択項目]：3->3）"
+        message: "{0}的{1}{2}，結果{4}",
+        exampleText: "[選擇角色]的[選擇項目]-1，結果（[選擇項目]：3->3）"
       }
     ],
     maxKey: 0
