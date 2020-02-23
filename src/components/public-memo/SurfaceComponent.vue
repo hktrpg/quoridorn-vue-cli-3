@@ -2,7 +2,7 @@
   <div class="surfaceComponent">
     <template v-if="isEditMode">
       <label>
-        タブ的名前
+        標籤名稱
         <input
           type="text"
           v-model="localValue"
@@ -29,8 +29,8 @@
         >
           ＞
         </ctrl-button>
-        <span class="icon-cross" @click.stop="deleteTab()">タブを刪除</span>
-        <span class="icon-copy" @click.stop="copyTab()">タブをコピー</span>
+        <span class="icon-cross" @click.stop="deleteTab()">分頁刪除</span>
+        <span class="icon-copy" @click.stop="copyTab()">分頁複製</span>
       </div>
 
       <!-- 閲覧權限的設定 -->
@@ -59,7 +59,7 @@
 
     <!-- 閲覧權限がない場合 -->
     <div v-if="!isViewableSurface()" class="disabled">
-      {{ !isViewableSurface() ? "あなたにこ的面は開示されていません。" : "" }}
+      {{ !isViewableSurface() ? "自己にこ的面は開示されていません。" : "" }}
     </div>
 
     <!-- 閲覧權限がある場合 -->
@@ -68,7 +68,7 @@
         ※ 裏面が白紙な的で、こ的タブは面がありません。
       </div>
       <template v-for="(contents, itemIndex) in surface.contentsList">
-        <!-- 大見出し -->
+        <!-- 標題 -->
         <div
           v-if="contents.kind === 'title'"
           class="item title selectable"
@@ -76,7 +76,7 @@
         >
           <span
             v-html="
-              contents.text.replace(/\n/g, '<br />').replace(/^$/, '大見出し')
+              contents.text.replace(/\n/g, '<br />').replace(/^$/, '標題')
             "
             v-if="!isEditMode"
           ></span>
@@ -84,7 +84,7 @@
             v-model="contents.text"
             v-if="isEditMode"
             @input="textareaOnInput"
-            placeholder="大見出し"
+            placeholder="標題"
             @keydown.enter.stop
             @keyup.enter.stop
             @keydown.229.stop
@@ -97,7 +97,7 @@
           ></span>
         </div>
 
-        <!-- 小見出し -->
+        <!-- 副標題 -->
         <div
           v-if="contents.kind === 'sub-title'"
           class="item sub-title selectable"
@@ -105,7 +105,7 @@
         >
           <span
             v-html="
-              contents.text.replace(/\n/g, '<br />').replace(/^$/, '小見出し')
+              contents.text.replace(/\n/g, '<br />').replace(/^$/, '副標題')
             "
             v-if="!isEditMode"
           ></span>
@@ -113,7 +113,7 @@
             v-model="contents.text"
             v-if="isEditMode"
             @input="textareaOnInput"
-            placeholder="小見出し"
+            placeholder="副標題"
             @keydown.enter.stop
             @keyup.enter.stop
             @keydown.229.stop
@@ -126,7 +126,7 @@
           ></span>
         </div>
 
-        <!-- テキスト -->
+        <!-- 文字內容 -->
         <div
           v-if="contents.kind === 'text'"
           class="item text selectable"
@@ -134,7 +134,7 @@
         >
           <span
             v-html="
-              contents.text.replace(/\n/g, '<br />').replace(/^$/, 'テキスト')
+              contents.text.replace(/\n/g, '<br />').replace(/^$/, '文字內容')
             "
             v-if="!isEditMode"
           ></span>
@@ -142,7 +142,7 @@
             v-model="contents.text"
             v-if="isEditMode"
             @input="textareaOnInput"
-            placeholder="テキスト"
+            placeholder="文字內容"
             @keydown.enter.stop
             @keyup.enter.stop
             @keydown.229.stop
@@ -340,7 +340,7 @@ export default class SurfaceComponent extends Vue {
   ) {}
 
   /**
-   * テキストエリアに入力される度に、必要に応じてテキストエリア的表示大小を拡張是
+   * 文字內容エリアに入力される度に、必要に応じて文字內容エリア的表示大小を拡張是
    */
   private textareaOnInput(event: any) {
     const textarea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;

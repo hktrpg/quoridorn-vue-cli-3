@@ -402,7 +402,7 @@ export default class WindowFrame extends Vue {
           .getElementById("mapBoardFrame")!
           .dispatchEvent(new MouseEvent("mouseUp", evtObj));
       };
-      // コンテキスト菜單防止
+      // コン文字內容菜單防止
       const contextMenuListener = () => {
         return false;
       };

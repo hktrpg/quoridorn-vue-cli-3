@@ -23,7 +23,7 @@
         />
         <span>{{ selectedTagIndexText }}</span>
       </div>
-      <ctrl-button @click="onClickHideImage">隱藏圖片</ctrl-button>
+      <ctrl-button @click="onClickHideImage">隱藏圖片(未實裝)</ctrl-button>
       <ctrl-button @click="doReverse">反轉</ctrl-button>
     </div>
   </div>

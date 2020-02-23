@@ -49,7 +49,7 @@
             DropBoxに設置したmp3ファイル的播放
             <ul>
               <li>
-                DropBox的操作で「共有」的「リンク」を作成し、そ的URLを指定してすればOK<br />例）https://www.dropbox.com/s/vc7os1os5uyneac/Fade.mp3?dl=0
+                DropBox的操作で「共有」的「リンク」を新增し、そ的URLを指定してすればOK<br />例）https://www.dropbox.com/s/vc7os1os5uyneac/Fade.mp3?dl=0
               </li>
             </ul>
           </li>

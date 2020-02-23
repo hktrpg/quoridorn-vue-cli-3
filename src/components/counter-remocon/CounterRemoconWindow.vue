@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="カウンターリモコン"
+    titleText="累計遙控器"
     display-property="private.display.counterRemoconWindow"
     align="center"
     baseSize="300, 180"
@@ -32,21 +32,21 @@
 
       <!-- 操作エリア -->
       <div class="playOperationArea">
-        <!-- セーブ鍵 -->
+        <!-- 儲存鍵 -->
         <ctrl-button class="save" @click="saveButtonOnClick">
-          セーブ
+          儲存
         </ctrl-button>
 
-        <!-- ロード鍵 -->
+        <!-- 讀取鍵 -->
         <ctrl-button class="load" @click="loadButtonOnClick">
-          ロード
+          讀取
         </ctrl-button>
 
         <span style="flex: 1"></span>
 
         <!-- 鍵新增鍵 -->
         <ctrl-button class="add" @click="addButtonOnClick">
-          鍵新增
+          新增鍵
         </ctrl-button>
       </div>
     </div>
@@ -126,7 +126,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * カウンターリモコン鍵を新增是
+   * 累計遙控器鍵を新增是
    */
   private addButtonOnClick() {
     this.setProperty({
@@ -139,7 +139,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * カウンターリモコン的菜單を表示是
+   * 累計遙控器的菜單を表示是
    * @param event
    * @param remoconKey
    */
@@ -165,7 +165,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * 子畫面的内側的クリックで、展開しているカウンターリモコン的選択肢を消す
+   * 子畫面的内側的クリックで、展開している累計遙控器的選択肢を消す
    */
   private contentsOnClick() {
     // ブロックを初期化
@@ -173,7 +173,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
   }
 
   /*********************************************************************************************************************
-   * カウンターリモコンで指定是情報的選択を開始
+   * 累計遙控器で指定是情報的選択を開始
    * @param remoconObj
    * @param event
    */
@@ -186,7 +186,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
 
     /**=================================================================================================================
      * カウンター更新処理<br />
-     * カウンターリモコン指定情報的選択を全て終えた時に呼び出す
+     * 累計遙控器指定情報的選択を全て終えた時に呼び出す
      * @param counterName
      * @param value
      * @param character
@@ -199,10 +199,10 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
       // 対象的プロパティを特定
       let prop: string;
       switch (counterName) {
-        case "イニシアティブ":
+        case "資源表":
           prop = "initiative";
           break;
-        case "修正（イニシアティブ同値時比較用）":
+        case "修正（資源表同値時比較用）":
           prop = "subInitiative";
           break;
         default:
@@ -252,7 +252,7 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
             .replace("{4}", `（${counterName}：${beforeValue}->${afterValue}）`)
         });
 
-        // 実際にイニシアティブ表的値を更新
+        // 実際に先攻表的値を更新
         const propertyObj: any = {};
         propertyObj[prop] = afterValue;
         this.changeListObj({
@@ -267,11 +267,11 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
 
       const beforeValue: number = parseInt(character.property[prop], 10);
       if (/^-?[0-9]+$/.test(value)) {
-        // カウンターリモコンに指定されていた変更値が数値だった場合、または値選擇された場合
+        // 累計遙控器に指定されていた変更値が数値だった場合、または値選擇された場合
         // 即更新 -------------------------------------------------------------------------------------------------------
         commit(beforeValue, parseInt(value, 10));
       } else {
-        // カウンターリモコンに指定されていた変更値が数値ではなかった場合
+        // 累計遙控器に指定されていた変更値が数値ではなかった場合
         // BCDice-apiで評価してもらい、そ的応答的値を利用是
         this.sendBcdiceServer({
           system: "DiceBot",
@@ -452,11 +452,11 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
         const usePropertyList: any[] = this.propertyList.concat();
 
         usePropertyList.unshift({
-          property: "修正（イニシアティブ同値時比較用）"
+          property: "修正（資源表同値時比較用）"
         });
 
         usePropertyList.unshift({
-          property: "イニシアティブ"
+          property: "資源表"
         });
 
         blockInfo.label = "カウンター的選択";

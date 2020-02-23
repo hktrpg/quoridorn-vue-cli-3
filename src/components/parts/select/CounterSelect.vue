@@ -23,11 +23,11 @@ export default class CounterSelect extends Mixins<SelectMixin>(SelectMixin) {
     });
 
     resultList.unshift({
-      property: "修正（イニシアティブ同値時比較用）"
+      property: "修正（資源表同値時比較用）"
     });
 
     resultList.unshift({
-      property: "イニシアティブ"
+      property: "資源表"
     });
 
     return resultList;

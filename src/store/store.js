@@ -155,7 +155,7 @@ export default new Vuex.Store({
       state.param.system = system;
 
       /* ------------------------------
-       * URLを書き換える（リロード無）
+       * URLを書き換える（リ讀取無）
        */
       const paramList = [];
       if (state.param.roomName !== null)
@@ -295,7 +295,7 @@ export default new Vuex.Store({
         rootState.setting.connect.bcdiceServer = setting.bcdiceServer;
 
         /* ----------------------------------------------------------------------
-         * ダイスシステム的検証
+         * ダイス系統的検証
          */
         dispatch("getBcdiceSystemList")
           .then(systemList => {
@@ -338,7 +338,7 @@ export default new Vuex.Store({
                 system,
                 isWait: false
               };
-              // 「新しい房間をつくる」畫面で入力される項目が指定されていれば新的房間作成を試みる
+              // 「新しい房間をつくる」畫面で入力される項目が指定されていれば新的房間新增を試みる
               if (
                 !isExist &&
                 roomPassword !== null &&

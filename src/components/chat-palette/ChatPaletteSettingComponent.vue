@@ -38,7 +38,7 @@
         <div class="optionLine">
           <!-- ステータス選択 -->
           <label>
-            状態
+            狀態
             <actor-status-select :actorKey="actor.key" v-model="statusName" />
           </label>
           <div class="spacer"></div>
@@ -136,7 +136,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレット的１行が送信された時的挙動
+   * 對話組合版的１行が送信された時的挙動
    * @param actor
    * @param text
    */
@@ -156,7 +156,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレット的１行が選択された時的挙動
+   * 對話組合版的１行が選択された時的挙動
    * @param actor
    * @param index
    */
@@ -166,7 +166,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレットを編輯是
+   * 對話組合版を編輯是
    * @param actor
    */
   private edit(actor: any) {
@@ -180,7 +180,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレットをセーブ是
+   * 對話組合版を儲存是
    * @param actor
    */
   private doExport(actor: any) {
@@ -194,7 +194,7 @@ export default class ChatPaletteSettingWindow extends Mixins<WindowMixin>(
   }
 
   /**
-   * チャットパレットを讀取是
+   * 對話組合版を讀取是
    * @param actor
    */
   private doImport(actor: any) {

@@ -25,10 +25,10 @@
     </div>
     <hr />
     <div class="item" @click.left.prevent="createHandCardArea">
-      手札置き場的作成(未實裝)
+      手札置き場的新增(未實裝)
     </div>
     <div class="item" @click.left.prevent="createMessageCard">
-      メッセージカード作成(未實裝)
+      メッセージカード新增(未實裝)
     </div>
     <hr />
     <div class="item" @click.left.prevent="resetWindowLocate">

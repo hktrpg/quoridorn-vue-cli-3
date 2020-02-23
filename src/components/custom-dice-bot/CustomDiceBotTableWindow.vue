@@ -96,7 +96,7 @@
       </div>
       <div>
         <ctrl-button @click="addButtonOnClick" ref="button"
-          >新的作成</ctrl-button
+          >新的新增</ctrl-button
         >
         <ctrl-button @click="copyButtonOnClick">複製</ctrl-button>
         <ctrl-button @click="changeButtonOnClick">變更</ctrl-button>

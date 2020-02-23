@@ -1,5 +1,5 @@
 export default {
-  /** カウンターリモコン */
+  /** 累計遙控器 */
   state: {
     list: [
       {

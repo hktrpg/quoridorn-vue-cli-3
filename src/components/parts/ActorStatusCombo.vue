@@ -3,7 +3,7 @@
     <input
       type="text"
       list="actorStatus"
-      placeholder="状態"
+      placeholder="狀態"
       :value="localValue"
       @change="event => changeValue(event.target.value)"
       @keydown.enter.stop

@@ -40,7 +40,7 @@
                 "
                 v-if="!status.standImage.isSystemLock"
               >
-                状態的刪除
+                狀態的刪除
               </span>
             </div>
             <div class="tab-contents">
@@ -49,7 +49,7 @@
                 v-if="status.standImage.ref || status.standImage.isSystemLock"
               >
                 <span v-if="status.standImage.ref">
-                  状態「{{ status.standImage.ref }}」的データを參考しています
+                  狀態「{{ status.standImage.ref }}」的データを參考しています
                 </span>
                 <span v-if="status.standImage.isSystemLock">
                   初期データとして必要なため<br />編輯できません

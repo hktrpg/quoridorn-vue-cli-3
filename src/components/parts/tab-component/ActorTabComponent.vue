@@ -17,11 +17,11 @@
           class="icon-arrow-up-right2"
           @click="diagonalButtonOnClick"
           :class="{ isDiagonal: isDiagonal }"
-          title="タブを斜め表示機能"
+          title="分頁斜め表示機能"
         ></span>
       </label>
 
-      <!-- 選択されて表示状態となっているタブ -->
+      <!-- 選択されて表示狀態となっているタブ -->
       <label
         class="tab"
         v-for="(actor, index) in standActorList"
@@ -60,7 +60,7 @@
         -->
       </label>
 
-      <!-- 選択されて表示状態となっているタブ -->
+      <!-- 選択されて表示狀態となっているタブ -->
       <div class="option-tab-container">
         <label
           class="tab plane-tab"

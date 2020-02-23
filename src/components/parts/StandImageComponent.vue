@@ -86,7 +86,7 @@ export default class StandImageComponent extends Vue {
 
     const promiseList = [];
 
-    // ベース的ロード
+    // ベース的讀取
     let baseImageElm: HTMLImageElement | null = null;
     const baseImageReverse: boolean = /:R/.test(standImage.base);
     promiseList.push(
@@ -95,7 +95,7 @@ export default class StandImageComponent extends Vue {
       })
     );
 
-    // 差分的ロード
+    // 差分的讀取
     this.diffImageList.splice(0, this.diffImageList.length);
     let diffImageList: any[] = [];
     standImage.diffList.forEach((diff: any, index: number) => {

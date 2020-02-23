@@ -327,7 +327,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
 
     if (!this.isOverEvent) {
       if (!isRoll) {
-        // 右ドラッグが解除された的が子畫面上でなく、調整後に回転していない場合的み右コンテキスト菜單を表示是
+        // 右ドラッグが解除された的が子畫面上でなく、調整後に回転していない場合的み右コン文字內容菜單を表示是
         const obj = {
           x: pageX,
           y: pageY
@@ -450,7 +450,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       isBorderHide: false
     };
 
-    // マップマスク的作成
+    // マップマスク的新增
     if (kind === "mapMask") {
       const name = event.dataTransfer.getData("name");
       const color = event.dataTransfer.getData("color");
@@ -474,7 +474,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // キャラクター的作成
+    // キャラクター的新增
     if (kind === "character") {
       const name = event.dataTransfer.getData("name");
       const size = event.dataTransfer.getData("size");
@@ -567,7 +567,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // フロアタイル的作成
+    // フロアタイル的新增
     if (kind === "floorTile") {
       const currentImageTag = event.dataTransfer.getData("currentImageTag");
       const imageKey = event.dataTransfer.getData("imageKey");
@@ -595,7 +595,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // チット的作成
+    // チット的新增
     if (kind === "chit") {
       const currentImageTag = event.dataTransfer.getData("currentImageTag");
       const imageKey = event.dataTransfer.getData("imageKey");
@@ -623,7 +623,7 @@ export default class GameTable extends Mixins<AddressCalcMixin>(
       return;
     }
 
-    // ダイスシンボル的作成
+    // ダイスシンボル的新增
     if (kind === "diceSymbol") {
       const faceNum = event.dataTransfer.getData("faceNum");
       const type = event.dataTransfer.getData("type");

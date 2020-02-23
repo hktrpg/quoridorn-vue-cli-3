@@ -32,10 +32,10 @@
                 ファイル
                 <ol>
                   <li>
-                    <spec-link property="export" title-str="">セーブ</spec-link>
+                    <spec-link property="export" title-str="">儲存</spec-link>
                   </li>
                   <li>
-                    <spec-link property="import" title-str="">ロード</spec-link>
+                    <spec-link property="import" title-str="">讀取</spec-link>
                   </li>
                 </ol>
               </li>
@@ -57,17 +57,17 @@
                       </li>
                       <li>
                         <spec-link property="initiativeWindow" title-str="">
-                          イニシアティブ表示
+                          先攻表示
                         </spec-link>
                       </li>
                       <li>
                         <spec-link property="resourceWindow" title-str="">
-                          リソース表示
+                          先攻表示
                         </spec-link>
                       </li>
                       <li>
                         <spec-link property="chatPaletteWindow" title-str="">
-                          チャットパレット表示
+                          對話組合版表示
                         </spec-link>
                       </li>
                       <li>
@@ -75,7 +75,7 @@
                           property="counterRemoteControlWindow"
                           title-str=""
                         >
-                          カウンターリモコン表示
+                          累計遙控器表示
                         </spec-link>
                       </li>
                     </ol>
@@ -142,12 +142,12 @@
                   </li>
                   <li>
                     <spec-link property="createEasyMapWindow" title-str="">
-                      簡易マップ作成
+                      簡易マップ新增
                     </spec-link>
                   </li>
                   <li>
                     <spec-link property="saveMapWindow" title-str="">
-                      マップ状態保存
+                      マップ狀態保存
                     </spec-link>
                   </li>
                   <li>

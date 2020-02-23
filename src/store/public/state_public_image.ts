@@ -52,7 +52,7 @@ export default {
         );
       });
 
-      let addList = useTexts.concat(); // 配列をシャロ―コピー
+      let addList = useTexts.concat(); // 配列をシャロ―複製
       const deleteList = state.tags.list.filter((tag: any) => {
         // 「(全て)」は消させない
         if (tag.key === "imgTag-0") {

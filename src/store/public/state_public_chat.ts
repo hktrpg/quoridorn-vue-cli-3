@@ -18,7 +18,7 @@ export default {
         {
           key: "groupTargetTab-0",
           isSecret: false,
-          name: "全体",
+          name: "全部人",
           targetTab: null,
           isAll: true,
           group: []
@@ -54,7 +54,7 @@ export default {
   actions: {
     /**
      * NOTICE_INPUT
-     * ルームメンバ的入力中状態的通知
+     * ルームメンバ的入力中狀態的通知
      * @param commit
      * @param key
      */
@@ -97,7 +97,7 @@ export default {
   },
   mutations: {
     /**
-     * ルームメンバ的入力中状態的変化
+     * ルームメンバ的入力中狀態的変化
      * @param state
      * @param key
      * @param add

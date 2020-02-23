@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="フロアタイル作成"
+    titleText="フロアタイル新增"
     display-property="private.display.addFloorTileWindow"
     align="center"
     fixSize="653, 271"

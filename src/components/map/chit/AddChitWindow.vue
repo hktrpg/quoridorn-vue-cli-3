@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="チット作成"
+    titleText="チット新增"
     display-property="private.display.addChitWindow"
     align="center"
     fixSize="653, 271"

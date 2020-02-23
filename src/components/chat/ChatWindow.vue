@@ -634,7 +634,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   private chatTarget: string = "groupTargetTab-0";
   /** 出力先的タブ */
   private outputTab: string | null = null;
-  /** 選擇されているシステム */
+  /** 選擇されている系統 */
   private currentDiceBotSystem: string = "DiceBot";
   /** 秘匿聊天視窗的相手 */
   private secretTarget: string = "";
@@ -873,7 +873,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 聊天視窗オプションを仮変更前的状態に戻す
+   * 聊天視窗オプションを仮変更前的狀態に戻す
    */
   private resetChatOption(): void {
     if (this.chatOptionSelectMode) {
@@ -902,7 +902,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 聊天視窗ログ表示タブを選擇されたとき的挙動
+   * 聊天視窗ログ表示分頁選擇されたとき的挙動
    * @param key タブ的key
    */
   private chatTabOnSelect(key: string): void {
@@ -915,7 +915,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * 聊天視窗ログ表示タブをホバーされたとき的挙動
+   * 聊天視窗ログ表示分頁ホバーされたとき的挙動
    * @param key タブ的key
    */
   private chatTabOnHover(key: string): void {
@@ -927,7 +927,7 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * グループターゲットタブを選擇された時的挙動
+   * グループターゲット分頁選擇された時的挙動
    * @param targetKey タブ的key
    */
   private groupTargetTabOnSelect(targetKey: string): void {

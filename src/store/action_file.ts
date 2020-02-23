@@ -8,7 +8,7 @@ import moment from "moment";
 export default {
   actions: {
     /** ========================================================================
-     * セーブデータ作成を開始是
+     * 儲存データ新增を開始是
      * @param dispatch
      * @param rootState
      * @param rootGetters
@@ -34,7 +34,7 @@ export default {
         delete rootGetters.volatilePrivateData[playerKey];
       }
 
-      // privateデータ的コピー
+      // privateデータ的複製
       const privateData = JSON.parse(JSON.stringify(rootState.private));
 
       // 開いてないディスプレイ情報は送信データに含めない
@@ -60,7 +60,7 @@ export default {
     },
 
     /** ========================================================================
-     * セーブデータ作成を実行是
+     * 儲存データ新增を実行是
      * @param dispatch
      * @param rootState
      * @param rootGetters
@@ -75,7 +75,7 @@ export default {
       rootGetters: any;
     }) {
       // ------------------------------------------------------------
-      // セーブデータ的ベース作成
+      // 儲存データ的ベース新增
       const saveData = JSON.parse(
         JSON.stringify({
           public: rootState.public,
@@ -89,7 +89,7 @@ export default {
           continue;
 
         // ------------------------------------------------------------
-        // セーブデータ内的player的リストに各玩家的privateデータを持たせる
+        // 儲存データ内的player的リストに各玩家的privateデータを持たせる
         const playerPrivateObj: any =
           rootGetters.volatilePrivateData[playerKey];
         saveData.public.player.list.forEach((player: any) => {
@@ -164,7 +164,7 @@ export default {
       //
       // // ------------------------------------------------------------
       // // こ的時点で刪除リストはプリセットデータ的刪除的みとなっているはず
-      // // → 対象的key的リストが保存データに含まれれば、ロード時に十分なデータとなる
+      // // → 対象的key的リストが保存データに含まれれば、讀取時に十分なデータとなる
       // saveData.delKeyList = delKeyList;
       //
       // // ============================================================
@@ -233,7 +233,7 @@ export default {
       // delete saveData.public.bgm;
       // delete saveData.public.diceSymbol;
       //
-      // // セーブデータに新增差分データを含める
+      // // 儲存データに新增差分データを含める
       // saveData.addObjList = addObjList;
 
       // zipファイル的生成
@@ -400,7 +400,7 @@ export default {
               .map(addObj => {
                 const type = addObj.key.split("-")[0];
 
-                // // image參考的差分ロード
+                // // image參考的差分讀取
                 // let useImageList: string = addObj.useImageList;
                 // if (useImageList) {
                 //   useImageList.split("|").forEach(useImage => {
@@ -428,7 +428,7 @@ export default {
                 );
                 addObj = JSON.parse(addObjStr);
 
-                // グループチャットデータ的ロード
+                // グループチャットデータ的讀取
                 if (type === "groupTargetTab") {
                   rootGetters.groupTargetTabList.push({
                     key: `groupTargetTab-${++rootGetters.groupTargetTab
@@ -456,17 +456,17 @@ export default {
       const roomName = publicData.room.name;
       const system = publicData.room.system;
       if (!dropZipRoomCreate) {
-        // 房間を作らないシンプルなロード
+        // 房間を作らないシンプルな讀取
         importFunc().then(() => {});
         return;
       }
       if (!publicData.room) {
-        // 房間を作る操作な的にセーブデータに房間情報が含まれてないならここで終わり
+        // 房間を作る操作な的に儲存データに房間情報が含まれてないならここで終わり
         alert("沒有房間信息。 \n停止處理。");
         return;
       }
       dispatch("loading", true);
-      // セーブデータに房間情報があるなら、進房処理を行う
+      // 儲存データに房間情報があるなら、進房処理を行う
       const checkFunc = (roomName: string) => {
         // 房間的存在檢查
         Promise.resolve()
@@ -526,7 +526,7 @@ export default {
                     );
                   })
               )
-              // 玩家情報を入力してもらったら房間を新的作成して進房是
+              // 玩家情報を入力してもらったら房間を新的新增して進房是
               .then((payload: any) => {
                 // privateデータ的復元
                 const playerData: any = publicData.player.list.filter(

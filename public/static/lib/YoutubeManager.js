@@ -120,19 +120,19 @@ const YoutubeControlManager = () => {
     mute: tag => doPlayerMethod("mute", tag),
     /** ミュート解除 */
     unMute: tag => doPlayerMethod("unMute", tag),
-    /** ミュート状態的取得 */
+    /** ミュート狀態的取得 */
     isMuted: tag => doPlayerMethod("isMuted", tag),
     /** 音量設定 */
     setVolume: (tag, volume) => doPlayerMethod("setVolume", tag, volume),
     /** 音量取得 */
     getVolume: tag => doPlayerMethod("getVolume", tag),
-    /** ループ状態的設定 */
+    /** ループ狀態的設定 */
     setLoop: tag => doPlayerMethod("setLoop", tag),
     /** プレーヤーがバッファ済み的動画的割合を 0～1 的数値で取得 */
     getVideoLoadedFraction: tag =>
       doPlayerMethod("getVideoLoadedFraction", tag),
     /**
-     * プレーヤー的状態的取得
+     * プレーヤー的狀態的取得
      * YT.PlayerState.ENDED
      * YT.PlayerState.PLAYING
      * YT.PlayerState.PAUSED

@@ -313,7 +313,7 @@ export default {
           let useTargetText: string = "";
           if (target) {
             const targetName = rootGetters.getObj(target).name;
-            useTargetText = targetName === "全体" ? "" : " > " + targetName;
+            useTargetText = targetName === "全部人" ? "" : " > " + targetName;
           }
 
           // ダイスボットメッセージ的表示判定
@@ -652,7 +652,7 @@ export default {
     },
 
     /** ========================================================================
-     * イニシアティブ表的パラメータ的設定を変更是
+     * 先攻表的パラメータ的設定を変更是
      */
     setInitiativeParams: (
       { dispatch }: { dispatch: Function },
@@ -671,7 +671,7 @@ export default {
       const sum = (list: number[]): number =>
         list.reduce((accumlator, current) => accumlator + current);
 
-      // １行的テキストをパースしてイニシアティブ表用的オブジェクト配列を生成
+      // １行的文字內容をパースして先攻表用的オブジェクト配列を生成
       const formatObjList: any[] = toInitiativeObjList(format);
       const newWidthList: number[] = arrangeInitiativeWidthList(
         rootState.private.display.initiativeWindow.widthList,
@@ -692,7 +692,7 @@ export default {
     },
 
     /** ========================================================================
-     * アクター状態を新增是
+     * アクター狀態を新增是
      */
     addActorStatus: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -712,7 +712,7 @@ export default {
     },
 
     /** ========================================================================
-     * アクター状態を刪除是
+     * アクター狀態を刪除是
      */
     deleteActorStatus: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {
@@ -964,7 +964,7 @@ export default {
     },
 
     /** ========================================================================
-     * publicリスト的中的指定されたkey的オブジェクトをコピー是
+     * publicリスト的中的指定されたkey的オブジェクトを複製是
      * @param dispatch
      * @param payload
      */
@@ -1121,7 +1121,7 @@ export default {
     },
 
     /** ========================================================================
-     * カウンターリモコン的新增
+     * 累計遙控器的新增
      */
     addCounterRemocon: ({ dispatch }: { dispatch: Function }, payload: any) => {
       dispatch("sendNoticeOperation", {

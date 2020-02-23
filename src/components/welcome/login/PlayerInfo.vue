@@ -32,7 +32,7 @@
               @keyup.229.stop
             />
             <ctrl-button class="copy" @click="doCopy">
-              コピー
+              複製
             </ctrl-button>
           </label>
         </dd>
@@ -68,7 +68,7 @@ export default class RoomInfo extends Vue {
     // const text = event.target.previousElementSibling.value;
     const text = event.target.parentNode.previousElementSibling.value;
     if (!execCopy(text)) {
-      alert("テキストをコピーできませんでした。");
+      alert("文字內容を複製できませんでした。");
     }
     alert(text);
   }
@@ -111,7 +111,7 @@ dt {
     content: "[不在] ";
   }
   &.isMe::before {
-    content: "[あなた] ";
+    content: "[自己] ";
   }
 }
 dd {

@@ -275,7 +275,7 @@ export default class ChatLog extends Vue {
           .map((logObj: any) => {
             const tabName = logObj.isDiceBot ? "" : `[${logObj.tab}]`;
             const targetText =
-              logObj.targetName === "全体" ? "" : `＞＞${logObj.targetName}`;
+              logObj.targetName === "全部人" ? "" : `＞＞${logObj.targetName}`;
             return [
               tabName,
               `<font color="${logObj.color}">`,
@@ -310,7 +310,7 @@ export default class ChatLog extends Vue {
         .map((logObj: any) => {
           const tabName = logObj.isDiceBot ? "" : `[${logObj.tab}]`;
           const targetText =
-            logObj.targetName === "全体" ? "" : `＞＞${logObj.targetName}`;
+            logObj.targetName === "全部人" ? "" : `＞＞${logObj.targetName}`;
           return [
             tabName,
             logObj.name,

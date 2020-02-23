@@ -5,7 +5,7 @@ import * as Mustache from "mustache";
 export default {
   actions: {
     /** ========================================================================
-     * HTML形式でチャットログをダウンロード是
+     * HTML形式でチャットログをダウン讀取是
      * @param rootGetters
      */
     async saveChatLogHtml({ rootGetters }: { rootGetters: any }) {

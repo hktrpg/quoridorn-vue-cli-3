@@ -98,11 +98,11 @@
               <player-box-spec /><!-- 棋子管理盒 -->
               <chat-spec /><!-- チャット -->
               <dice-spec /><!-- ダイス -->
-              <chat-palette-spec /><!-- チャットパレット -->
+              <chat-palette-spec /><!-- 對話組合版 -->
               <public-memo-spec /><!-- 共有メモ -->
               <change-font-size-spec /><!-- フォント大小変更 -->
-              <initiative-spec /><!-- イニシアティブ -->
-              <counter-remocon-spec /><!-- カウンターリモコン -->
+              <initiative-spec /><!-- 資源表 -->
+              <counter-remocon-spec /><!-- 累計遙控器 -->
               <custom-dice-bot-spec /><!-- 独自ダイスボット -->
               <bgm-spec /><!-- BGM -->
               <bgm-spec2 /><!-- BGM2 -->
@@ -110,7 +110,7 @@
               <range-spec /><!-- 範囲 -->
               <map-spec /><!-- マップ -->
               <easy-map-spec /><!-- 簡易マップ -->
-              <map-save-spec /><!-- マップ状態保存 -->
+              <map-save-spec /><!-- マップ狀態保存 -->
               <map-load-spec /><!-- マップ切り替え -->
               <reset-all-window-spec /><!-- ウィンドウ配置初期化機能 -->
               <welcome-window-spec /><!-- ようこそ畫面 -->

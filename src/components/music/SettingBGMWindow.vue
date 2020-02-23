@@ -68,14 +68,14 @@
       <div class="operateArea" @contextmenu.prevent>
         <ctrl-button @click="doAdd" ref="button">新增</ctrl-button>
         <ctrl-button @click="doModify">変更</ctrl-button>
-        <ctrl-button @click="doCopy">コピー</ctrl-button>
+        <ctrl-button @click="doCopy">複製</ctrl-button>
         <ctrl-button @click="doDelete">刪除</ctrl-button>
         <ctrl-button @click="doUp">↑</ctrl-button>
         <ctrl-button @click="doDown">↓</ctrl-button>
         <template v-if="isGameMaster">
           <div class="space"></div>
           <ctrl-button @click="doSave">保存</ctrl-button>
-          <ctrl-button @click="doImport">ロード</ctrl-button>
+          <ctrl-button @click="doImport">讀取</ctrl-button>
         </template>
         <!--<label><input type="checkbox" @change="changeSortMode" />並べ替え許可</label>-->
       </div>

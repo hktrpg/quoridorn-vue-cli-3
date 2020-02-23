@@ -27,9 +27,9 @@
             @keyup.enter.stop
             @keydown.229.stop
             @keyup.229.stop
-          />複数作成</label
+          />複数新增</label
         >
-        <span>連番：</span
+        <span>序號：</span
         ><input
           type="number"
           min="0"

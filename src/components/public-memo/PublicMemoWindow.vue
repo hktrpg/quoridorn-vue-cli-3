@@ -46,7 +46,7 @@
           <input
             type="text"
             @change="addTab"
-            placeholder="新增タブ的名前"
+            placeholder="新增標籤名稱"
             ref="input"
             @keydown.enter.stop
             @keyup.enter.stop
@@ -120,9 +120,9 @@
       :style="{ top: hoverMenuY + 'px', left: hoverMenuX + 'px' }"
       @mouseleave="configOnClose"
     >
-      <div @click.stop="insertTitleItemOnClick">下に大見出しを新增</div>
-      <div @click.stop="insertSubTitleItemOnClick">下に小見出しを新增</div>
-      <div @click.stop="insertTextItemOnClick">下にテキストを新增</div>
+      <div @click.stop="insertTitleItemOnClick">下に標題を新增</div>
+      <div @click.stop="insertSubTitleItemOnClick">下に副標題を新增</div>
+      <div @click.stop="insertTextItemOnClick">下に文字內容を新增</div>
       <div @click.stop="insertCheckboxItemOnClick">
         下に檢查ボックスを新增
       </div>
@@ -241,7 +241,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
         contentsList: [
           {
             kind: "text",
-            text: "テキスト"
+            text: "文字內容"
           }
         ]
       },
@@ -318,7 +318,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   /**
-   * テキストエリアに入力される度に、必要に応じてテキストエリア的表示大小を拡張是
+   * 文字內容エリアに入力される度に、必要に応じて文字內容エリア的表示大小を拡張是
    */
   private textareaOnInput(event: any) {
     const textarea: HTMLTextAreaElement = event.target as HTMLTextAreaElement;
@@ -379,7 +379,7 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   private insertTitleItemOnClick() {
     this.insertContents({
       kind: "title",
-      text: "大見出し"
+      text: "標題"
     });
   }
 
@@ -389,17 +389,17 @@ export default class PublicMemoWindow extends Mixins<WindowMixin>(WindowMixin) {
   private insertSubTitleItemOnClick() {
     this.insertContents({
       kind: "sub-title",
-      text: "小見出し"
+      text: "副標題"
     });
   }
 
   /**
-   * テキスト新增が押下された時
+   * 文字內容新增が押下された時
    */
   private insertTextItemOnClick() {
     this.insertContents({
       kind: "text",
-      text: "テキスト"
+      text: "文字內容"
     });
   }
 

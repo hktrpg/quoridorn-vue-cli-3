@@ -17,7 +17,7 @@
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        Quoridorn全体的フォント大小を変更是
+        Quoridorn全部人的フォント大小を変更是
       </li>
     </spec-item>
     <!----------------------

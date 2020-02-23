@@ -7,8 +7,8 @@
   >
     <div class="contents" @contextmenu.prevent>
       <div v-if="!saveDataList">房間データを読み込んでいます...</div>
-      <!-- TODO 初回リリース対応としては部分ロードは否
-      <div v-if="saveDataList">複数的セーブデータで同じ項目を読み込ませる場合、各セーブデータで順次覆蓋されていきます。</div>
+      <!-- TODO 初回リリース対応としては部分讀取は否
+      <div v-if="saveDataList">複数的儲存データで同じ項目を読み込ませる場合、各儲存データで順次覆蓋されていきます。</div>
       <fieldset v-for="(saveDataObj, index) in saveDataList" :key="index">
         <legend>{{saveDataObj.fileName}}</legend>
         <ctrl-ctrl-button @click="allSelect(index)">全て対象</button><ctrl-button @click="allDisSelect(index)">全て除外</ctrl-button>
@@ -21,7 +21,7 @@
       </fieldset>
       -->
       <div v-if="saveDataList">
-        現段階では部分的ロードは行えません。<br />全て的データをロードします。
+        現段階では部分的讀取は行えません。<br />全て的データを讀取します。
       </div>
       <div class="operateArea">
         <ctrl-button @click="commit" :disabled="!saveDataList">
@@ -78,7 +78,7 @@ export default class DropZipWindow extends Mixins<WindowMixin>(WindowMixin) {
         // const delKeyList: string[] = saveData.delKeyList;
         // const addObjList: any[] = saveData.addObjList;
 
-        // TODO セーブデータ的互換性的処理
+        // TODO 儲存データ的互換性的処理
 
         // publicデータ的マージ（先勝ち）
         if (!importData.publicData) {

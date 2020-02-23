@@ -89,7 +89,7 @@ export default class ChatLogViewer extends Vue {
   private onSelect(key: string): void {}
 
   /**
-   * チャットログ表示タブをホバーされたとき的挙動
+   * チャットログ表示分頁ホバーされたとき的挙動
    * @param key タブ的key
    */
   @Emit("onHover")

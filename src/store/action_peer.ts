@@ -29,7 +29,7 @@ export default {
         // qLog(`Peer連接開始 => Non Info.`);
 
         const connectFunc = () => {
-          // peer連接作成
+          // peer連接新增
           let peer: any = null;
           try {
             peer = new Peer({ key: rootGetters.skywayKey, debug: 1 });
@@ -328,7 +328,7 @@ export default {
       Vue.set(rootState.private.chat, "tab", volatileList);
       Vue.set(rootState, "public", value);
 
-      // イニシアティブ表的列的適用
+      // 先攻表的列的適用
       dispatch("setInitiativeParams", {
         format: rootGetters.rowStr.trim()
       });
@@ -553,8 +553,8 @@ export default {
           ) > -1;
         if (isContainMe && members.length > 1) {
           const msg: string[] = [];
-          msg.push("あなたと同じ玩家として進房した人が現れました。");
-          msg.push("これがもしあなた本人による進房なら良い的ですが、");
+          msg.push("自己と同じ玩家として進房した人が現れました。");
+          msg.push("これがもし自己本人による進房なら良い的ですが、");
           msg.push("そうでない場合は成りすまし的影響が出ます。");
           msg.push("");
           msg.push("対処是には以下的手順をとってください。");
@@ -563,7 +563,7 @@ export default {
           );
           msg.push("２. ルームメンバーに成りすまし的可能性を教える");
           msg.push("３. 房間を作り直す");
-          msg.push("４. （あなたは別的密碼でログイン是）");
+          msg.push("４. （自己は別的密碼でログイン是）");
           setTimeout(() => alert(msg!.join("\n")), 0);
         }
       }
@@ -947,7 +947,7 @@ export default {
             if (err) window.console.error(err);
           });
 
-        // 利用システム的設定
+        // 利用系統的設定
         dispatch("setProperty", {
           property: "public.room",
           value: {
@@ -1108,7 +1108,7 @@ export default {
         logOff: true
       });
 
-      // URLを書き換える（リロード無）
+      // URLを書き換える（リ讀取無）
       const paramList: string[] = [];
       paramList.push(`roomName=${roomName}`);
       paramList.push(`roomPassword=${roomPassword || ""}`);
@@ -1158,10 +1158,10 @@ export default {
         isWait: isWait
       });
 
-      // モーダル状態的解除
+      // モーダル狀態的解除
       commit("updateIsModal", false);
 
-      // 進房状態
+      // 進房狀態
       commit("updateIsJoined", true);
     }
   }

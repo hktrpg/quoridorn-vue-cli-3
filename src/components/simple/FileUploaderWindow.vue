@@ -63,10 +63,10 @@
 
       <div class="ctrl-type-2">
         <ctrl-file-selector @change="fileOnChange" ref="button">
-          アップロード対象圖片選択
+          アップ讀取対象圖片選択
         </ctrl-file-selector>
         <ctrl-button :disabled="!useImageList.length" @click="commitOnClick">
-          アップロード
+          アップ讀取
         </ctrl-button>
         <ctrl-button @click="cancelOnClick">閉じる</ctrl-button>
       </div>

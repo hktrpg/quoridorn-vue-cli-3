@@ -4,7 +4,7 @@
  */
 
 /**
- * Javascriptを動的にロード是。
+ * Javascriptを動的に讀取是。
  * {@link http://blog.yuhiisk.com/archive/2014/12/20/dynamic-loading-and-complete-processing-of-script.html 参考URL}
  * @param  {string}    src      - 読み込むJavascript的パス
  * @param  {Function}  callback - 読み込み完了後に呼び出されるコールバック関数

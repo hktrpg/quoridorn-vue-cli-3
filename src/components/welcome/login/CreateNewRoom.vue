@@ -295,7 +295,7 @@ export default class CreateNewRoom extends Vue {
     }
 
     /* ------------------------------
-     * URLを書き換える（リロード無）
+     * URLを書き換える（リ讀取無）
      */
     const paramList: string[] = [];
     paramList.push(`roomName=${this.roomName}`);
@@ -468,7 +468,7 @@ export default class CreateNewRoom extends Vue {
           };
           checkFunc();
 
-          // モーダル状態的解除
+          // モーダル狀態的解除
           this.updateIsModal(false);
 
           // エントランス房間に連接是

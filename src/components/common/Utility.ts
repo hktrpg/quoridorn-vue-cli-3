@@ -330,7 +330,7 @@ export function conversion(num: number, unitName: string): any {
 }
 
 /**
- * 文字列をクリップボードにコピー是
+ * 文字列をクリップボードに複製是
  *
  * @param text
  */
@@ -575,7 +575,6 @@ export function sum(list: number[]): number {
 }
 
 /**
- * イニシアティブ表的各列的幅を再計算是
  *
  * @param widthList
  * @param formatObjList
@@ -667,7 +666,7 @@ function createBase64DataSet(
       try {
         const reader: any = new FileReader();
         reader.onload = function(event: any) {
-          // サムネイル圖片作成的場合は小さくて決まった大小的圖片データに加工是（アニメGIFも最初的１コマ的静止画になる）
+          // サムネイル圖片新增的場合は小さくて決まった大小的圖片データに加工是（アニメGIFも最初的１コマ的静止画になる）
 
           const image = new Image();
           image.onload = function() {

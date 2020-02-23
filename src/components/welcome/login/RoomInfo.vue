@@ -10,7 +10,7 @@
       <span>{{ roomPassword || "沒有密碼" }}</span>
     </label>
     <label>
-      システム：
+      系統：
       <span>{{ systemName }}</span>
     </label>
     <div style="color: darkgreen;">
@@ -28,7 +28,7 @@
         @keydown.229.stop
         @keyup.229.stop
       />
-      <ctrl-button class="copy" @click="doCopy">コピー</ctrl-button>
+      <ctrl-button class="copy" @click="doCopy">複製</ctrl-button>
     </label>
     <div class="description" v-if="isWait">
       這是一個臨時房間，一直保留到指定房間新增為止。
@@ -69,7 +69,7 @@ export default class RoomInfo extends Vue {
   }
 
   /**
-   * テキストをクリップボードにコピー是
+   * 文字內容をクリップボードに複製是
    * @param event
    */
   doCopy(event: any): void {

@@ -10,7 +10,7 @@
      !--------------------->
     <spec-item class-str="operation" label-str="操作方法１">
       <li>畫面上方菜單的「ファイル」選擇</li>
-      <li>「セーブ」選擇</li>
+      <li>「儲存」選擇</li>
     </spec-item>
     <spec-item class-str="operation" label-str="操作方法２">
       <li>
@@ -26,17 +26,17 @@
      !--------------------->
     <spec-item class-str="spec" label-str="規格">
       <li>
-        そ的時点で的Quoridorn的状態をzipファイルでダウンロード
+        そ的時点で的Quoridorn的狀態をzipファイルでダウン讀取
       </li>
       <li>
         菜單から選択できるオプション
-        <a href="#ref_menuOption_selectSaveData">「セーブデータ的選択」</a>
+        <a href="#ref_menuOption_selectSaveData">「儲存データ的選択」</a>
         が有効的場合、zipファイルに含めるデータを選ぶ畫面
-        <a href="#ref_selectSaveDataWindow">「セーブデータ選択畫面」</a>
+        <a href="#ref_selectSaveDataWindow">「儲存データ選択畫面」</a>
         を表示是
       </li>
       <li>
-        セーブデータ選擇否場合、すべて的状態をzipファイルとしてダウンロード是
+        儲存データ選擇否場合、すべて的狀態をzipファイルとしてダウン讀取是
       </li>
       <li>
         圖片や音楽的データ部分、秘匿チャット的内容については暗号化を施す
@@ -54,7 +54,7 @@
     <spec-item class-str="unImplemented" label-str="未實裝項目">
       <li>Mac的場合的ショートカット<br />→ Macが買えたら實裝是</li>
       <li>
-        <a href="#ref_selectSaveDataWindow">「セーブデータ選択畫面」</a>
+        <a href="#ref_selectSaveDataWindow">「儲存データ選択畫面」</a>
         が未實裝的ため、畫面表示機能がない
         <br />→ 初回リリースには含めない機能。
       </li>

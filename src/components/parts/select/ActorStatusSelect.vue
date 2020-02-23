@@ -52,7 +52,7 @@ export default class ActorStatusSelect extends Mixins<SelectMixin>(
     resultList.unshift({
       key: null,
       value: "",
-      text: "状態",
+      text: "狀態",
       disabled: true
     });
     return resultList;

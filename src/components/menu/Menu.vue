@@ -84,8 +84,8 @@
      ! 檔案
      !-------------------------------------------------->
     <div class="hoverMenu hoverMenu2" v-show="isShow('檔案')">
-      <div class="item" @click="clickExport">セーブ</div>
-      <div class="item" @click="clickImport">ロード</div>
+      <div class="item" @click="clickExport">儲存</div>
+      <div class="item" @click="clickImport">讀取</div>
       <hr @mouseenter="menuHover('檔案')" />
       <div class="item" @click="clickChatLog">獲取聊天記錄</div>
     </div>
@@ -219,26 +219,26 @@
         @click="menuClick"
         property="private.display.initiativeWindow"
       >
-        イニシアティブ顯示
+        顯示先攻表
       </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.resourceWindow"
       >
-        リソース顯示
+        顯示資源表
       </menu-boolean-item>
       <hr />
       <menu-boolean-item
         @click="menuClick"
         property="private.display.chatPaletteSettingWindow"
       >
-        チャットパレット顯示
+        對話組合版顯示
       </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.counterRemoconWindow"
       >
-        カウンターリモコン顯示
+        累計遙控器顯示
       </menu-boolean-item>
     </div>
     <!--------------------------------------------------
@@ -247,7 +247,7 @@
     <div class="hoverMenu hoverMenu9" v-show="isShow('Demo')">
       <div class="item" @click="clickDevHistory">開發歷史</div>
       <hr />
-      <div class="item" @click="clickBufForm">不具合的報告</div>
+      <div class="item" @click="clickBufForm">錯誤報告</div>
     </div>
   </div>
 </template>
@@ -322,17 +322,17 @@ export default class Menu extends Vue {
   /* --------------------
    * 檔案
    * ----------------- */
-  /** セーブ */
+  /** 儲存 */
   clickExport(): void {
     this.exportStart();
     this.menuClick();
   }
 
-  /** ロード */
+  /** 讀取 */
   clickImport(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
-      value: "ロード",
+      value: "讀取",
       logOff: true
     });
     this.windowOpen("private.display.unSupportWindow");
@@ -435,7 +435,7 @@ export default class Menu extends Vue {
     this.menuClick();
   }
 
-  /** 地圖状態保存 */
+  /** 地圖狀態保存 */
   clickSaveMap(): void {
     this.setProperty({
       property: "private.display.unSupportWindow.title",
@@ -529,7 +529,7 @@ export default class Menu extends Vue {
     this.menuClick();
   }
 
-  /** 不具合的報告 */
+  /** 錯誤報告 */
   clickBufForm(): void {
     window.open("https://9224.teacup.com/quoridorn_bug/bbs", "_blank");
     this.menuClick();

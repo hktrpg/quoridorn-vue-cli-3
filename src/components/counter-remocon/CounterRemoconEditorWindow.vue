@@ -1,6 +1,6 @@
 <template>
   <window-frame
-    titleText="カウンターリモコンエディター"
+    titleText="累計遙控器エディター"
     display-property="private.display.counterRemoconEditorWindow"
     align="left-top"
     fixSize="360, 220"
@@ -125,9 +125,7 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
       const firstProperty = this.propertyList[0];
       this.buttonName = "";
       this.target = "";
-      this.counterName = firstProperty
-        ? firstProperty.property
-        : "イニシアティブ";
+      this.counterName = firstProperty ? firstProperty.property : "資源表";
       this.modifyType = this.COUNTER_REMOCON_TYPE.PLUS;
       this.modifyValue = "";
       this.message = "{0}的{1}を{2}した{4}";

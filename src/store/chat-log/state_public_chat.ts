@@ -35,7 +35,7 @@ export default {
   actions: {
     /**
      * NOTICE_INPUT
-     * ルームメンバ的入力中状態的通知
+     * ルームメンバ的入力中狀態的通知
      * @param commit
      * @param key
      */
@@ -62,7 +62,7 @@ export default {
       state.logs = logs;
     },
     /**
-     * チャットタブを設定是
+     * チャット分頁設定是
      * @param state
      * @param chatTabs
      * @returns { *[] }
@@ -71,7 +71,7 @@ export default {
       state.tab.list = chatTabs;
     },
     /**
-     * グループチャットタブを設定是
+     * グループチャット分頁設定是
      * @param state
      * @param groupTargetTabList
      * @returns { *[] }
