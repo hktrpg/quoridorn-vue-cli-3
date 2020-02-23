@@ -23,6 +23,7 @@
     "mathjs": "^6.6.0",
     "moment": "^2.24.0",
     "mustache": "^3.2.1",
+    "python3": "0.0.1",
     "skyway-js": "^1.4.0",
     "typescript": "^3.8.2",
     "vue": "^2.6.11",
