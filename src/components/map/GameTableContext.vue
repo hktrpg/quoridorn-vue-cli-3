@@ -11,10 +11,10 @@
     <div class="item" @click.left.prevent="changeMap">地圖變更</div>
     <hr />
     <div class="item" @click.left.prevent="createHandCardArea">
-      手札置き場的新增(未實裝)
+      新增手牌放置區(未實裝)
     </div>
     <div class="item" @click.left.prevent="createMessageCard">
-      信息卡新增(未實裝)
+      新增信息卡(未實裝)
     </div>
     <hr />
     <div class="item" @click.left.prevent="resetWindowLocate">

@@ -70,7 +70,7 @@ export default {
         }
       }
       if (animationName.startsWith("turn-animation")) {
-        if (confirm("手札に加える")) {
+        if (confirm("增加手牌")) {
           this.drawCard({
             index: this.index,
             cardKey: this.objKey
