@@ -11,7 +11,7 @@ export default {
     async saveChatLogHtml({ rootGetters }: { rootGetters: any }) {
       if (!rootGetters.isGameMaster) {
         alert(
-          "由於對標准的考慮，這是GM的獨有功能。 \ n我們將盡快進行修改。 \ n請由GM獲取紀錄。"
+          "由於對標准的考慮，這是GM的獨有功能。 \n我們將盡快進行修改。 \n請由GM獲取紀錄。"
         );
         return;
       }

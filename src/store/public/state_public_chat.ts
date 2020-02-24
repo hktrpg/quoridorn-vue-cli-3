@@ -35,7 +35,7 @@ export default {
         from: "HKTRPG",
         tab: "chatTab-1",
         target: "groupTargetTab-0",
-        text: "歡迎來到冰丼 @ HKTRPG",
+        text: "歡迎來到冰丼 @ HKTRPG\n本網站主網址- https://hktrpg.com/\n源碼: https://github.com/hktrpg/quoridorn\n更新日誌\n 20200224 渣中文化了大部份內容，把部份彈出提示變成在對話視窗顯示。\n其實和凍豆腐相比，冰丼很多功能都未加入，仍是半成品，而且作者好像認為結構太累贅，砍掉重練這版本 (好像是第二三次了.....)轉而開發v2.0，只能說作者真天才+強迫症",
         color: "color-Quoridorn",
         statusName: "◆",
         isDiceBot: false,
