@@ -6,51 +6,44 @@
         @click="menuClick()"
         @mouseenter="menuHover('檔案')"
         :class="{ isHover: isShow('檔案') }"
+        >檔案</span
       >
-        檔案
-      </span>
       <span
         @click="menuClick()"
         @mouseenter="menuHover('顯示')"
         :class="{ isHover: isShow('顯示', '視窗設定') }"
+        >顯示</span
       >
-        顯示
-      </span>
       <span
         @click="menuClick()"
         @mouseenter="menuHover('方塊')"
         :class="{ isHover: isShow('方塊') }"
+        >方塊</span
       >
-        方塊
-      </span>
       <span
         @click="menuClick()"
         @mouseenter="menuHover('地圖')"
         :class="{ isHover: isShow('地圖') }"
+        >地圖</span
       >
-        地圖
-      </span>
       <span
         @click="menuClick()"
         @mouseenter="menuHover('圖片')"
         :class="{ isHover: isShow('圖片') }"
+        >圖片</span
       >
-        圖片
-      </span>
       <span
         @click="menuClick()"
         @mouseenter="menuHover('說明')"
         :class="{ isHover: isShow('說明') }"
+        >說明</span
       >
-        說明
-      </span>
       <span
         @click="menuClick()"
         @mouseenter="menuHover('Demo')"
         :class="{ isHover: isShow('Demo') }"
+        >Demo</span
       >
-        Demo
-      </span>
     </div>
     <!-- 房間情報 -->
     <div
@@ -59,9 +52,9 @@
       :title="roomInfoTitle"
       :class="{ isDisconnect: !isRoomJoined }"
     >
-      <span :class="{ isDisconnect: !isRoomJoined }">{{
-        `${roomName}` || "未連線"
-      }}</span>
+      <span :class="{ isDisconnect: !isRoomJoined }">
+        {{ `${roomName}` || "未連線" }}
+      </span>
       ：
       <span>{{ members.length }}</span>
       名
@@ -82,7 +75,7 @@
 
     <!--------------------------------------------------
      ! 檔案
-     !-------------------------------------------------->
+    !-------------------------------------------------->
     <div class="hoverMenu hoverMenu2" v-show="isShow('檔案')">
       <div class="item" @click="clickExport">儲存</div>
       <div class="item" @click="clickImport">讀取(未實裝)</div>
@@ -91,7 +84,7 @@
     </div>
     <!--------------------------------------------------
      ! 顯示
-     !-------------------------------------------------->
+    !-------------------------------------------------->
     <div class="hoverMenu hoverMenu3" v-show="isShow('顯示', '視窗')">
       <div class="item" @mouseenter="menuHover('視窗')">
         視窗
@@ -101,35 +94,30 @@
       <menu-boolean-item
         property="private.setting.standImage"
         @mouseenter="menuHover('顯示')"
+        >立繪顯示</menu-boolean-item
       >
-        立繪顯示
-      </menu-boolean-item>
       <menu-boolean-item
         property="private.setting.cutIn"
         @mouseenter="menuHover('顯示')"
+        >Cut-In顯示</menu-boolean-item
       >
-        Cut-In顯示
-      </menu-boolean-item>
       <hr @mouseenter="menuHover('顯示')" />
       <menu-boolean-item
         property="public.setting.gridId"
         @mouseenter="menuHover('顯示')"
+        >座標顯示</menu-boolean-item
       >
-        座標顯示
-      </menu-boolean-item>
       <menu-boolean-item
         property="public.setting.gridLine"
         @mouseenter="menuHover('顯示')"
+        >網格顯示</menu-boolean-item
       >
-        網格顯示
-      </menu-boolean-item>
       <hr @mouseenter="menuHover('顯示')" />
       <menu-boolean-item
         property="public.setting.isFitGrid"
         @mouseenter="menuHover('顯示')"
+        >格線貼齊</menu-boolean-item
       >
-        格線貼齊
-      </menu-boolean-item>
       <hr @mouseenter="menuHover('顯示')" />
       <div
         class="item"
@@ -149,7 +137,7 @@
     </div>
     <!--------------------------------------------------
      ! 方塊
-     !-------------------------------------------------->
+    !-------------------------------------------------->
     <div class="hoverMenu hoverMenu4" v-show="isShow('方塊')">
       <div class="item" @click="clickAddCharacter">添加角色</div>
       <div class="item" @click="clickAddRange">添加範圍(未實裝)</div>
@@ -161,13 +149,13 @@
         角色等候室(整合到棋子管理盒)
       </div>
       <hr />
-      <menu-boolean-item property="public.setting.pieceRotateMarker">
-        顯示旋轉標誌
-      </menu-boolean-item>
+      <menu-boolean-item property="public.setting.pieceRotateMarker"
+        >顯示旋轉標誌</menu-boolean-item
+      >
     </div>
     <!--------------------------------------------------
      ! 地圖
-     !-------------------------------------------------->
+    !-------------------------------------------------->
     <div class="hoverMenu hoverMenu5" v-show="isShow('地圖')">
       <div class="item" @click="clickChangeMap">變更地圖</div>
       <div class="item" @click="clickAddFloorTile">添加地圖版塊</div>
@@ -179,7 +167,7 @@
     </div>
     <!--------------------------------------------------
      ! 圖片
-     !-------------------------------------------------->
+    !-------------------------------------------------->
     <div class="hoverMenu hoverMenu6" v-show="isShow('圖片')">
       <div class="item" @click="clickFileUploader">上傳檔案</div>
       <hr />
@@ -190,7 +178,7 @@
     </div>
     <!--------------------------------------------------
      ! 說明
-     !-------------------------------------------------->
+    !-------------------------------------------------->
     <div class="hoverMenu hoverMenu7" v-show="isShow('說明')">
       <div class="item" @click="clickWelcome">歡迎畫面</div>
       <div class="item" @click="clickVersion">版本</div>
@@ -201,52 +189,46 @@
     </div>
     <!--------------------------------------------------
      ! 視窗
-     !-------------------------------------------------->
+    !-------------------------------------------------->
     <div class="hoverMenu hoverMenu8" v-show="isShow('視窗')">
       <menu-boolean-item
         @click="menuClick"
         property="private.display.chatWindow"
+        >顯示對話</menu-boolean-item
       >
-        顯示對話
-      </menu-boolean-item>
-      <menu-boolean-item @click="menuClick" property="private.setting.dice">
-        顯示棋子
-      </menu-boolean-item>
+      <menu-boolean-item @click="menuClick" property="private.setting.dice"
+        >顯示棋子</menu-boolean-item
+      >
       <menu-boolean-item
         @click="menuClick"
         property="private.display.playerBoxWindow"
+        >顯示棋子管理盒</menu-boolean-item
       >
-        顯示棋子管理盒
-      </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.initiativeWindow"
+        >顯示先攻表</menu-boolean-item
       >
-        顯示先攻表
-      </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.resourceWindow"
+        >顯示資源表</menu-boolean-item
       >
-        顯示資源表
-      </menu-boolean-item>
       <hr />
       <menu-boolean-item
         @click="menuClick"
         property="private.display.chatPaletteSettingWindow"
+        >對話組合版顯示</menu-boolean-item
       >
-        對話組合版顯示
-      </menu-boolean-item>
       <menu-boolean-item
         @click="menuClick"
         property="private.display.counterRemoconWindow"
+        >累計遙控器顯示</menu-boolean-item
       >
-        累計遙控器顯示
-      </menu-boolean-item>
     </div>
     <!--------------------------------------------------
      ! Demo
-     !-------------------------------------------------->
+    !-------------------------------------------------->
     <div class="hoverMenu hoverMenu9" v-show="isShow('Demo')">
       <div class="item" @click="clickDevHistory">開發歷史</div>
       <hr />
@@ -267,6 +249,9 @@ import { Component, Vue, Watch } from "vue-property-decorator";
   }
 })
 export default class Menu extends Vue {
+  @Getter("activeChatTab") private activeChatTab: any;
+  @Getter("playerKey") private playerKey: any;
+  @Action("sendChatLog") private sendChatLog: any;
   @Action("windowOpen") private windowOpen: any;
   @Action("setProperty") private setProperty: any;
   @Action("doResetWindowLocate") private doResetWindowLocate: any;
@@ -396,13 +381,27 @@ export default class Menu extends Vue {
 
   /** 墓場 */
   clickGraveyard(): void {
-    alert("「墓場」由棋子管理盒畫面整合。");
+    //alert("「墓場」由棋子管理盒畫面整合。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "「墓場」由棋子管理盒畫面整合。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
     this.menuClick();
   }
 
   /** 角色等候室 */
   clickWaitingRoom(): void {
-    alert("「角色等候室」由棋子管理盒畫面整合。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "「角色等候室」由棋子管理盒畫面整合。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
+    // alert("「角色等候室」由棋子管理盒畫面整合。");
     this.menuClick();
   }
 

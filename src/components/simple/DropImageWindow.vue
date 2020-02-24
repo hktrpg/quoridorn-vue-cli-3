@@ -11,12 +11,12 @@
         <legend>{{ imageObj.name }}</legend>
         <div>
           <img class="image" v-img="imageObj.image" draggable="false" />
-          <ctrl-button class="passwordButton" @click="passwordButtonOnClick">
-            隱藏圖片密碼設定
-          </ctrl-button>
-          <label class="passwordLabel">
-            隱藏圖片密碼：{{ imageObj.password !== "" ? "有" : "無" }}
-          </label>
+          <ctrl-button class="passwordButton" @click="passwordButtonOnClick"
+            >隱藏圖片密碼設定</ctrl-button
+          >
+          <label class="passwordLabel"
+            >隱藏圖片密碼：{{ imageObj.password !== "" ? "有" : "無" }}</label
+          >
           <span class="tagLabel">加上標籤(用半型/全型和空格分隔)</span>
           <input
             class="tagInput"
@@ -37,12 +37,8 @@
         </div>
       </fieldset>
       <div class="operateArea">
-        <ctrl-button @click="commit" :disabled="!imageList">
-          決定
-        </ctrl-button>
-        <ctrl-button @click="cancel" :disabled="!imageList">
-          取消
-        </ctrl-button>
+        <ctrl-button @click="commit" :disabled="!imageList">決定</ctrl-button>
+        <ctrl-button @click="cancel" :disabled="!imageList">取消</ctrl-button>
       </div>
     </div>
   </window-frame>
@@ -73,6 +69,8 @@ export default class DropImageWindow extends Mixins<WindowMixin>(WindowMixin) {
   @Getter("dropImageList") private dropImageList: any;
   @Getter("imageTagList") private imageTagList: any;
   @Getter("playerKey") private playerKey: any;
+  @Getter("activeChatTab") private activeChatTab: any;
+  @Action("sendChatLog") private sendChatLog: any;
 
   private imageList: any[] = [];
 
@@ -114,7 +112,14 @@ export default class DropImageWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   private passwordButtonOnClick(): void {
-    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝此功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
+    //  alert("未實裝此功能。");
   }
 
   private changeTag(key: string): void {

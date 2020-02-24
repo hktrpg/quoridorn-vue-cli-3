@@ -97,6 +97,9 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
   @Getter("propertyList") private propertyList: any;
   @Getter("counterRemoconEditorKey") private counterRemoconEditorKey: any;
   @Getter("getObj") private getObj: any;
+  @Getter("activeChatTab") private activeChatTab: any;
+  @Getter("playerKey") private playerKey: any;
+  @Action("sendChatLog") private sendChatLog: any;
 
   private buttonName: string = "";
   private target: string = "";
@@ -141,7 +144,14 @@ export default class CounterRemoconEditorWindow extends Mixins<WindowMixin>(
     const messageList: string[] = [];
     if (!this.buttonName) messageList.push("必須有快捷鍵名稱。");
     if (messageList.length) {
-      alert(messageList.join("\n"));
+      this.sendChatLog({
+        actorKey: "HKTRPG",
+        text: messageList.join("\n"),
+        chatTarget: this.playerKey,
+        statusName: "◆",
+        outputTab: this.activeChatTab
+      });
+      //  alert(messageList.join("\n"));
       return;
     }
 

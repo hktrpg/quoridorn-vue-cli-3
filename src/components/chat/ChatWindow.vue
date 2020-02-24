@@ -11,7 +11,7 @@
     <div class="container">
       <!----------------
        ! 聊天視窗ログ
-       !--------------->
+      !--------------->
       <chat-log-viewer
         :tabIndex="0"
         :chatLogList="chatLogList"
@@ -33,7 +33,7 @@
 
       <!----------------
        ! 操作盤
-       !--------------->
+      !--------------->
       <div class="oneLine dep" @contextmenu.prevent>
         <!-- 發言者選擇 -->
         <span class="label">你的名字：</span>
@@ -41,7 +41,7 @@
           :tabindex="isModal ? -1 : chatTabs.length + 2"
           :value="chatActorKey"
           @input="updateActorKey"
-          title=""
+          title
           :optionInfoList="
             getSelfActors.map(actor => ({
               key: actor.key,
@@ -195,12 +195,12 @@
 
       <!----------------
        ! 發言
-       !--------------->
+      !--------------->
       <div class="sendLine dep">
         <div class="textAreaContainer">
           <!----------------
            ! グループ聊天視窗タブ
-           !--------------->
+          !--------------->
           <tabs-component
             class="group"
             :tabIndex="chatTabs.length + 14"
@@ -242,7 +242,7 @@
 
           <!----------------
            ! 聊天視窗オプション（単位）
-           !--------------->
+          !--------------->
           <div
             class="optionTable dep"
             v-if="unitList.length"
@@ -259,19 +259,19 @@
 
           <!----------------
            ! 聊天視窗オプション（提交者）
-           !--------------->
+          !--------------->
           <div
             class="chatOptionSelector dep"
             v-if="chatOptionSelectMode === 'from'"
             @contextmenu.prevent
           >
-            <span
-              >發信人{{
+            <span>
+              發信人{{
                 chatOptionPageMaxNum > 1
                   ? ` (${chatOptionPageNum} / ${chatOptionPageMaxNum})`
                   : ""
-              }}</span
-            >
+              }}
+            </span>
             <ul>
               <li
                 class="ope"
@@ -320,19 +320,19 @@
 
           <!----------------
            ! 聊天視窗オプション（對像）
-           !--------------->
+          !--------------->
           <div
             class="chatOptionSelector dep"
             v-if="chatOptionSelectMode === 'target'"
             @contextmenu.prevent
           >
-            <span
-              >目的地{{
+            <span>
+              目的地{{
                 chatOptionPageMaxNum > 1
                   ? ` (${chatOptionPageNum} / ${chatOptionPageMaxNum})`
                   : ""
-              }}</span
-            >
+              }}
+            </span>
             <ul>
               <li
                 class="ope"
@@ -377,19 +377,19 @@
 
           <!----------------
            ! 聊天視窗オプション（タブ）
-           !--------------->
+          !--------------->
           <div
             class="chatOptionSelector dep"
             v-if="chatOptionSelectMode === 'tab'"
             @contextmenu.prevent
           >
-            <span
-              >目標分頁{{
+            <span>
+              目標分頁{{
                 chatOptionPageMaxNum > 1
                   ? ` (${chatOptionPageNum} / ${chatOptionPageMaxNum})`
                   : ""
-              }}</span
-            >
+              }}
+            </span>
             <ul>
               <li
                 class="ope"
@@ -434,19 +434,19 @@
 
           <!----------------
            ! 聊天視窗オプション（對像）
-           !--------------->
+          !--------------->
           <div
             class="chatOptionSelector dep"
             v-if="chatOptionSelectMode === 'chatFormat'"
             @contextmenu.prevent
           >
-            <span
-              >後續的文字…{{
+            <span>
+              後續的文字…{{
                 chatOptionPageMaxNum > 1
                   ? ` (${chatOptionPageNum} / ${chatOptionPageMaxNum})`
                   : ""
-              }}</span
-            >
+              }}
+            </span>
             <ul>
               <li
                 class="ope"
@@ -508,7 +508,7 @@
             </span>
             <!----------------
              ! 輸入欄
-             !--------------->
+            !--------------->
             <textarea
               id="chatTextArea"
               v-model="currentMessage"
@@ -540,11 +540,11 @@
       </div>
       <!----------------
        ! 輸入者顯示
-       !--------------->
+      !--------------->
       <div class="inputtingArea dep" @contextmenu.prevent>
         <div v-for="name in inputtingPeerIdList" :key="name">
           <img
-            alt=""
+            alt
             v-show="inputtingPeerIdList.length > 0"
             :src="require('../../assets/inputting.gif')"
           />
@@ -980,13 +980,23 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
    */
   private async chatLogDeleteButtonOnClick(): Promise<any> {
     if (!this.isGameMaster) {
-      alert(
+      this.sendChatLog({
+        actorKey: "HKTRPG",
+        text: "這是GM的專用功能",
+        chatTarget: this.playerKey,
+        statusName: "◆",
+        outputTab: this.activeChatTab || this.outputTab
+      });
+      /*
+     alert(
         "規格的な考慮不足によりGM専用功能です。\nGM以外でも可能になるよう、近いうちに改修します。\nGMにログ取得を促してくださいませ。"
       );
+      */
+
       return;
     }
     const result: boolean = window.confirm(
-      "本当に聊天視窗ログを刪除しますか？\n刪除前にログ保存を同時に行います。"
+      "真的要將聊天紀錄刪除？\n刪除前可以先去保存紀錄。"
     );
     if (!result) return;
     await this.saveChatLogHtml();
@@ -1005,7 +1015,14 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
    */
   private rollCallSettingButtonOnClick(): void {
     // TODO
-    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝點名功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab || this.outputTab
+    });
+    //  alert("未實裝此功能。");
   }
 
   /**
@@ -1013,7 +1030,14 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
    */
   private alermSettingButtonOnClick(): void {
     // TODO
-    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝鬧鐘功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab || this.outputTab
+    });
+    //    alert("未實裝此功能。");
   }
 
   /**
@@ -1028,7 +1052,14 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
    */
   private cutInSettingButtonOnClick(): void {
     // TODO
-    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝CUT-IN功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab || this.outputTab
+    });
+    //alert("未實裝此功能。");
   }
 
   /**
@@ -1050,7 +1081,15 @@ export default class ChatWindow extends Mixins<WindowMixin>(WindowMixin) {
    */
   private rangeSettingButtonOnClick(): void {
     // TODO
-    alert("未實裝此功能。");
+
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝射界功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab || this.outputTab
+    });
+    // alert("未實裝此功能。");
   }
 
   /**
@@ -1542,7 +1581,8 @@ i.icon-target {
   left: 0;
   cursor: default;
   z-index: 1000;
-  max-height: 22.8em;
+  //  max-height: 22.8em;
+  max-height: 18.8em;
   overflow-y: auto;
 
   .ope {
@@ -1577,7 +1617,8 @@ i.icon-target {
   left: 0;
   cursor: default;
   z-index: 1000;
-  max-height: 26em;
+  //  max-height: 26em;
+  max-height: 20em;
   overflow-y: auto;
 
   table {

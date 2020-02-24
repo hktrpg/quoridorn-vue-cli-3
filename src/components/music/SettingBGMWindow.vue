@@ -11,7 +11,7 @@
       <div class="playOperationArea" @contextmenu.prevent>
         <ctrl-button @click="doPlay">送出</ctrl-button>
         <span class="space"></span>
-        <ctrl-button @click="doPreview">預覽(自分的み)</ctrl-button>
+        <ctrl-button @click="doPreview">預覽(只有自己)</ctrl-button>
       </div>
       <div class="tableContainer">
         <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">

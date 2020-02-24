@@ -32,7 +32,14 @@ const YoutubeControlManager = () => {
 
       const usePlayer = playerArr[useIndex];
       if (!usePlayer) {
-        alert("超出了有效的YouTube播放限制。  n取消此操作。");
+        this.sendChatLog({
+          actorKey: "HKTRPG",
+          text: "超出了有效的YouTube播放限制。取消此操作。",
+          chatTarget: this.playerKey,
+          statusName: "◆",
+          outputTab: this.activeChatTab
+        });
+        //alert("超出了有效的YouTube播放限制。  \n取消此操作。");
         return false;
       }
       const index = playerArr.indexOf(usePlayer);

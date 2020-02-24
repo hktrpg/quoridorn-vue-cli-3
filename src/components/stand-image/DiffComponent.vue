@@ -265,7 +265,7 @@ export default class DiffComponent extends Vue {
     resultList.push({
       key: "0",
       value: "0",
-      text: "重ねる",
+      text: "重疊",
       disabled: false
     });
     resultList.push({

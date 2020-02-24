@@ -26,6 +26,9 @@ import { Component, Mixins } from "vue-mixin-decorator";
 export default class CounterRemoconContext extends Mixins<WindowMixin>(
   WindowMixin
 ) {
+  @Getter("activeChatTab") private activeChatTab: any;
+  @Getter("playerKey") private playerKey: any;
+  @Action("sendChatLog") private sendChatLog: any;
   @Action("windowOpen") private windowOpen: any;
   @Action("setProperty") private setProperty: any;
   @Action("windowClose") private windowClose: any;
@@ -64,14 +67,28 @@ export default class CounterRemoconContext extends Mixins<WindowMixin>(
   private moveRightOnClick(): void {
     // TODO
     window.console.log("moveRightOnClick");
-    alert("未實裝");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝此功能",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
+    //alert("未實裝");
     this.windowClose("private.display.counterRemoconContext");
   }
 
   private moveLeftOnClick(): void {
     // TODO
     window.console.log("moveLeftOnClick");
-    alert("未實裝");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝此功能",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
+    // alert("未實裝");
     this.windowClose("private.display.counterRemoconContext");
   }
 }

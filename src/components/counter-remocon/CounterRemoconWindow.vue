@@ -24,30 +24,29 @@
             @click="event => remoconButtonOnClick(infoObj, event)"
             @click-right="event => openContext(event, infoObj.key)"
             ref="button"
+            >{{ infoObj.buttonName }}</ctrl-button
           >
-            {{ infoObj.buttonName }}
-          </ctrl-button>
         </label>
       </div>
 
       <!-- 操作エリア -->
       <div class="playOperationArea">
         <!-- 儲存鍵 -->
-        <ctrl-button class="save" @click="saveButtonOnClick">
-          儲存(未實裝)
-        </ctrl-button>
+        <ctrl-button class="save" @click="saveButtonOnClick"
+          >儲存(未實裝)</ctrl-button
+        >
 
         <!-- 讀取鍵 -->
-        <ctrl-button class="load" @click="loadButtonOnClick">
-          讀取(未實裝)
-        </ctrl-button>
+        <ctrl-button class="load" @click="loadButtonOnClick"
+          >讀取(未實裝)</ctrl-button
+        >
 
         <span style="flex: 1"></span>
 
         <!-- 鍵新增鍵 -->
-        <ctrl-button class="add" @click="addButtonOnClick">
-          新增快捷鍵
-        </ctrl-button>
+        <ctrl-button class="add" @click="addButtonOnClick"
+          >新增快捷鍵</ctrl-button
+        >
       </div>
     </div>
     <div
@@ -65,9 +64,8 @@
         :style="{ left: item.x, top: item.y }"
         class="selectItem"
         :class="{ isEnd: selectBlock.isEnd, isHover: item.isHover }"
+        >{{ item.text }}</span
       >
-        {{ item.text }}
-      </span>
     </div>
   </window-frame>
 </template>
@@ -100,6 +98,9 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
   @Getter("getObj") private getObj: any;
   @Getter("chatActorKey") private chatActorKey: any;
   @Getter("propertyList") private propertyList: any;
+  @Getter("activeChatTab") private activeChatTab: any;
+  @Getter("playerKey") private playerKey: any;
+  @Action("sendChatLog") private sendChatLog: any;
 
   private selectBlockList: any[] = [];
 
@@ -114,7 +115,14 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
    */
   private saveButtonOnClick() {
     // TODO
-    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝此功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
+    // alert("未實裝此功能。");
   }
 
   /**
@@ -122,7 +130,14 @@ export default class CounterRemoconWindow extends Mixins<WindowMixin>(
    */
   private loadButtonOnClick() {
     // TODO
-    alert("未實裝此功能。");
+    //    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝此功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
   }
 
   /**

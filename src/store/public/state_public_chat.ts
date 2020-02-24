@@ -30,9 +30,9 @@ export default {
     /** 聊天視窗的リスト */
     logs: [
       {
-        owner: "Quoridorn",
-        name: "Quoridorn",
-        from: "Quoridorn",
+        owner: "HKTRPG",
+        name: "HKTRPG",
+        from: "HKTRPG",
         tab: "chatTab-1",
         target: "groupTargetTab-0",
         text: "歡迎來到冰丼 @ HKTRPG",
@@ -82,9 +82,9 @@ export default {
     doDeleteChatLog: ({ state }: { state: any }) => {
       state.logs.splice(0, state.logs.length);
       state.logs.push({
-        owner: "Quoridorn",
-        name: "Quoridorn",
-        from: "Quoridorn",
+        owner: "HKTRPG",
+        name: "HKTRPG",
+        from: "HKTRPG",
         tab: "chatTab-1",
         target: "groupTargetTab-0",
         text: "初始化聊天記錄。",

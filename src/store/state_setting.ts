@@ -9,7 +9,7 @@ export default {
     magicWord: "I walk slowly, but I never walk backward.",
     /** 連接情報 */
     connect: {
-      skywayKey: "",
+      skywayKey: "0aa1821d-2598-4400-b954-3c50fab1c0f0",
       type: "",
       bcdiceServer: ""
     },
@@ -37,11 +37,11 @@ export default {
       }
     ],
     systemLog: {
-      name: "Quoridorn",
+      name: "HKTRPG",
       colorKey: "color-Quoridorn",
       color: "#000",
       tab: "chatTab-1",
-      from: "Quoridorn"
+      from: "HKTRPG"
     },
     chatFormat: {
       lineRegExp: null,

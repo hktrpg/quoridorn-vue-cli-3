@@ -178,7 +178,7 @@ export default class SettingChatTargetTabWindow extends Mixins<WindowMixin>(
     if (this.selectLineKey) {
       this.deleteGroupTargetTab({ key: this.selectLineKey });
     } else {
-      alert("刪除對像選擇してください。");
+      alert("請先選擇刪除對像。");
     }
   }
 
