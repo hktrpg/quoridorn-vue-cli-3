@@ -136,9 +136,7 @@ export default new Vuex.Store({
       let system = getUrlParam("system");
 
       if (roomName && roomName.endsWith(CreateNewRoom.ENTRANCE_ROOM_NAME)) {
-        alert(
-          `「${CreateNewRoom.ENTRANCE_ROOM_NAME}」で終わる房間名は使えません。`
-        );
+        alert(`「${CreateNewRoom.ENTRANCE_ROOM_NAME}」房間無法使用。`);
         roomName = null;
       }
 
@@ -306,7 +304,7 @@ export default new Vuex.Store({
             if (index === -1) system = "DiceBot";
           })
           .catch(() => {
-            alert(`BCDice-apiサーバ\n${setting.bcdiceServer}\n的連線失敗。`);
+            alert(`BCDice-api\n${setting.bcdiceServer}\n的連線失敗。`);
           });
 
         /* ----------------------------------------------------------------------
