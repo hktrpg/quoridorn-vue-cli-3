@@ -5,7 +5,7 @@ export default {
   // FIXME setting的データは別経路で保存是？
   state: {
     /** 版本 */
-    version: "1.0.2-CHT",
+    version: "1.0.2 @ HKTRPG",
     magicWord: "I walk slowly, but I never walk backward.",
     /** 連接情報 */
     connect: {
