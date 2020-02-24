@@ -304,7 +304,7 @@ export default class Menu extends Vue {
 
   /** 登出鍵押下 */
   clickLogOut(): void {
-    location.href = location.href.replace(/\?.+$/, "");
+    location.href = "https://hktrpg.com";
   }
 
   /* --------------------
