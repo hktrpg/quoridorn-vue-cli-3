@@ -28,7 +28,7 @@ import ContextFrame from "../ContextFrame.vue";
 import WindowMixin from "../WindowMixin.vue";
 import { qLog } from "../common/Utility";
 
-import { Action } from "vuex-class";
+import { Action, Getter } from "vuex-class";
 import { Component, Mixins } from "vue-mixin-decorator";
 
 @Component({
