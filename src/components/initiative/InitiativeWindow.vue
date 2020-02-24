@@ -14,18 +14,16 @@
           @click="arrangeWindowSize(true)"
           v-if="isWindowViewScroll"
           :disabled="isModal"
+          >◁︎放大</ctrl-button
         >
-          ◁︎放大
-        </ctrl-button>
 
         <!-- 縮小鍵 -->
         <ctrl-button
           @click="arrangeWindowSize(false)"
           v-if="!isWindowViewScroll"
           :disabled="isModal || baseWindowWidth === 0"
+          >縮小▷︎</ctrl-button
         >
-          縮小▷︎
-        </ctrl-button>
 
         <!-- 空白 -->
         <div style="flex: 1;"></div>
@@ -35,9 +33,8 @@
           class="setting"
           @click="openSettingWindow"
           :disabled="isModal"
+          >設定</ctrl-button
         >
-          設定
-        </ctrl-button>
       </div>
       <div class="playOperationArea" @contextmenu.prevent>
         <!-- 取消鍵 -->
@@ -45,18 +42,16 @@
           class="back"
           @click="roundBack"
           :disabled="isModal || round === 0 || backDisabled"
+          >取消</ctrl-button
         >
-          取消
-        </ctrl-button>
 
         <!-- 次へ鍵 -->
         <ctrl-button
           class="next"
           @click="roundNext"
           :disabled="isModal || round === 0"
+          >下一個</ctrl-button
         >
-          下一個
-        </ctrl-button>
 
         <!-- 空白 -->
         <div style="flex: 1;"></div>
@@ -66,18 +61,16 @@
           class="start"
           @click="battleStart"
           :disabled="isModal || sortCharacterList.length === 0"
+          >戰鬥開始</ctrl-button
         >
-          戰鬥開始
-        </ctrl-button>
 
         <!-- 戰鬥完結鍵 -->
         <ctrl-button
           class="end"
           @click="battleEnd"
           :disabled="isModal || round === 0"
+          >戰鬥完結</ctrl-button
         >
-          戰鬥完結
-        </ctrl-button>
       </div>
       <div class="tableContainer">
         <table @mousemove="event => moveDev(event)" @mouseup="moveDevEnd">
@@ -92,9 +85,7 @@
                 @doubleClick="doubleClick"
                 prop="initiativeWindow"
               />
-              <th :style="colStyle(1)" title="先攻表">
-                先攻表
-              </th>
+              <th :style="colStyle(1)" title="先攻表">先攻表</th>
 
               <!-- 修正（先攻表同値時） -->
               <divider
@@ -443,6 +434,10 @@ export default class InitiativeWindow extends Mixins<WindowMixin>(WindowMixin) {
   @Getter("roundPlayerKey") private roundPlayerKey: any;
   @Getter("propertyList") private propertyList: any;
   @Getter("isModal") private isModal: any;
+
+  @Getter("activeChatTab") private activeChatTab: any;
+  @Getter("playerKey") private playerKey: any;
+  @Action("sendChatLog") private sendChatLog: any;
 
   private windowWidth: number = 0;
   private windowPadding: number = 0;
@@ -902,7 +897,14 @@ export default class InitiativeWindow extends Mixins<WindowMixin>(WindowMixin) {
   }
 
   private editButtonOnClick() {
-    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝此功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
+    // alert("未實裝此功能。");
   }
 }
 </script>

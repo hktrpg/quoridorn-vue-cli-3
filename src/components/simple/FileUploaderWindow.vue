@@ -19,7 +19,7 @@
           @mouseenter="imageOnHover(image.key)"
           @mouseleave="imageOnHover()"
         >
-          <img v-img="image.image" alt="" />
+          <img v-img="image.image" alt />
           <span
             class="icon-cross"
             @click="deleteImageOnClick(image.key)"
@@ -40,15 +40,13 @@
             }
           ]"
         />
-        <ctrl-button @click="passwordButtonOnClick">
-          隱藏圖片密碼設定
-        </ctrl-button>
+        <ctrl-button @click="passwordButtonOnClick"
+          >隱藏圖片密碼設定</ctrl-button
+        >
       </div>
 
       <div class="ctrl-type-1">
-        <label for="fileUploader-tag">
-          加上標籤（半型・全型和空格分隔）：
-        </label>
+        <label for="fileUploader-tag">加上標籤（半型・全型和空格分隔）：</label>
         <input
           type="text"
           id="fileUploader-tag"
@@ -62,12 +60,12 @@
       </div>
 
       <div class="ctrl-type-2">
-        <ctrl-file-selector @change="fileOnChange" ref="button">
-          選擇要讀取的對像圖片
-        </ctrl-file-selector>
-        <ctrl-button :disabled="!useImageList.length" @click="commitOnClick">
-          讀取
-        </ctrl-button>
+        <ctrl-file-selector @change="fileOnChange" ref="button"
+          >選擇要讀取的對像圖片</ctrl-file-selector
+        >
+        <ctrl-button :disabled="!useImageList.length" @click="commitOnClick"
+          >讀取</ctrl-button
+        >
         <ctrl-button @click="cancelOnClick">關閉</ctrl-button>
       </div>
     </div>
@@ -103,6 +101,8 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
   @Action("windowClose") private windowClose: any;
   @Getter("imageTagList") private imageTagList: any;
   @Getter("playerKey") private playerKey: any;
+  @Getter("activeChatTab") private activeChatTab: any;
+  @Action("sendChatLog") private sendChatLog: any;
 
   private inputImageTag: string = "角色";
   private selectImageTag: string = "imgTag-2";
@@ -137,7 +137,14 @@ export default class FileUploaderWindow extends Mixins<WindowMixin>(
   }
 
   private passwordButtonOnClick() {
-    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝此功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
+    // alert("未實裝此功能。");
   }
 
   /**

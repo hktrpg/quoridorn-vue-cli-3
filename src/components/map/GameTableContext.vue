@@ -1,28 +1,14 @@
 <template>
   <context-frame displayProperty="private.display.gameTableContext">
-    <div class="item" @click.left.prevent="addCharacter">
-      添加角色
-    </div>
-    <div class="item" @click.left.prevent="addMapMask">
-      添加地圖迷霧
-    </div>
-    <div class="item" @click.left.prevent="addMapMarker">
-      添加地圖標記
-    </div>
-    <div class="item" @click.left.prevent="addChit">
-      添加棋子
-    </div>
-    <div class="item" @click.left.prevent="addFloorTile">
-      添加地圖版塊
-    </div>
+    <div class="item" @click.left.prevent="addCharacter">添加角色</div>
+    <div class="item" @click.left.prevent="addMapMask">添加地圖迷霧</div>
+    <div class="item" @click.left.prevent="addMapMarker">添加地圖標記</div>
+    <div class="item" @click.left.prevent="addChit">添加棋子</div>
+    <div class="item" @click.left.prevent="addFloorTile">添加地圖版塊</div>
     <hr />
-    <div class="item" @click.left.prevent="addDiceSymbol">
-      添加骰子
-    </div>
+    <div class="item" @click.left.prevent="addDiceSymbol">添加骰子</div>
     <hr />
-    <div class="item" @click.left.prevent="changeMap">
-      地圖變更
-    </div>
+    <div class="item" @click.left.prevent="changeMap">地圖變更</div>
     <hr />
     <div class="item" @click.left.prevent="createHandCardArea">
       手札置き場的新增(未實裝)
@@ -54,6 +40,9 @@ export default class GameTableContext extends Mixins<WindowMixin>(WindowMixin) {
   @Action("windowClose") private windowClose: any;
   @Action("doResetWindowLocate") private doResetWindowLocate: any;
 
+  @Getter("activeChatTab") private activeChatTab: any;
+  @Getter("playerKey") private playerKey: any;
+  @Action("sendChatLog") private sendChatLog: any;
   private addCharacter(): void {
     this.windowOpen("private.display.addCharacterSettingWindow");
     this.windowClose("private.display.gameTableContext");
@@ -96,7 +85,14 @@ export default class GameTableContext extends Mixins<WindowMixin>(WindowMixin) {
 
   private createHandCardArea(): void {
     qLog(`  [methods] select context => item: GameTable.createHandCardArea`);
-    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝此功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
+    // alert("未實裝此功能。");
     this.windowClose("private.display.gameTableContext");
   }
 

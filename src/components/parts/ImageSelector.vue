@@ -34,13 +34,16 @@ import ImageTagSelect from "@/components/parts/select/ImageTagSelect.vue";
 import CtrlButton from "@/components/parts/CtrlButton.vue";
 
 import { Component, Emit, Prop, Vue, Watch } from "vue-property-decorator";
-import { Getter } from "vuex-class";
+import { Getter, Action } from "vuex-class";
 
 @Component({ components: { CtrlButton, ImageTagSelect } })
 export default class ImageSelector extends Vue {
   @Getter("getObj") private getObj: any;
   @Getter("imageListFromTagKey") private imageListFromTagKey: any;
 
+  @Getter("activeChatTab") private activeChatTab: any;
+  @Getter("playerKey") private playerKey: any;
+  @Action("sendChatLog") private sendChatLog: any;
   @Prop({ type: String, required: true })
   public value!: string;
 
@@ -99,7 +102,14 @@ export default class ImageSelector extends Vue {
   }
 
   private onClickHideImage() {
-    alert("未實裝此功能。");
+    this.sendChatLog({
+      actorKey: "HKTRPG",
+      text: "未實裝此功能。",
+      chatTarget: this.playerKey,
+      statusName: "◆",
+      outputTab: this.activeChatTab
+    });
+    //  alert("未實裝此功能。");
   }
 
   private get selectedTagIndexText() {
