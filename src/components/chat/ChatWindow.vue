@@ -1582,7 +1582,7 @@ i.icon-target {
   cursor: default;
   z-index: 1000;
   //  max-height: 22.8em;
-  max-height: 18.8em;
+  max-height: 18em;
   overflow-y: auto;
 
   .ope {
@@ -1618,7 +1618,7 @@ i.icon-target {
   cursor: default;
   z-index: 1000;
   //  max-height: 26em;
-  max-height: 20em;
+  max-height: 18em;
   overflow-y: auto;
 
   table {

@@ -12,7 +12,7 @@
         <div>
           <img class="image" v-img="imageObj.image" draggable="false" />
           <ctrl-button class="passwordButton" @click="passwordButtonOnClick"
-            >隱藏圖片密碼設定</ctrl-button
+            >隱藏圖片密碼(未實裝)</ctrl-button
           >
           <label class="passwordLabel"
             >隱藏圖片密碼：{{ imageObj.password !== "" ? "有" : "無" }}</label

@@ -41,7 +41,7 @@
           ]"
         />
         <ctrl-button @click="passwordButtonOnClick"
-          >隱藏圖片密碼設定</ctrl-button
+          >隱藏圖片密碼(未實裝)</ctrl-button
         >
       </div>
 
@@ -61,7 +61,7 @@
 
       <div class="ctrl-type-2">
         <ctrl-file-selector @change="fileOnChange" ref="button"
-          >選擇要讀取的對像圖片</ctrl-file-selector
+          >選擇要讀取的圖片</ctrl-file-selector
         >
         <ctrl-button :disabled="!useImageList.length" @click="commitOnClick"
           >讀取</ctrl-button
